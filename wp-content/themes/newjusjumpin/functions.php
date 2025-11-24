@@ -75,13 +75,12 @@ function newjusjumpin_scripts() {
     }
     
     // Page template stylesheets
-    // Important: page-about-us.php is a slug-specific template (page-{slug}.php),
-    // which is NOT considered a "custom page template" by is_page_template().
-    // So we also detect by slug/title to ensure the CSS loads.
+    // Important: the About page uses a slug-specific template (page-{slug}.php),
+    // so we detect by slug/title to ensure the CSS loads no matter the permalink.
     if (
         (function_exists('is_page_template') && is_page_template('page-about-us.php'))
         || (function_exists('get_page_template_slug') && get_page_template_slug(get_queried_object_id()) === 'page-about-us.php')
-        || (function_exists('is_page') && is_page(array('about-us', 'About Us')))
+        || (function_exists('is_page') && is_page(array('about', 'about-us', 'About Us')))
     ) {
         $about_css_path = get_template_directory() . '/assets/css/about-us-page.css';
         $about_css_ver = file_exists($about_css_path) ? filemtime($about_css_path) : '1.0.0';
@@ -89,7 +88,11 @@ function newjusjumpin_scripts() {
     }
     
     // Birthday Celebrations page CSS
-    if (is_page_template('page-birthday-celebrations.php') || is_page('birthday-celebrations') || is_page_template('page-birthday-celebrations')) {
+    if (
+        (function_exists('is_page_template') && is_page_template('page-birthday-celebration.php'))
+        || (function_exists('get_page_template_slug') && get_page_template_slug(get_queried_object_id()) === 'page-birthday-celebration.php')
+        || (function_exists('is_page') && is_page(array('birthday-celebration', 'birthday-celebrations', 'Birthday Celebrations')))
+    ) {
         $birthday_css_path = get_template_directory() . '/assets/css/birthday-celebrations.css';
         $birthday_css_ver = file_exists($birthday_css_path) ? filemtime($birthday_css_path) : '1.0.0';
         wp_enqueue_style('newjusjumpin-birthday-celebrations', get_template_directory_uri() . '/assets/css/birthday-celebrations.css', array('newjusjumpin-style'), $birthday_css_ver);
@@ -103,7 +106,7 @@ function newjusjumpin_scripts() {
     }
     
     // Fallback for both pages using page-templates.css (if needed)
-    if ((is_page_template('page-birthday-celebrations.php') || is_page_template('page-our-activities.php')) && !file_exists(get_template_directory() . '/assets/css/birthday-celebrations.css')) {
+    if ((is_page_template('page-birthday-celebration.php') || is_page_template('page-our-activities.php')) && !file_exists(get_template_directory() . '/assets/css/birthday-celebrations.css')) {
         wp_enqueue_style('newjusjumpin-page-templates', get_template_directory_uri() . '/assets/css/page-templates.css', array('newjusjumpin-style'), '1.0.0');
     }
 
@@ -123,6 +126,19 @@ function newjusjumpin_scripts() {
     ));
 }
 add_action('wp_enqueue_scripts', 'newjusjumpin_scripts');
+
+/**
+ * Ensure the About template is used for both /about/ and /about-us/ slugs.
+ */
+add_filter('page_template', function($template) {
+    if (is_page(array('about', 'about-us'))) {
+        $about_template = locate_template('page-about-us.php');
+        if (!empty($about_template)) {
+            return $about_template;
+        }
+    }
+    return $template;
+});
 
 /**
  * Force Font Awesome to load after Elementor to prevent conflicts
@@ -156,14 +172,13 @@ add_action('template_redirect', function() {
         return;
     }
     $request_uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-    // Expect pattern: {state}/{slug}
     $parts = explode('/', $request_uri);
-    if (count($parts) >= 2) {
-        $slug = end($parts); // location slug
+    $slug = end($parts); // location slug
+    if (!empty($slug)) {
         $template_path = get_template_directory() . '/template-part/' . sanitize_file_name($slug) . '.php';
         if (file_exists($template_path)) {
             // Ensure trailing slash for canonical consistency
-            $expected = home_url('/' . trim(implode('/', $parts), '/') . '/');
+            $expected = home_url('/' . $slug . '/');
             if (trailingslashit(home_url(add_query_arg(array(), $request_uri))) !== $expected && empty($_GET)) {
                 wp_safe_redirect($expected, 301);
                 exit;
@@ -250,24 +265,30 @@ function newjusjumpin_activation_setup() {
         ),
         'About Us' => array(
             'content' => '',
-            'template' => 'page-about-us'
+            'template' => 'page-about-us',
+            'slug' => 'about'
         ),
         'Birthday Celebrations' => array(
             'content' => '',
-            'template' => 'page-birthday-celebrations'
+            'template' => 'page-birthday-celebration',
+            'slug' => 'birthday-celebration'
         ),
         'Our Activities' => array(
             'content' => '',
             'template' => 'page-our-activities'
+            
         ),
         'Blogs' => array(
             'content' => '<h2>Latest News & Updates</h2><p>Stay updated with the latest news, events, and health tips from Jus Jumpin.</p>',
             'template' => 'page',
             'is_blog' => true
+            
         ),
         'Contact Us' => array(
             'content' => '',
             'template' => 'page-contact'
+            
+            
         ),
         'Menu1' => array(
             'content' => '<h2>Menu Item 1</h2><p>This is a placeholder page for Menu Item 1. Content will be added later.</p>',
@@ -305,7 +326,7 @@ function newjusjumpin_activation_setup() {
                 'post_content' => $page_data['content'],
                 'post_status' => 'publish',
                 'post_type' => 'page',
-                'post_name' => sanitize_title($title)
+                'post_name' => sanitize_title(isset($page_data['slug']) ? $page_data['slug'] : $title)
             ));
             
             $created_pages[$title] = $page_id;
@@ -358,7 +379,7 @@ function newjusjumpin_setup_menus($pages) {
         wp_update_nav_menu_item($left_menu, 0, array(
             'menu-item-title' => 'Birthday Celebrations',
             'menu-item-object' => 'page',
-            'menu-item-object-id' => $pages['Birthday Celebrations'],
+            'menu-item-object-id' => $pages['Birthday Celebration'],
             'menu-item-type' => 'post_type',
             'menu-item-status' => 'publish'
         ));
@@ -438,40 +459,40 @@ function newjusjumpin_setup_mega_menu() {
     // Define the location structure - 2 levels: State -> Venues
     $locations = array(
         'West Bengal' => array(
-            'Kolkata - ABC Square Building' => '/west-bengal/kolkata-abc-square-building/',
-            'Kolkata - Avani Mall' => '/west-bengal/kolkata-avani-mall/',
-            'Kolkata - Axis Mall' => '/west-bengal/kolkata-axis-mall/',
-            'Kolkata - City Centre 2' => '/west-bengal/kolkata-city-centre-2/',
-            'Siliguri - City Centre' => '/west-bengal/siliguri-city-centre/',
-            'Durgapur - Junction Mall' => '/west-bengal/durgapur-junction-mall/'
+            'Kolkata - ABC Square Building' => '/kolkata-abc-square-building-best-adult-trampoline-park/',
+            'Kolkata - Avani Mall' => '/kolkata-avani-mall/',
+            'Kolkata - Axis Mall' => '/kolkata-axis-mall/',
+            'Kolkata - City Centre 2' => '/kolkata-city-centre-2/',
+            'Siliguri - City Centre' => '/siliguri-city-centre/',
+            'Durgapur - Junction Mall' => '/durgapur-junction-mall/'
         ),
         'Karnataka' => array(
-            'Bengaluru - M5 Ecity Mall' => '/karnataka/bengaluru-m5-ecity-mall/',
-            'Bengaluru - Meenakshi Mall' => '/karnataka/bengaluru-meenakshi-mall/'
+            'Bengaluru - M5 Ecity Mall' => '/bengaluru-m5-ecity-mall/',
+            'Bengaluru - Meenakshi Mall' => '/bengaluru-meenakshi-mall/'
         ),
         'Jharkhand' => array(
-            'Dhanbad - Prabhatam Mall' => '/jharkhand/dhanbad-prabhatam-mall/',
-            'Jamshedpur - P&M Mall' => '/jharkhand/jamshedpur-pm-mall/',
-            'Ranchi - Nucleus Mall' => '/jharkhand/ranchi-nucleus-mall/'
+            'Dhanbad - Prabhatam Mall' => '/dhanbad-prabhatam-mall/',
+            'Jamshedpur - P&M Mall' => '/jamshedpur-pm-mall/',
+            'Ranchi - Nucleus Mall' => '/ranchi-nucleus-mall/'
         ),
         'Uttar Pradesh' => array(
-            'Noida - GIP Mall' => '/uttar-pradesh/noida-gip-mall/',
-            'Noida - Spectrum Mall' => '/uttar-pradesh/noida-spectrum-mall/',
+            'Noida - GIP Mall' => '/noida-gip-mall/',
+            'Noida - Spectrum Mall' => '/noida-spectrum-mall/',
             
         ),
         'Maharashtra' => array(
-            'Nagpur - VR Mall' => '/maharashtra/nagpur-vr-mall/',
-            'Pune - Seasons Mall' => '/maharashtra/pune-seasons-mall/',
-            'Nashik - City Centre' => '/maharashtra/nashik-city-centre/'
+            'Nagpur - VR Mall' => '/nagpur-vr-mall/',
+            'Pune - Seasons Mall' => '/pune-seasons-mall/',
+            'Nashik - City Centre' => '/nashik-city-centre/'
         ),
         'Chhattisgarh' => array(
-            'Raipur - Zora Mall' => '/chhattisgarh/raipur-zora-mall/'
+            'Raipur - Zora Mall' => '/raipur-zora-mall/'
         ),
         'Rajasthan' => array(
-            'Udaipur - Urban Square Mall' => '/rajasthan/udaipur-urban-square-mall/'
+            'Udaipur - Urban Square Mall' => '/udaipur-urban-square-mall/'
         ),
         'Gujarat' => array(
-            'Surat - VR Mall' => '/gujarat/surat-vr-mall/'
+            'Surat - VR Mall' => '/surat-vr-mall/'
         )
     );
     

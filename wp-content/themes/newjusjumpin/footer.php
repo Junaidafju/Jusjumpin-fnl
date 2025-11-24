@@ -33,8 +33,8 @@
                 <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="<?php echo esc_url( home_url('/') ); ?>">Home</a></li>
-                    <li><a href="<?php echo esc_url( home_url('/about-us') ); ?>">About Us</a></li>
-                    <li><a href="<?php echo esc_url( home_url('/birthday-celebrations') ); ?>">Birthday Celebrations</a></li>
+                    <li><a href="<?php echo esc_url( home_url('/about') ); ?>">About Us</a></li>
+                    <li><a href="<?php echo esc_url( home_url('/birthday-celebration') ); ?>">Birthday Celebrations</a></li>
                     <li><a href="<?php echo esc_url( home_url('/our-activities') ); ?>">Our Activities</a></li>
                     <li><a href="<?php echo esc_url( home_url('/contact') ); ?>">Contact Us</a></li>
                     <li><a href="<?php echo esc_url( home_url('/blog') ); ?>">Blogs</a></li>
@@ -45,16 +45,16 @@
             <div class="footer-column footer-col-3">
                 <h3 class="footer-heading">Our Locations</h3>
                 <ul class="footer-links">
-                    <li><a href="<?php echo esc_url(home_url('/west-bengal/kolkata-abc-square-building/')); ?>">Kolkata - ABC Square Building</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/west-bengal/kolkata-avani-mall/')); ?>">Kolkata - Avani Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/west-bengal/kolkata-axis-mall/')); ?>">Kolkata - Axis Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/west-bengal/kolkata-city-centre-2/')); ?>">Kolkata - City Centre 2</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/west-bengal/siliguri-city-centre/')); ?>">Siliguri - City Centre</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/west-bengal/durgapur-junction-mall/')); ?>">Durgapur - Junction Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/karnataka/bengaluru-m5-ecity-mall/')); ?>">Bengaluru - M5 Ecity Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/karnataka/bengaluru-meenakshi-mall/')); ?>">Bengaluru - Meenakshi Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/maharashtra/nashik-city-centre/')); ?>">Nashik - City Centre</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/jharkhand/dhanbad-prabhatam-mall/')); ?>">Dhanbad - Prabhatam Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/kolkata-abc-square-building/')); ?>">Kolkata - ABC Square Building</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/kolkata-avani-mall/')); ?>">Kolkata - Avani Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/kolkata-axis-mall/')); ?>">Kolkata - Axis Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/kolkata-city-centre-2/')); ?>">Kolkata - City Centre 2</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/siliguri-city-centre/')); ?>">Siliguri - City Centre</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/durgapur-junction-mall/')); ?>">Durgapur - Junction Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/bengaluru-m5-ecity-mall/')); ?>">Bengaluru - M5 Ecity Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/bengaluru-meenakshi-mall/')); ?>">Bengaluru - Meenakshi Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/nashik-city-centre/')); ?>">Nashik - City Centre</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/dhanbad-prabhatam-mall/')); ?>">Dhanbad - Prabhatam Mall</a></li>
                 </ul>
             </div>
 
@@ -62,15 +62,15 @@
             <div class="footer-column footer-col-4">
                 <h3 class="footer-heading footer-heading-invisible">Our Locations</h3>
                 <ul class="footer-links">
-                    <li><a href="<?php echo esc_url(home_url('/jharkhand/jamshedpur-pm-mall/')); ?>">Jamshedpur - P&M Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/jharkhand/ranchi-nucleus-mall/')); ?>">Ranchi - Nucleus Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/uttar-pradesh/noida-gip-mall/')); ?>">Noida - GIP Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/uttar-pradesh/noida-spectrum-mall/')); ?>">Noida - Spectrum Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/maharashtra/nagpur-vr-mall/')); ?>">Nagpur - VR Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/maharashtra/pune-seasons-mall/')); ?>">Pune - Seasons Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/chhattisgarh/raipur-zora-mall/')); ?>">Raipur - Zora Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/rajasthan/udaipur-urban-square-mall/')); ?>">Udaipur - Urban Square Mall</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/gujarat/surat-vr-mall/')); ?>">Surat - VR Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/jamshedpur-pm-mall/')); ?>">Jamshedpur - P&M Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/ranchi-nucleus-mall/')); ?>">Ranchi - Nucleus Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/noida-gip-mall/')); ?>">Noida - GIP Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/noida-spectrum-mall/')); ?>">Noida - Spectrum Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/nagpur-vr-mall/')); ?>">Nagpur - VR Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/pune-seasons-mall/')); ?>">Pune - Seasons Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/raipur-zora-mall/')); ?>">Raipur - Zora Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/udaipur-urban-square-mall/')); ?>">Udaipur - Urban Square Mall</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/surat-vr-mall/')); ?>">Surat - VR Mall</a></li>
                 </ul>
             </div>
 

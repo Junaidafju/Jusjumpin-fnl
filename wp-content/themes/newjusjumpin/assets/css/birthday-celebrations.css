@@ -8,12 +8,12 @@
 
 /* ==================== ANIMATED BACKGROUND (SITE-WIDE) ==================== */
 
-body.page-template-page-birthday-celebrations {
+body.page-template-page-birthday-celebration {
     position: relative;
     overflow-x: hidden;
 }
 
-body.page-template-page-birthday-celebrations::before {
+body.page-template-page-birthday-celebration::before {
     content: '';
     position: fixed;
     top: 0;
