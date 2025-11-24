@@ -1,0 +1,333 @@
+/* ==================== MODERN FULL-WIDTH FOOTER ==================== */
+
+/* Footer Container */
+.new_footer_area {
+    width: 100%;
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+    color: #f1f1f1;
+    padding: 25px 0;
+    font-family: 'Nunito', 'Poppins', 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0px;
+}
+
+/* Full-width container */
+.footer-container {
+    max-width: 1600px;
+    margin: 50px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+/* Footer Columns */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Column 1: Logo & About */
+.footer-col-1 {
+    padding-right: 20px;
+}
+
+.footer-logo-wrapper {
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    max-width: 160px;
+    height: auto;
+    display: block;
+}
+
+.footer-about {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d1d1d1;
+    margin: 0;
+}
+
+/* Social Icons */
+.footer-social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.social-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f1f1f1;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.social-icon:hover {
+    background: #80ba41;
+    color: #0d0d0d;
+    transform: translateY(-3px);
+    border-color: #b7e968;
+    box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+}
+
+/* Footer Headings */
+.footer-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hidden heading for visual balance (Column 4) */
+.footer-heading-invisible {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Footer Links Lists */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links li {
+    margin: 0;
+}
+
+.footer-links a {
+    color: #d1d1d1;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: #b7e968;
+    padding-left: 5px;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: #b7e968;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    width: 5px;
+}
+
+/* Contact Info */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-address,
+.contact-item {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d1d1d1;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.contact-address i,
+.contact-item i {
+    color: #b7e968;
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.contact-address span,
+.contact-item span {
+    flex: 1;
+}
+
+.contact-item a {
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #a8cc05;
+}
+
+/* ==================== FOOTER BOTTOM ==================== */
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    margin-top: 25px;
+}
+
+.footer-bottom-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-copyright,
+.footer-credit {
+    font-size: 14px;
+    color: #d1d1d1;
+    margin: 0;
+}
+
+.footer-credit i {
+    color: #ff7b00;
+    margin: 0 3px;
+}
+
+.footer-credit a {
+    color: #e0f008;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-credit a:hover {
+    color: #ff5e00;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+    }
+    
+    .footer-col-1 {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    .footer-logo-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer-about {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .footer-social-icons {
+        justify-content: center;
+    }
+}
+
+/* Small Tablet */
+@media (max-width: 992px) {
+    .new_footer_area {
+        padding: 50px 0;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .new_footer_area {
+        padding: 40px 0;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0 20px;
+    }
+    
+    .footer-column {
+        text-align: left;
+    }
+    
+    .footer-col-1 {
+        text-align: center;
+    }
+    
+    .footer-heading {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .footer-links {
+        gap: 8px;
+    }
+    
+    .footer-links a {
+        font-size: 13px;
+    }
+    
+    .contact-address,
+    .contact-item {
+        font-size: 13px;
+    }
+    
+    .social-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+    
+    .footer-bottom {
+        margin-top: 35px;
+        padding: 20px 0;
+    }
+    
+    .footer-bottom-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+        gap: 10px;
+    }
+    
+    .footer-copyright,
+    .footer-credit {
+        font-size: 13px;
+    }
+}

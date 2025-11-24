@@ -1,0 +1,1575 @@
+/*
+ * Birthday Celebrations Page Styles
+ * Modern, themed design matching website color scheme
+ */
+ @import url(https://db.onlinewebfonts.com/c/0f2337a53f47532a6cc42fe50cc894e1?family=Sheiloria+Stylish+Brush);
+/* ==================== GOOGLE FONTS ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==================== ANIMATED BACKGROUND (SITE-WIDE) ==================== */
+
+body.page-template-page-birthday-celebrations {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body.page-template-page-birthday-celebrations::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgb(237, 239, 171);
+    background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(222, 254, 189, 0.15) 35px, rgba(222, 254, 189, 0.15) 70px),
+        repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(171, 224, 118, 0.1) 35px, rgba(171, 224, 118, 0.1) 70px);
+    animation: bgMove 20s linear infinite;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: 70px 70px, -70px 70px; }
+}
+
+/* ==================== BIRTHDAY HERO SECTION ==================== */
+
+.jj-birthday-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 150px 0 100px;
+    /* background-image: url('../img/birthday_bg.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed; */
+}
+
+
+/* Background Image - More Visible */
+.jj-birthday-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 0;
+    opacity: 1; /* More visible than before */
+}
+
+/* Desktop background image */
+.jj-birthday-hero__bg--desktop {
+    /* background-image will be set in PHP */
+    background-color: #ff6b6b;
+}
+
+/* Mobile background image */
+.jj-birthday-hero__bg--mobile {
+    display: none; /* Hidden by default */
+    /* background-image will be set in PHP */
+    background-color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+    .jj-birthday-hero__bg--desktop {
+        display: none;
+    }
+
+    .jj-birthday-hero__bg--mobile {
+        display: block;
+    }
+}
+
+/* Green Theme Gradient Overlay */
+.jj-birthday-hero__overlay {
+    position: absolute;
+    inset: 0;
+    /* background: linear-gradient(
+        135deg,
+        rgba(116, 169, 61, 0.75) 0%,
+        rgba(46, 93, 46, 0.70) 25%,
+        rgba(171, 224, 118, 0.65) 50%,
+        rgba(115, 168, 60, 0.70) 75%,
+        rgba(74, 122, 74, 0.75) 100%
+    ); */
+    z-index: 1;
+}
+
+/* Animated Mesh Pattern */
+.jj-birthday-hero__mesh {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    /* background-image:
+        radial-gradient(900px 600px at 10% 20%, rgba(222, 254, 189, 0.25) 0%, rgba(222, 254, 189, 0) 60%),
+        radial-gradient(800px 600px at 90% 25%, rgba(171, 224, 118, 0.2) 0%, rgba(171, 224, 118, 0) 60%),
+        radial-gradient(700px 600px at 30% 80%, rgba(175, 255, 96, 0.25) 0%, rgba(175, 255, 96, 0) 58%),
+        radial-gradient(700px 600px at 80% 70%, rgba(115, 168, 60, 0.2) 0%, rgba(115, 168, 60, 0) 55%); */
+    filter: blur(3px);
+    animation: meshMove 20s ease-in-out infinite;
+}
+
+@keyframes meshMove {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+}
+
+/* Hero Content */
+.jj-birthday-hero__inner {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Pushes content to the extreme right */
+}
+
+.jj-birthday-hero__content {
+    text-align: right; /* Align text to the right */
+    max-width: 650px; /* Keep max-width for content block */
+    margin-left: auto; /* Push the block to the right */
+    padding: 0 60px 0 20px; /* Add padding-right for spacing */
+}
+
+/* Specific large screen padding */
+@media (min-width: 1400px) {
+    .jj-birthday-hero__content {
+        padding-right: 80px;
+    }
+}
+
+/* Medium screens: Adjust padding for .jj-birthday-hero__content */
+@media (max-width: 1200px) {
+    .jj-birthday-hero__content {
+        padding-right: 40px;
+    }
+}
+
+/* On tablets (992px and below), center content slightly */
+@media (max-width: 992px) {
+    .jj-birthday-hero__content {
+        max-width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .jj-birthday-hero__title,
+    .jj-birthday-hero__subtitle,
+    .jj-birthday-hero__description {
+        text-align: center;
+    }
+
+    .jj-birthday-hero__title {
+        font-size: clamp(3rem, 7vw, 5rem);
+    }
+
+    .jj-birthday-hero__subtitle {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+}
+
+/* On smaller tablets/large mobiles (768px and below) */
+@media (max-width: 768px) {
+    .jj-birthday-hero__inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 36%;
+    }
+
+    .jj-birthday-hero__content {
+        order: 2; /* Content below cake */
+        max-width: 90%;
+        padding: 0 15px;
+        margin: 20px auto 0 auto; /* Add some top margin after cake */
+        text-align: center;
+    }
+
+    .jj-birthday-hero__title {
+        font-size: clamp(2.2rem, 7vw, 3.5rem);
+        white-space: normal; /* Allow title to wrap */
+    }
+
+    .jj-birthday-hero__subtitle {
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+    }
+
+    .jj-birthday-hero__description {
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        max-width: 80%; /* Constrain width for readability */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Cake image adjustments for mobile (overriding desktop) */
+    .jj-birthday-hero__cake-image {
+        order: 1; /* Cake above content */
+        position: static; /* Remove absolute positioning */
+        top: auto;
+        left: auto;
+        transform: none; /* Remove transform for static positioning */
+        width: 200px; /* Adjust width for mobile */
+        height: 50%; /* 50% height for mobile */
+        margin-bottom: 20px; /* Space between cake and content */
+    }
+
+    .jj-birthday-hero__cake-image img {
+        height: 100%;
+        width: auto;
+    }
+    
+}
+
+/* On mobile, center everything for better view */
+@media (max-width: 768px) {
+    .jj-birthday-hero__inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .jj-birthday-hero__content {
+        margin: 0 auto;
+        padding: 0 15px;
+        text-align: center;
+    }
+    
+
+    .jj-birthday-hero__title {
+        font-size: clamp(2rem, 6vw, 3rem);
+        justify-content: center;
+    }
+
+    .jj-birthday-hero__subtitle,
+    .jj-birthday-hero__description {
+        text-align: center;
+    }
+}
+
+.jj-birthday-hero__title {
+    font-family: "Sheiloria Stylish Brush", cursive;
+    font-size: 7.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    display: inline-block; /* Use inline-block to contain gradient correctly */
+    text-align: left; /* Keep left-aligned now */
+    white-space: nowrap;
+    color: transparent;
+    margin: 0 auto; /* Center naturally */
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+
+    /* ✨ Gradient text */
+    background: linear-gradient(90deg,
+        #f67edd 0%,
+        #ff661a 20%,
+        #ffc60b 40%,
+        #6dc065 60%,
+        #00b9e3 80%,
+        #8869d2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Optional glow */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+
+    /* Ensure full gradient area visible */
+    background-size: 200% auto;
+    background-position: left center;
+    transition: background-position 2s ease;
+}
+
+/* Optional hover animation */
+.jj-birthday-hero__title:hover {
+    background-position: right center;
+}
+
+.birthday-icon { /* This rule can be removed if icons are permanently gone */
+    display: none; /* Hide the icons */
+}
+
+.birthday-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.birthday-icon:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes levitate {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.jj-birthday-hero__subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem; /* Around 1.8rem as requested */
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25);
+    text-align: right; /* Right align as requested */
+}
+
+.jj-birthday-hero__description {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Keep existing font size */
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 850px; /* Re-add max-width for description */
+    margin-left: auto; /* Push to right, keeping text-align right */
+    margin-right: 0;
+    text-align: right; /* Right align as requested */
+}
+
+/* ==================== BIRTHDAY HEADINGS (GLOBAL) ==================== */
+
+.jj-birthday-heading {
+    font-family: 'Fredoka', 'Poppins', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #74a93d;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 20px;
+    /* background-color: #ffffffe0; */
+}
+
+
+/* Main heading text wrapper */
+.heading-main-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.1;
+    gap: 5px;
+}
+
+.heading-line-1 {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 500;
+    display: block;
+    color: #20490e;
+    letter-spacing: 0.5px;
+    text-shadow: none;
+}
+
+.heading-line-2 {
+    font-size: clamp(2rem, 5.5vw, 2.8rem);
+    font-weight: 800;
+    display: block;
+    color: #ffffff;
+    text-shadow: none;
+    letter-spacing: 0px;
+}
+
+/* Desktop: Keep two lines */
+@media (min-width: 769px) {
+    .heading-main-text {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .heading-line-1 {
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
+        font-weight: 500;
+        color: #20490e;
+    }
+    
+    .heading-line-2 {
+        font-size: clamp(2rem, 5.5vw, 2.8rem);
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 40px;
+    }
+}
+
+.jj-birthday-heading.sparkle {
+    color: #2e5d2e;
+    text-shadow: 2px 3px 0px rgba(46, 93, 46, 0.15);
+}
+
+.jj-birthday-heading.white {
+    color: #ffffff;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.heading-decoration {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+    color: #FF6B35;
+}
+
+.heading-decoration i {
+    color: #FF6B35;
+    filter: drop-shadow(2px 3px 5px rgba(255, 107, 53, 0.3));
+}
+
+.heading-decoration.left {
+    animation: none;
+}
+
+.heading-decoration.right {
+    animation: none;
+}
+
+@keyframes levitateDecoration {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* ==================== WHY SECTION ==================== */
+
+.jj-why-celebrate {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #fff7fb 0%, #ffe8f4 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* GRID LAYOUT */
+.why-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+/* LEFT TEXT */
+.why-heading {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ff3980;
+    font-family: "Poppins", sans-serif;
+}
+
+.why-heading .highlight {
+    color: #ff661a;
+}
+
+.why-heading .emoji {
+    font-size: 2.6rem;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.why-tagline {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #444;
+}
+
+.why-description {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* RIGHT IMAGE */
+.why-image-wrapper {
+    text-align: center;
+    position: relative;
+}
+
+.why-image {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 20px;
+    transform: translateY(10px);
+    filter: drop-shadow(0px 25px 40px rgba(0,0,0,0.15));
+    animation: floatGift 4s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatGift {
+    0% { transform: translateY(10px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(10px); }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .why-heading {
+        font-size: 2.5rem;
+    }
+    .why-image {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+/* ==================== COMPARISON TABLE SECTION ==================== */
+
+.jj-birthday-compare {
+    padding: 80px 0;
+    background: linear-gradient(
+359deg, #00cfff 0%, #0099cc 100%);
+    position: relative;
+    /* background-image: url('../img/birthday_bg.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed; */
+}
+
+/* Scroll hint for mobile */
+.jj-birthday-compare::after {
+    content: '';
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .jj-birthday-compare::after {
+        content: '← Swipe to see all features →';
+        display: block;
+        text-align: center;
+        font-family: 'Nunito', 'Poppins', sans-serif;
+        font-size: 0.85rem;
+        color: #74a93d;
+        margin-top: 15px;
+        font-weight: 600;
+    }
+
+}
+
+.compare-table {
+    display: flex;
+    gap: 0;
+    max-width: 1150px;
+    margin: 60px auto 0;
+    position: relative;
+    justify-content: center;
+    /* background: #ffffffde; */
+    border-radius: 10px;      /* <-- added */
+}
+
+/* Scrollbar styling for mobile */
+.compare-table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.compare-table::-webkit-scrollbar-track {
+    background: rgba(116, 169, 61, 0.1);
+    border-radius: 10px;
+}
+
+.compare-table::-webkit-scrollbar-thumb {
+    background: #74a93d;
+    border-radius: 10px;
+}
+
+.compare-table::-webkit-scrollbar-thumb:hover {
+    background: #2e5d2e;
+}
+
+.compare-table .column {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.compare-table .column li {
+    padding: 20px 25px;
+    border-bottom: 2px solid rgba(116, 169, 61, 0.15);
+    font-family: 'Nunito', 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    min-height: 80px;
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+    word-break: break-word;
+}
+
+.compare-table .column li:last-child {
+    border-bottom: none;
+}
+
+/* Feature Column (First Column) */
+.compare-table .feature-column {
+    background: rgb(255 255 255 / 81%);
+    border-radius: 16px 0 0 16px;
+    border: 2px solid rgba(116, 169, 61, 0.2);
+    border-right: none;
+}
+
+.compare-table .feature-column li {
+    font-weight: 700;
+    color: #2e5d2e;
+    justify-content: center;
+    text-align: center;
+}
+
+.compare-table .feature-column .column-header {
+    background: linear-gradient(135deg, #74a93d 0%, #2e5d2e 100%);
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 14px 0 0 0;
+}
+
+/* Jus Jumpin Column (Middle Column) with Skew Effect */
+.compare-table .jj-column {
+    position: relative;
+    z-index: 2;
+}
+
+.compare-table .jj-column::before {
+    content: "";
+    position: absolute;
+    top: -35px;
+    bottom: -35px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 3px solid #FE5000;
+    transform: skewY(-5deg);
+    z-index: -1;
+    box-shadow: 0 15px 40px rgba(254, 80, 0, 0.25);
+    border-radius: 16px;
+}
+
+.compare-table .jj-column li {
+    background: transparent;
+    color: #2e5d2e;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.compare-table .jj-column li i {
+    color: #74a93d;
+    font-size: 1.3rem;
+    text-shadow: 
+        0 1px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 0 5px rgba(116, 169, 61, 0.3);
+}
+
+.compare-table .jj-column .column-header {
+    background: transparent;
+    padding: 35px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+.compare-table .compare-logo {
+    max-width: 190px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Home Column (Third Column) */
+.compare-table .home-column {
+    background: rgb(255 255 255 / 91%);
+    border-radius: 0 16px 16px 0;
+    border: 2px solid rgb(0 0 0 / 45%);
+    border-left: none;
+}
+
+.compare-table .home-column li {
+    color: #777;
+    font-weight: 500;
+}
+
+.compare-table .home-column li i {
+    color: #999;
+    font-size: 1.2rem;
+}
+
+.compare-table .home-column .column-header {
+    background: linear-gradient(135deg, #999 0%, #666 100%);
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    justify-content: center;
+    border-radius: 0 14px 0 0;
+}
+
+/* Hover Effects */
+.compare-table .jj-column li:hover {
+    background: rgba(116, 169, 61, 0.05);
+    transform: scale(1.02);
+}
+
+.compare-table .feature-column li:hover,
+.compare-table .home-column li:hover {
+    background: rgba(116, 169, 61, 0.08);
+}
+
+/* ==================== HAPPIEST MOMENTS GALLERY ==================== */
+
+.jj-happiest-moments {
+    padding: 80px 0;
+    background: #ffffff;
+    position: relative;
+    /* background-image: url('../img/birthday_bg2.svg');
+    background-repeat: repeat; /*make it no repeat if repeated background is found */
+    /* background-position: center top; */
+    /* background-size: cover; */
+    /* background-attachment: fixed; */
+}
+
+.jj-birthday-subtext {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #777;
+    margin-bottom: 60px;
+    font-style: italic;
+    /* background-color: #ffffffde; */
+}
+
+.moments-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.moment-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #ffffff;
+}
+
+.moment-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(116, 169, 61, 0.25);
+}
+
+.moment-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.moment-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.moment-card:hover .moment-image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Overlay with Icon */
+.moment-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(116, 169, 61, 0) 0%,
+        rgba(116, 169, 61, 0.75) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.moment-card:hover .moment-overlay {
+    opacity: 1;
+}
+
+.moment-icon {
+    font-size: 4rem;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+    animation: iconBounce 0.6s ease-in-out;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* ==================== ELEGANT BIRTHDAY CTA ==================== */
+.jj-birthday-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+    color: #fff;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+  }
+  
+  /* Soft gradient glow overlay */
+  .jj-birthday-cta__overlay {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.2), transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.15), transparent 60%);
+    z-index: 0;
+    filter: blur(60px);
+  }
+  
+  /* Floating sparkles layer */
+  .jj-birthday-cta__sparkles {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: sparkleFloat 6s linear infinite;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  
+  @keyframes sparkleFloat {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px -40px; }
+  }
+  
+  /* CONTENT */
+  .jj-birthday-cta__content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  
+  .jj-birthday-cta__heading {
+    font-family: "Sheiloria Stylish Brush", cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    letter-spacing: 1px;
+  }
+  
+  .jj-birthday-cta__heading .decor-left,
+  .jj-birthday-cta__heading .decor-right {
+    font-size: 2rem;
+    display: inline-block;
+    transform: rotate(-10deg);
+  }
+  
+  .jj-birthday-cta__text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 45px;
+    opacity: 0.95;
+  }
+  
+  /* BUTTON WRAPPER */
+  .jj-birthday-cta__buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  
+  /* Elegant Glass Buttons */
+  .btn-glass {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.6);
+    color: #fff;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .btn-glass.primary {
+    background: rgba(255,255,255,0.25);
+    border-color: rgba(255,255,255,0.8);
+  }
+  
+  .btn-glass.secondary {
+    background: transparent;
+    border-color: rgba(255,255,255,0.5);
+  }
+  
+  /* Hover Effects */
+  .btn-glass:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.35);
+    color: #2e5d2e;
+  }
+  
+  .btn-icon {
+    font-size: 1.4em;
+    transition: transform 0.3s ease;
+  }
+  
+  .btn-glass:hover .btn-icon {
+    transform: rotate(15deg) scale(1.2);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .jj-birthday-cta__heading {
+      font-size: 2.8rem;
+    }
+    .jj-birthday-cta__text {
+      font-size: 1.1rem;
+    }
+    .btn-glass {
+      padding: 14px 35px;
+      font-size: 1rem;
+    }
+  }
+  
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 1400px) {
+    .compare-table {
+        max-width: 1000px;
+    }
+    
+    .compare-table .column li {
+        padding: 18px 20px;
+        font-size: 1rem;
+    }
+    
+    .compare-table .compare-logo {
+        max-width: 130px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .compare-table .column li {
+        padding: 16px 18px;
+        font-size: 0.95rem;
+    }
+    
+    .compare-table .column li:not(:first-child) {
+        padding-left: 30px;
+    }
+    
+    .compare-table .feature-column li {
+        padding-left: 18px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .jj-birthday-compare {
+        padding: 70px 0;
+    }
+    
+    .compare-table {
+        margin: 50px auto 0;
+    }
+    
+    .compare-table .column li {
+        min-height: 70px;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .compare-table .compare-logo {
+        max-width: 110px;
+    }
+}
+
+@media (max-width: 992px) {
+    .jj-birthday-hero {
+        min-height: 65vh;
+        padding: 130px 0 80px;
+    }
+    
+    .moments-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .compare-table .column {
+        width: 33.333333%;
+        flex-grow: 1;
+    }
+    
+    .compare-table .column li {
+        padding: 14px 12px;
+        column-gap: 8px;
+    }
+}
+
+@media (max-width: 950px) {
+    .jj-birthday-heading {
+        font-size: clamp(1.6rem, 4vw, 2.5rem);
+        margin-bottom: 30px;
+    }
+    
+    .compare-table .jj-column .column-header {
+        padding: 25px 15px;
+        min-height: 100px;
+    }
+    
+    .compare-table .compare-logo {
+        max-width: 90px;
+    }
+    
+    .compare-table .column li:first-child,
+    .compare-table .home-column .column-header {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        min-height: 70px;
+        padding: 12px 10px;
+    }
+    
+    .compare-table .column li:not(:first-child) {
+        min-height: 70px;
+        column-gap: 5px;
+        font-size: 0.85rem;
+        line-height: 1.35;
+        padding: 12px 8px;
+    }
+    
+    .compare-table .column li i {
+        font-size: 1rem;
+    }
+    
+    .compare-table .jj-column li i {
+        font-size: 1.1rem;
+        min-width: 18px;
+    }
+    
+    .compare-table .home-column li i {
+        width: 16px;
+        min-width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .jj-birthday-hero {
+        min-height: 60vh;
+        padding: 110px 0 70px;
+    }
+    
+    .jj-birthday-hero__title {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+    
+    .birthday-icon {
+        font-size: 1em;
+        margin: 0 10px;
+    }
+    
+    .jj-birthday-hero__subtitle {
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    }
+    
+    .jj-birthday-heading {
+        font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+        gap: 15px;
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+    
+    .heading-decoration {
+        font-size: 1.5rem;
+    }
+    
+    .heading-line-1 {
+        font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+    }
+    
+    .heading-line-2 {
+        font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+    }
+    
+    .moments-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .jj-birthday-cta__buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-birthday-primary,
+    .btn-birthday-secondary {
+        width: 100%;
+        max-width: 350px;
+        justify-content: center;
+    }
+    
+    /* Comparison Table Mobile - Keep All 3 Columns Visible */
+    .jj-birthday-compare {
+        padding: 60px 0;
+    }
+    
+    .compare-table {
+        gap: 0;
+        margin: 40px auto 0;
+        overflow-x: visible;
+        max-width: 100%;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+    }
+    
+    /* Keep all three columns visible */
+    .compare-table .feature-column {
+        display: flex;
+        min-width: 140px;
+    }
+    
+    .compare-table .jj-column {
+        min-width: 200px;
+    }
+    
+    .compare-table .home-column {
+        min-width: 180px;
+    }
+    
+    .compare-table .column {
+        width: auto;
+    }
+    
+    .compare-table .jj-column::before {
+        top: -30px;
+        bottom: -30px;
+    }
+    
+    .compare-table .column li {
+        min-height: 75px;
+        padding: 14px 12px;
+        font-size: 0.8rem;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .compare-table .feature-column li {
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 12px 10px;
+    }
+    
+    .compare-table .jj-column .column-header,
+    .compare-table .home-column .column-header {
+        min-height: 90px;
+        padding: 20px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .compare-table .feature-column .column-header {
+        font-size: 0.75rem;
+        padding: 20px 10px;
+    }
+    
+    .compare-table .compare-logo {
+        max-width: 100px;
+    }
+    
+    .compare-table .column li i {
+        font-size: 0.95rem;
+    }
+    
+    .compare-table .jj-column li,
+    .compare-table .home-column li {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .jj-birthday-hero {
+        min-height: 55vh;
+        padding: 100px 0 60px;
+    }
+    
+    .jj-birthday-hero__title {
+        font-size: clamp(2.5rem, 6vw, 2.8rem);
+        margin-bottom: 20px;
+    }
+    .jj-birthday-hero__cake-image img {
+        width: 50%;
+        height: auto;
+    }
+    
+    .birthday-icon {
+        font-size: 0.9em;
+        margin: 0 8px;
+    }
+    
+    .jj-birthday-hero__subtitle {
+        font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+        margin-bottom: 15px;
+    }
+    
+    .jj-birthday-hero__description {
+        font-size: clamp(0.7rem, 2vw, 1rem);
+    }
+    
+    .jj-birthday-why,
+    .jj-happiest-moments {
+        padding: 60px 0;
+    }
+    
+    .jj-birthday-cta {
+        padding: 57px 0;
+        z-index: 10;
+        overflow: overlay;
+        margin-top: -59px;
+    }
+    
+    .moments-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .moment-icon {
+        font-size: 3rem;
+    }
+    
+    .btn-birthday-primary,
+    .btn-birthday-secondary {
+        padding: 16px 35px;
+        font-size: 1.1rem;
+    }
+    
+    /* Comparison Table - All 3 Columns Visible */
+    .jj-birthday-compare {
+        padding: 50px 0;
+    }
+    
+    .jj-birthday-heading {
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        margin-bottom: 60px;
+        gap: 12px;
+        padding: 0 10px;
+    }
+    
+    .heading-decoration {
+        font-size: 1.3rem;
+    }
+    
+    .heading-line-1 {
+        font-size: clamp(0.85rem, 2.5vw, 1rem);
+    }
+    
+    .heading-line-2 {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+    }
+    
+    .compare-table {
+        /* margin: 30px auto 0; */
+        display: flex;
+        gap: 0;
+        max-width: 1950px;
+        margin: 60px auto 0;
+        position: relative;
+        justify-content: center;
+        /* background: #ffffffde; */
+        border-radius: 10px;
+    }
+    
+    .compare-table .feature-column {
+        min-width: 110px;
+    }
+    
+    .compare-table .jj-column {
+        min-width: 170px;
+    }
+    
+    .compare-table .home-column {
+        min-width: 150px;
+    }
+    
+    .compare-table .column li {
+        min-height: 80px;
+        padding: 12px 8px;
+        font-size: 0.7rem;
+        line-height: 1.3;
+    }
+    
+    .compare-table .feature-column li {
+        font-size: 0.65rem;
+        padding: 10px 6px;
+    }
+    
+    .compare-table .jj-column .column-header,
+    .compare-table .home-column .column-header {
+        min-height: 95px;
+        padding: 18px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .compare-table .feature-column .column-header {
+        font-size: 0.65rem;
+        padding: 18px 6px;
+    }
+    
+    .compare-table .compare-logo {
+        max-width: 85px;
+    }
+    
+    .compare-table .column li i {
+        font-size: 0.85rem;
+        min-width: 14px;
+    }
+    .jj-birthday-intro {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    text-align: center;
+    color: #555;
+    max-width: 900px;
+    margin: 0 auto;
+    /* background-color: #ffffffcf; */
+    
+}
+.jj-birthday-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    text-align: center;
+    color: #555;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: -25px;
+}
+}
+
+@media (max-width: 375px) {
+    .compare-table .feature-column {
+        min-width: 95px;
+    }
+    
+    .compare-table .jj-column {
+        min-width: 150px;
+    }
+    
+    .compare-table .home-column {
+        min-width: 135px;
+    }
+    
+    .compare-table .column li {
+        padding: 10px 6px;
+        font-size: 0.65rem;
+        min-height: 85px;
+    }
+    
+    .compare-table .feature-column li {
+        font-size: 0.6rem;
+        padding: 10px 5px;
+    }
+    
+    .compare-table .jj-column .column-header,
+    .compare-table .home-column .column-header {
+        padding: 15px 6px;
+        font-size: 0.65rem;
+        min-height: 100px;
+    }
+    
+    .compare-table .feature-column .column-header {
+        font-size: 0.6rem;
+        padding: 15px 5px;
+    }
+    
+    .compare-table .compare-logo {
+        max-width: 70px;
+    }
+    
+    .compare-table .column li i {
+        font-size: 0.75rem;
+        min-width: 12px;
+    }
+}
+/* Levitating Cake Image */
+.jj-birthday-hero__cake-image {
+    position: absolute;
+    left: 95%; /* Keep on the left */
+    top: 60%;
+    transform: translateY(-50%) scale(1.1); 
+    z-index: 5;
+    width: 300px; /* Base width */
+    height: 85%; /* Default 100% height for desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: levitateCake 4s ease-in-out infinite alternate;
+    filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.3));
+}
+
+.jj-birthday-hero__cake-image img {
+    height: 100%; /* Take 100% height of its container */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Mobile cake image adjustments */
+@media (max-width: 768px) {
+    .jj-birthday-hero__cake-image {
+        width: 150px; /* Adjust width for mobile */
+        height: 50%; /* 50% height for mobile */
+        top: 30%; /* Adjust vertical position for mobile */
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.0);
+    }
+
+    .jj-birthday-hero__cake-image img {
+        height: 150%;
+        width: 150%;
+        margin-top: 304%;
+    }
+}
+
+@keyframes levitateCake {
+    0% { transform: translateY(-45%) scale(1.1); }
+    100% { transform: translateY(-55%) scale(1.1); }
+}
+
+
+/*bottom wave shape*/
+.hero-wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+.hero-wave-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 120px;
+}
+
+.hero-wave-bottom .shape-fill {
+    fill: #FFFFFF;
+}
+/* Adjust hero inner content padding */
+.jj-birthday-hero__inner {
+    position: relative;
+    z-index: 3;
+    padding-bottom: 80px; /* Space for wave */
+}
+
+/* Mobile responsive wave */
+@media (max-width: 768px) {
+    .hero-wave-bottom svg {
+        height: 80px;
+    }
+    
+    .jj-birthday-hero__inner {
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-wave-bottom svg {
+        height: 60px;
+    }
+    
+    .jj-birthday-hero__inner {
+        padding-bottom: 50px;
+    }
+}
+
+/* Ensure background elements stay behind wave */
+.jj-birthday-hero__bg,
+.jj-birthday-hero__overlay,
+.jj-birthday-hero__mesh {
+    z-index: 1;
+}
+
+.jj-birthday-hero__inner {
+    z-index: 2;
+}
+
+.hero-wave-bottom {
+    z-index: 2;
+}
+
+/*svg divider hAPPY MOMENTS*/
+.jj-cloud-divider {
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: relative;
+  line-height: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.jj-cloud-divider svg {
+  display: block;
+  width: 100%;
+  height: 140px; /* tweak as needed */
+}
+.jj-cloud-divider svg path {
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.05));
+}
+
+
+/* smaller cloud height on mobile */
+@media (max-width: 768px) {
+  .jj-cloud-divider svg { height: 90px; }
+}

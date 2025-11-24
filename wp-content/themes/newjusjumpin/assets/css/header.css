@@ -1,0 +1,541 @@
+/**
+ * Header & Navigation Styles
+ * 
+ * Contains all styling for the site header, navigation menus,
+ * mobile navigation overlay, and accessibility features.
+ * 
+ * @package NewJusJumpin
+ * @version 1.0.0
+ */
+
+/* ==================== MEGA MENU STYLES ==================== */
+/* Main dropdown container */
+.dropdown-parent {
+    position: relative;
+}
+
+.dropdown-parent .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -50px;
+    background: rgba(12, 12, 12, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 280px;
+    max-width: 400px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+/* Click-based dropdown display */
+.dropdown-parent .dropdown.show {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* First level dropdown items (states) */
+.dropdown .dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Removed hover effect - only click-based interaction */
+
+/* Remove this - we'll use Font Awesome icons in HTML instead */
+
+/* Second level submenu (venues) */
+.dropdown .has-submenu {
+    position: relative;
+}
+
+.dropdown .submenu {
+    display: none;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Click-based submenu display */
+.dropdown .submenu.show {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Active states for clicked items */
+.dropdown .dropdown-item.active {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+}
+
+/* Remove hover-open: submenus open only via click (show class) */
+
+/* Proper submenu positioning and styling */
+
+/* All hover selectors removed - purely click-based system */
+
+/* FORCE DISABLE ALL HOVER EFFECTS - COMPLETELY REMOVE HOVER */
+.dropdown .dropdown-item:hover,
+.dropdown .has-submenu:hover,
+.dropdown .dropdown-item.has-submenu:hover,
+.dropdown a:hover,
+.dropdown a[href="#"]:hover,
+.dropdown:hover,
+.dropdown-parent:hover {
+    /* background: none !important; */
+    color: inherit !important;
+}
+
+/* Prevent any hover-based submenu display - FORCE HIDE ON HOVER */
+/* .dropdown .dropdown-item:hover + .submenu,
+.dropdown .has-submenu:hover + .submenu,
+.dropdown a:hover + .submenu,
+.dropdown .dropdown-item:hover > .submenu,
+.dropdown .has-submenu:hover > .submenu,
+.dropdown:hover .submenu,
+.dropdown-parent:hover .submenu {
+    display: none !important;
+    visibility: hidden !important;
+} */
+
+/* Only show submenu on click via .show class */
+.dropdown .submenu {
+    display: none !important;
+}
+
+.dropdown .submenu.show {
+    display: block !important;
+}
+
+/* Venue links styling */
+.submenu .venue-link {
+    display: block;
+    padding: 10px 14px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    margin: 2px 0;
+    border-left: 2px solid transparent;
+    font-size: 0.9rem;
+}
+
+.submenu .venue-link:hover {
+    background: rgba(152, 251, 152, 0.1);
+    color: #ffffff;
+    border-left-color: rgba(152, 251, 152, 0.8);
+}
+
+/* Keep venue hover effect since they are final clickable links */
+
+/* Custom scrollbar for submenu */
+.submenu::-webkit-scrollbar {
+    width: 4px;
+}
+
+.submenu::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.submenu::-webkit-scrollbar-thumb {
+    background: rgba(152, 251, 152, 0.5);
+    border-radius: 2px;
+}
+
+.submenu::-webkit-scrollbar-thumb:hover {
+    background: rgba(152, 251, 152, 0.7);
+}
+
+/* Font Awesome dropdown arrows for clickable states */
+.dropdown-arrow {
+    float: right;
+    margin-left: auto;
+    margin-top: 2px;
+    opacity: 0.7;
+    font-size: 0.8em;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item.active .dropdown-arrow {
+    opacity: 1;
+    transform: rotate(90deg);
+    color: rgba(152, 251, 152, 0.9);
+}
+
+/* Click-only feedback - no hover effects */
+.dropdown-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hide any duplicate arrows from CSS pseudo-elements */
+.dropdown-item:after,
+.has-submenu:after {
+    display: none !important;
+}
+
+
+/* Extend hover zones to prevent gaps */
+.dropdown {
+    padding: 8px;
+}
+
+.dropdown .dropdown-item {
+    margin: 0; /* remove spacing to avoid hover gap delay */
+}
+
+.dropdown .submenu {
+    margin: 0; /* eliminate vertical gap so show is immediate under state */
+}
+
+/* Better positioning for click-based menu */
+.dropdown-parent .dropdown {
+    left: -30px;
+}
+
+/* Alignment class for dropdowns near screen edge */
+.dropdown.align-right {
+    left: auto !important;
+    right: -50px !important;
+}
+
+/* Active state styling */
+.dropdown-parent.active > .nav-link,
+.has-submenu.active > a,
+.submenu-item.active > a {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+}
+
+/* Mobile responsive behavior */
+@media (max-width: 768px) {
+    /* Hide the desktop mega menu on mobile */
+    .dropdown-parent .dropdown {
+        display: none !important;
+    }
+    
+    /* Mobile navigation should use the mobile overlay instead */
+    .mobile-nav-overlay .mobile-menu-list {
+        display: block;
+    }
+    
+    .mobile-nav-overlay .mobile-menu-list li {
+        margin: 12px 0;
+    }
+    
+    .mobile-nav-overlay .mobile-menu-list a {
+        display: block;
+        padding: 12px 16px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        color: #2e5d2e;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-nav-overlay .mobile-menu-list a:hover {
+        background: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+    }
+    
+    /* Mobile submenu styling */
+    .mobile-nav-overlay .menu-item-has-children > .sub-menu {
+        display: none;
+        margin: 8px 0 0 15px;
+        padding-left: 0;
+    }
+    
+    .mobile-nav-overlay .menu-item-has-children.open > .sub-menu {
+        display: block;
+    }
+    
+    .mobile-nav-overlay .sub-menu a {
+        background: rgba(255, 255, 255, 0.2);
+        font-size: 0.9rem;
+        margin: 4px 0;
+    }
+}
+
+/* Tablet responsive behavior */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .dropdown .submenu {
+        min-width: 220px;
+        width: 220px;
+        max-height: 350px;
+        font-size: 0.9rem;
+    }
+    
+    .submenu .venue-link {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ==================== MOBILE NAVIGATION OVERLAY ==================== */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(136, 105, 210, 0.98), rgba(42, 0, 58, 0.98)); /* Slightly less transparent */
+    backdrop-filter: blur(20px); /* More blur for modern effect */
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 9999;
+    padding: 80px 20px 20px;
+    display: flex; /* Always flex, control visibility with opacity/transform */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* Slide in from the right */
+}
+
+.mobile-nav-content {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transform: translateY(20px); /* Initial offset for content */
+    opacity: 0;
+    transition: transform 0.4s ease-out 0.2s, opacity 0.4s ease-out 0.2s; /* Delayed animation */
+}
+
+.mobile-nav-overlay.active .mobile-nav-content {
+    transform: translateY(0); /* Slide into place */
+    opacity: 1;
+}
+
+.mobile-nav-section h3 {
+    color: #9573ef;
+    margin-bottom: 40px; /* Increased spacing */
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Larger and responsive font */
+    font-weight: 800; /* Bolder */
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.mobile-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu-list li {
+    margin: 15px 0; /* Slightly reduced spacing for a tighter look */
+}
+
+.mobile-menu-list a {
+    display: block;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.1); /* More subtle transparency */
+    border-radius: 12px; /* Slightly more rounded */
+    color: #ffffff;
+    font-weight: 700; /* Bolder text */
+    font-size: 1.15rem; /* Slightly larger font */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative; /* For underline effect */
+    overflow: hidden;
+}
+
+.mobile-menu-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-cyan), var(--brand-pink)); /* Gradient underline */
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.mobile-menu-list a:hover::after, 
+.mobile-menu-list a.current-menu-item::after, 
+.mobile-menu-list a.current_page_item::after, 
+.mobile-menu-list a.current-menu-ancestor::after, 
+.mobile-menu-list a.active::after {
+    transform: translateX(0%);
+}
+
+.mobile-menu-list a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+    transform: none; /* Remove translateY on hover as it conflicts with underline */
+}
+
+/* Active state for mobile menu links (redesigned) */
+.mobile-menu-list a.current-menu-item, 
+.mobile-menu-list a.current_page_item, 
+.mobile-menu-list a.current-menu-ancestor, 
+.mobile-menu-list a.active {
+    background: rgba(255, 255, 255, 0.25); /* More prominent active background */
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 185, 227, 0.3);
+}
+
+/* Mobile submenu styling (adjusting existing styles) */
+@media (max-width: 768px) {
+    .mobile-nav-overlay .mobile-menu-list a {
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        font-size: 1.1rem; /* Adjust font size for responsiveness */
+        border-radius: 10px;
+    }
+
+    .mobile-nav-overlay .mobile-menu-list a:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .mobile-nav-overlay .sub-menu a {
+        background: rgba(255, 255, 255, 0.05); 
+        color: #ffffff;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .mobile-nav-overlay .sub-menu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav-overlay .menu-item-has-children.open > a {
+        background: var(--brand-orange); 
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(255, 102, 26, 0.3);
+    }
+
+    .mobile-nav-overlay .menu-item-has-children.open > .sub-menu {
+        border-left: 3px solid var(--brand-yellow); /* Thicker border */
+        margin-left: 20px; /* Increased indentation */
+    }
+}
+
+.jj-mobile-watermark {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem); /* Large and responsive */
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05); /* Very subtle white */
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    pointer-events: none; /* Ensure it doesn't interfere with clicks */
+    z-index: 1; /* Keep it behind navigation elements */
+    text-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ==================== ACCESSIBILITY FEATURES ==================== */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    z-index: 999999;
+    background: #2e5d2e;
+    color: #ffffff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+/* ==================== MOBILE DROPDOWN STYLES ==================== */
+@media (max-width: 480px) {
+    .dropdown-content,
+    .sub-dropdown-content {
+        position: static;
+        display: block;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: none;
+        border-radius: 8px;
+        margin-top: 10px;
+        padding: 15px;
+        margin-left: 0;
+        min-width: auto;
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .sub-dropdown-content {
+        margin-left: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        border-left: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .dropdown-content a,
+    .sub-dropdown-content a {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+    
+    .dropdown-arrow,
+    .submenu-arrow {
+        display: none;
+    }
+}

@@ -1,0 +1,53 @@
+/* Cool infinite background scrolling animation.
+ * Converted to plain CSS for WordPress theme usage.
+ */
+
+/* Exo thin font from Google */
+@import url("https://fonts.googleapis.com/css?family=Exo:100");
+
+/* Background data (Base64 PNG 50x50) */
+:root {
+    --bg-url: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC");
+    --bg-size-x: 50px;
+    --bg-size-y: 50px;
+}
+
+/* Ensure full viewport coverage */
+html, body { min-height: 100%; }
+body { background: transparent !important; }
+
+/* Animations */
+@-webkit-keyframes jj-bg-scroll { from { background-position: 0 0; } to { background-position: var(--bg-size-x) var(--bg-size-y); } }
+@-moz-keyframes jj-bg-scroll { from { background-position: 0 0; } to { background-position: var(--bg-size-x) var(--bg-size-y); } }
+@-o-keyframes jj-bg-scroll { from { background-position: 0 0; } to { background-position: var(--bg-size-x) var(--bg-size-y); } }
+@keyframes jj-bg-scroll { from { background-position: 0 0; } to { background-position: var(--bg-size-x) var(--bg-size-y); } }
+
+/* Site background (apply to html to avoid theme/body overrides) */
+html {
+    /* Use separate properties so animation can control background-position */
+    background-image: var(--bg-url) !important;
+    background-repeat: repeat !important;
+    background-size: var(--bg-size-x) var(--bg-size-y) !important;
+    background-attachment: scroll !important;
+    background-position: 0 0; /* not important on purpose */
+    will-change: background-position;
+    -webkit-animation: jj-bg-scroll .92s linear infinite !important;
+    -moz-animation:    jj-bg-scroll .92s linear infinite !important;
+    -o-animation:      jj-bg-scroll .92s linear infinite !important;
+    animation:         jj-bg-scroll .92s linear infinite !important;
+}
+
+/* Optional large watermark text (disabled by default)
+body.jj-animated-bg::before {
+    content: "INFINITY";
+    display: block;
+    text-align: center;
+    margin-top: 13.5rem;
+    color: #999;
+    font: 400 16px/1.5 Exo, Ubuntu, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 8rem;
+    font-weight: 100;
+}
+*/
+
+

@@ -1,0 +1,38 @@
+/* 
+ * Dropdown Debug CSS
+ * Add this temporarily to see dropdown structure
+ */
+
+/* Make dropdowns visible for debugging */
+.debug-dropdowns .dropdown-content,
+.debug-dropdowns .sub-dropdown-content {
+    display: block !important;
+    position: relative !important;
+    background: rgba(255, 0, 0, 0.2) !important;
+    border: 2px solid red !important;
+    margin: 10px 0 !important;
+}
+
+/* Add borders to see structure */
+.debug-dropdowns .dropdown {
+    border: 2px solid blue !important;
+    margin: 5px !important;
+}
+
+.debug-dropdowns .has-submenu {
+    border: 2px solid green !important;
+    margin: 2px !important;
+}
+
+/* Show all elements */
+.debug-dropdowns * {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Add this class to body to enable debug mode */
+body.debug-dropdowns .nav-menu-list {
+    background: rgba(0, 0, 0, 0.8) !important;
+    padding: 20px !important;
+    margin: 20px !important;
+}

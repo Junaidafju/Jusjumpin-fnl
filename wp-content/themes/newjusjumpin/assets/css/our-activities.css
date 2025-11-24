@@ -1,0 +1,643 @@
+/* Our Activities Page Styles with Natural Green Theme */
+
+/* Animated Background */
+body.page-template-page-our-activities::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/Activities.webp'); /* Using the hero image as the general background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px); /* Apply blur effect */
+    -webkit-filter: blur(8px); /* For Safari */
+    opacity: 0.7; /* Adjust opacity to ensure content visibility */
+    z-index: -1; /* Ensure it's behind the content */
+    pointer-events: none;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    100% {
+        background-position: 70px 70px, -70px 70px;
+    }
+}
+
+body.page-template-page-our-activities {
+    position: relative;
+    /* This is important for the fixed background to work correctly */
+    z-index: 1;
+}
+
+/* Hero Section */
+.jj-activities-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: -80px;
+    padding-top: 80px;
+}
+
+.jj-activities-hero__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 1;
+    z-index: 1;
+}
+
+.jj-activities-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .9), transparent);
+    z-index: 2;
+}
+
+.jj-activities-hero__mesh {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(171, 224, 118, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(116, 169, 61, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(46, 93, 46, 0.1) 0%, transparent 70%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.jj-activities-hero .container {
+    position: relative;
+    z-index: 4;
+}
+
+.jj-activities-hero__inner {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.jj-activities-hero__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: nowrap;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.activity-emoji {
+    display: inline-block;
+    font-size: 1.2em;
+    flex-shrink: 0;
+    animation: levitate 3s ease-in-out infinite;
+}
+.activity-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.activity-emoji:first-child {
+    animation-delay: 0s;
+}
+
+.activity-emoji:last-child {
+    animation-delay: 1.5s;
+}
+
+@keyframes levitate {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.jj-activities-hero__subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.jj-activities-hero__description {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Activity Sections */
+.activities-section {
+    padding: 80px 0;
+    /* background: rgba(255, 255, 255, 0.95); */ /* Remove this to allow the background image to show */
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Ensure background and overlay don't spill out */
+}
+
+.activities-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Apply blur to section background images */
+    -webkit-filter: blur(5px); /* For Safari */
+    opacity: 0.6; /* Adjust opacity as needed */
+    z-index: -1; /* Behind section content */
+}
+
+.activities-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Between blurred background and content */
+    opacity: 0.7; /* Adjust opacity for the color overlay */
+}
+
+.activities-section:nth-of-type(1)::after { background-color: #f67edd; }
+.activities-section:nth-of-type(2)::after { background-color: #6dc065; }
+.activities-section:nth-of-type(3)::after { background-color: #ff661a; }
+.activities-section:nth-of-type(4)::after { background-color: #00b9e3; }
+.activities-section:nth-of-type(5)::after { background-color: #ff5da0; }
+.activities-section:nth-of-type(6)::after { background-color: #ffc60b; }
+.activities-section:nth-of-type(7)::after { background-color: #b2d235; }
+.activities-section:nth-of-type(8)::after { background-color: #ff3645; }
+.activities-section:nth-of-type(9)::after { background-color: #8869d2; }
+
+/* Set specific background images for each section. Replace with actual image paths. */
+.trampoline-zone::before { background-image: url('../img/trampoline-infinite.webp'); }
+.climbing-zone::before { background-image: url('../img/sky_stepper_activity.webp'); }
+.slides-zone::before { background-image: url('../img/donut_slide_activity.webp'); }
+.kids-zone::before { background-image: url('../img/Toddler_play_activity.webp'); }
+.gaming-zone::before { background-image: url('../img/vr-game.jpg'); }
+.sports-zone::before { background-image: url('../img/foam-balance-beam.jpg'); }
+.special-zone::before { background-image: url('../img/sand-pit.jpg'); }
+
+/* Ensure content is above the new backgrounds and overlays */
+.activities-section .container {
+    position: relative;
+    z-index: 2; 
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.jj-activities-heading {
+    position: relative;
+    /* z-index: 2; */
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: #222;
+}
+.heading-watermark {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgb(0 0 0 / 21%); /* Very light */
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 1;
+    pointer-events: none;
+    /* z-index: 26; */
+    user-select: none;
+}
+
+
+.heading-decoration {
+    display: inline-block;
+    font-size: 1.3em;
+    flex-shrink: 0;
+    animation: levitateDecoration 3s ease-in-out infinite;
+}
+
+.heading-decoration:first-child {
+    animation-delay: 0s;
+}
+
+.heading-decoration:last-child {
+    animation-delay: 1.5s;
+}
+
+@keyframes levitateDecoration {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Activity Cards */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.activity-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(116, 169, 61, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 2px solid rgba(171, 224, 118, 0.2);
+    height: 250px;
+    z-index: 0; /* Ensure the card content is above the pseudo-elements */
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(116, 169, 61, 0.3);
+    border-color: rgba(116, 169, 61, 0.4);
+}
+
+/* Image Container - Full Card */
+.activity-card .activity-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+    position: relative; /* Ensure the image is above the ::before pseudo-element */
+    z-index: 1;
+}
+
+.activity-card:hover .activity-image {
+    transform: scale(1.1);
+}
+
+/* Hover Overlay on Image */
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to top,
+        rgba(46, 93, 46, 0.95) 0%,
+        rgba(74, 122, 74, 0.85) 50%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.activity-card:hover::before {
+    opacity: 1;
+    transform: scale(1.05); /* Slightly scale the blurred background on hover */
+}
+
+/* Hover Text Overlay */
+.activity-card::after {
+    content: attr(data-activity-name) '\A' attr(data-activity-desc);
+    white-space: pre-line;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 20px;
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.activity-card:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hide bottom text info */
+
+.activity-category {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent; /* Make background transparent to show blurred image */
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Category-specific colors */
+.trampoline-zone .activity-category {
+    background: rgba(116, 169, 61, 0.95);
+}
+
+.climbing-zone .activity-category {
+    background: rgba(74, 122, 74, 0.95);
+}
+
+.slides-zone .activity-category {
+    background: rgba(171, 224, 118, 0.95);
+    color: #2e5d2e;
+}
+
+.kids-zone .activity-category {
+    background: rgba(46, 93, 46, 0.95);
+}
+
+.gaming-zone .activity-category {
+    background: rgba(115, 168, 60, 0.95);
+}
+
+.sports-zone .activity-category {
+    background: rgba(116, 169, 61, 0.95);
+}
+
+.special-zone .activity-category {
+    background: rgba(74, 122, 74, 0.95);
+}
+
+/* CTA Section */
+.jj-activities-cta {
+    position: relative;
+    padding: 100px 0;
+    background: linear-gradient(
+        135deg,
+        rgba(116, 169, 61, 0.95) 0%,
+        rgba(46, 93, 46, 0.95) 100%
+    );
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.jj-activities-cta__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 30% 40%, rgba(171, 224, 118, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(74, 122, 74, 0.1) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.jj-activities-cta .container {
+    position: relative;
+    z-index: 2;
+}
+
+.jj-activities-cta__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.jj-activities-cta__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.jj-activities-cta__subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    margin-top: 50px;
+}
+
+.jj-activities-cta__btn {
+    display: inline-block;
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2e5d2e;
+    background: #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.jj-activities-cta__btn:hover {
+    background: #f0ff94;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    color: #2e5d2e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .jj-activities-hero {
+        min-height: 60vh;
+        margin-top: -70px;
+        padding-top: 70px;
+    }
+    
+    .jj-activities-hero__inner {
+        padding: 40px 15px;
+    }
+    
+    .jj-activities-hero__title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        gap: 10px;
+    }
+    
+    .activity-emoji {
+        font-size: 1em;
+    }
+    
+    .jj-activities-hero__subtitle {
+        font-size: clamp(1rem, 3vw, 1.4rem);
+    }
+    
+    .jj-activities-hero__description {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+    }
+    
+    .activities-section {
+        padding: 60px 0;
+    }
+    
+    .jj-activities-heading {
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+        gap: 10px;
+    }
+    
+    .heading-decoration {
+        font-size: 1.2em;
+    }
+    
+    .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .activity-card {
+        width: 100%;
+        margin: 0 auto;
+        height: 220px;
+    }
+    
+    .activity-category {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .activity-card::after {
+        font-size: 1rem;
+        padding: 25px 15px;
+    }
+    
+    .jj-activities-cta {
+        padding: 70px 0;
+    }
+    
+    .jj-activities-cta__title {
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+    }
+    
+    .jj-activities-cta__subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        margin-bottom: 30px;
+        margin-top: 5px;
+    }
+    
+    .jj-activities-cta__btn {
+        padding: 15px 40px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .jj-activities-hero {
+        min-height: 50vh;
+    }
+    
+    .jj-activities-hero__inner {
+        padding: 30px 10px;
+    }
+    
+    .jj-activities-hero__title {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .activity-emoji {
+        font-size: 1.5em;
+    }
+    
+    .activities-section {
+        padding: 50px 0;
+    }
+    
+    .category-header {
+        margin-bottom: 35px;
+    }
+    
+    .jj-activities-heading {
+        flex-direction: column;
+        gap: 8px;
+    }
+@media (max-width: 768px) {
+    .heading-watermark {
+        font-size: 2.5rem;
+        top: -60px;
+    }
+}
+
+    
+    .heading-decoration {
+        font-size: 1.5em;
+    }
+    
+    .activities-grid {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .activity-card {
+        height: 180px;
+        width: 100%;
+    }
+    
+    .activity-category {
+        font-size: 0.6rem;
+        padding: 4px 8px;
+    }
+    
+    .activity-card::after {
+        font-size: 0.95rem;
+        padding: 20px 12px;
+    }
+    
+    .jj-activities-cta {
+        padding: 60px 0;
+    }
+    
+    .jj-activities-cta__btn {
+        padding: 14px 35px;
+        font-size: 1rem;
+    }
+}
+

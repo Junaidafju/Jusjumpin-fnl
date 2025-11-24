@@ -1,0 +1,600 @@
+/* Page Templates Styles */
+
+/* Page Hero Section */
+.page-hero {
+    background: linear-gradient(135deg, #2a5c3d 0%, #ade049 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Stats Section */
+.stats-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.stat-item h3 {
+    font-size: 3rem;
+    color: #ade049;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.stat-item p {
+    color: #2a5c3d;
+    font-weight: 600;
+}
+
+/* Values Section */
+.values-section {
+    padding: 80px 0;
+}
+
+.values-section h2 {
+    text-align: center;
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.value-item {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #ade049;
+}
+
+.value-item h3 {
+    color: #2a5c3d;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.value-item p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Birthday Celebrations Page Styles */
+.birthday-intro {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.birthday-content h2 {
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.birthday-content p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Packages Section */
+.packages-section {
+    padding: 80px 0;
+}
+
+.packages-section h2 {
+    text-align: center;
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.package-item {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.package-item:hover {
+    border-color: #ade049;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.package-item.featured {
+    border-color: #ade049;
+    background: linear-gradient(135deg, #ade049 0%, #2a5c3d 100%);
+    color: white;
+    transform: scale(1.05);
+}
+
+.package-item.featured::before {
+    content: "Most Popular";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2a5c3d;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.package-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2a5c3d;
+}
+
+.package-item.featured h3 {
+    color: white;
+}
+
+.package-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ade049;
+    margin-bottom: 1.5rem;
+}
+
+.package-item.featured .package-price {
+    color: white;
+}
+
+.package-item ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.package-item li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.package-item.featured li {
+    border-bottom-color: rgba(255,255,255,0.2);
+}
+
+.package-item li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ade049;
+    font-weight: bold;
+}
+
+.package-item.featured li::before {
+    color: white;
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.features-section h2 {
+    text-align: center;
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.feature-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.feature-item h3 {
+    color: #2a5c3d;
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.feature-item p {
+    color: #555;
+    padding: 0 1rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Booking Section */
+.booking-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.booking-section h2 {
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.booking-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.booking-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #ade049;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2a5c3d;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #2a5c3d;
+    border: 2px solid #2a5c3d;
+}
+
+.btn-secondary:hover {
+    background: #2a5c3d;
+    color: white;
+}
+
+/* Our Activities Page Styles */
+.activities-intro {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.activities-content h2 {
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.activities-content p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Main Activities */
+.main-activities {
+    padding: 80px 0;
+}
+
+.main-activities h2 {
+    text-align: center;
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.activity-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: translateY(-5px);
+}
+
+.activity-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.activity-item h3 {
+    color: #2a5c3d;
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.activity-item p {
+    color: #555;
+    padding: 0 1rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Special Activities */
+.special-activities {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.special-activities h2 {
+    text-align: center;
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.special-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.special-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.special-item:hover {
+    transform: translateY(-5px);
+}
+
+.special-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.special-item h3 {
+    color: #2a5c3d;
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.special-item p {
+    color: #555;
+    padding: 0 1rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Age Groups */
+.age-groups {
+    padding: 80px 0;
+}
+
+.age-groups h2 {
+    text-align: center;
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.age-groups-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.age-group {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 4px solid #ade049;
+}
+
+.age-group h3 {
+    color: #2a5c3d;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.age-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.age-group li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.age-group li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ade049;
+    font-weight: bold;
+}
+
+/* Safety Section */
+.safety-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.safety-section h2 {
+    text-align: center;
+    color: #2a5c3d;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.safety-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.safety-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.safety-features {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: left;
+}
+
+.safety-features li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.safety-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ade049;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .page-hero p {
+        font-size: 1rem;
+    }
+    
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .package-item.featured {
+        transform: none;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .special-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .age-groups-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .safety-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .booking-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+}
