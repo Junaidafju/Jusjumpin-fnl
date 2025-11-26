@@ -371,14 +371,14 @@ get_header(); ?>
     <div class="jj-activities-cta__overlay"></div>
     <div class="container">
         <div class="jj-activities-cta__content">
-            <!-- <h2 class="jj-activities-cta__title"><?php esc_html_e('Ready to Jump Into Fun?', 'newjusjumpin'); ?></h2> -->
+            <h2 class="jj-activities-cta__title"><?php esc_html_e('Ready to Jump Into Fun?', 'newjusjumpin'); ?></h2>
              <h2><div class="heading-watermark">Are You Ready?</div></h2>
             
             
         </div>
     </div>
     <p class="jj-activities-cta__subtitle"><?php esc_html_e('Book your slot now and experience 25+ exciting activities!', 'newjusjumpin'); ?></p>
-        <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="jj-activities-cta__btn"><?php esc_html_e('Book Now', 'newjusjumpin'); ?></a>
+        <a href="<?php echo esc_url(home_url('/contact')); ?>" class="jj-activities-cta__btn"><?php esc_html_e('Book Now', 'newjusjumpin'); ?></a>
 </section>
 
 <?php get_footer(); ?>

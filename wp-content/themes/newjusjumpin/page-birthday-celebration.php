@@ -329,7 +329,7 @@ get_header(); ?>
       </p>
 
       <div class="jj-birthday-cta__buttons">
-        <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="btn-glass primary">
+        <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn-glass primary">
           <span class="btn-icon">🎂</span> Book Now
         </a>
         <a href="tel:+919830359999" class="btn-glass secondary">

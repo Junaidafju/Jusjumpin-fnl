@@ -104,7 +104,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at Junction Mall features <strong>an infinity trampoline, foam pits, colorful ball pit, wall climbing, obstacle zone, and a dedicated kids' play zone.</strong>
+        <p class="section-intro">Jus Jumpin at Junction Mall features an infinity trampoline, foam pits, an interactive doll house, zebra swing, an obstacle zone, and a dedicated kids' play zone.</strong>
 </p>
         
 <div class="experience-grid">
@@ -142,7 +142,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section activities-section">
     <div class="container">
         <h2 class="section-heading2"><span class="emoji-icon"><i class="fas fa-gamepad"></i></span> Our Activities</h2>
-        <p class="section-intro">Beyond India's premier trampoline park, experience mind-bending soft play zone for kids, fun merry-go-round, and 15+ interactive gaming activities curated just for you.</p>
+        <p class="section-intro">Beyond India's premier trampoline park, experience colourful slides, a dedicated soft play zone for kids, a fun-fuelled obstacle zone, and 15+ interactive gaming activities curated just for you.</p>
         <!-- Toggle Switch -->
         <div class="activities-toggle-wrapper">
             <label for="activity-filter" class="switch" aria-label="Toggle Between Adults and Kids Activities">
@@ -484,7 +484,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     <p class="special-bookings-text">
                         <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, <strong>kitty parties</strong>, <strong>group events</strong>, <strong>bulk bookings</strong>, <strong>corporate packages</strong>, and <strong>personalized gift vouchers.</strong>
                     </p>
-                    <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="contact-cta-button">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="contact-cta-button">
                         <i class="fas fa-phone"></i> Contact Us Now
                     </a>
                 </div>
@@ -656,7 +656,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <p class="conclusion-text"><strong>Jus Jumpin | Deogarh (Junction Mall)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
-            <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="cta-button">
+            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">
                 <span class="emoji-icon"><i class="fas fa-ticket-alt"></i></span> Book Your Jump Now!
             </a>
         </div>

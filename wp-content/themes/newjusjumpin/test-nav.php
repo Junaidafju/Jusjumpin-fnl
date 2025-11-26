@@ -89,7 +89,7 @@ Template Name: Navigation Test
                 <ul class="nav-menu-list">
                     <li><a href="#">Our Activities</a></li>
                     <li><a href="#">Blogs</a></li>
-                    <li><a href="#" class="btn btn-primary">Contact Us</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-primary">Contact Us</a></li>
                 </ul>
             </div>
         </nav>

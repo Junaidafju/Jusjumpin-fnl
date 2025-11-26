@@ -3,7 +3,7 @@
  * New Jus Jumpin Theme Functions
  * 
  * @package NewJusJumpin
- * @version 1.0.0
+ * @version 1.0.4
  */
 
 // Prevent direct access
@@ -45,6 +45,170 @@ function newjusjumpin_setup() {
 add_action('after_setup_theme', 'newjusjumpin_setup');
 
 /**
+ * Custom Meta Titles for Pages
+ */
+function newjusjumpin_custom_meta_titles($title) {
+    // Get the current page slug
+    $page_slug = basename(get_permalink());
+    
+    // For home page, WordPress uses 'home' or 'front-page' depending on settings
+    if (is_front_page() || is_home()) {
+        return 'Discover the Best Trampoline Park at Jus Jumpin';
+    }
+    
+    // Define custom titles for specific pages
+    $custom_titles = array(
+        'home' => 'Discover the Best Trampoline Park at Jus Jumpin',
+        'about' => 'About Jus Jumpin – India\'s Leading Indoor Trampoline Park',
+        'our-location' => 'Jus Jumpin Locations – Find a Kids Play Zone Near You',
+        'our-activities' => 'Activities at Jus Jumpin | Indoor Fun & Play Zones for Kids',
+        'birthday-celebration' => 'Birthday Celebration at Jus Jumpin | Best Kids Birthday Party Venue',
+        'contact' => 'Contact Jus Jumpin – India\'s Premier Kids Play Zone',
+        'blog' => 'Blog - JUSJUMPIN | Latest News & Updates',
+        // Location pages
+        'kolkata-abc-square-building-best-adult-trampoline-park' => 'Best Adult Trampoline Park at ABC Square Building Kolkata | Jus Jumpin',
+        'kolkata-avani-mall' => 'Best Adult Trampoline Park at Avani Mall Kolkata | Jus Jumpin',
+        'kolkata-axis-mall' => 'Best Children\'s Birthday Party in Axis Mall Kolkata | Jus Jumpin',
+        'kolkata-city-centre-2' => 'Kid\'s Play Zone in City Centre 2 Kolkata - Jus Jumpin Fun',
+        'siliguri-city-centre' => 'Kids Playzone at Siliguri City Centre Mall - Jus Jumpin',
+        'durgapur-junction-mall' => 'Trampoline Park At Durgapur Junction Mall – Jus Jumpin',
+        'bengaluru-m5-ecity-mall' => 'Kids Playzone Bengaluru M5 Ecity Mall - Jus Jumpin',
+        'bengaluru-meenakshi-mall' => 'Kids Playzone Bengaluru Meenakshi Mall - Jus Jumpin',
+        'dhanbad-prabhatam-mall' => 'Adult Trampoline Park in Prabhatam Mall Dhanbad - Jus Jumpin',
+        'jamshedpur-pm-mall' => 'Kids Play Area in Jamshedpur P&M Mall - Jus Jumpin',
+        'ranchi-nucleus-mall' => 'Best Kids Playzone at Nucleus Mall Ranchi - Jus Jumpin',
+        'noida-gip-mall' => 'Trampoline Park in GIP Mall Noida - Jus Jumpin',
+        'noida-spectrum-mall' => 'Best Trampoline Park and Kids Playzone in Noida Spectrum Mall | Jus Jumpin',
+        'nagpur-vr-mall' => 'Children\'s Birthday Parties in Nagpur\'s VR Mall - Jus Jumpin',
+        'pune-season-mall' => 'Adult Trampoline Park at Pune\'s Season Mall - Jus Jumpin',
+        'raipur-zora-mall' => 'Vibrant Trampoline Park and Gaming Zone In Raipur Zora Mall | Jus Jumpin',
+        'udiapur-urban-square-mall' => 'Kids Birthday Party Venue in Udaipur\'s Urban Square Mall - Jus Jumpin',
+        'surat-vr-mall' => 'Best Kids Play Area in Surat VR mall - Jus Jumpin'
+    );
+    
+    // If we have a custom title for this page, use it
+    if (isset($custom_titles[$page_slug])) {
+        return $custom_titles[$page_slug];
+    }
+    
+    // For location pages that follow a pattern, create dynamic titles
+    if (strpos($page_slug, '-kids-playzone-') !== false || strpos($page_slug, '-trampoline-park-') !== false) {
+        // Convert slug to readable format
+        $location_name = str_replace('-', ' ', $page_slug);
+        $location_name = ucwords(str_replace(array('kids playzone', 'trampoline park'), array('Kids Playzone', 'Trampoline Park'), $location_name));
+        return $location_name . ' | Jus Jumpin';
+    }
+    
+    // Return default title if no custom title is found
+    return $title;
+}
+add_filter('pre_get_document_title', 'newjusjumpin_custom_meta_titles');
+
+/**
+ * Custom Meta Descriptions for Pages
+ */
+function newjusjumpin_custom_meta_descriptions() {
+    // Handle Home Page
+    if (is_front_page() || is_home()) {
+        echo '<meta name="description" content="Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball & birthday parties for kids, teens & adults. Safe, high-energy adventures await!" />' . "\n";
+        return;
+    }
+
+    // Get correct slug of current page
+    // Use different methods to get the slug for better compatibility
+    $page_slug = '';
+    if (is_page() || is_single()) {
+        $page_slug = get_post_field('post_name', get_post());
+    } else {
+        $page_slug = basename(get_permalink());
+    }
+    
+    // Test output to see if function is being called
+    error_log("Custom meta description function called. Page slug: " . $page_slug);
+    
+    // For blog posts, we might want to handle differently
+    if (is_single() && get_post_type() === 'post') {
+        // Use the post excerpt or a default description for blog posts
+        $excerpt = get_the_excerpt();
+        if (!empty($excerpt)) {
+            echo '<meta name="description" content="' . esc_attr(wp_trim_words($excerpt, 30, '...')) . '" />' . "\n";
+        } else {
+            echo '<meta name="description" content="Stay updated with the latest news and updates from Jus Jumpin - India\'s premier indoor trampoline park." />' . "\n";
+        }
+        return;
+    }
+
+    // Custom meta descriptions
+    $custom_descriptions = array(
+        'about' => 'Jus Jumpin is India\'s top indoor trampoline and play park brand offering safe, fun-filled zones for kids, families, and birthdays across multiple cities.',
+        'our-location' => 'Explore all Jus Jumpin locations across India! Find your nearest indoor trampoline park & kids play zone for birthdays, playdates & family fun.',
+        'blog' => 'Stay updated with the latest news and updates from Jus Jumpin - India\'s premier indoor trampoline park.',
+
+        // Location pages
+        'kolkata-abc-square-building-best-adult-trampoline-park' => 'Experience high-energy fun at Kolkata\'s best adult trampoline park at ABC Square Building Kolkata. Best for birthday parties and kitty parties in ABC Square Building.',
+        'kolkata-avani-mall' => 'Celebrate your children\'s birthday at Avani Mall Kolkata. Featuring a soft play area and indoor sports layout for non-stop fun.',
+        'kolkata-axis-mall' => 'Plan the ultimate kids\' birthday parties at Axis Mall Kolkata. Visit our adventure park and birthday party center for unforgettable memories!',
+        'kolkata-city-centre-2' => 'Book birthday party places in City Centre 2 Kolkata with kids\' indoor play area setup. Kids Playzone fun & hassle-free party arrangements!',
+        'siliguri-city-centre' => 'Celebrate kids\' birthdays at City Centre Siliguri\'s Kids Playzone with full indoor play setup & exciting adventure park experience.',
+        'durgapur-junction-mall' => 'The best children\'s birthday party place in Durgapur Junction Mall—fun trampoline park & safe indoor play area setup for all ages.',
+        'bengaluru-m5-ecity-mall' => 'Visit Kids Playzone at M5 Ecity Mall Bengaluru—top indoor play area & adventure park, perfect for fun-filled kids\' birthday party celebrations.',
+        'bengaluru-meenakshi-mall' => 'Explore Kids Playzone Bengaluru Meenakshi Mall – the ultimate indoor play area & party venue for kids\' birthdays in Bengaluru Meenakshi Mall.',
+        'dhanbad-prabhatam-mall' => 'Explore Adult Trampoline Park in Prabhatam Mall Dhanbad – combined with Kids Playzone & indoor play area, adventure park for family fun & kids\' play.',
+        'jamshedpur-pm-mall' => 'Jamshedpur P&M Mall offers a fantastic indoor play area setup, a top adventure park, and the best birthday party venues.',
+        'ranchi-nucleus-mall' => 'Make birthdays special at Ranchi Nucleus Mall – indoor play area & the best adventure park venue for kids. Best Kids Playzone at Nucleus Mall Ranchi.',
+        'noida-gip-mall' => 'Explore the trampoline park in GIP Mall Noida – indoor play area setup & kids\' party venues for birthdays, family fun & safe play.',
+        'noida-spectrum-mall' => 'Find the ultimate destination for fun at Jus Jumpin Noida Spectrum Mall. Jump into our vibrant trampoline park for lots of high-energy activities for Adults & Kids.',
+        'nagpur-vr-mall' => 'Plan your children\'s birthday parties at VR Mall, Nagpur. Our indoor play area setup and adventure park at VR Mall Nagpur promise a memorable celebration.',
+        'pune-season-mall' => 'The Adult Trampoline Park at Pune\'s Season Mall – with kids\' indoor play area at Season\'s Mall, best birthday party spots & corporate event venues at Season\'s Mall Pune.',
+        'raipur-zora-mall' => 'Hop into the best trampoline park and gaming zone for adults and kids in Raipur Zora Mall. Experience our exciting bowling alley and Kids\' adventure park.',
+        'udiapur-urban-square-mall' => 'Celebrate your kid\'s birthday at Urban Square Mall, Udaipur. Urban Square Mall Udaipaur is a great place for kid\'s adventure park & kid\'s indoor play area.',
+        'surat-vr-mall' => 'Find the best birthday party venue in Surat VR Mall – kids\' play area in Surat VR Mall, adventure park & indoor play area in Surat VR mall fun for children.',
+
+        'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
+        'birthday-celebration' => 'Celebrate your kid\'s birthday at Jus Jumpin – India\'s favorite indoor play zone. Trampolines, foam pits & party fun at locations nationwide!',
+        'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.'
+    );
+
+    // Output description if slug matches
+    if (isset($custom_descriptions[$page_slug])) {
+        error_log("Found custom description for slug: " . $page_slug);
+        echo '<meta name="description" content="' . esc_attr($custom_descriptions[$page_slug]) . '" />' . "\n";
+    } else {
+        // For any other pages, use a default description
+        error_log("Using default description for slug: " . $page_slug);
+        echo '<meta name="description" content="Experience the ultimate indoor trampoline and play park experience at Jus Jumpin - India\'s premier destination for family fun." />' . "\n";
+    }
+    
+    // Signal that we've output our meta descriptions
+    do_action('newjusjumpin_custom_meta_descriptions_done');
+}
+/**
+ * Hook for custom meta descriptions
+ */
+add_action('wp_head', 'newjusjumpin_custom_meta_descriptions', 5);
+
+/**
+ * Add Google Site Verification and other meta tags
+ */
+function newjusjumpin_add_meta_tags() {
+    // Google Site Verification - only output if not already output
+    if (!did_action('newjusjumpin_site_verification_done')) {
+        echo '<meta name="google-site-verification" content="QKqaMCa9aZeg143tzKjKhMldwtGgzlfLey0KqMKGWJs" />' . "\n";
+        do_action('newjusjumpin_site_verification_done');
+    }
+}
+add_action('wp_head', 'newjusjumpin_add_meta_tags', 1);
+
+/**
+ * Enqueue styles and scripts
+ */
+function newjusjumpin_enqueue_styles_scripts() {
+    wp_enqueue_style('newjusjumpin-style', get_stylesheet_uri());
+    wp_enqueue_script('newjusjumpin-script', get_template_directory_uri() . '/js/main.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'newjusjumpin_enqueue_styles_scripts');
+
+/**
  * Enqueue styles and scripts
  */
 function newjusjumpin_scripts() {
@@ -55,23 +219,22 @@ function newjusjumpin_scripts() {
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css', array(), '6.5.2');
     
     // Theme main stylesheet
-    wp_enqueue_style('newjusjumpin-style', get_stylesheet_uri(), array('google-fonts', 'font-awesome'), '1.0.0');
+    wp_enqueue_style('newjusjumpin-style', get_stylesheet_uri(), array('google-fonts', 'font-awesome'), '1.0.4');
     // Animated background stylesheet (site-wide)
     $bg_path = get_template_directory() . '/assets/css/background.css';
-    $bg_ver = file_exists($bg_path) ? filemtime($bg_path) : '1.0.0';
+    $bg_ver = file_exists($bg_path) ? filemtime($bg_path) : '1.0.4';
     wp_enqueue_style('newjusjumpin-background', get_template_directory_uri() . '/assets/css/background.css', array('newjusjumpin-style'), $bg_ver);
-    
     // Component-specific stylesheets
-    wp_enqueue_style('newjusjumpin-header', get_template_directory_uri() . '/assets/css/header.css', array('newjusjumpin-style'), '1.0.0');
-    wp_enqueue_style('newjusjumpin-footer', get_template_directory_uri() . '/assets/css/footer.css', array('newjusjumpin-style'), '1.0.0');
+    wp_enqueue_style('newjusjumpin-header', get_template_directory_uri() . '/assets/css/header.css', array('newjusjumpin-style'), '1.0.4');
+    wp_enqueue_style('newjusjumpin-footer', get_template_directory_uri() . '/assets/css/footer.css', array('newjusjumpin-style'), '1.0.4');
     
     // Page-specific stylesheets
     if (is_front_page()) {
-        wp_enqueue_style('newjusjumpin-front-page', get_template_directory_uri() . '/assets/css/front-page.css', array('newjusjumpin-style'), '1.0.0');
+        wp_enqueue_style('newjusjumpin-front-page', get_template_directory_uri() . '/assets/css/front-page.css', array('newjusjumpin-style'), '1.0.4');
     }
     
     if (is_page_template('page-contact.php')) {
-        wp_enqueue_style('newjusjumpin-contact', get_template_directory_uri() . '/assets/css/contact.css', array('newjusjumpin-style'), '1.0.0');
+        wp_enqueue_style('newjusjumpin-contact', get_template_directory_uri() . '/assets/css/contact.css', array('newjusjumpin-style'), '1.0.4');
     }
     
     // Page template stylesheets
@@ -83,7 +246,7 @@ function newjusjumpin_scripts() {
         || (function_exists('is_page') && is_page(array('about', 'about-us', 'About Us')))
     ) {
         $about_css_path = get_template_directory() . '/assets/css/about-us-page.css';
-        $about_css_ver = file_exists($about_css_path) ? filemtime($about_css_path) : '1.0.0';
+        $about_css_ver = file_exists($about_css_path) ? filemtime($about_css_path) : '1.0.4';
         wp_enqueue_style('newjusjumpin-about-us', get_template_directory_uri() . '/assets/css/about-us-page.css', array('newjusjumpin-style'), $about_css_ver);
     }
     
@@ -94,30 +257,30 @@ function newjusjumpin_scripts() {
         || (function_exists('is_page') && is_page(array('birthday-celebration', 'birthday-celebrations', 'Birthday Celebrations')))
     ) {
         $birthday_css_path = get_template_directory() . '/assets/css/birthday-celebrations.css';
-        $birthday_css_ver = file_exists($birthday_css_path) ? filemtime($birthday_css_path) : '1.0.0';
+        $birthday_css_ver = file_exists($birthday_css_path) ? filemtime($birthday_css_path) : '1.0.4';
         wp_enqueue_style('newjusjumpin-birthday-celebrations', get_template_directory_uri() . '/assets/css/birthday-celebrations.css', array('newjusjumpin-style'), $birthday_css_ver);
     }
     
     // Our Activities page CSS
     if (is_page_template('page-our-activities.php') || is_page('our-activities') || is_page_template('page-our-activities')) {
         $activities_css_path = get_template_directory() . '/assets/css/our-activities.css';
-        $activities_css_ver = file_exists($activities_css_path) ? filemtime($activities_css_path) : '1.0.0';
+        $activities_css_ver = file_exists($activities_css_path) ? filemtime($activities_css_path) : '1.0.4';
         wp_enqueue_style('newjusjumpin-our-activities', get_template_directory_uri() . '/assets/css/our-activities.css', array('newjusjumpin-style'), $activities_css_ver);
     }
     
     // Fallback for both pages using page-templates.css (if needed)
     if ((is_page_template('page-birthday-celebration.php') || is_page_template('page-our-activities.php')) && !file_exists(get_template_directory() . '/assets/css/birthday-celebrations.css')) {
-        wp_enqueue_style('newjusjumpin-page-templates', get_template_directory_uri() . '/assets/css/page-templates.css', array('newjusjumpin-style'), '1.0.0');
+        wp_enqueue_style('newjusjumpin-page-templates', get_template_directory_uri() . '/assets/css/page-templates.css', array('newjusjumpin-style'), '1.0.4');
     }
 
     // Blog assets on blog template, single posts, and archives
     if (is_page_template('blog.php') || is_home() || is_single() || is_category() || is_tag()) {
-        wp_enqueue_style('newjusjumpin-blog', get_template_directory_uri() . '/assets/css/blog.css', array('newjusjumpin-style'), '1.0.0');
-        wp_enqueue_script('newjusjumpin-blog', get_template_directory_uri() . '/assets/js/blog.js', array(), '1.0.0', true);
+        wp_enqueue_style('newjusjumpin-blog', get_template_directory_uri() . '/assets/css/blog.css', array('newjusjumpin-style'), '1.0.4');
+        wp_enqueue_script('newjusjumpin-blog', get_template_directory_uri() . '/assets/js/blog.js', array(), '1.0.4', true);
     }
     
     // Theme JavaScript
-    wp_enqueue_script('newjusjumpin-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('newjusjumpin-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.4', true);
     
     // Localize script for AJAX
     wp_localize_script('newjusjumpin-main', 'newjusjumpin_ajax', array(
@@ -852,6 +1015,17 @@ function newjusjumpin_admin_menu() {
         'newjusjumpin-settings',
         'newjusjumpin_settings_page'
     );
+    /**
+ * Popup setting
+ */
+    add_submenu_page(
+        'themes.php', // Parent slug
+        'Popup Settings',
+        'Popup Settings',
+        'manage_options',
+        'jusjumpin-popup-settings',
+        'jusjumpin_popup_settings_page_callback'
+    );
 }
 add_action('admin_menu', 'newjusjumpin_admin_menu');
 
@@ -918,6 +1092,16 @@ function newjusjumpin_seo_meta() {
     $current_title = wp_get_document_title();
     $current_url = (is_singular() || is_page()) ? get_permalink($post) : home_url('/');
     $og_type = (is_single() || is_page()) ? 'article' : 'website';
+    
+    // Get featured image or default image for og:image
+    $og_image = '';
+    if (is_singular() && has_post_thumbnail()) {
+        // Use featured image if available
+        $og_image = get_the_post_thumbnail_url(null, 'full');
+    } else {
+        // Use the specific default image you provided
+        $og_image = 'https://www.jusjumpin.com/wp-content/uploads/2025/11/jus-jumpin-og.png';
+    }
 
     // Prioritize template-defined $description
     if (isset($description) && !empty($description)) {
@@ -946,15 +1130,33 @@ function newjusjumpin_seo_meta() {
     $current_description = wp_trim_words($current_description, 25, '...');
     $current_keywords = wp_trim_words($current_keywords, 20, '...');
 
-
-    echo "\n<meta name=\"description\" content=\"" . esc_attr($current_description) . "\">\n";
-    echo "<meta name=\"keywords\" content=\"" . esc_attr($current_keywords) . "\">\n";
-    echo "<meta property=\"og:title\" content=\"" . esc_attr($current_title) . "\">\n";
-    echo "<meta property=\"og:description\" content=\"" . esc_attr($current_description) . "\">\n";
-    echo "<meta property=\"og:url\" content=\"" . esc_url($current_url) . "\">\n";
-    echo "<meta property=\"og:type\" content=\"" . esc_attr($og_type) . "\">\n";
-    echo "<meta property=\"og:site_name\" content=\"" . esc_attr(get_bloginfo('name')) . "\">\n";
-    // Consider adding og:image if there's a reliable way to get a featured image or default
+    // Only output meta tags if they haven't been output already by our custom functions
+    if (!did_action('newjusjumpin_custom_meta_descriptions_done') && !did_action('newjusjumpin_site_verification_done')) {
+        error_log("SEO meta function outputting description: " . $current_description);
+        echo "\n<meta name=\"description\" content=\"" . esc_attr($current_description) . "\">\n";
+        echo "<meta name=\"keywords\" content=\"" . esc_attr($current_keywords) . "\">\n";
+        echo "<meta property=\"og:title\" content=\"" . esc_attr($current_title) . "\">\n";
+        echo "<meta property=\"og:description\" content=\"" . esc_attr($current_description) . "\">\n";
+        echo "<meta property=\"og:url\" content=\"" . esc_url($current_url) . "\">\n";
+        echo "<meta property=\"og:type\" content=\"" . esc_attr($og_type) . "\">\n";
+        echo "<meta property=\"og:site_name\" content=\"" . esc_attr(get_bloginfo('name')) . "\">\n";
+        
+        // Add og:image if we have one
+        if (!empty($og_image)) {
+            echo "<meta property=\"og:image\" content=\"" . esc_url($og_image) . "\">\n";
+        }
+        
+        // Add Twitter Card meta tags
+        echo "<meta name=\"twitter:card\" content=\"summary_large_image\">\n";
+        echo "<meta name=\"twitter:title\" content=\"" . esc_attr($current_title) . "\">\n";
+        echo "<meta name=\"twitter:description\" content=\"" . esc_attr($current_description) . "\">\n";
+        if (!empty($og_image)) {
+            echo "<meta name=\"twitter:image\" content=\"" . esc_url($og_image) . "\">\n";
+        }
+        echo "<meta name=\"twitter:site\" content=\"@jusjumpin\">\n"; // Replace with your actual Twitter handle
+    } else {
+        error_log("SEO meta function skipped - custom meta descriptions already output");
+    }
 }
 add_action('wp_head', 'newjusjumpin_seo_meta', 1); // Run early to ensure meta tags are high in head
 
@@ -970,3 +1172,417 @@ add_filter('template_include', function($template) {
     }
     return $template;
 }, 20);
+
+// Include custom post types and taxonomies
+// require get_template_directory() . '/inc/custom-post-types.php';
+
+// Include popup manager
+require_once get_template_directory() . '/inc/popup-manager.php';
+
+// Register the main image popup, dynamically configured from admin settings
+function jusjumpin_register_image_popup() {
+    global $popup_manager;
+
+    // Will fetch popup settings from WordPress options later
+    $popup_enabled = get_option('jusjumpin_popup_enabled', false);
+
+    if ($popup_enabled) {
+        $image_url = get_option('jusjumpin_popup_image_url', '');
+        $popup_title = get_option('jusjumpin_popup_title', '');
+        $popup_content_text = get_option('jusjumpin_popup_content_text', '');
+        $popup_trigger = get_option('jusjumpin_popup_trigger', 'auto');
+        $popup_delay = get_option('jusjumpin_popup_delay', 3000);
+        $popup_scroll_percentage = get_option('jusjumpin_popup_scroll_percentage', 50);
+        $popup_show_once = get_option('jusjumpin_popup_show_once', true);
+        $popup_expire_days = get_option('jusjumpin_popup_expire_days', 30);
+        $display_on_homepage = get_option('jusjumpin_popup_display_homepage', false);
+        $display_on_location_pages = get_option('jusjumpin_popup_display_location_pages', false);
+        $popup_width = get_option('jusjumpin_popup_width', '500px'); // New setting
+        $popup_max_height = get_option('jusjumpin_popup_max_height', '80vh'); // New setting
+
+        $pages_to_show = array();
+        if ($display_on_homepage) {
+            $pages_to_show[] = 'home';
+        }
+
+        if ($display_on_location_pages) {
+            // Get all location slugs
+            $location_slugs = array();
+            $locations_config = newjusjumpin_get_location_slugs(); // A new helper function to get slugs
+            foreach ($locations_config as $state => $venues) {
+                foreach ($venues as $venue_name => $venue_url) {
+                    $location_slugs[] = trim(parse_url($venue_url, PHP_URL_PATH), '/');
+                }
+            }
+            $pages_to_show = array_merge($pages_to_show, $location_slugs);
+        }
+
+        $popup_html_content = '';
+        if (!empty($image_url)) {
+            $popup_html_content .= '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($popup_title) . '" class="popup-image-responsive">';
+        }
+        if (!empty($popup_content_text)) {
+            $popup_html_content .= '<div class="popup-text-content">' . wp_kses_post(wpautop($popup_content_text)) . '</div>';
+        }
+
+        if (!empty($popup_html_content) || !empty($popup_title)) {
+            $popup_manager->register_popup('main_promo_image_popup', array(
+                'title' => $popup_title,
+                'content' => $popup_html_content,
+                'trigger' => $popup_trigger,
+                'delay' => intval($popup_delay),
+                'scroll_percentage' => intval($popup_scroll_percentage),
+                'show_once' => (bool)$popup_show_once,
+                'expire_days' => intval($popup_expire_days),
+                'pages' => $pages_to_show,
+                'classes' => 'popup-zoom popup-image-only',
+                'styles' => array(
+                    'width' => $popup_width,
+                    'max-height' => $popup_max_height,
+                )
+            ));
+        }
+    }
+}
+add_action('wp_loaded', 'jusjumpin_register_image_popup');
+
+// Admin page for Popup Settings
+function jusjumpin_popup_settings_page_callback() {
+    ?>
+    <div class="wrap">
+        <h1>Jus Jumpin Popup Settings</h1>
+        <form method="post" action="options.php">
+            <?php
+            settings_fields('jusjumpin_popup_settings_group');
+            do_settings_sections('jusjumpin-popup-settings');
+            submit_button();
+            ?>
+        </form>
+    </div>
+    <?php
+}
+
+// Register Popup Settings
+function jusjumpin_register_popup_settings() {
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_enabled',
+        array('type' => 'boolean', 'sanitize_callback' => 'rest_sanitize_boolean', 'default' => false)
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_image_url',
+        array('type' => 'string', 'sanitize_callback' => 'esc_url_raw', 'default' => '')
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_title',
+        array('type' => 'string', 'sanitize_callback' => 'sanitize_text_field', 'default' => '')
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_content_text',
+        array('type' => 'string', 'sanitize_callback' => 'wp_kses_post', 'default' => '')
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_trigger',
+        array('type' => 'string', 'sanitize_callback' => 'sanitize_text_field', 'default' => 'auto')
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_delay',
+        array('type' => 'integer', 'sanitize_callback' => 'absint', 'default' => 3000)
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_scroll_percentage',
+        array('type' => 'integer', 'sanitize_callback' => 'absint', 'default' => 50)
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_show_once',
+        array('type' => 'boolean', 'sanitize_callback' => 'rest_sanitize_boolean', 'default' => true)
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_expire_days',
+        array('type' => 'integer', 'sanitize_callback' => 'absint', 'default' => 30)
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_width',
+        array('type' => 'string', 'sanitize_callback' => 'sanitize_text_field', 'default' => '500px')
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_max_height',
+        array('type' => 'string', 'sanitize_callback' => 'sanitize_text_field', 'default' => '80vh')
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_display_homepage',
+        array('type' => 'boolean', 'sanitize_callback' => 'rest_sanitize_boolean', 'default' => false)
+    );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_display_location_pages',
+        array('type' => 'boolean', 'sanitize_callback' => 'rest_sanitize_boolean', 'default' => false)
+    );
+
+    add_settings_section(
+        'jusjumpin_popup_main_section',
+        'Popup Content & Display',
+        'jusjumpin_popup_section_callback',
+        'jusjumpin-popup-settings'
+    );
+
+    add_settings_field(
+        'jusjumpin_popup_enabled_field',
+        'Enable Popup',
+        'jusjumpin_popup_enabled_callback',
+        'jusjumpin-popup-settings',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_image_url_field',
+        'Popup Image',
+        'jusjumpin_popup_image_url_callback',
+        'jusjumpin-popup-settings',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_title_field',
+        'Popup Title',
+        'jusjumpin_popup_title_callback',
+        'jusjumpin-popup-settings',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_content_text_field',
+        'Popup Content Text',
+        'jusjumpin_popup_content_text_callback',
+        'jusjumpin-popup-settings',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_trigger_field',
+        'Popup Trigger',
+        'jusjumpin_popup_trigger_callback',
+        'jusjumpin-popup-settings',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_delay_field',
+        'Auto Trigger Delay (ms)',
+        'jusjumpin_popup_delay_callback',
+        'jusjumpin-popup-settings',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_scroll_percentage_field',
+        'Scroll Trigger Percentage',
+        'jusjumpin_popup_scroll_percentage_callback',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_show_once_field',
+        'Show Once Per User',
+        'jusjumpin_popup_show_once_callback',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_expire_days_field',
+        'Dismissal Expiry (Days)',
+        'jusjumpin_popup_expire_days_callback',
+        'jusjumpin_popup_main_section'
+    );
+    
+    // Add missing fields for Popup Width and Max Height
+    add_settings_field(
+        'jusjumpin_popup_width_field',
+        'Popup Width',
+        'jusjumpin_popup_width_callback',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_max_height_field',
+        'Popup Max Height',
+        'jusjumpin_popup_max_height_callback',
+        'jusjumpin_popup_main_section'
+    );
+
+    // Add missing fields for Display on Homepage and Location Pages
+    add_settings_field(
+        'jusjumpin_popup_display_homepage_field',
+        'Display on Homepage',
+        'jusjumpin_popup_display_homepage_callback',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_display_location_pages_field',
+        'Display on Location Pages',
+        'jusjumpin_popup_display_location_pages_callback',
+        'jusjumpin_popup_main_section'
+    );
+}
+add_action('admin_init', 'jusjumpin_register_popup_settings');
+
+// Section callback (optional, can be left empty)
+function jusjumpin_popup_section_callback() {
+    echo '<p>Configure the content and display rules for your main image popup.</p>';
+}
+
+// Field callbacks
+function jusjumpin_popup_enabled_callback() {
+    $value = get_option('jusjumpin_popup_enabled', false);
+    echo '<label><input type="checkbox" name="jusjumpin_popup_enabled" value="1" ' . checked(1, $value, false) . ' /> Enable the popup</label>';
+}
+
+function jusjumpin_popup_image_url_callback() {
+    $value = get_option('jusjumpin_popup_image_url', '');
+    echo '<input type="text" id="jusjumpin_popup_image_url_input" name="jusjumpin_popup_image_url" value="' . esc_attr($value) . '" class="regular-text" /><!-- Remove <br> tag here -->';
+    echo '<input type="button" id="jusjumpin_popup_image_upload_button" class="button-secondary jusjumpin-upload-button" value="Upload Image" /> ';
+    if ($value) {
+        echo '<input type="button" id="jusjumpin_popup_image_remove_button" class="button-secondary jusjumpin-remove-button" value="Remove Image" />';
+    }
+    echo '<p class="description">Enter an image URL or upload one for your popup.</p>';
+    if ($value) {
+        echo '<img src="' . esc_url($value) . '" style="max-width:200px; height:auto; margin-top:10px; display:block;" class="jusjumpin-popup-image-preview" />';
+    } else {
+        echo '<img src="" style="max-width:200px; height:auto; margin-top:10px; display:none;" class="jusjumpin-popup-image-preview" />'; // Hidden preview for initial state
+    }
+}
+
+function jusjumpin_popup_title_callback() {
+    $value = get_option('jusjumpin_popup_title', '');
+    echo '<input type="text" name="jusjumpin_popup_title" value="' . esc_attr($value) . '" class="regular-text" />';
+    echo '<p class="description">A main title for your popup.</p>';
+}
+
+function jusjumpin_popup_content_text_callback() {
+    $value = get_option('jusjumpin_popup_content_text', '');
+    wp_editor(htmlspecialchars_decode($value), 'jusjumpin_popup_content_text_editor', array(
+        'textarea_name' => 'jusjumpin_popup_content_text',
+        'textarea_rows' => 5,
+        'tinymce' => true,
+        'quicktags' => true,
+        'media_buttons' => false,
+    ));
+    echo '<p class="description">Additional text content for your popup. HTML is allowed.</p>';
+}
+
+function jusjumpin_popup_trigger_callback() {
+    $value = get_option('jusjumpin_popup_trigger', 'auto');
+    echo '<select name="jusjumpin_popup_trigger">';
+    echo '<option value="auto" ' . selected($value, 'auto', false) . '>Automatic (after delay)</option>';
+    echo '<option value="scroll" ' . selected($value, 'scroll', false) . '>On Scroll Percentage</option>';
+    echo '<option value="exit" ' . selected($value, 'exit', false) . '>On Exit Intent</option>';
+    echo '<option value="manual" ' . selected($value, 'manual', false) . '>Manual Trigger (via button)</option>';
+    echo '</select>';
+    echo '<p class="description">Choose how the popup is triggered.</p>';
+}
+
+function jusjumpin_popup_delay_callback() {
+    $value = get_option('jusjumpin_popup_delay', 3000);
+    echo '<input type="number" name="jusjumpin_popup_delay" value="' . esc_attr($value) . '" class="small-text" /> ms';
+    echo '<p class="description">Delay in milliseconds before the popup appears (for "Automatic" trigger).</p>';
+}
+
+function jusjumpin_popup_scroll_percentage_callback() {
+    $value = get_option('jusjumpin_popup_scroll_percentage', 50);
+    echo '<input type="number" name="jusjumpin_popup_scroll_percentage" value="' . esc_attr($value) . '" min="1" max="100" class="small-text" /> %';
+    echo '<p class="description">Percentage of page scrolled before the popup appears (for "On Scroll" trigger).</p>';
+}
+
+function jusjumpin_popup_show_once_callback() {
+    $value = get_option('jusjumpin_popup_show_once', true);
+    echo '<label><input type="checkbox" name="jusjumpin_popup_show_once" value="1" ' . checked(1, $value, false) . ' /> Show this popup only once per user session (uses cookies)</label>';
+    echo '<p class="description">If checked, the popup will not reappear to the same user after dismissal until the cookie expires.</p>';
+}
+
+function jusjumpin_popup_expire_days_callback() {
+    $value = get_option('jusjumpin_popup_expire_days', 30);
+    echo '<input type="number" name="jusjumpin_popup_expire_days" value="' . esc_attr($value) . '" min="0" class="small-text" /> days';
+    echo '<p class="description">Number of days before the dismissal cookie expires (0 for session-only).</p>';
+}
+
+function jusjumpin_popup_width_callback() {
+    $value = get_option('jusjumpin_popup_width', '500px');
+    echo '<input type="text" name="jusjumpin_popup_width" value="' . esc_attr($value) . '" class="regular-text" />';
+    echo '<p class="description">Set the width of the popup (e.g., 500px, 80%, 30em). Default: 500px.</p>';
+}
+
+function jusjumpin_popup_max_height_callback() {
+    $value = get_option('jusjumpin_popup_max_height', '80vh');
+    echo '<input type="text" name="jusjumpin_popup_max_height" value="' . esc_attr($value) . '" class="regular-text" />';
+    echo '<p class="description">Set the maximum height of the popup (e.g., 80vh, 400px). Default: 80vh.</p>';
+}
+
+function jusjumpin_popup_display_homepage_callback() {
+    $value = get_option('jusjumpin_popup_display_homepage', false);
+    echo '<label><input type="checkbox" name="jusjumpin_popup_display_homepage" value="1" ' . checked(1, $value, false) . ' /> Display on Homepage</label>';
+}
+
+function jusjumpin_popup_display_location_pages_callback() {
+    $value = get_option('jusjumpin_popup_display_location_pages', false);
+    echo '<label><input type="checkbox" name="jusjumpin_popup_display_location_pages" value="1" ' . checked(1, $value, false) . ' /> Display on all Location Pages</label>';
+}
+
+// Enqueue media uploader scripts
+function jusjumpin_enqueue_media_uploader() {
+    // Temporarily add a debug line to find the correct screen ID
+    error_log('Current Admin Screen ID: ' . get_current_screen()->id);
+
+    if ('toplevel_page_jusjumpin-popup-settings' === get_current_screen()->id || 'appearance_page_jusjumpin-popup-settings' === get_current_screen()->id ) {
+        wp_enqueue_media();
+        wp_enqueue_script('jusjumpin-media-uploader', get_template_directory_uri() . '/assets/js/media-uploader.js', array('jquery'), '1.0.0', true);
+    }
+}
+add_action('admin_enqueue_scripts', 'jusjumpin_enqueue_media_uploader');
+
+// media-uploader.js content
+// This will be created in the next step, but defined here for clarity.
+
+// Helper function to get all location slugs
+function newjusjumpin_get_location_slugs() {
+    $locations = array(
+        'West Bengal' => array(
+            'Kolkata - ABC Square Building' => '/kolkata-abc-square-building-best-adult-trampoline-park/',
+            'Kolkata - Avani Mall' => '/kolkata-avani-mall/',
+            'Kolkata - Axis Mall' => '/kolkata-axis-mall/',
+            'Kolkata - City Centre 2' => '/kolkata-city-centre-2/',
+            'Siliguri - City Centre' => '/siliguri-city-centre/',
+            'Durgapur - Junction Mall' => '/durgapur-junction-mall/'
+        ),
+        'Karnataka' => array(
+            'Bengaluru - M5 Ecity Mall' => '/bengaluru-m5-ecity-mall/',
+            'Bengaluru - Meenakshi Mall' => '/bengaluru-meenakshi-mall/'
+        ),
+        'Jharkhand' => array(
+            'Dhanbad - Prabhatam Mall' => '/dhanbad-prabhatam-mall/',
+            'Jamshedpur - P&M Mall' => '/jamshedpur-pm-mall/',
+            'Ranchi - Nucleus Mall' => '/ranchi-nucleus-mall/'
+        ),
+        'Uttar Pradesh' => array(
+            'Noida - GIP Mall' => '/noida-gip-mall/',
+            'Noida - Spectrum Mall' => '/noida-spectrum-mall/',
+            
+        ),
+        'Maharashtra' => array(
+            'Nagpur - VR Mall' => '/nagpur-vr-mall/',
+            'Pune - Seasons Mall' => '/pune-seasons-mall/',
+            'Nashik - City Centre' => '/nashik-city-centre/'
+        ),
+        'Chhattisgarh' => array(
+            'Raipur - Zora Mall' => '/raipur-zora-mall/'
+        ),
+        'Rajasthan' => array(
+            'Udaipur - Urban Square Mall' => '/udaipur-urban-square-mall/'
+        ),
+        'Gujarat' => array(
+            'Surat - VR Mall' => '/surat-vr-mall/'
+        )
+    );
+    return $locations;
+}

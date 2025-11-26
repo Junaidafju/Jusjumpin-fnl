@@ -1,0 +1,383 @@
+/* themes/jusjumpin/assets/css/popup.css */
+
+/* Popup Base Styles */
+.custom-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    animation: overlayFadeIn 0.3s ease-out;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 40px 30px 30px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 1px solid #e1e1e1;
+}
+
+/* Apply dynamic width and max-height from data attributes */
+.custom-popup[data-popup-width] .popup-content {
+    width: var(--popup-width, 90%); /* Use CSS variable, fallback to 90% */
+    max-width: var(--popup-width, 500px); /* Use CSS variable, fallback to 500px */
+}
+
+.custom-popup[data-popup-max-height] .popup-content {
+    max-height: var(--popup-max-height, 80vh); /* Use CSS variable, fallback to 80vh */
+}
+
+/* Set CSS variables from data attributes using JavaScript in popup.js */
+/* The following will be handled by JavaScript */
+/*
+.custom-popup {
+  --popup-width: attr(data-popup-width);
+  --popup-max-height: attr(data-popup-max-height);
+}
+*/
+
+/* Close Button */
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    line-height: 1;
+    padding: 0;
+    z-index: 10;
+}
+
+.popup-close:hover {
+    background: #f8f9fa;
+    color: #333;
+    transform: rotate(90deg);
+}
+
+.popup-close:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+/* Popup Title */
+.popup-title {
+    margin: 0 0 20px 0;
+    color: #000000;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    padding-right: 30px; /* Space for close button */
+}
+
+/* Popup Body */
+.popup-body {
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.popup-body p {
+    margin-bottom: 15px;
+}
+
+.popup-body p:last-child {
+    margin-bottom: 0;
+}
+
+.popup-body a {
+    color: #007cba;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.popup-body a:hover {
+    color: #005a87;
+    text-decoration: underline;
+}
+
+/* Buttons in Popup */
+.popup-body .button {
+    display: inline-block;
+    background: #007cba;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.popup-body .button:hover {
+    background: #005a87;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: white;
+}
+
+/* Body class when popup is open */
+body.popup-open {
+    overflow: hidden;
+}
+
+/* Animations */
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation Classes */
+.popup-fade-in .popup-content {
+    animation: popupFadeIn 0.4s ease-out;
+}
+
+.popup-slide-in .popup-content {
+    animation: slideIn 0.4s ease-out;
+}
+
+.popup-bounce .popup-content {
+    animation: bounceIn 0.6s ease-out;
+}
+
+.popup-zoom .popup-content {
+    animation: zoomIn 0.4s ease-out;
+}
+
+/* Jus Jumpin Brand Specific Styles */
+.jusjumpin-popup .popup-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+}
+
+.jusjumpin-popup .popup-title {
+    color: #ff7b00; /* Jus Jumpin brand color - adjust as needed */
+
+    background-clip: text;
+}
+
+.jusjumpin-popup .popup-body .button {
+    background: linear-gradient(135deg, #e91e63, #ff4081);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.jusjumpin-popup .popup-body .button:hover {
+    background: linear-gradient(135deg, #c2185b, #e91e63);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 35px 20px 25px;
+        width: 95%;
+        max-width: 400px;
+    }
+    
+    .popup-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+        padding-right: 25px;
+    }
+    
+    .popup-close {
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+        top: 12px;
+        right: 12px;
+    }
+    
+    .popup-body {
+        font-size: 15px;
+    }
+    
+    .popup-body .button {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 30px 15px 20px;
+        border-radius: 8px;
+    }
+    
+    .popup-title {
+        font-size: 22px;
+    }
+    
+    .popup-body {
+        font-size: 14px;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .popup-content {
+        border: 2px solid #000;
+    }
+    
+    .popup-close {
+        border: 1px solid #000;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .popup-content,
+    .popup-overlay,
+    .popup-close {
+        animation: none;
+        transition: none;
+    }
+    
+    .popup-fade-in .popup-content,
+    .popup-slide-in .popup-content,
+    .popup-bounce .popup-content,
+    .popup-zoom .popup-content {
+        animation: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .custom-popup {
+        display: none !important;
+    }
+}
+
+/* Custom Scrollbar for Popup Content */
+.popup-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Responsive image styling for popups */
+.popup-body .popup-image-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto 15px auto; /* Center image and add some bottom margin */
+    border-radius: 8px; /* Optional: adds rounded corners to the image */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+/* Adjust popup content padding for image-only popups if desired */
+.popup-image-only .popup-content {
+    padding: 20px; /* Reduce padding for popups primarily containing an image */
+}
+
+.popup-image-only .popup-title {
+    margin-bottom: 10px; /* Adjust title margin for image popups */
+}

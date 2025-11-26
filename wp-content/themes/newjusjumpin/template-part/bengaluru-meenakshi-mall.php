@@ -86,7 +86,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <h2 class="section-title gradient-text">Ultimate Fun Awaits.</h2>
                 <p class="section-text">Time to jump into the most exciting trampoline park for kids in Bengaluru at<strong>us Jumpin - Royal Meenakshi Mall.</strong> Thoughtfully designed to provide a safe space for kids to jump and slide without fear and explore new ideas, Jus Jumpin serves as an ideal destination for a perfect family hangout spot. Stacked with 15+ gaming activities, including special attractions like wall to wall trampoline park, hanging bridge, obstacle course and dedicated soft play zone for tiny jumpers, Jus Jumpin lets the kids' imagination run wild.                </p>
                 <p class="section-text">Jus Jumpin also acts as the finest venue for birthday party of your child. You can get customized cartoon or anime-themed decorations, an extensive menu curated to your needs, and access to our indoor sports layout, where your kids can play all day long.</p>
-                <p class="section-text">For the caring parents, we have a cozy lounge area where they can relax comfortably, while their children can explore the new limits of their imagination and play with no restrictions. With more than 15+ games and joyrides, Jus Jumpin creates laughter, energy among kids, and wholesome memories for the parents.</p>
+                
                 <p class="section-text">Our Kids play zone Royal Meenakshi Mall provides a safe, yet action-packed fun experience to all the little jumpers with exciting activities like an exciting trampoline park, wall climb, colourful slides, and obstacle courses. Thoughtfully designed to stimulate physical and mental growth through playing, Jus Jumpin is what modern kids' play zones should look like. With international standards of safety and hygiene, Jus Jumpin prioritizes the child's safety before anything else.</p>
             </div>
             <div class="content-right">
@@ -103,8 +103,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at Royal Meenakshi Mall features <strong>an infinity trampoline, foam pits, thrilling arcade, wall climbing, basketball zone, and a dedicated kids' play zone.</strong>
-</p>
+        <p class="section-intro">Jus Jumpin at Royal Meenakshi Mall features an infinity trampoline, foam pits, interactive ball pool, wall climbing, horn slide, and a dedicated kids' play zone.</p>
         
 <div class="experience-grid">
             <div class="experience-card glass-card">
@@ -141,7 +140,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section activities-section">
     <div class="container">
         <h2 class="section-heading2"><span class="emoji-icon"><i class="fas fa-gamepad"></i></span> Our Activities</h2>
-        <p class="section-intro">Beyond India's premier trampoline park, experience mind-bending VR games, a dedicated soft play zone for kids, an international-standard arcade, and 15+ interactive gaming activities curated just for you.</p>
+        <p class="section-intro">Beyond India's premier trampoline park, experience an interactive ball pool, a dedicated soft play zone for kids, a wholesome cow Game, and 15+ interactive gaming activities curated just for you.</p>
         <!-- Toggle Switch -->
         <div class="activities-toggle-wrapper">
             <label for="activity-filter" class="switch" aria-label="Toggle Between Adults and Kids Activities">
@@ -522,7 +521,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     <p class="special-bookings-text">
                         <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, <strong>kitty parties</strong>, <strong>group events</strong>, <strong>bulk bookings</strong>, <strong>corporate packages</strong>, and <strong>personalized gift vouchers.</strong>
                     </p>
-                    <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="contact-cta-button">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="contact-cta-button">
                         <i class="fas fa-phone"></i> Contact Us Now
                     </a>
                 </div>
@@ -694,7 +693,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <p class="conclusion-text"><strong>Jus Jumpin | Bengaluru (Meenakshi Mall)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
-            <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="cta-button">
+            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">
                 <span class="emoji-icon"><i class="fas fa-ticket-alt"></i></span> Book Your Jump Now!
             </a>
         </div>

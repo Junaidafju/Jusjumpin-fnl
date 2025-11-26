@@ -513,7 +513,7 @@ Jus Jumpin at VR Mall offers a unique kids' playzone experience, featuring thril
                     <p class="special-bookings-text">
                         <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, <strong>kitty parties</strong>, <strong>group events</strong>, <strong>bulk bookings</strong>, <strong>corporate packages</strong>, and <strong>personalized gift vouchers.</strong>
                     </p>
-                    <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="contact-cta-button">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="contact-cta-button">
                         <i class="fas fa-phone"></i> Contact Us Now
                     </a>
                 </div>

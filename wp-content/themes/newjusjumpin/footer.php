@@ -45,7 +45,7 @@
             <div class="footer-column footer-col-3">
                 <h3 class="footer-heading">Our Locations</h3>
                 <ul class="footer-links">
-                    <li><a href="<?php echo esc_url(home_url('/kolkata-abc-square-building/')); ?>">Kolkata - ABC Square Building</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/kolkata-abc-square-building-best-adult-trampoline-park/')); ?>">Kolkata - ABC Square Building</a></li>
                     <li><a href="<?php echo esc_url(home_url('/kolkata-avani-mall/')); ?>">Kolkata - Avani Mall</a></li>
                     <li><a href="<?php echo esc_url(home_url('/kolkata-axis-mall/')); ?>">Kolkata - Axis Mall</a></li>
                     <li><a href="<?php echo esc_url(home_url('/kolkata-city-centre-2/')); ?>">Kolkata - City Centre 2</a></li>

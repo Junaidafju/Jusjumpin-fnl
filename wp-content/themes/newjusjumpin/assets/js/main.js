@@ -843,17 +843,6 @@
         return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
     };
 
-    // Handle window resize events
-    let resizeTimer;
-    $(window).on('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-            // Recalculate animations on resize
-            $('.animate-on-scroll.animate').removeClass('animate');
-            // Removed the call to checkScrollAnimations as it's not in scope here
-        }, 250);
-    });
-
     // Add CSS for body states
     const additionalCSS = `
         <style>

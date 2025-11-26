@@ -64,8 +64,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at Zora Mall Raipur features <strong>an infinity trampoline, foam pits, thrilling arcade, wall climbing, basketball zone, and a dedicated kids' play zone.</strong>
-</p>
+        <p class="section-intro">Jus Jumpin at Zora Mall features an infinity trampoline, mind-bending VR games, pin wall, bumper cars, wave slide, and a skill-driven arcade zone.</p>
         
         <div class="experience-grid">
             <div class="experience-card glass-card">
@@ -102,7 +101,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
 <section class="location-section activities-section">
     <div class="container">
         <h2 class="section-heading2"><span class="emoji-icon"><i class="fas fa-gamepad"></i></span> Our Activities</h2>
-        <p class="section-intro">Beyond India's premier trampoline park, experience mind-bending VR games, a dedicated soft play zone for kids, an international-standard arcade, and 15+ interactive gaming activities curated just for you.</p>
+        <p class="section-intro">Beyond India's premier trampoline park, experience an adrenaline-filled sky stepper, obstacle zone, soft play area, and 15+ interactive gaming activities curated just for you.</p>
         <!-- Toggle Switch -->
         <div class="activities-toggle-wrapper">
             <label for="activity-filter" class="switch" aria-label="Toggle Between Adults and Kids Activities">
@@ -443,11 +442,11 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td>60 Minutes</td>
                             <td>₹600</td>
                             <td>₹650</td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td>90 Minutes</td>
                             <td>₹750</td>
@@ -463,7 +462,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                     <p class="special-bookings-text">
                         <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, <strong>kitty parties</strong>, <strong>group events</strong>, <strong>bulk bookings</strong>, <strong>corporate packages</strong>, and <strong>personalized gift vouchers.</strong>
                     </p>
-                    <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="contact-cta-button">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="contact-cta-button">
                         <i class="fas fa-phone"></i> Contact Us Now
                     </a>
                 </div>
@@ -635,7 +634,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
         <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (ABC Square)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
-            <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="cta-button">
+            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">
                 <span class="emoji-icon"><i class="fas fa-ticket-alt"></i></span> Book Your Jump Now!
             </a>
         </div>

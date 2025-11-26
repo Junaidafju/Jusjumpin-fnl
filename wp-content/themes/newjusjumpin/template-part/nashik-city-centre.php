@@ -9,9 +9,9 @@ $title = "Nashik - City Centre | Jus Jumpin";
 $state = "Maharashtra";
 $city = "Nashik";
 $slug = "nashik-city-centre";
-$address = "2nd Floor, Jus Jumpin, City Center Mall, Untwadi Rd, Lavate Nagar, Parijat Nagar, Nashik, Maharashtra 422002";
+$address = "3rd Floor, Jus Jumpin, City Center Mall, Untwadi Rd, Lavate Nagar, Parijat Nagar, Nashik, Maharashtra 422002";
 $timings = "11:00 AM - 9:30 PM";
-$pricing = "Weekday: ₹650 (90min), ₹850 (120min) | Weekend: ₹750 (90min), ₹950 (120min)";
+$pricing = "Weekday: ₹400 (30min), ₹500 (60min) | Weekend: ₹400 (30min), ₹500 (60min)";
 $phone = "+919830115533"; // Using a placeholder as the provided content says 'Available Soon.'
 $highlights = [
     "Infinity trampoline",
@@ -511,7 +511,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     <p class="special-bookings-text">
                         <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, <strong>kitty parties</strong>, <strong>group events</strong>, <strong>bulk bookings</strong>, <strong>corporate packages</strong>, and <strong>personalized gift vouchers.</strong>
                     </p>
-                    <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="contact-cta-button">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="contact-cta-button">
                         <i class="fas fa-phone"></i> Contact Us Now
                     </a>
                 </div>
@@ -528,7 +528,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="address-card glass-card">
             <div class="address-content">
                 <p class="address-main"><strong>Address:</strong></p>
-                <p>2nd Floor, Jus Jumpin, City Center Mall,<br>
+                <p>3rd Floor, Jus Jumpin, City Center Mall,<br>
                 Untwadi Rd, Lavate Nagar, Parijat Nagar, Nashik, Maharashtra 422002.<br><strong>Call Us:</strong> Available Soon.</p>
                 <p class="landmarks"><strong>Landmarks:</strong> Near Untwadi Rd, Lavate Nagar, Parijat Nagar, Nashik, Maharashtra 422002</p>
             </div>
@@ -536,7 +536,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         
         <div class="map-container">
             <iframe
-                src="https://maps.google.com/maps?q=nashik&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Jus%20Jumpin,%20City%20Center%20Mall,%20+()&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 width="100%"
                 height="450"
                 style="border:0;border-radius:16px;"
@@ -683,7 +683,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <p class="conclusion-text"><strong>Jus Jumpin | City Center Mall (Nashik)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
-            <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="cta-button">
+            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">
                 <span class="emoji-icon"><i class="fas fa-ticket-alt"></i></span> Book Your Jump Now!
             </a>
         </div>

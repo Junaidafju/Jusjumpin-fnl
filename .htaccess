@@ -12,5 +12,29 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
+# ============================================
+# JUS JUMPIN – OLD URL TO NEW URL REDIRECTS
+# ============================================
+
+Redirect 301 /play-area-for-kids-gip-mall-noida/ https://www.jusjumpin.com/noida-gip-mall/
+
+Redirect 301 /abc/ https://www.jusjumpin.com/kolkata-abc-square-building-best-adult-trampoline-park/
+
+Redirect 301 /kolkata-abc-square-building/ https://www.jusjumpin.com/kolkata-abc-square-building-best-adult-trampoline-park/
+
+Redirect 301 /abc-square-mall/ https://www.jusjumpin.com/kolkata-abc-square-building-best-adult-trampoline-park/
+
+Redirect 301 /trampoline-park/ https://www.jusjumpin.com/
+
+Redirect 301 /indoor-play-area-spectrum-mall-noida/ https://www.jusjumpin.com/noida-spectrum-mall/
+
+Redirect 301 /the-best-kids-play-area-in-prabhatam-mall-dhanbad/ https://www.jusjumpin.com/dhanbad-prabhatam-mall/
+
+Redirect 301 /adult-trampoline-park-prabhatam-mall-dhanbad/ https://www.jusjumpin.com/dhanbad-prabhatam-mall/
+
+Redirect 301 /indoor-play-area-for-kids-adults-prabhatam-mall-dhanbad/ https://www.jusjumpin.com/dhanbad-prabhatam-mall/
+
+Redirect 301 /udiapur-urban-square-mall/ https://www.jusjumpin.com/udaipur-urban-square-mall/
+
 
 # END WordPress
