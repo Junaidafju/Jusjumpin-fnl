@@ -65,25 +65,7 @@ function newjusjumpin_custom_meta_titles($title) {
         'birthday-celebration' => 'Birthday Celebration at Jus Jumpin | Best Kids Birthday Party Venue',
         'contact' => 'Contact Jus Jumpin – India\'s Premier Kids Play Zone',
         'blog' => 'Blog - JUSJUMPIN | Latest News & Updates',
-        // Location pages
-        'kolkata-abc-square-building-best-adult-trampoline-park' => 'Best Adult Trampoline Park at ABC Square Building Kolkata | Jus Jumpin',
-        'kolkata-avani-mall' => 'Best Adult Trampoline Park at Avani Mall Kolkata | Jus Jumpin',
-        'kolkata-axis-mall' => 'Best Children\'s Birthday Party in Axis Mall Kolkata | Jus Jumpin',
-        'kolkata-city-centre-2' => 'Kid\'s Play Zone in City Centre 2 Kolkata - Jus Jumpin Fun',
-        'siliguri-city-centre' => 'Kids Playzone at Siliguri City Centre Mall - Jus Jumpin',
-        'durgapur-junction-mall' => 'Trampoline Park At Durgapur Junction Mall – Jus Jumpin',
-        'bengaluru-m5-ecity-mall' => 'Kids Playzone Bengaluru M5 Ecity Mall - Jus Jumpin',
-        'bengaluru-meenakshi-mall' => 'Kids Playzone Bengaluru Meenakshi Mall - Jus Jumpin',
-        'dhanbad-prabhatam-mall' => 'Adult Trampoline Park in Prabhatam Mall Dhanbad - Jus Jumpin',
-        'jamshedpur-pm-mall' => 'Kids Play Area in Jamshedpur P&M Mall - Jus Jumpin',
-        'ranchi-nucleus-mall' => 'Best Kids Playzone at Nucleus Mall Ranchi - Jus Jumpin',
-        'noida-gip-mall' => 'Trampoline Park in GIP Mall Noida - Jus Jumpin',
-        'noida-spectrum-mall' => 'Best Trampoline Park and Kids Playzone in Noida Spectrum Mall | Jus Jumpin',
-        'nagpur-vr-mall' => 'Children\'s Birthday Parties in Nagpur\'s VR Mall - Jus Jumpin',
-        'pune-season-mall' => 'Adult Trampoline Park at Pune\'s Season Mall - Jus Jumpin',
-        'raipur-zora-mall' => 'Vibrant Trampoline Park and Gaming Zone In Raipur Zora Mall | Jus Jumpin',
-        'udiapur-urban-square-mall' => 'Kids Birthday Party Venue in Udaipur\'s Urban Square Mall - Jus Jumpin',
-        'surat-vr-mall' => 'Best Kids Play Area in Surat VR mall - Jus Jumpin'
+        
     );
     
     // If we have a custom title for this page, use it
@@ -117,10 +99,86 @@ function newjusjumpin_custom_meta_descriptions() {
     // Get correct slug of current page
     // Use different methods to get the slug for better compatibility
     $page_slug = '';
+    
+    // Method 1: Get slug from post object
     if (is_page() || is_single()) {
-        $page_slug = get_post_field('post_name', get_post());
-    } else {
-        $page_slug = basename(get_permalink());
+        $post_obj = get_post();
+        if ($post_obj && isset($post_obj->post_name)) {
+            $page_slug = $post_obj->post_name;
+        }
+    }
+    
+    // Method 2: Get slug from URL if method 1 didn't work
+    if (empty($page_slug)) {
+        $permalink = get_permalink();
+        if ($permalink) {
+            $page_slug = basename(rtrim($permalink, '/'));
+        }
+    }
+    
+    // Method 3: For location pages handled by custom router, extract from request URI
+    if (empty($page_slug)) {
+        $request_uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+        $parts = explode('/', $request_uri);
+        $page_slug = end($parts);
+        
+        // Clean up the slug - remove any query parameters
+        if (strpos($page_slug, '?') !== false) {
+            $page_slug = substr($page_slug, 0, strpos($page_slug, '?'));
+        }
+        
+        // Additional check for location pages
+        if (!empty($page_slug)) {
+            // Check if this is a location page by looking for location-specific patterns
+            $location_patterns = array(
+                'kolkata-', 'bengaluru-', 'dhanbad-', 'durgapur-', 'jamshedpur-',
+                'nagpur-', 'noida-', 'pune-', 'raipur-', 'ranchi-', 'siliguri-',
+                'surat-', 'udaipur-', 'nashik-'
+            );
+            
+            $is_location_page = false;
+            foreach ($location_patterns as $pattern) {
+                if (strpos($page_slug, $pattern) !== false) {
+                    $is_location_page = true;
+                    break;
+                }
+            }
+            
+            // If it's not detected as a location page but should be, try alternative methods
+            if (!$is_location_page) {
+                // Reset page_slug to try other methods
+                $page_slug = '';
+            }
+        }
+    }
+    
+    // Method 4: For edge cases, try getting slug from queried object
+    if (empty($page_slug) && is_page()) {
+        $queried_object = get_queried_object();
+        if ($queried_object && isset($queried_object->post_name)) {
+            $page_slug = $queried_object->post_name;
+        }
+    }
+    
+    // Method 5: Try to get slug from WP query vars
+    if (empty($page_slug)) {
+        global $wp_query;
+        if (isset($wp_query->query_vars['pagename'])) {
+            $page_slug = $wp_query->query_vars['pagename'];
+        } elseif (isset($wp_query->query_vars['name'])) {
+            $page_slug = $wp_query->query_vars['name'];
+        }
+    }
+    
+    // Final fallback: try to extract from the full request URI
+    if (empty($page_slug)) {
+        $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+        if (!empty($request_uri)) {
+            // Remove leading/trailing slashes and query parameters
+            $clean_uri = trim(parse_url($request_uri, PHP_URL_PATH), '/');
+            $parts = explode('/', $clean_uri);
+            $page_slug = end($parts);
+        }
     }
     
     // Test output to see if function is being called
@@ -140,6 +198,7 @@ function newjusjumpin_custom_meta_descriptions() {
 
     // Custom meta descriptions
     $custom_descriptions = array(
+        'home' => 'Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball &amp; birthday parties for kids, teens &amp; adults. Safe, high-energy adventures await!',
         'about' => 'Jus Jumpin is India\'s top indoor trampoline and play park brand offering safe, fun-filled zones for kids, families, and birthdays across multiple cities.',
         'our-location' => 'Explore all Jus Jumpin locations across India! Find your nearest indoor trampoline park & kids play zone for birthdays, playdates & family fun.',
         'blog' => 'Stay updated with the latest news and updates from Jus Jumpin - India\'s premier indoor trampoline park.',
@@ -159,10 +218,11 @@ function newjusjumpin_custom_meta_descriptions() {
         'noida-gip-mall' => 'Explore the trampoline park in GIP Mall Noida – indoor play area setup & kids\' party venues for birthdays, family fun & safe play.',
         'noida-spectrum-mall' => 'Find the ultimate destination for fun at Jus Jumpin Noida Spectrum Mall. Jump into our vibrant trampoline park for lots of high-energy activities for Adults & Kids.',
         'nagpur-vr-mall' => 'Plan your children\'s birthday parties at VR Mall, Nagpur. Our indoor play area setup and adventure park at VR Mall Nagpur promise a memorable celebration.',
-        'pune-season-mall' => 'The Adult Trampoline Park at Pune\'s Season Mall – with kids\' indoor play area at Season\'s Mall, best birthday party spots & corporate event venues at Season\'s Mall Pune.',
+        'pune-seasons-mall' => 'The Adult Trampoline Park at Pune\'s Season Mall – with kids\' indoor play area at Season\'s Mall, best birthday party spots & corporate event venues at Season\'s Mall Pune.',
         'raipur-zora-mall' => 'Hop into the best trampoline park and gaming zone for adults and kids in Raipur Zora Mall. Experience our exciting bowling alley and Kids\' adventure park.',
-        'udiapur-urban-square-mall' => 'Celebrate your kid\'s birthday at Urban Square Mall, Udaipur. Urban Square Mall Udaipaur is a great place for kid\'s adventure park & kid\'s indoor play area.',
+        'udaipur-urban-square-mall' => 'Celebrate your kid\'s birthday at Urban Square Mall, Udaipur. Urban Square Mall Udaipur is a great place for kid\'s adventure park & kid\'s indoor play area.',
         'surat-vr-mall' => 'Find the best birthday party venue in Surat VR Mall – kids\' play area in Surat VR Mall, adventure park & indoor play area in Surat VR mall fun for children.',
+        'nashik-city-centre' => 'Celebrate your kid\'s birthday at Nashik City Centre. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Nashik.',
 
         'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
         'birthday-celebration' => 'Celebrate your kid\'s birthday at Jus Jumpin – India\'s favorite indoor play zone. Trampolines, foam pits & party fun at locations nationwide!',
@@ -174,9 +234,21 @@ function newjusjumpin_custom_meta_descriptions() {
         error_log("Found custom description for slug: " . $page_slug);
         echo '<meta name="description" content="' . esc_attr($custom_descriptions[$page_slug]) . '" />' . "\n";
     } else {
-        // For any other pages, use a default description
-        error_log("Using default description for slug: " . $page_slug);
-        echo '<meta name="description" content="Experience the ultimate indoor trampoline and play park experience at Jus Jumpin - India\'s premier destination for family fun." />' . "\n";
+        // Try alternative slug detection methods
+        // For location pages, check if it's a custom page handled by the router
+        global $wp;
+        $request_uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+        $parts = explode('/', $request_uri);
+        $alternative_slug = end($parts);
+        
+        if (!empty($alternative_slug) && isset($custom_descriptions[$alternative_slug])) {
+            error_log("Found custom description for alternative slug: " . $alternative_slug);
+            echo '<meta name="description" content="' . esc_attr($custom_descriptions[$alternative_slug]) . '" />' . "\n";
+        } else {
+            // For any other pages, use a default description
+            error_log("Using default description for slug: " . $page_slug . " Alternative slug: " . $alternative_slug);
+            echo '<meta name="description" content="Experience the ultimate indoor trampoline and play park experience at Jus Jumpin - India\'s premier destination for family fun." />' . "\n";
+        }
     }
     
     // Signal that we've output our meta descriptions
@@ -185,7 +257,7 @@ function newjusjumpin_custom_meta_descriptions() {
 /**
  * Hook for custom meta descriptions
  */
-add_action('wp_head', 'newjusjumpin_custom_meta_descriptions', 5);
+add_action('wp_head', 'newjusjumpin_custom_meta_descriptions', 2);
 
 /**
  * Add Google Site Verification and other meta tags
@@ -358,28 +430,25 @@ add_action('template_redirect', function() {
             } else {
                 // Fallback to location-based titles
                 $location_titles = array(
-                    'kolkata-abc-square-building' => 'Kolkata - ABC Square Building | Jus Jumpin',
-                    'bengaluru-m5-ecity-mall' => 'Bengaluru - M5 ECity Mall | Jus Jumpin',
-                    'kolkata-avani-mall' => 'Kolkata - Avani Mall | Jus Jumpin',
-                    'kolkata-axis-mall' => 'Kolkata - Axis Mall | Jus Jumpin',
-                    'kolkata-city-centre-2' => 'Kolkata - City Centre 2 | Jus Jumpin',
-                    'bengaluru-meenakshi-mall' => 'Bengaluru - Meenakshi Mall | Jus Jumpin',
-                    'dhanbad-prabhatam-mall' => 'Dhanbad - Prabhatam Mall | Jus Jumpin',
-                    'durgapur-junction-mall' => 'Durgapur - Junction Mall | Jus Jumpin',
-                    'nashik-city-centre' => 'Nashik - City Centre | Jus Jumpin',
-                    'jamshedpur-pm-mall' => 'Jamshedpur - PM Mall | Jus Jumpin',
-                    'kolkata-avani-mall' => 'Kolkata - Avani Mall | Jus Jumpin',
-                    'kolkata-axis-mall' => 'Kolkata - Axis Mall | Jus Jumpin',
-                    'kolkata-city-centre-2' => 'Kolkata - City Centre 2 | Jus Jumpin',
-                    'nagpur-vr-mall' => 'Nagpur - VR Mall | Jus Jumpin',
-                    'noida-gip-mall' => 'Noida - GIP Mall | Jus Jumpin',
-                    'noida-spectrum-mall' => 'Noida - Spectrum Mall | Jus Jumpin',
-                    'pune-seasons-mall' => 'Pune - Seasons Mall | Jus Jumpin',
-                    'raipur-zora-mall' => 'Raipur - Zora Mall | Jus Jumpin',
-                    'ranchi-nucleus-mall' => 'Ranchi - Nucleus Mall | Jus Jumpin',
-                    'siliguri-city-centre' => 'Siliguri - City Centre | Jus Jumpin',
-                    'surat-vr-mall' => 'Surat - VR Mall | Jus Jumpin',
-                    'udaipur-urban-square-mall' => 'Udaipur - Urban Square Mall | Jus Jumpin',
+                    'kolkata-abc-square-building-best-adult-trampoline-park' => 'Best Adult Trampoline Park at ABC Square Building Kolkata',
+                    'bengaluru-m5-ecity-mall' => 'Kids Playzone Bengaluru M5 Ecity Mall - Jus Jumpin',
+                    'kolkata-avani-mall' => 'Best Children’s Birthday Party in Avani Mall Kolkata',
+                    'kolkata-axis-mall' => 'Kid’s Play Zone in Axis Mall Kolkata - Jus Jumpin Fun',
+                    'kolkata-city-centre-2' => 'Kids Playzone at City Centre 2 Kolkata - Jus Jumpin',
+                    'bengaluru-meenakshi-mall' => 'Kids Playzone Bengaluru Meenakshi Mall - Jus Jumpin',
+                    'dhanbad-prabhatam-mall' => 'Adult Trampoline Park in Prabhatam Mall Dhanbad - Jus Jumpin',
+                    'durgapur-junction-mall' => 'Trampoline Park At Durgapur Junction Mall – Jus Jumpin',
+                    'nashik-city-centre' => 'Kids Amusement Park in City Centre - Nashik',
+                    'jamshedpur-pm-mall' => 'Kids Play Area in Jamshedpur P&M Mall - Jus Jumpin',
+                    'nagpur-vr-mall' => 'Children’s Birthday Parties in Nagpur VR Mall - Jus Jumpin',
+                    'noida-gip-mall' => 'Trampoline Park in GIP Mall Noida - Jus Jumpin',
+                    'noida-spectrum-mall' => 'Best Trampoline Park and Kids Playzone in Noida Spectrum Mall',
+                    'pune-seasons-mall' => 'Adult Trampoline Park at Pune Season Mall - Jus Jumpin',
+                    'raipur-zora-mall' => 'Vibrant Trampoline Park and Gaming Zone In Raipur Zora Mall',
+                    'ranchi-nucleus-mall' => 'Best Kids Playzone at Nucleus Mall Ranchi - Jus Jumpin',
+                    'siliguri-city-centre' => 'Kids Playzone City Centre Mall Siliguri - Jus Jumpin',
+                    'surat-vr-mall' => 'Best Kids Play Area in Surat VR mall - Jus Jumpin',
+                    'udaipur-urban-square-mall' => 'Kids Play Area in Udaipur Urban Square Mall - Jus Jumpin',
                     // Add more location titles as needed
                 );
                 
@@ -1131,7 +1200,8 @@ function newjusjumpin_seo_meta() {
     $current_keywords = wp_trim_words($current_keywords, 20, '...');
 
     // Only output meta tags if they haven't been output already by our custom functions
-    if (!did_action('newjusjumpin_custom_meta_descriptions_done') && !did_action('newjusjumpin_site_verification_done')) {
+    // But also check if our custom function actually output a description
+    if (!did_action('newjusjumpin_custom_meta_descriptions_done')) {
         error_log("SEO meta function outputting description: " . $current_description);
         echo "\n<meta name=\"description\" content=\"" . esc_attr($current_description) . "\">\n";
         echo "<meta name=\"keywords\" content=\"" . esc_attr($current_keywords) . "\">\n";
@@ -1158,7 +1228,7 @@ function newjusjumpin_seo_meta() {
         error_log("SEO meta function skipped - custom meta descriptions already output");
     }
 }
-add_action('wp_head', 'newjusjumpin_seo_meta', 1); // Run early to ensure meta tags are high in head
+add_action('wp_head', 'newjusjumpin_seo_meta', 3); // Run early to ensure meta tags are high in head
 
 /**
  * Use our custom blog template for the Posts Page (/blogs) as well

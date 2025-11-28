@@ -5,7 +5,8 @@
  */
 
 // Page specific variables
-$title = "Bengaluru - M5 Ecity Mall | Jus Jumpin";
+$title = "Bengaluru - M5 Ecity Mall";
+$description = "Visit Kids Playzone at M5 Ecity Mall Bengaluru—top indoor play area & adventure park, perfect for fun-filled kids’ birthday party celebrations.";
 $state = "Karnataka";
 $city = "Bengaluru";
 $slug = "bengaluru-m5-ecity-mall";

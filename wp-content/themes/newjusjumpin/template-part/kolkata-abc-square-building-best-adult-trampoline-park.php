@@ -83,7 +83,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
     <div class="container">
         <div class="content-with-image">
             <div class="content-left">
-                <h2 class="section-title gradient-text">Ultimate Fun Awaits.</h2>
+                <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
                 <p class="section-text">Welcome to <strong>Jus Jumpin, ABC Square Building,</strong> the ultimate destination for fun and fitness. Jump into an exciting world of laughter and joy, where age is truly just a number! Jus Jumpin at the ABC Square building is meticulously designed with two dedicated play zones; one to host toddlers and kids to enjoy, and another exciting trampoline park for kids in an adult's body. Both areas consist of wholesome play zones, thrilling physical activities, a dynamic trampoline park, and interactive indoor games. Our dedicated team ensures endless fun with paramount safety standards and well-maintained hygiene.</p>
                 <p class="section-text">Alongside our energetic and action-filled amusement park, <strong>Jus Jumpin</strong>, also offers a dedicated party area that is just perfect for hosting unforgettable birthday parties for kids and adults, corporate events, and more. Customized theme decorations, flexible packages tailored to your needs, and a dedicated team to ensure your party remains stress-free, hassle-free, and free from all boring stuff.</p>
                 <p class="section-text">At<strong> Jus Jumpin, </strong>We strive to go beyond ordinary. Our thoughtfully designed, vibrant space radiates energy, generates laughter, and creates memories that last for years.</p>
@@ -102,7 +102,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at ABC Square Building features <strong>an infinity trampoline, foam pits, thrilling arcade, wall climbing, basketball zone, and a dedicated kids' play zone.</strong>
+        <p class="section-intro">Jus Jumpin at ABC Square Building features <strong>an infinity trampoline, foam pits, thrilling basket ball area, wall climbing, basketball zone, and a dedicated kids' play zone.</strong>
 </p>
         
         <div class="experience-grid">
@@ -520,8 +520,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
             <div class="safety-item glass-card">
                 <span class="safety-icon"><i class="fas fa-socks"></i></span>
                 <h4>Grip Socks Required</h4>
-                <p>₹60, reusable on future visits.
-                    <strong>This socks are provided for extra protection and hygiene.</strong>
+                <p>Grip socks are <strong>compulsory</strong> on the Jumpin' floor to maintain safety and hygiene standards.
                 </p>
             </div>
             <div class="safety-item glass-card">

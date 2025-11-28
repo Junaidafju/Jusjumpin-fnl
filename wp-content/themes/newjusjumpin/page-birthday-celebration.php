@@ -8,7 +8,7 @@
 get_header(); ?>
 <!-- Birthday Hero Section with Background -->
 <section class="jj-birthday-hero">
-    <div class="jj-birthday-hero__bg jj-birthday-hero__bg--desktop" aria-hidden="true" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/Birthday_Party_Zones1.svg' ); ?>');"></div>
+    <div class="jj-birthday-hero__bg jj-birthday-hero__bg--desktop" aria-hidden="true" style="background-image: url('https://www.jusjumpin.com/wp-content/uploads/2025/11/Birthday_Party_Zones1-scaled.webp');"></div>
     <div class="jj-birthday-hero__bg jj-birthday-hero__bg--mobile" aria-hidden="true" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/mobile-birthday-hero.svg' ); ?>');"></div>
     <div class="jj-birthday-hero__overlay" aria-hidden="true"></div>
     
@@ -115,7 +115,7 @@ get_header(); ?>
             
             <ul class="column jj-column">
                 <li class="column-header">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.SVG'); ?>" alt="Jus Jumpin Logo" class="compare-logo">
+                    <img src="https://www.jusjumpin.com/wp-content/uploads/2025/11/DO-NOT-DELETE.png" alt="Jus Jumpin Logo" class="compare-logo">
                 </li>
                 <li><i class="fas fa-building"></i> Massive Indoor Play Arena</li>
                 <li><i class="fas fa-rocket"></i> 25+ Attractions & Games</li>
