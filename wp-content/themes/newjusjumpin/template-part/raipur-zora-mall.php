@@ -29,7 +29,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <span class="hero-emoji"></span>
                 Jus Jumpin<br> Zora Mall - Raipur
             </h1>
-            <p class="location-hero-subtitle">Jump into a whole new world where there are no restrictions on having a blast. Jus Jumpin presents the best trampoline Park for Adults in Raipur, offering an enchanting experience for all ages.</p>
+            <p class="location-hero-subtitle">Jump into a whole new world where there are no restrictions on having a blast. Jus Jumpin presents the best trampoline Park and gaming zone in Raipur for kids and adults. Spring it on!</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -45,7 +45,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
     <div class="container">
         <div class="content-with-image">
             <div class="content-left">
-                <h2 class="section-title gradient-text">Ultimate Fun Awaits.</h2>
+                <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
                 <p class="section-text">Welcome to <strong>Jus Jumpin, Zora The Mall, Raipur.</strong> The ultimate destination for fun and fitness. Centrally located at Zora the mall, Raipur, Jus Jumpin offers a thrilling family entertainment park with a variety of games and captivating fun activities meticulously designed for people of all age groups.</p>
                 <p class="section-text">Our facility at Zora the Mall facilitates a dedicated soft play zone for the kids, trampoline park, arcade zone, Virtual reality (VR) games, a vibrant bowling alley, bumper cars, and more to ensure you have a blast while being at Jus Jumpin.</p>
                 <p class="section-text">At this venue, we also offer a dedicated party zone to host magical birthday parties in Raipur and conduct corporate events for team building activities. The enchanting atmosphere, customized party decor, in-house DJ, loads of party games, and, of course, a large range of delectable food make it a perfect venue for parties and social gatherings.</p>
@@ -67,6 +67,12 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
         <p class="section-intro">Jus Jumpin at Zora Mall features an infinity trampoline, mind-bending VR games, pin wall, bumper cars, wave slide, and a skill-driven arcade zone.</p>
         
         <div class="experience-grid">
+        <div class="experience-card glass-card">
+                <div class="card-image">
+                    <img src="https://www.jusjumpin.com/wp-content/uploads/2025/11/vr-games.webp" alt="Fitness Enthusiasts" loading="lazy">
+                </div>
+                <h3 class="card-title gradient-text"><i class="fas fa-dumbbell"></i> Amazing VR & Arcade Games</h3>
+            </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KittyKolkataABC.jpg'); ?>" alt="Kitty Parties" loading="lazy">
@@ -85,12 +91,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-users"></i> Perfect Family Celebrations</h3>
             </div>
-            <div class="experience-card glass-card">
-                <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FitnessKolkataABC.jpg'); ?>" alt="Fitness Enthusiasts" loading="lazy">
-                </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-dumbbell"></i> Passionate Fitness Enthusiasts</h3>
-            </div>
+            
         </div>
         
         <p class="section-footer-text">Dedicated party area perfect for <strong>hosting amazing birthday parties</strong> and <strong>corporate events </strong>in Raipur. The venue features an <strong>awesome in-house DJ</strong> and a <strong>designated cafe with beverages.</strong></p>
@@ -114,6 +115,38 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
         <!-- Adults Activities Section -->
         <div class="activities-content adults-activities active" data-category="adults">
             <div class="activities-grid">
+                <!-- Adult Activity 10 -->
+                <div class="activity-card glass-card" data-activity-name="Arcade Game">
+                    <div class="activity-image">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Arcade_game.webp'); ?>" alt="Arcade Game in Jus Jumpin" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Arcade</h4>
+                        <p class="activity-desc">Step into the Arcade and relive the golden age of gaming, where bright lights, retro sounds, and competitive high scores promise non-stop fun!</p>
+                    </div>
+                </div>
+                
+                <!-- Adult Activity 11 -->
+                <div class="activity-card glass-card" data-activity-name="VR Games">
+                    <div class="activity-image">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/VR_Bike_games.webp'); ?>" alt="VR Games in Jus Jumpin" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">VR Games</h4>
+                        <p class="activity-desc">Dive into a fully immersive, 360-degree digital world with VR Games, where imagination and reality merge for the ultimate sensory adventure.</p>
+                    </div>
+                </div>
+                
+                <!-- Adult Activity 12 -->
+                <div class="activity-card glass-card" data-activity-name="Bowling">
+                    <div class="activity-image">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Bowling_alley.webp'); ?>" alt="Bowling at jus jumpin" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Bowling</h4>
+                        <p class="activity-desc">Challenge your friends to strike out in the E-Line Bowling alley, where digital scoring and sleek lanes elevate the classic game of pins!</p>
+                    </div>
+                </div>
                 <!-- Adult Activity 1 -->
                 <div class="activity-card glass-card" data-activity-name="Infinity Trampoline">
                     <div class="activity-image">
@@ -631,7 +664,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (ABC Square)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (ABC Square Building)</strong> isn't just another trampoline park — it's an experience built for everyone who wants to jump higher, laugh harder, and rediscover the joy of play.</p> 
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

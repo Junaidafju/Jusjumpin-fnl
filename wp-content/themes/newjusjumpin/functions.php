@@ -45,14 +45,31 @@ function newjusjumpin_setup() {
 add_action('after_setup_theme', 'newjusjumpin_setup');
 
 /**
+ * Remove WordPress core shortlink tags - we only want clean canonical tags
+ */
+remove_action('wp_head', 'wp_shortlink_wp_head', 10);
+remove_action('template_redirect', 'wp_shortlink_header', 11);
+
+
+/**
  * Custom Meta Titles for Pages
  */
 function newjusjumpin_custom_meta_titles($title) {
-    // Get the current page slug
-    $page_slug = basename(get_permalink());
+    // Prefer the posts page slug when we're on the blog index with a static front page
+    $page_slug = '';
+    if (is_home() && !is_front_page()) {
+        $posts_page_id = (int) get_option('page_for_posts');
+        if ($posts_page_id) {
+            $page_slug = get_post_field('post_name', $posts_page_id);
+        }
+    }
     
-    // For home page, WordPress uses 'home' or 'front-page' depending on settings
-    if (is_front_page() || is_home()) {
+    if (empty($page_slug)) {
+        $page_slug = basename(get_permalink());
+    }
+    
+    // Treat the real front page (or when the blog is also the front page) as the home title
+    if (is_front_page() || (!get_option('page_for_posts') && is_home())) {
         return 'Discover the Best Trampoline Park at Jus Jumpin';
     }
     
@@ -90,15 +107,35 @@ add_filter('pre_get_document_title', 'newjusjumpin_custom_meta_titles');
  * Custom Meta Descriptions for Pages
  */
 function newjusjumpin_custom_meta_descriptions() {
-    // Handle Home Page
-    if (is_front_page() || is_home()) {
+    $has_posts_page = (int) get_option('page_for_posts');
+    $is_static_front = is_front_page() && !is_home();
+    $is_blog_front = is_front_page() && is_home();
+    
+    // Treat the actual homepage (either the static front page or when posts are the front page) with the home description
+    if ($is_static_front || $is_blog_front) {
         echo '<meta name="description" content="Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball & birthday parties for kids, teens & adults. Safe, high-energy adventures await!" />' . "\n";
+        do_action('newjusjumpin_custom_meta_descriptions_done');
+        return;
+    }
+    
+    // If there is no dedicated posts page, the blog index is also the homepage
+    if (!$has_posts_page && is_home()) {
+        echo '<meta name="description" content="Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball & birthday parties for kids, teens & adults. Safe, high-energy adventures await!" />' . "\n";
+        do_action('newjusjumpin_custom_meta_descriptions_done');
         return;
     }
 
     // Get correct slug of current page
     // Use different methods to get the slug for better compatibility
     $page_slug = '';
+    
+    // Method 0: When viewing the posts page while a static front page is set
+    if (is_home() && !$is_blog_front) {
+        $posts_page_id = $has_posts_page;
+        if ($posts_page_id) {
+            $page_slug = get_post_field('post_name', $posts_page_id);
+        }
+    }
     
     // Method 1: Get slug from post object
     if (is_page() || is_single()) {
@@ -193,6 +230,7 @@ function newjusjumpin_custom_meta_descriptions() {
         } else {
             echo '<meta name="description" content="Stay updated with the latest news and updates from Jus Jumpin - India\'s premier indoor trampoline park." />' . "\n";
         }
+        do_action('newjusjumpin_custom_meta_descriptions_done');
         return;
     }
 
@@ -218,7 +256,7 @@ function newjusjumpin_custom_meta_descriptions() {
         'noida-gip-mall' => 'Explore the trampoline park in GIP Mall Noida – indoor play area setup & kids\' party venues for birthdays, family fun & safe play.',
         'noida-spectrum-mall' => 'Find the ultimate destination for fun at Jus Jumpin Noida Spectrum Mall. Jump into our vibrant trampoline park for lots of high-energy activities for Adults & Kids.',
         'nagpur-vr-mall' => 'Plan your children\'s birthday parties at VR Mall, Nagpur. Our indoor play area setup and adventure park at VR Mall Nagpur promise a memorable celebration.',
-        'pune-seasons-mall' => 'The Adult Trampoline Park at Pune\'s Season Mall – with kids\' indoor play area at Season\'s Mall, best birthday party spots & corporate event venues at Season\'s Mall Pune.',
+        'pune-seasons-mall' => 'Jump into a world full of laughter at the best kids play zone in Pune Seasons Mall. Experience mind-bending mirror maze, soft play area and trampoline park for all ages!',
         'raipur-zora-mall' => 'Hop into the best trampoline park and gaming zone for adults and kids in Raipur Zora Mall. Experience our exciting bowling alley and Kids\' adventure park.',
         'udaipur-urban-square-mall' => 'Celebrate your kid\'s birthday at Urban Square Mall, Udaipur. Urban Square Mall Udaipur is a great place for kid\'s adventure park & kid\'s indoor play area.',
         'surat-vr-mall' => 'Find the best birthday party venue in Surat VR Mall – kids\' play area in Surat VR Mall, adventure park & indoor play area in Surat VR mall fun for children.',
@@ -274,11 +312,8 @@ add_action('wp_head', 'newjusjumpin_add_meta_tags', 1);
 /**
  * Enqueue styles and scripts
  */
-function newjusjumpin_enqueue_styles_scripts() {
-    wp_enqueue_style('newjusjumpin-style', get_stylesheet_uri());
-    wp_enqueue_script('newjusjumpin-script', get_template_directory_uri() . '/js/main.js', array(), null, true);
-}
-add_action('wp_enqueue_scripts', 'newjusjumpin_enqueue_styles_scripts');
+
+ 
 
 /**
  * Enqueue styles and scripts
@@ -400,89 +435,126 @@ add_action('wp_enqueue_scripts', function() {
 }, 999); // Run late to override Elementor
 
 /**
- * Simple router for location pages: maps friendly URLs to template-part PHP files
+ * Custom Router for Location Pages + Dynamic Schema Injection
  */
 add_action('template_redirect', function() {
+
     if (is_admin() || is_feed()) {
         return;
     }
+
+    // ---------------------------------------------------------------------------------
+    // Identify slug
+    // ---------------------------------------------------------------------------------
     $request_uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
     $parts = explode('/', $request_uri);
-    $slug = end($parts); // location slug
-    if (!empty($slug)) {
-        $template_path = get_template_directory() . '/template-part/' . sanitize_file_name($slug) . '.php';
-        if (file_exists($template_path)) {
-            // Ensure trailing slash for canonical consistency
-            $expected = home_url('/' . $slug . '/');
-            if (trailingslashit(home_url(add_query_arg(array(), $request_uri))) !== $expected && empty($_GET)) {
-                wp_safe_redirect($expected, 301);
-                exit;
-            }
-            
-            // Set the page title based on the location
-            // First, try to get title from the template file if it defines a $title variable
-            $page_title = '';
-            $template_content = file_get_contents($template_path);
-            
-            // Check if the template defines a $title variable
-            if (preg_match('/\\\$title\s*=\s*["\']([^"\']+)["\']/', $template_content, $matches)) {
-                $page_title = $matches[1];
-            } else {
-                // Fallback to location-based titles
-                $location_titles = array(
-                    'kolkata-abc-square-building-best-adult-trampoline-park' => 'Best Adult Trampoline Park at ABC Square Building Kolkata',
-                    'bengaluru-m5-ecity-mall' => 'Kids Playzone Bengaluru M5 Ecity Mall - Jus Jumpin',
-                    'kolkata-avani-mall' => 'Best Children’s Birthday Party in Avani Mall Kolkata',
-                    'kolkata-axis-mall' => 'Kid’s Play Zone in Axis Mall Kolkata - Jus Jumpin Fun',
-                    'kolkata-city-centre-2' => 'Kids Playzone at City Centre 2 Kolkata - Jus Jumpin',
-                    'bengaluru-meenakshi-mall' => 'Kids Playzone Bengaluru Meenakshi Mall - Jus Jumpin',
-                    'dhanbad-prabhatam-mall' => 'Adult Trampoline Park in Prabhatam Mall Dhanbad - Jus Jumpin',
-                    'durgapur-junction-mall' => 'Trampoline Park At Durgapur Junction Mall – Jus Jumpin',
-                    'nashik-city-centre' => 'Kids Amusement Park in City Centre - Nashik',
-                    'jamshedpur-pm-mall' => 'Kids Play Area in Jamshedpur P&M Mall - Jus Jumpin',
-                    'nagpur-vr-mall' => 'Children’s Birthday Parties in Nagpur VR Mall - Jus Jumpin',
-                    'noida-gip-mall' => 'Trampoline Park in GIP Mall Noida - Jus Jumpin',
-                    'noida-spectrum-mall' => 'Best Trampoline Park and Kids Playzone in Noida Spectrum Mall',
-                    'pune-seasons-mall' => 'Adult Trampoline Park at Pune Season Mall - Jus Jumpin',
-                    'raipur-zora-mall' => 'Vibrant Trampoline Park and Gaming Zone In Raipur Zora Mall',
-                    'ranchi-nucleus-mall' => 'Best Kids Playzone at Nucleus Mall Ranchi - Jus Jumpin',
-                    'siliguri-city-centre' => 'Kids Playzone City Centre Mall Siliguri - Jus Jumpin',
-                    'surat-vr-mall' => 'Best Kids Play Area in Surat VR mall - Jus Jumpin',
-                    'udaipur-urban-square-mall' => 'Kids Play Area in Udaipur Urban Square Mall - Jus Jumpin',
-                    // Add more location titles as needed
-                );
-                
-                $page_title = isset($location_titles[$slug]) ? $location_titles[$slug] : 'Jus Jumpin Location | Best Trampoline Park in India';
-            }
-            
-            // Add title filter
-            add_filter('pre_get_document_title', function() use ($page_title) {
-                return $page_title;
-            });
-            
-            // Enqueue location page specific styles and scripts
-            add_action('wp_enqueue_scripts', function() {
-                $location_css_path = get_template_directory() . '/assets/css/location-page.css';
-                if (file_exists($location_css_path)) {
-                    $location_css_ver = filemtime($location_css_path);
-                    wp_enqueue_style('newjusjumpin-location-page', get_template_directory_uri() . '/assets/css/location-page.css', array('newjusjumpin-style'), $location_css_ver);
-                }
-                
-                $location_js_path = get_template_directory() . '/assets/js/location-page.js';
-                if (file_exists($location_js_path)) {
-                    $location_js_ver = filemtime($location_js_path);
-                    wp_enqueue_script('newjusjumpin-location-page', get_template_directory_uri() . '/assets/js/location-page.js', array(), $location_js_ver, true);
-                }
-            });
-            
-            status_header(200);
-            include get_template_directory() . '/header.php';
-            include $template_path;
-            include get_template_directory() . '/footer.php';
-            exit;
-        }
+    $slug = end($parts);
+
+    if (empty($slug)) {
+        return;
     }
+
+    // Match template file
+    $template_path = get_template_directory() . '/template-part/' . sanitize_file_name($slug) . '.php';
+
+    if (!file_exists($template_path)) {
+        return;
+    }
+
+    // ---------------------------------------------------------------------------------
+    // Ensure trailing slash
+    // ---------------------------------------------------------------------------------
+    $expected = home_url('/' . $slug . '/');
+    if (trailingslashit(home_url(add_query_arg([], $request_uri))) !== $expected && empty($_GET)) {
+        wp_safe_redirect($expected, 301);
+        exit;
+    }
+
+    // ---------------------------------------------------------------------------------
+    // MARK AS LOCATION PAGE (to disable global schema)
+    // ---------------------------------------------------------------------------------
+    set_query_var('is_location_page', true);
+
+    // ---------------------------------------------------------------------------------
+    // LOAD LOCATION-SPECIFIC SCHEMA FILE
+    // schema/location-schema.php
+    // ---------------------------------------------------------------------------------
+    $schema_file = get_template_directory() . '/schema/location-schema.php';
+    $location_schemas = file_exists($schema_file) ? include $schema_file : [];
+
+    if (isset($location_schemas[$slug])) {
+        add_action('wp_head', function() use ($location_schemas, $slug) {
+            echo '<script type="application/ld+json">' .
+                wp_json_encode($location_schemas[$slug], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) .
+            '</script>';
+        });
+    }
+
+    // ---------------------------------------------------------------------------------
+    // PAGE TITLE LOGIC
+    // ---------------------------------------------------------------------------------
+    $page_title = '';
+    $template_content = file_get_contents($template_path);
+
+    if (preg_match('/\\\$title\s*=\s*["\']([^"\']+)["\']/', $template_content, $matches)) {
+        $page_title = $matches[1];
+    } else {
+        $location_titles = [
+            'kolkata-abc-square-building-best-adult-trampoline-park' => 'Best Adult Trampoline Park at ABC Square Building Kolkata',
+            'bengaluru-m5-ecity-mall' => 'Kids Playzone Bengaluru M5 Ecity Mall - Jus Jumpin',
+            'kolkata-avani-mall' => 'Best Children’s Birthday Party in Avani Mall Kolkata',
+            'kolkata-axis-mall' => 'Kid’s Play Zone in Axis Mall Kolkata - Jus Jumpin Fun',
+            'kolkata-city-centre-2' => 'Kids Playzone at City Centre 2 Kolkata - Jus Jumpin',
+            'bengaluru-meenakshi-mall' => 'Kids Playzone Bengaluru Meenakshi Mall - Jus Jumpin',
+            'dhanbad-prabhatam-mall' => 'Adult Trampoline Park in Prabhatam Mall Dhanbad - Jus Jumpin',
+            'durgapur-junction-mall' => 'Trampoline Park At Durgapur Junction Mall – Jus Jumpin',
+            'nashik-city-centre' => 'Kids Amusement Park in City Centre - Nashik',
+            'jamshedpur-pm-mall' => 'Kids Play Area in Jamshedpur P&M Mall - Jus Jumpin',
+            'nagpur-vr-mall' => 'Children’s Birthday Parties in Nagpur VR Mall - Jus Jumpin',
+            'noida-gip-mall' => 'Trampoline Park in GIP Mall Noida - Jus Jumpin',
+            'noida-spectrum-mall' => 'Best Trampoline Park and Kids Playzone in Noida Spectrum Mall',
+            'pune-seasons-mall' => 'Kids Play Zone and Entertainment Park in Pune | Jus Jumpin',
+            'raipur-zora-mall' => 'Vibrant Trampoline Park and Gaming Zone In Raipur Zora Mall',
+            'ranchi-nucleus-mall' => 'Best Kids Playzone at Nucleus Mall Ranchi - Jus Jumpin',
+            'siliguri-city-centre' => 'Kids Playzone City Centre Mall Siliguri - Jus Jumpin',
+            'surat-vr-mall' => 'Best Kids Play Area in Surat VR mall - Jus Jumpin',
+            'udaipur-urban-square-mall' => 'Kids Play Area in Udaipur Urban Square Mall - Jus Jumpin',
+        ];
+
+        $page_title = $location_titles[$slug] ?? 'Jus Jumpin Location | Best Trampoline Park in India';
+    }
+
+    add_filter('pre_get_document_title', function() use ($page_title) {
+        return $page_title;
+    });
+
+    // ---------------------------------------------------------------------------------
+    // Enqueue CSS + JS
+    // ---------------------------------------------------------------------------------
+    add_action('wp_enqueue_scripts', function() {
+        $location_css = get_template_directory() . '/assets/css/location-page.css';
+        if (file_exists($location_css)) {
+            $ver = filemtime($location_css);
+            wp_enqueue_style('newjusjumpin-location-page', get_template_directory_uri() . '/assets/css/location-page.css', ['newjusjumpin-style'], $ver);
+        }
+
+        $location_js = get_template_directory() . '/assets/js/location-page.js';
+        if (file_exists($location_js)) {
+            $ver = filemtime($location_js);
+            wp_enqueue_script('newjusjumpin-location-page', get_template_directory_uri() . '/assets/js/location-page.js', [], $ver, true);
+        }
+    });
+
+    // ---------------------------------------------------------------------------------
+    // Load Final Output
+    // ---------------------------------------------------------------------------------
+    status_header(200);
+    include get_template_directory() . '/header.php';
+    include $template_path;
+    include get_template_directory() . '/footer.php';
+    exit;
 });
+
 
 /**
  * Theme activation - Create pages and set up menus
@@ -973,25 +1045,140 @@ class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu {
  * Contact form handler
  */
 function newjusjumpin_handle_contact_form() {
-    if (isset($_POST['newjusjumpin_contact_nonce']) && wp_verify_nonce($_POST['newjusjumpin_contact_nonce'], 'newjusjumpin_contact')) {
-        $name = sanitize_text_field($_POST['contact_name']);
-        $email = sanitize_email($_POST['contact_email']);
-        $phone = sanitize_text_field($_POST['contact_phone']);
-        $message = sanitize_textarea_field($_POST['contact_message']);
-        
-        // Send email (customize as needed)
-        $to = get_option('admin_email');
-        $subject = 'New Contact Form Submission from ' . get_bloginfo('name');
-        $body = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message";
-        $headers = array('Content-Type: text/plain; charset=UTF-8');
-        
-        if (wp_mail($to, $subject, $body, $headers)) {
-            wp_redirect(add_query_arg('contact', 'success', wp_get_referer()));
-        } else {
-            wp_redirect(add_query_arg('contact', 'error', wp_get_referer()));
-        }
+    // Verify nonce
+    if (!isset($_POST['newjusjumpin_contact_nonce']) || !wp_verify_nonce($_POST['newjusjumpin_contact_nonce'], 'newjusjumpin_contact')) {
+        wp_redirect(add_query_arg('contact', 'error', wp_get_referer()));
         exit;
     }
+    
+    // Honeypot spam protection
+    if (!empty($_POST['contact_website'])) {
+        // Spam detected - silently fail
+        wp_redirect(add_query_arg('contact', 'success', wp_get_referer()));
+        exit;
+    }
+    
+    // Sanitize and validate input
+    $name = isset($_POST['contact_name']) ? sanitize_text_field(trim($_POST['contact_name'])) : '';
+    $email = isset($_POST['contact_email']) ? sanitize_email(trim($_POST['contact_email'])) : '';
+    $phone = isset($_POST['contact_phone']) ? sanitize_text_field(trim($_POST['contact_phone'])) : '';
+    $subject_field = isset($_POST['contact_subject']) ? sanitize_text_field($_POST['contact_subject']) : 'general';
+    $message = isset($_POST['contact_message']) ? sanitize_textarea_field(trim($_POST['contact_message'])) : '';
+    
+    // Validate required fields
+    $errors = array();
+    if (empty($name)) {
+        $errors[] = 'Name is required';
+    }
+    if (empty($email) || !is_email($email)) {
+        $errors[] = 'Valid email is required';
+    }
+    if (empty($phone)) {
+        $errors[] = 'Phone is required';
+    }
+    if (empty($subject_field)) {
+        $errors[] = 'Subject is required';
+    }
+    if (empty($message)) {
+        $errors[] = 'Message is required';
+    }
+    
+    // If validation fails, redirect with error
+    if (!empty($errors)) {
+        wp_redirect(add_query_arg('contact', 'error', wp_get_referer()));
+        exit;
+    }
+    
+    // Map subject values to readable format
+    $subject_map = array(
+        'general' => 'General Inquiry',
+        'booking' => 'Booking & Reservations',
+        'birthday' => 'Birthday Parties',
+        'activities' => 'Activities & Programs',
+        'feedback' => 'Feedback & Suggestions',
+        'support' => 'Customer Support',
+        'media' => 'Media & Press',
+        'other' => 'Other'
+    );
+    $topic = isset($subject_map[$subject_field]) ? $subject_map[$subject_field] : ucfirst($subject_field);
+    
+    // Generate tracking ID
+    $tracking_id = 'JJ-' . strtoupper(wp_generate_password(8, false, false)) . '-' . date('Ymd');
+    
+    // Get IP address
+    $ip = '';
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = sanitize_text_field($_SERVER['HTTP_CLIENT_IP']);
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = sanitize_text_field($_SERVER['HTTP_X_FORWARDED_FOR']);
+    } elseif (!empty($_SERVER['REMOTE_ADDR'])) {
+        $ip = sanitize_text_field($_SERVER['REMOTE_ADDR']);
+    }
+    
+    // Prepare data for email templates
+    $email_data = array(
+        'name' => $name,
+        'email' => $email,
+        'phone' => $phone,
+        'topic' => $topic,
+        'subject' => $subject_field, // Keep original value too
+        'message' => $message,
+        'trackingId' => $tracking_id,
+        'submittedAt' => current_time('F j, Y \a\t g:i A'),
+        'ip' => $ip,
+        'siteName' => get_bloginfo('name'),
+        'siteUrl' => home_url()
+    );
+    
+    // Send admin notification email
+    $admin_sent = false;
+    $admin_error = '';
+    try {
+        $admin_sent = jj_mail_admin_contact($email_data);
+        if (!$admin_sent) {
+            global $phpmailer;
+            if (isset($phpmailer) && !empty($phpmailer->ErrorInfo)) {
+                $admin_error = $phpmailer->ErrorInfo;
+                error_log('Contact Form Admin Email Error: ' . $admin_error);
+            }
+        }
+    } catch (Exception $e) {
+        $admin_error = $e->getMessage();
+        error_log('Contact Form Admin Email Exception: ' . $admin_error);
+    }
+    
+    // Send user confirmation email
+    $user_sent = false;
+    $user_error = '';
+    try {
+        $user_sent = jj_mail_user_confirmation($email_data);
+        if (!$user_sent) {
+            global $phpmailer;
+            if (isset($phpmailer) && !empty($phpmailer->ErrorInfo)) {
+                $user_error = $phpmailer->ErrorInfo;
+                error_log('Contact Form User Email Error: ' . $user_error);
+            }
+        }
+    } catch (Exception $e) {
+        $user_error = $e->getMessage();
+        error_log('Contact Form User Email Exception: ' . $user_error);
+    }
+    
+    // Log submission details (for debugging)
+    error_log('Contact Form Submission: Name=' . $name . ', Email=' . $email . ', Admin Sent=' . ($admin_sent ? 'Yes' : 'No') . ', User Sent=' . ($user_sent ? 'Yes' : 'No'));
+    
+    // Log to database (optional - for tracking submissions)
+    // You can add custom post type or database logging here if needed
+    
+    // Redirect based on result - consider it success if at least admin email is sent
+    if ($admin_sent) {
+        wp_redirect(add_query_arg('contact', 'success', wp_get_referer()));
+    } else {
+        // If both failed, redirect with error and log details
+        error_log('Contact Form Failed: Admin Error=' . $admin_error . ', User Error=' . $user_error);
+        wp_redirect(add_query_arg('contact', 'error', wp_get_referer()));
+    }
+    exit;
 }
 add_action('admin_post_nopriv_contact_form', 'newjusjumpin_handle_contact_form');
 add_action('admin_post_contact_form', 'newjusjumpin_handle_contact_form');
@@ -1169,7 +1356,7 @@ function newjusjumpin_seo_meta() {
         $og_image = get_the_post_thumbnail_url(null, 'full');
     } else {
         // Use the specific default image you provided
-        $og_image = 'https://www.jusjumpin.com/wp-content/uploads/2025/11/jus-jumpin-og.png';
+        $og_image = 'https://www.jusjumpin.com/wp-content/uploads/2025/11/cropped-Jus-jumpin-favicon.png';
     }
 
     // Prioritize template-defined $description
@@ -1199,36 +1386,168 @@ function newjusjumpin_seo_meta() {
     $current_description = wp_trim_words($current_description, 25, '...');
     $current_keywords = wp_trim_words($current_keywords, 20, '...');
 
-    // Only output meta tags if they haven't been output already by our custom functions
-    // But also check if our custom function actually output a description
-    if (!did_action('newjusjumpin_custom_meta_descriptions_done')) {
-        error_log("SEO meta function outputting description: " . $current_description);
-        echo "\n<meta name=\"description\" content=\"" . esc_attr($current_description) . "\">\n";
-        echo "<meta name=\"keywords\" content=\"" . esc_attr($current_keywords) . "\">\n";
-        echo "<meta property=\"og:title\" content=\"" . esc_attr($current_title) . "\">\n";
-        echo "<meta property=\"og:description\" content=\"" . esc_attr($current_description) . "\">\n";
-        echo "<meta property=\"og:url\" content=\"" . esc_url($current_url) . "\">\n";
-        echo "<meta property=\"og:type\" content=\"" . esc_attr($og_type) . "\">\n";
-        echo "<meta property=\"og:site_name\" content=\"" . esc_attr(get_bloginfo('name')) . "\">\n";
+    // Check if a custom description was already output
+    $description_already_output = did_action('newjusjumpin_custom_meta_descriptions_done');
+    
+    // Get the custom description if one was already set (for OG tags)
+    $og_description = $current_description;
+    if ($description_already_output) {
+        // Try to get the custom description that was already output
+        // For homepage, use the home description
+        $has_posts_page = (int) get_option('page_for_posts');
+        $is_static_front = is_front_page() && !is_home();
+        $is_blog_front = is_front_page() && is_home();
         
-        // Add og:image if we have one
-        if (!empty($og_image)) {
-            echo "<meta property=\"og:image\" content=\"" . esc_url($og_image) . "\">\n";
+        if ($is_static_front || $is_blog_front || (!$has_posts_page && is_home())) {
+            $og_description = 'Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball & birthday parties for kids, teens & adults. Safe, high-energy adventures await!';
+        } elseif (is_single() && get_post_type() === 'post') {
+            $excerpt = get_the_excerpt();
+            $og_description = !empty($excerpt) ? wp_trim_words($excerpt, 30, '...') : 'Stay updated with the latest news and updates from Jus Jumpin - India\'s premier indoor trampoline park.';
+        } else {
+            // For other pages, try to get from custom descriptions array
+            $page_slug = '';
+            if (is_home() && !$is_blog_front) {
+                $posts_page_id = $has_posts_page;
+                if ($posts_page_id) {
+                    $page_slug = get_post_field('post_name', $posts_page_id);
+                }
+            } elseif (is_page() || is_single()) {
+                $post_obj = get_post();
+                if ($post_obj && isset($post_obj->post_name)) {
+                    $page_slug = $post_obj->post_name;
+                }
+            }
+            
+            if (empty($page_slug)) {
+                $permalink = get_permalink();
+                if ($permalink) {
+                    $page_slug = basename(rtrim($permalink, '/'));
+                }
+            }
+            
+            // Get the full custom descriptions array (same as in newjusjumpin_custom_meta_descriptions)
+            $custom_descriptions = array(
+                'home' => 'Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball &amp; birthday parties for kids, teens &amp; adults. Safe, high-energy adventures await!',
+                'about' => 'Jus Jumpin is India\'s top indoor trampoline and play park brand offering safe, fun-filled zones for kids, families, and birthdays across multiple cities.',
+                'our-location' => 'Explore all Jus Jumpin locations across India! Find your nearest indoor trampoline park & kids play zone for birthdays, playdates & family fun.',
+                'blog' => 'Stay updated with the latest news and updates from Jus Jumpin - India\'s premier indoor trampoline park.',
+                'kolkata-abc-square-building-best-adult-trampoline-park' => 'Experience high-energy fun at Kolkata\'s best adult trampoline park at ABC Square Building Kolkata. Best for birthday parties and kitty parties in ABC Square Building.',
+                'kolkata-avani-mall' => 'Celebrate your children\'s birthday at Avani Mall Kolkata. Featuring a soft play area and indoor sports layout for non-stop fun.',
+                'kolkata-axis-mall' => 'Plan the ultimate kids\' birthday parties at Axis Mall Kolkata. Visit our adventure park and birthday party center for unforgettable memories!',
+                'kolkata-city-centre-2' => 'Book birthday party places in City Centre 2 Kolkata with kids\' indoor play area setup. Kids Playzone fun & hassle-free party arrangements!',
+                'siliguri-city-centre' => 'Celebrate kids\' birthdays at City Centre Siliguri\'s Kids Playzone with full indoor play setup & exciting adventure park experience.',
+                'durgapur-junction-mall' => 'The best children\'s birthday party place in Durgapur Junction Mall—fun trampoline park & safe indoor play area setup for all ages.',
+                'bengaluru-m5-ecity-mall' => 'Visit Kids Playzone at M5 Ecity Mall Bengaluru—top indoor play area & adventure park, perfect for fun-filled kids\' birthday party celebrations.',
+                'bengaluru-meenakshi-mall' => 'Explore Kids Playzone Bengaluru Meenakshi Mall – the ultimate indoor play area & party venue for kids\' birthdays in Bengaluru Meenakshi Mall.',
+                'dhanbad-prabhatam-mall' => 'Explore Adult Trampoline Park in Prabhatam Mall Dhanbad – combined with Kids Playzone & indoor play area, adventure park for family fun & kids\' play.',
+                'jamshedpur-pm-mall' => 'Jamshedpur P&M Mall offers a fantastic indoor play area setup, a top adventure park, and the best birthday party venues.',
+                'ranchi-nucleus-mall' => 'Make birthdays special at Ranchi Nucleus Mall – indoor play area & the best adventure park venue for kids. Best Kids Playzone at Nucleus Mall Ranchi.',
+                'noida-gip-mall' => 'Explore the trampoline park in GIP Mall Noida – indoor play area setup & kids\' party venues for birthdays, family fun & safe play.',
+                'noida-spectrum-mall' => 'Find the ultimate destination for fun at Jus Jumpin Noida Spectrum Mall. Jump into our vibrant trampoline park for lots of high-energy activities for Adults & Kids.',
+                'nagpur-vr-mall' => 'Plan your children\'s birthday parties at VR Mall, Nagpur. Our indoor play area setup and adventure park at VR Mall Nagpur promise a memorable celebration.',
+                'pune-seasons-mall' => 'Jump into a world full of laughter at the best kids play zone in Pune Seasons Mall. Experience mind-bending mirror maze, soft play area and trampoline park for all ages!',
+                'raipur-zora-mall' => 'Hop into the best trampoline park and gaming zone for adults and kids in Raipur Zora Mall. Experience our exciting bowling alley and Kids\' adventure park.',
+                'udaipur-urban-square-mall' => 'Celebrate your kid\'s birthday at Urban Square Mall, Udaipur. Urban Square Mall Udaipur is a great place for kid\'s adventure park & kid\'s indoor play area.',
+                'surat-vr-mall' => 'Find the best birthday party venue in Surat VR Mall – kids\' play area in Surat VR Mall, adventure park & indoor play area in Surat VR mall fun for children.',
+                'nashik-city-centre' => 'Celebrate your kid\'s birthday at Nashik City Centre. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Nashik.',
+                'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
+                'birthday-celebration' => 'Celebrate your kid\'s birthday at Jus Jumpin – India\'s favorite indoor play zone. Trampolines, foam pits & party fun at locations nationwide!',
+                'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.'
+            );
+            
+            // Try to get description from page slug
+            if (!empty($page_slug) && isset($custom_descriptions[$page_slug])) {
+                $og_description = $custom_descriptions[$page_slug];
+            } else {
+                // Try alternative slug from request URI (for location pages handled by router)
+                $request_uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+                $parts = explode('/', $request_uri);
+                $alternative_slug = end($parts);
+                
+                if (!empty($alternative_slug) && isset($custom_descriptions[$alternative_slug])) {
+                    $og_description = $custom_descriptions[$alternative_slug];
+                } else {
+                    $og_description = 'Experience the ultimate indoor trampoline and play park experience at Jus Jumpin - India\'s premier destination for family fun.';
+                }
+            }
         }
-        
-        // Add Twitter Card meta tags
-        echo "<meta name=\"twitter:card\" content=\"summary_large_image\">\n";
-        echo "<meta name=\"twitter:title\" content=\"" . esc_attr($current_title) . "\">\n";
-        echo "<meta name=\"twitter:description\" content=\"" . esc_attr($current_description) . "\">\n";
-        if (!empty($og_image)) {
-            echo "<meta name=\"twitter:image\" content=\"" . esc_url($og_image) . "\">\n";
-        }
-        echo "<meta name=\"twitter:site\" content=\"@jusjumpin\">\n"; // Replace with your actual Twitter handle
-    } else {
-        error_log("SEO meta function skipped - custom meta descriptions already output");
     }
+
+    // Only output meta description if it hasn't been output already by our custom function
+    if (!$description_already_output) {
+        // Only output description if it's not empty
+        if (!empty($current_description)) {
+            error_log("SEO meta function outputting description: " . $current_description);
+            echo "\n<meta name=\"description\" content=\"" . esc_attr($current_description) . "\">\n";
+        }
+    }
+    
+    // Always output keywords, OG tags, and Twitter cards
+    echo "<meta name=\"keywords\" content=\"" . esc_attr($current_keywords) . "\">\n";
+    echo "<meta property=\"og:title\" content=\"" . esc_attr($current_title) . "\">\n";
+    if (!empty($og_description)) {
+        echo "<meta property=\"og:description\" content=\"" . esc_attr($og_description) . "\">\n";
+    }
+    echo "<meta property=\"og:url\" content=\"" . esc_url($current_url) . "\">\n";
+    echo "<meta property=\"og:type\" content=\"" . esc_attr($og_type) . "\">\n";
+    echo "<meta property=\"og:site_name\" content=\"" . esc_attr(get_bloginfo('name')) . "\">\n";
+    
+    // Add og:image if we have one
+    if (!empty($og_image)) {
+        echo "<meta property=\"og:image\" content=\"" . esc_url($og_image) . "\">\n";
+    }
+    
+    // Add Twitter Card meta tags
+    echo "<meta name=\"twitter:card\" content=\"summary_large_image\">\n";
+    echo "<meta name=\"twitter:title\" content=\"" . esc_attr($current_title) . "\">\n";
+    if (!empty($og_description)) {
+        echo "<meta name=\"twitter:description\" content=\"" . esc_attr($og_description) . "\">\n";
+    }
+    if (!empty($og_image)) {
+        echo "<meta name=\"twitter:image\" content=\"" . esc_url($og_image) . "\">\n";
+    }
+    echo "<meta name=\"twitter:site\" content=\"@jusjumpin\">\n";
 }
 add_action('wp_head', 'newjusjumpin_seo_meta', 3); // Run early to ensure meta tags are high in head
+
+/**
+ * Global Organization Schema
+ */
+add_action('wp_head', function() {
+    // Don't output global schema if location-specific schema is used
+    if (get_query_var('is_location_page') === true) {
+        return;
+    }
+
+    $schema = [
+        "@context" => "https://schema.org",
+        "@type" => "Organization",
+        "@id" => home_url('/#organization'),
+        "name" => "Jus Jumpin",
+        "legalName" => "Jus Jumpin Kids Entertainment Private Limited",
+        "url" => home_url('/'),
+        "logo" => "https://www.jusjumpin.com/wp-content/uploads/2025/06/Jus-Jumpin-Logo-2-1024x209.png",
+        "description" => "Jus Jumpin is a national brand of indoor trampoline parks and kids entertainment zones across India.",
+        "contactPoint" => [
+            [
+                "@type" => "ContactPoint",
+                "telephone" => "+919836229922",
+                "contactType" => "Customer Service",
+                "areaServed" => "IN",
+                "availableLanguage" => ["English", "Hindi", "Bengali", "Marathi"]
+            ]
+        ],
+        "sameAs" => [
+            "https://www.facebook.com/jusjumpin",
+            "https://www.instagram.com/jusjumpin/",
+            "https://www.youtube.com/@jusjumpin"
+        ]
+    ];
+
+    echo '<script type="application/ld+json">' .
+        wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) .
+    '</script>';
+});
 
 /**
  * Use our custom blog template for the Posts Page (/blogs) as well
@@ -1248,6 +1567,12 @@ add_filter('template_include', function($template) {
 
 // Include popup manager
 require_once get_template_directory() . '/inc/popup-manager.php';
+
+// Include mail functions
+require_once get_template_directory() . '/inc/mail.php';
+
+// Include SMTP configuration
+require_once get_template_directory() . '/smtp-config.php';
 
 // Register the main image popup, dynamically configured from admin settings
 function jusjumpin_register_image_popup() {

@@ -68,7 +68,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 Jus Jumpin<br>Axis Mall, Kolkata
 
             </h1>
-            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, arcade games zone, and a large range of delicious food, a memorable day out is guaranteed with us.</p>
+            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, and a large range of delicious food, a memorable day out is guaranteed with us.</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -112,7 +112,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <div class="experience-grid">
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp'); ?>" alt="Creative & Educational Activities" loading="lazy">
+                    <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/compressed_AXIS-MALL.webp'); ?>" alt="Creative & Educational Activities" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-book"></i> Creative & Educational Activities</h3>
             </div>
@@ -674,7 +674,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (Axis Mall)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (Axis Mall)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

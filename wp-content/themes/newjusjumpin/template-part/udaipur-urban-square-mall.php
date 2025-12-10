@@ -67,7 +67,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <span class="hero-emoji"></span>
                 Jus Jumpipn<br>URBAN SQUARE MALL - UDAIPUR 
             </h1>
-            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, an arcade games zone, and a large range of delicious food, a memorable day out is guaranteed with us</p>
+            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, and a large range of delicious food, a memorable day out is guaranteed with us</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -83,7 +83,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
     <div class="container">
         <div class="content-with-image">
             <div class="content-left">
-                <h2 class="section-title gradient-text">Ultimate Fun Awaits.</h2>
+                <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
                 <p class="section-text">Welcome to <strong>Jus Jumpin, Urban Square Mall - Udaipur,</strong> a wholesome Kids’ Playzone Adventure Park in designed specifically for the enjoyment of kids aged between 6 months to 12 years. A perfect destination to let your child's imagination flow without any restrictions. Packed with trampoline, wave slide, tunnels, hanging bridge, wall climber, and soft play area, Jus Jumpin acts as the most exciting children's adventure park in India.</p>
                 <p class="section-text">Jus Jumpin also acts as the finest venue for birthday party of your child. You can get customized cartoon or anime-themed decorations, an extensive menu curated to your needs, and access to our indoor sports layout, where your kids can play all day long.</p>
                 <p class="section-text">For the caring parents, we have a cozy lounge area where they can relax comfortably, while their children can explore the new limits of their imagination and play with no restrictions. With more than 15+ games and joyrides, Jus Jumpin creates laughter, energy among kids and wholesome memories for the parents.</p>
@@ -660,7 +660,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (ABC Square)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (ABC Square)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

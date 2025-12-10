@@ -67,7 +67,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <span class="hero-emoji"></span>
                 Jus Jumpin<br>CITY CENTRE NASHIK
             </h1>
-            <p class="location-hero-subtitle">Hop in to experience the best trampoline park in Nashik. With more than 15 different activities for kids and adults, a day out to remember for a lifetime is guaranteed</p>
+            <p class="location-hero-subtitle">Hop in to experience the best trampoline park in Nashik. With more than 15 different activities for kids, a day out to remember for a lifetime is guaranteed</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -83,7 +83,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
     <div class="container">
         <div class="content-with-image">
             <div class="content-left">
-                <h2 class="section-title gradient-text">Ultimate Fun Awaits.</h2>
+                <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
                 <p class="section-text">Step into a whole new world of fun at <strong>Jus Jumpin, City Center Mall Nashik,</strong> Designed with care to provide a safe space for kids where they can jump, slide, and fall without fear. With a thoughtfully engineered soft play zone for kids, our kids' play zone in Nashik is ideal for kids aged between 6 months to 12 years. Featuring a wall-to-wall trampoline, zebra swing, dollhouse, obstacle zone, interactive ball pool, and 15+ fun activities for kids, Jus Jumpin offers the best kids' play zone in Nashik, where kids can have nonstop fun.</p>
                 <p class="section-text">Jus Jumpin at Nashik City Centre mall prioritises kids' safety before anything else. For that reason, we maintain strict safety and hygiene standards with regular equipment checks and frequent clean-up in all our facilities. The caring parents can watch their kids jump into new heights from our comfortable resting zone. Our team of trained supervisors ensures the children’s safety in the playzone, so they can curate only good memories at Jus Jumpin.</p>
                 <p class="section-text">Our vibrant and buzzing facility offers an excellent party zone to host charming birthday parties that will fill the kids with joy and thrill. With tailored decoration, amazing party games, and exclusive access to our colourful play zone, surprise your kid with an extraordinary birthday party.</p>
@@ -102,8 +102,8 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at ABC Square Mall features <strong>an infinity trampoline, foam pits, thrilling arcade, wall climbing, basketball zone, and a dedicated kids' play zone.</strong>
-</p>
+        <p class="section-intro">Jus Jumpin at City Center Nashik features <strong>a premium kids play area, thrilling soft play area, wall climbing, basketball zone, and a dedicated kids' play zone.</strong>
+        </p>
         
 <div class="experience-grid">
             <div class="experience-card glass-card">
@@ -140,7 +140,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section activities-section">
     <div class="container">
         <h2 class="section-heading2"><span class="emoji-icon"><i class="fas fa-gamepad"></i></span> Our Activities</h2>
-        <p class="section-intro">Beyond India's premier trampoline park, experience mind-bending VR games, a dedicated soft play zone for kids, an international-standard arcade, and 15+ interactive gaming activities curated just for you.</p>
+        <p class="section-intro">Beyond India's premier trampoline park, experience mind-bending games, a dedicated soft play zone for kids, an international-standard kids play area, and 15+ interactive gaming activities curated just for you.</p>
         <!-- Toggle Switch -->
         <div class="activities-toggle-wrapper">
             <label for="activity-filter" class="switch" aria-label="Toggle Between Adults and Kids Activities">
@@ -529,14 +529,14 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             <div class="address-content">
                 <p class="address-main"><strong>Address:</strong></p>
                 <p>3rd Floor, Jus Jumpin, City Center Mall,<br>
-                Untwadi Rd, Lavate Nagar, Parijat Nagar, Nashik, Maharashtra 422002.<br><strong>Call Us:</strong> Available Soon.</p>
+                Untwadi Rd, Lavate Nagar, Parijat Nagar, Nashik, Maharashtra 422002.<br><strong>Call Us:</strong> (+91)98363 34433</p>
                 <p class="landmarks"><strong>Landmarks:</strong> Near Untwadi Rd, Lavate Nagar, Parijat Nagar, Nashik, Maharashtra 422002</p>
             </div>
         </div>
         
         <div class="map-container">
             <iframe
-                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Jus%20Jumpin,%20City%20Center%20Mall,%20+()&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.4506808405263!2d73.75932771194144!3d19.989590981334857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeba187b29a3f%3A0x9f7bb9ece38536c4!2sJus%20Jumpin%2C%20Nashik%20%7C%20Kid&#39;s%20Play%20Activity%20%26%20Birthday%20Party%20Zone!5e0!3m2!1sen!2sin!4v1764828872644!5m2!1sen!2sin"
                 width="100%"
                 height="450"
                 style="border:0;border-radius:16px;"
@@ -680,7 +680,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | City Center Mall (Nashik)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | City Center Mall (Nashik)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

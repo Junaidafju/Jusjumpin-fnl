@@ -67,7 +67,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <span class="hero-emoji"></span>
                 Jus Jumpin<br>Junction mall, Durgapur
             </h1>
-            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, an arcade games zone, and a large range of delicious food, a memorable day out is guaranteed with the best children’s amusement park in Durgapur.</p>
+            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, and a large range of delicious food, a memorable day out is guaranteed with the best children’s amusement park in Durgapur.</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -83,7 +83,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
     <div class="container">
         <div class="content-with-image">
             <div class="content-left">
-                <h2 class="section-title gradient-text">Ultimate Fun Awaits.</h2>
+                <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
                 <p class="section-text">Hop into the vibrant Kids playzone in Durgapur at  <strong>Jus Jumpin - Junction Mall. </strong>Thoughtfully designed for kids aged between 6 months to 12 years, Jus Jumpin Children's amusement park is the ideal destination to let the little jumpers jump freely and let their imaginations run wild without any restrictions. Stacked with infinity trampolines, colourful slides, thrilling tunnels, and 15+ gaming activities, Jus Jumpin has gone beyond an ordinary children's adventure park in India.
                 </p>
                 <p class="section-text">For the caring parents, we have a cozy lounge area where they can relax comfortably, while their children can explore the new limits of their imagination and play with no restrictions. With more than 15+ games and joyrides, Jus Jumpin creates laughter, energy among kids and wholesome memories for the parents.
@@ -653,7 +653,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Deogarh (Junction Mall)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Durgapur (Junction Mall)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

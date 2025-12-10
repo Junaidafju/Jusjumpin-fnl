@@ -148,7 +148,7 @@ $store_items = array_keys($store_items);
 				</div>
 			</div>
 			<div class="jj-know__image-wrap animate-on-scroll slide-right" data-jj-tilt>
-				<img class="jj-know__image" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/MAIN-PAGE.SVG"" alt="<?php esc_attr_e('Excited child jumping', 'newjusjumpin'); ?>" loading="lazy">
+				<img class="jj-know__image" src="https://www.jusjumpin.com/wp-content/uploads/2025/12/compressed_MAIN-PAGE.webp" alt="<?php esc_attr_e('Excited child jumping', 'newjusjumpin'); ?>" loading="lazy">
 			</div>
 		</div>
 

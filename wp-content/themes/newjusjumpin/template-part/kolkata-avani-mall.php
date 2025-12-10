@@ -48,10 +48,10 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-hero-slider">
     <div class="hero-slider-wrapper">
         <div class="hero-slide active">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/avani-mall-main.webp'); ?>" alt="Jus Jumpin Kolkata Avani Mall Riverside Mall" class="hero-slide-img">
+            <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/avani-mall.png" alt="Jus Jumpin Kolkata Avani Mall Riverside Mall" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/avani-mall2.webp'); ?>" alt="Adult Trampoline Park Kolkata" class="hero-slide-img">
+            <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/avani-mall2.webp" alt="Adult Trampoline Park Kolkata" class="hero-slide-img">
         </div>
         <div class="hero-slide">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Kolkata Avani Mall Activities" class="hero-slide-img">
@@ -67,7 +67,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <span class="hero-emoji"></span>
                 Jus Jumpin<br>Avani Riverside Mall - Howrah
             </h1>
-            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, arcade games zone, and a large range of delicious food, a memorable day out is guaranteed with us.
+            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzones and a large range of delicious food, a memorable day out is guaranteed with us.
 </p>
         </div>
     </div>
@@ -90,7 +90,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <p class="section-text">Jus Jumpin at Avani Riverside Mall offers a unique kids' playzone experience, featuring thrilling wall-to-wall trampolines for kids, exciting wave slides, spiral slides, adventure obstacle games for children, and an interactive soft play zone. With international safety and hygiene standards, parents can sit back and relax, while the kids enjoy to their fullest. Apart from acting as the finest kids' indoor play area, the venue also specializes in hosting blissful birthday party celebrations with custom themes, delicious food, and fun birthday party activities.</p>
             </div>
             <div class="content-right">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/AVANI-MALL-BODY.WEBP'); ?>" alt="Avani Mall" class="building-image">
+                <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/compressed_avani-mall-main.webp'); ?>" alt="Avani Mall" class="building-image">
              <div class="image-overlay">
                     <h2 class="building-name">Avani Mall</h2>
                 </div>
@@ -127,7 +127,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Resting-zone-highlights.webp'); ?>" alt="Dedicated Resting Zone For Parents" loading="lazy">
+                    <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/compressed_Resting-zone-highlights.webp" alt="Dedicated Resting Zone For Parents" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-smile"></i> Dedicated Resting Zone For Parents</h3>
             </div>
@@ -662,7 +662,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (Avani Mall)</strong> is wholesome adventure playzone designed exclusively for kids aged 6 months to 12 years—where imagination runs wild, creativity knows no limits, and every moment is filled with joy, discovery, and endless fun.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (Avani Mall)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

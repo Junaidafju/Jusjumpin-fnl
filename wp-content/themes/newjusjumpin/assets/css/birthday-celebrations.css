@@ -828,11 +828,11 @@ body.page-template-page-birthday-celebration::before {
     opacity: 1;
 }
 
-.moment-icon {
+/* .moment-icon {
     font-size: 4rem;
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
     animation: iconBounce 0.6s ease-in-out;
-}
+} */
 
 @keyframes iconBounce {
     0%, 100% { transform: scale(1); }
@@ -1281,9 +1281,9 @@ body.page-template-page-birthday-celebration::before {
         gap: 20px;
     }
     
-    .moment-icon {
+    /* .moment-icon {
         font-size: 3rem;
-    }
+    } */
     
     .btn-birthday-primary,
     .btn-birthday-secondary {

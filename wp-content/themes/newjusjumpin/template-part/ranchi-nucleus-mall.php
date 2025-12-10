@@ -68,7 +68,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 Jus Jumpin<br>Nucleus Mall- Ranchi
 
             </h1>
-            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, arcade games zone, and a large range of delicious food, a memorable day out is guaranteed with the best Kids’ Playzone Adventure Park in Ranchi.</p>
+            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, and a large range of delicious food, a memorable day out is guaranteed with the best Kids’ Playzone Adventure Park in Ranchi.</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -84,7 +84,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
     <div class="container">
         <div class="content-with-image">
             <div class="content-left">
-                <h2 class="section-title gradient-text">Ultimate Fun Awaits.</h2>
+                <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
                 <p class="section-text">Dive in and explore a whole new world full of joy at <strong>Jus Jumpin,</strong> a wholesome indoor kids play zone in Ranchi Nucleus Mall. At our facility in Ranchi, with 20+ fun-filled activities for the little jumpers, we curate a happy place ideal for family hangouts. With wall-to-wall trampoline park, exciting obstacle courses, colourful slides, and various gaming activities, Jus Jumpin creates a vibrant action packed space where the kids can jump, slide, and laugh without any restrictions.</p>
                 <p class="section-text">Jus Jumpin also acts as the finest venue for birthday party of your child. You can get customized cartoon or anime-themed decorations, an extensive menu curated to your needs, and access to our indoor sports layout, where your kids can play all day long.</p>
                 <p class="section-text">Our Kids play zone at Ranchi Nucleus Mall offers the tiny jumpers with a one-of-a-kind playing experience without phones or internet. Our unique activities include an international-grade trampoline park, foam pit, challenging obstacle courses for kids, colourful ball pool, sand pits and a dedicated play zone for toddlers. At Jus Jumpin, we strictly maintain the highest standards of safety and hygiene to keep our little jumpers and their parents worry-free. Visit Jus Jumpin and see your child jump into new heights.</p>
@@ -679,7 +679,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Nucleus Mall(Ranchi)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Nucleus Mall(Ranchi)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

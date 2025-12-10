@@ -84,8 +84,8 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
     <div class="container">
         <div class="content-with-image">
             <div class="content-left">
-                <h2 class="section-title gradient-text">Ultimate Fun Awaits.</h2>
-                <p class="section-text">Dive into a world of joy at<strong> Jus Jumpin, Seasons Mall, Pune.</strong> Jump in for an electrifying experience for kids and adults. At our venue, get access to India's finest trampoline Park for adults, alongside a sparkling kids play zone that adheres to international safety & hygiene standards. At our facility, we offer several slides, arcade zone, foam pits, wall climbing and more than 15 energizing activities for people of all ages.</p>
+                <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
+                <p class="section-text">Dive into a world of joy at<strong> Jus Jumpin, Seasons Mall, Pune.</strong> Jump in for an electrifying experience for kids and adults. At our venue, get access to India's finest trampoline Park for adults, alongside a sparkling kids play zone that adheres to international safety & hygiene standards. At our facility, we offer several slides, foam pits, wall climbing and more than 15 energizing activities for people of all ages.</p>
                 <p class="section-text">At our venue, you get exclusive access to action-packed activities like sky stepper, obstacle zone, net climb, basketball area, and numerous fun activities for adults. Alongside these, we also offer a dedicated soft play area stacked with kid-friendly activities like foam pit, wave slide, merry-go-round, tunnel slide, toddler play area, and other wholesome activities for the kids to explore.</p>
                 <p class="section-text">Our bright and vibrant venue features a dedicated party area ideal for hosting amazing birthday parties, social gatherings, or corporate team building activities. Your party shines brighter at Jus Jumpin with exclusive access to our play zone, party games, personalized decoration, and customized dining menu. Hurry up now! Get ready to visit us at Jus Jumpin! Let's Spring It On!</p>
             </div>
@@ -640,7 +640,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Season Mall (Pune)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Season Mall (Pune)</strong>  isn't just another trampoline park — it's an experience built for everyone who wants to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

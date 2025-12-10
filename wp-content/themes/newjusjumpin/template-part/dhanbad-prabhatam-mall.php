@@ -83,8 +83,8 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
     <div class="container">
         <div class="content-with-image">
             <div class="content-left">
-                <h2 class="section-title gradient-text">Ultimate Fun Awaits.</h2>
-                <p class="section-text">Welcome to <strong>Jus Jumpin,  Prabhatam Grand Mall, Dhanbad.</strong> ump in for an electrifying experience for kids and adults. At our venue, get access to India's finest trampoline Park for adults, alongside a sparkling kids play zone that adheres to international safety & hygiene standards. At our facility, we offer several slides, arcade zone, foam pits, wall climbing and more than 15 energizing activities for people of all ages.</p>
+                <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
+                <p class="section-text">Welcome to <strong>Jus Jumpin,  Prabhatam Grand Mall, Dhanbad.</strong> ump in for an electrifying experience for kids and adults. At our venue, get access to India's finest trampoline Park for adults, alongside a sparkling kids play zone that adheres to international safety & hygiene standards. At our facility, we offer several slides, foam pits, wall climbing and more than 15 energizing activities for people of all ages.</p>
                 <p class="section-text">Alongside our energetic and action-filled amusement park, <strong>Jus Jumpin</strong>, also offers a dedicated party area that is just perfect for hosting unforgettable birthday parties for kids and adults, corporate events, and more. Customized theme decorations, flexible packages tailored to your needs, and a dedicated team to ensure your party remains stress-free, hassle-free, and free from all boring stuff.</p>
                 <p class="section-text">At<strong> Jus Jumpin, </strong>We strive to go beyond ordinary. Our thoughtfully designed, vibrant space radiates energy, generates laughter, and creates memories that last for years.</p>
             </div>
@@ -619,7 +619,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Prabhatam Grand Mall (Dhanbad),</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Prabhatam Grand Mall (Dhanbad),</strong>  isn't just another trampoline park — it's an experience built for everyone who wants to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

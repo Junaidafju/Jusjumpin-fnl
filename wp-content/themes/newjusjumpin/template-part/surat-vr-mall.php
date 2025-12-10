@@ -67,7 +67,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <span class="hero-emoji"></span>
                Jus Jumpin<br>VR MALL - Surat
             </h1>
-            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, an arcade games zone, and a large range of delicious food, a memorable day out is guaranteed at the best Kids’ Playzone Adventure Park in Surat.</p>
+            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, and a large range of delicious food, a memorable day out is guaranteed at the best Kids’ Playzone Adventure Park in Surat.</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -104,7 +104,7 @@ Jus Jumpin at VR Mall offers a unique kids' playzone experience, featuring thril
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at VR Mall, Surat Features <strong>an infinity trampoline, foam pits, thrilling arcade, wall climbing, basketball zone, and a dedicated kids' play zone.</strong>
+        <p class="section-intro">Jus Jumpin at VR Mall, Surat Features <strong>an infinity trampoline, foam pits, thrilling kids play area, wall climbing, basketball zone, and a dedicated kids' play zone.</strong>
 </p>
         
 <div class="experience-grid">
@@ -142,7 +142,7 @@ Jus Jumpin at VR Mall offers a unique kids' playzone experience, featuring thril
 <section class="location-section activities-section">
     <div class="container">
         <h2 class="section-heading2"><span class="emoji-icon"><i class="fas fa-gamepad"></i></span> Our Activities</h2>
-        <p class="section-intro">Beyond India's premier trampoline park, experience mind-bending VR games, a dedicated soft play zone for kids, an international-standard arcade, and 15+ interactive gaming activities curated just for you.</p>
+        <p class="section-intro">Beyond India's premier trampoline park, experience mind-bending games, a dedicated soft play zone for kids, an international-standard kids play area, and 15+ interactive gaming activities curated just for you.</p>
         <!-- Toggle Switch -->
         <div class="activities-toggle-wrapper">
             <label for="activity-filter" class="switch" aria-label="Toggle Between Adults and Kids Activities">
@@ -682,10 +682,10 @@ Jus Jumpin at VR Mall offers a unique kids' playzone experience, featuring thril
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | VR Mall (Surat)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | VR Mall (Surat)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
-            <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="cta-button">
+            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">
                 <span class="emoji-icon"><i class="fas fa-ticket-alt"></i></span> Book Your Jump Now!
             </a>
         </div>

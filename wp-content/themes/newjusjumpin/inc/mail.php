@@ -6,9 +6,10 @@ function jj_mail_headers(array $extra = array(), $replyTo = '') {
     $headers = array();
     $headers[] = 'MIME-Version: 1.0';
     $headers[] = 'Content-Type: text/html; charset=UTF-8';
-    $fromEmail = apply_filters('JJ_CONTACT_FROM_EMAIL', get_bloginfo('admin_email'));
+    $fromEmail = apply_filters('JJ_CONTACT_FROM_EMAIL', 'junaidafju@gmail.com'); // Use SMTP email
     if (empty($fromEmail)) { $fromEmail = get_option('admin_email'); }
-    $fromName  = apply_filters('JJ_CONTACT_FROM_NAME', get_bloginfo('name'));
+    $fromName  = apply_filters('JJ_CONTACT_FROM_NAME', 'JUS JUMPIN | Best Trampoline Park in India');
+    if (empty($fromName)) { $fromName = get_bloginfo('name'); }
     $headers[] = 'From: ' . $fromName . ' <' . $fromEmail . '>';
     if (!empty($replyTo)) {
         $headers[] = 'Reply-To: ' . $replyTo;
@@ -37,7 +38,12 @@ function jj_mail_admin_contact(array $data) {
     }
     $html  = jj_render_email('contact-admin', $data);
     if ($html === '') { $html = wpautop(esc_html(wp_strip_all_tags(print_r($data, true)))); }
-    $headers = jj_mail_headers(array(), $data['name'] . ' <' . $data['email'] . '>');
+     // Add CC + BCC
+     $headers = jj_mail_headers([
+        'Cc: jusjumpinmarketing@gmail.com',
+        'Cc: Outreach@jusjumpin.com',
+        'Bcc: info@jusjumpin.com'
+    ], $data['name'] . ' <' . $data['email'] . '>');
     return wp_mail($adminEmail, $subject, $html, $headers);
 }
 

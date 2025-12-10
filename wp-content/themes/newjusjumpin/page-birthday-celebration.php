@@ -175,7 +175,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Birthday_Party_Zones.jpg" alt="<?php esc_attr_e('Birthday Party Zone', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎉</span>
+                        <!-- <span class="moment-icon">🎉</span> -->
                     </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday2.webp" alt="<?php esc_attr_e('Kids Playing at Birthday Party', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎈</span>
+                        <!-- <span class="moment-icon">🎈</span> -->
                     </div>
                 </div>
             </div>
@@ -193,7 +193,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday3.webp" alt="<?php esc_attr_e('Trampoline Birthday Fun', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎂</span>
+                        <!-- <span class="moment-icon">🎂</span> -->
                     </div>
                 </div>
             </div>
@@ -202,7 +202,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday4.webp" alt="<?php esc_attr_e('Ball Pit Party Fun', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎁</span>
+                        <!-- <span class="moment-icon">🎁</span> -->
                     </div>
                 </div>
             </div>
@@ -211,7 +211,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday5.webp" alt="<?php esc_attr_e('Creative Birthday Activities', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎊</span>
+                        <!-- <span class="moment-icon">🎊</span> -->
                     </div>
                 </div>
             </div>
@@ -220,7 +220,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday6.jpg" alt="<?php esc_attr_e('Basketball Birthday Challenge', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🏀</span>
+                        <!-- <span class="moment-icon">🏀</span> -->
                     </div>
                 </div>
             </div>
@@ -229,7 +229,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday7.jpg" alt="<?php esc_attr_e('Foam Pit Birthday Adventure', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎯</span>
+                        <!-- <span class="moment-icon">🎯</span> -->
                     </div>
                 </div>
             </div>
@@ -238,7 +238,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday8.jpg" alt="<?php esc_attr_e('Obstacle Course Party', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🏆</span>
+                        <!-- <span class="moment-icon">🏆</span> -->
                     </div>
                 </div>
             </div>
@@ -247,7 +247,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday9.jpg" alt="<?php esc_attr_e('Climbing Birthday Challenge', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">⭐</span>
+                        <!-- <span class="moment-icon">⭐</span> -->
                     </div>
                 </div>
             </div>
@@ -256,7 +256,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday10.jpg" alt="<?php esc_attr_e('Rock Wall Birthday Adventure', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎪</span>
+                        <!-- <span class="moment-icon">🎪</span> -->
                     </div>
                 </div>
             </div>
@@ -266,7 +266,7 @@ get_header(); ?>
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday11.jpg"
                     alt="<?php esc_attr_e('Donut Slide Party Fun', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🍩</span>
+                        <!-- <span class="moment-icon">🍩</span> -->
                     </div>
                 </div>
             </div>
@@ -276,7 +276,7 @@ get_header(); ?>
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday12.webp"
                      alt="<?php esc_attr_e('Interactive Play Birthday', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎨</span>
+                        <!-- <span class="moment-icon">🎨</span> -->
                     </div>
                 </div>
             </div>
@@ -285,7 +285,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday13.webp" alt="<?php esc_attr_e('Merry Go Round Birthday', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎠</span>
+                        <!-- <span class="moment-icon">🎠</span> -->
                     </div>
                 </div>
             </div>
@@ -294,7 +294,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday14.webp" alt="<?php esc_attr_e('Ladder Climbing Party', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">🎢</span>
+                        <!-- <span class="moment-icon">🎢</span> -->
                     </div>
                 </div>
             </div>
@@ -303,7 +303,7 @@ get_header(); ?>
                 <div class="moment-image-wrapper">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/birthday15.webp" alt="<?php esc_attr_e('Happy Birthday Jumping', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="moment-overlay">
-                        <span class="moment-icon">💝</span>
+                        <!-- <span class="moment-icon">💝</span> -->
                     </div>
                 </div>
             </div>

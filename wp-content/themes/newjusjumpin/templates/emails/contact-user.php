@@ -178,7 +178,7 @@
             <!-- Header with Logo -->
             <div class="email-header">
                 <div class="logo-container">
-                    <img src="https://www.jusjumpin.com/wp-content/uploads/2025/06/Jus-Jumpin-Logo-2-1024x209.png" alt="Jus Jumpin Logo" class="logo">
+                    <img src="https://jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Jus-Jumpin-Logo.webp" alt="Jus Jumpin Logo" class="logo">
                 </div>
                 <h1>Thanks for contacting <?php echo esc_html($d['siteName']); ?>!</h1>
             </div>
@@ -187,7 +187,7 @@
             <div class="email-body">
                 <p class="greeting">Hi <?php echo esc_html($d['name']); ?>,</p>
                 
-                <p class="message">We've received your message and our team will get back to you within 24 hours. We're excited to help you with your inquiry!</p>
+                <p class="message">We've received your message and our team will get back to you soon. We're excited to help you with your inquiry!</p>
                 
                 <div class="info-box">
                     <p style="margin: 0; font-weight: 600;">Your reference number: <span class="reference-id"><?php echo esc_html($d['trackingId']); ?></span></p>
@@ -225,7 +225,7 @@
                     <div class="contact-details">
                         <p style="margin: 8px 0;">Call us: <strong>+91 9830359999</strong> (Bookings & Birthdays)</p>
                         <p style="margin: 8px 0;">Email: <strong>info@jusjumpin.com</strong></p>
-                        <p style="margin: 8px 0;">Visit: PS Qube, Action Area IID, Rajarhat, Newtown, West Bengal 700156</p>
+                        <p style="margin: 8px 0;">Headquater: PS Qube, Action Area IID, Rajarhat, Newtown, West Bengal 700156</p>
                     </div>
                 </div>
             </div>
@@ -233,13 +233,13 @@
             <!-- Footer -->
             <div class="email-footer">
                 <div class="social-links">
-                    <a href="#" class="social-link">Facebook</a> • 
-                    <a href="#" class="social-link">Instagram</a> • 
+                    <a href="https://www.facebook.com/jusjumpin/" class="social-link">Facebook</a> • 
+                    <a href="https://www.instagram.com/jusjumpin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link">Instagram</a> • 
                     <a href="#" class="social-link">Twitter</a> • 
-                    <a href="#" class="social-link">YouTube</a>
+                    <a href="https://www.youtube.com/@jusjumpin" class="social-link">YouTube</a>
                 </div>
                 <p style="margin: 8px 0;">Visit us: <a href="<?php echo esc_url($d['siteUrl']); ?>"><?php echo esc_html($d['siteUrl']); ?></a></p>
-                <p style="margin: 0; font-size: 11px;">Kolkata's premier experiential hub • Sports • Dining • Entertainment</p>
+                <p style="margin: 0; font-size: 11px;">India's Premier Amusement Park • Kids Play Area • Trampoline Park</p>
             </div>
         </div>
     </div>

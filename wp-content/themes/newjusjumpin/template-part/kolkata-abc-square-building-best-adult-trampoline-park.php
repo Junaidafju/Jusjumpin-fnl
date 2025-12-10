@@ -89,7 +89,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <p class="section-text">At<strong> Jus Jumpin, </strong>We strive to go beyond ordinary. Our thoughtfully designed, vibrant space radiates energy, generates laughter, and creates memories that last for years.</p>
             </div>
             <div class="content-right">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC1.webp'); ?>" alt="ABC Square Building" class="building-image">
+                <img src="https://www.jusjumpin.com/wp-content/uploads/2025/11/jus-jumpin-og.png'); ?>" alt="ABC Square Building" class="building-image">
              <div class="image-overlay">
                     <h2 class="building-name">ABC Square Building</h2>
                 </div>
@@ -140,7 +140,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
 <section class="location-section activities-section">
     <div class="container">
         <h2 class="section-heading2"><span class="emoji-icon"><i class="fas fa-gamepad"></i></span> Our Activities</h2>
-        <p class="section-intro">Beyond India's premier trampoline park, experience spine-tingling Sky stepper, a dedicated soft play zone for kids, an international-standard arcade, and 15+ interactive gaming activities curated just for you.</p>
+        <p class="section-intro">Beyond India's premier trampoline park, experience spine-tingling Sky stepper, a dedicated soft play zone for kids, fun filled obstacle zone and 15+ interactive gaming activities curated just for you.</p>
         <!-- Toggle Switch -->
         <div class="activities-toggle-wrapper">
             <label for="activity-filter" class="switch" aria-label="Toggle Between Adults and Kids Activities">
@@ -300,12 +300,12 @@ $review_count = "2795"; // Example: if available, uncomment and set
         <div class="activities-content kids-activities" data-category="kids">
             <div class="activities-grid">
                 <!-- Kids Activity 1 -->
-                <div class="activity-card glass-card" data-activity-name="MerryGo Round">
+                <div class="activity-card glass-card" data-activity-name="Merry-Go-Round">
                     <div class="activity-image">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp'); ?>" alt="MerryGo Round - Kids" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">MerryGo Round</h4>
+                        <h4 class="activity-title">Merry-Go-Round</h4>
                         <p class="activity-desc">Classic spinning fun for kids! Enjoy the colorful ride on our safe and exciting merry-go-round.</p>
                     </div>
                 </div>
@@ -520,8 +520,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
             <div class="safety-item glass-card">
                 <span class="safety-icon"><i class="fas fa-socks"></i></span>
                 <h4>Grip Socks Required</h4>
-                <p>Grip socks are <strong>compulsory</strong> on the Jumpin' floor to maintain safety and hygiene standards.
-                </p>
+                <p>Grip socks are <strong>compulsory</strong> on the Jumpin' floor to maintain safety and hygiene standards.</p>
             </div>
             <div class="safety-item glass-card">
                 <span class="safety-icon"><i class="fas fa-file-signature"></i></span>
@@ -629,7 +628,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (ABC Square Building)</strong> isn't just another trampoline park — it's an <strong>experience built for adults</strong> who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Kolkata (ABC Square Building)</strong> isn't just another trampoline park — it's an experience built for everyone who wants to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

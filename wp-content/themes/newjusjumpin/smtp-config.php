@@ -16,7 +16,7 @@ add_action('phpmailer_init', function($phpmailer) {
 
     // Credentials
     $phpmailer->Username = 'junaidafju@gmail.com';
-    $phpmailer->Password = 'ggqb aekf mwij cdtl';
+    $phpmailer->Password = 'rcrw efyf dcox hvpf';
 
     // From
     $fromEmail = 'junaidafju@gmail.com';
@@ -28,9 +28,20 @@ add_action('phpmailer_init', function($phpmailer) {
     }
 });
 
+// Enable SMTP debugging (set to 0 for production, 2 for verbose debugging)
+add_action('phpmailer_init', function($phpmailer) {
+    if (!($phpmailer instanceof PHPMailer\PHPMailer\PHPMailer)) {
+        return;
+    }
+    // Uncomment for debugging (only in development)
+    // $phpmailer->SMTPDebug = 2;
+    // $phpmailer->Debugoutput = function($str, $level) {
+    //     error_log("SMTP Debug: $str");
+    // };
+});
+
 // Default email content type to HTML for our theme emails only
 add_filter('wp_mail_content_type', function($content_type) {
     return 'text/html';
 });
-// SMTP configuration for Gmail
 
