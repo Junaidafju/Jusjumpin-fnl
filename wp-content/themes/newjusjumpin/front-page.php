@@ -11,15 +11,29 @@ get_header(); ?>
 <!-- Hero Section -->
 <section class="hero-section full-width" id="hero">
     <?php 
-    // Check for available video files (in priority order)
-    $video_files = array(
-        'Hero1.webm' => get_template_directory() . '/assets/video/Hero1.webm',
-        'for-webside-1-3.webm' => get_template_directory() . '/assets/video/for-webside-1-3.webm',
-        'hero-video.webm' => get_template_directory() . '/assets/video/hero-video.webm',
-        'hero-video.mp4' => get_template_directory() . '/assets/video/hero-video.mp4'
+    // Define video files for mobile and desktop separately
+    $mobile_video_files = array(
+        'mobile-video.mp4' => get_template_directory() . '/assets/video/mobile-video.mp4',
+        'mobile-video.webm' => get_template_directory() . '/assets/video/mobile-video.webm',
+        // Add more mobile-specific videos here if needed
     );
     
-    // Check for poster image (SVG or JPG)
+    $desktop_video_files = array(
+        'Hero1.mp4' => get_template_directory() . '/assets/video/Hero1.mp4',
+        'for-webside-1-3.webm' => get_template_directory() . '/assets/video/for-webside-1-3.webm',
+        'hero-video.webm' => get_template_directory() . '/assets/video/hero-video.webm',
+        'hero-video.mp4' => get_template_directory() . '/assets/video/hero-video.mp4',
+        // Add more desktop-specific videos here if needed
+    );
+    
+    // Select the appropriate video files based on device type
+    if (wp_is_mobile()) {
+        $video_files = $mobile_video_files;
+    } else {
+        $video_files = $desktop_video_files;
+    }
+    
+    // Check for poster image (SVG or JPG) - same for both mobile and desktop
     $poster_svg_path = get_template_directory() . '/assets/img/hero-poster.svg';
     $poster_svg_url = get_template_directory_uri() . '/assets/img/hero-poster.svg';
     $poster_jpg_path = get_template_directory() . '/assets/img/hero-poster.jpg';

@@ -170,7 +170,7 @@ function newjusjumpin_custom_meta_descriptions() {
             $location_patterns = array(
                 'kolkata-', 'bengaluru-', 'dhanbad-', 'durgapur-', 'jamshedpur-',
                 'nagpur-', 'noida-', 'pune-', 'raipur-', 'ranchi-', 'siliguri-',
-                'surat-', 'udaipur-', 'nashik-'
+                'surat-', 'udaipur-', 'nashik-', 'ghatkopar-'
             );
             
             $is_location_page = false;
@@ -251,6 +251,7 @@ function newjusjumpin_custom_meta_descriptions() {
         'bengaluru-m5-ecity-mall' => 'Visit Kids Playzone at M5 Ecity Mall Bengaluru—top indoor play area & adventure park, perfect for fun-filled kids\' birthday party celebrations.',
         'bengaluru-meenakshi-mall' => 'Explore Kids Playzone Bengaluru Meenakshi Mall – the ultimate indoor play area & party venue for kids\' birthdays in Bengaluru Meenakshi Mall.',
         'dhanbad-prabhatam-mall' => 'Explore Adult Trampoline Park in Prabhatam Mall Dhanbad – combined with Kids Playzone & indoor play area, adventure park for family fun & kids\' play.',
+        'ghatkopar-rcity-mall' => 'Explore Adult Trampoline Park in Prabhatam Mall Dhanbad – combined with Kids Playzone & indoor play area, adventure park for family fun & kids\' play.',
         'jamshedpur-pm-mall' => 'Jamshedpur P&M Mall offers a fantastic indoor play area setup, a top adventure park, and the best birthday party venues.',
         'ranchi-nucleus-mall' => 'Make birthdays special at Ranchi Nucleus Mall – indoor play area & the best adventure park venue for kids. Best Kids Playzone at Nucleus Mall Ranchi.',
         'noida-gip-mall' => 'Explore the trampoline park in GIP Mall Noida – indoor play area setup & kids\' party venues for birthdays, family fun & safe play.',
@@ -507,6 +508,7 @@ add_action('template_redirect', function() {
             'kolkata-city-centre-2' => 'Kids Playzone at City Centre 2 Kolkata - Jus Jumpin',
             'bengaluru-meenakshi-mall' => 'Kids Playzone Bengaluru Meenakshi Mall - Jus Jumpin',
             'dhanbad-prabhatam-mall' => 'Adult Trampoline Park in Prabhatam Mall Dhanbad - Jus Jumpin',
+            'ghatkopar-rcity-mall' => 'Adult Trampoline Park in Prabhatam Mall Dhanbad - Jus Jumpin',
             'durgapur-junction-mall' => 'Trampoline Park At Durgapur Junction Mall – Jus Jumpin',
             'nashik-city-centre' => 'Kids Amusement Park in City Centre - Nashik',
             'jamshedpur-pm-mall' => 'Kids Play Area in Jamshedpur P&M Mall - Jus Jumpin',
@@ -787,7 +789,8 @@ function newjusjumpin_setup_mega_menu() {
         'Maharashtra' => array(
             'Nagpur - VR Mall' => '/nagpur-vr-mall/',
             'Pune - Seasons Mall' => '/pune-seasons-mall/',
-            'Nashik - City Centre' => '/nashik-city-centre/'
+            'Nashik - City Centre' => '/nashik-city-centre/',
+            'Ghatkopar - RCity Mall' => '/ghatkopar-rcity-mall/',
         ),
         'Chhattisgarh' => array(
             'Raipur - Zora Mall' => '/raipur-zora-mall/'
@@ -1440,6 +1443,7 @@ function newjusjumpin_seo_meta() {
                 'bengaluru-m5-ecity-mall' => 'Visit Kids Playzone at M5 Ecity Mall Bengaluru—top indoor play area & adventure park, perfect for fun-filled kids\' birthday party celebrations.',
                 'bengaluru-meenakshi-mall' => 'Explore Kids Playzone Bengaluru Meenakshi Mall – the ultimate indoor play area & party venue for kids\' birthdays in Bengaluru Meenakshi Mall.',
                 'dhanbad-prabhatam-mall' => 'Explore Adult Trampoline Park in Prabhatam Mall Dhanbad – combined with Kids Playzone & indoor play area, adventure park for family fun & kids\' play.',
+                'ghatkopar-rcity-mall' => 'Celebrate your kid\'s birthday at RCity Mall Ghatkopar. Enjoy our indoor play area setup and adventure park for an unforgettable birthday party experience.',
                 'jamshedpur-pm-mall' => 'Jamshedpur P&M Mall offers a fantastic indoor play area setup, a top adventure park, and the best birthday party venues.',
                 'ranchi-nucleus-mall' => 'Make birthdays special at Ranchi Nucleus Mall – indoor play area & the best adventure park venue for kids. Best Kids Playzone at Nucleus Mall Ranchi.',
                 'noida-gip-mall' => 'Explore the trampoline park in GIP Mall Noida – indoor play area setup & kids\' party venues for birthdays, family fun & safe play.',
@@ -1967,7 +1971,8 @@ function newjusjumpin_get_location_slugs() {
         'Maharashtra' => array(
             'Nagpur - VR Mall' => '/nagpur-vr-mall/',
             'Pune - Seasons Mall' => '/pune-seasons-mall/',
-            'Nashik - City Centre' => '/nashik-city-centre/'
+            'Nashik - City Centre' => '/nashik-city-centre/',
+            'Ghatkopar -Rcity Mall' => '/ghatkopar-rcity-mall/'
         ),
         'Chhattisgarh' => array(
             'Raipur - Zora Mall' => '/raipur-zora-mall/'
