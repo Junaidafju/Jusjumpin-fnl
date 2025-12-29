@@ -738,5 +738,42 @@ return [
             "closes" => "21:30"
         ]
     ],
+    // ============================================================
+    // 19. Ghatkopar — R City Mall
+    // ============================================================
+    'ghatkopar-rcity-mall' => [
+        "@context" => "https://schema.org",
+        "@type" => "LocalBusiness",
+        "name" => "Jus Jumpin Kids Amusement Park in City Centre - Nashik",
+        "alternateName" => "Jus Jumpin Trampoline Park Nashik",
+        "url" => "https://www.jusjumpin.com/ghatkopar-rcity-mall/",
+        "telephone" => "+91 9836229922",
+        "logo" => "https://www.jusjumpin.com/wp-content/uploads/2025/12/CCTV-Group-Photo-3.png",
+        "image" => [
+            "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_0001-2048x1365.jpg",
+            "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_4608-2048x1536.jpg"
+        ],
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "City Centre Mall, Untwadi Road, Nashik",
+            "addressLocality" => "Mumbai",
+            "addressRegion" => "Maharashtra",
+            "postalCode" => "400086",
+            "addressCountry" => "IN"
+        ],
+        "geo" => [
+            "@type" => "GeoCoordinates",
+            "latitude" => 19.100151063974447,
+            "longitude" => 72.91685234907767
+        ],
+        "hasMap" => "https://maps.app.goo.gl/7feR1KpsZiEQQDnV7",
+        "openingHoursSpecification" => [
+            "@type" => "OpeningHoursSpecification",
+            "dayOfWeek" => ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens" => "11:00",
+            "closes" => "21:30"
+        ]
+    ],
+
    
 ];

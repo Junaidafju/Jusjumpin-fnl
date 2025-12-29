@@ -170,7 +170,7 @@ function newjusjumpin_custom_meta_descriptions() {
             $location_patterns = array(
                 'kolkata-', 'bengaluru-', 'dhanbad-', 'durgapur-', 'jamshedpur-',
                 'nagpur-', 'noida-', 'pune-', 'raipur-', 'ranchi-', 'siliguri-',
-                'surat-', 'udaipur-', 'nashik-', 'ghatkopar-'
+                'surat-', 'udaipur-', 'nashik-', 'ghatkopar-', 'thane-'
             );
             
             $is_location_page = false;
@@ -261,8 +261,8 @@ function newjusjumpin_custom_meta_descriptions() {
         'raipur-zora-mall' => 'Hop into the best trampoline park and gaming zone for adults and kids in Raipur Zora Mall. Experience our exciting bowling alley and Kids\' adventure park.',
         'udaipur-urban-square-mall' => 'Celebrate your kid\'s birthday at Urban Square Mall, Udaipur. Urban Square Mall Udaipur is a great place for kid\'s adventure park & kid\'s indoor play area.',
         'surat-vr-mall' => 'Find the best birthday party venue in Surat VR Mall – kids\' play area in Surat VR Mall, adventure park & indoor play area in Surat VR mall fun for children.',
+        'thane-r-mall' => 'Find the best birthday party venue in Thane R Mall – kids\' play area in Thane R Mall, adventure park & indoor play area in Thane R mall fun for children.',
         'nashik-city-centre' => 'Celebrate your kid\'s birthday at Nashik City Centre. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Nashik.',
-
         'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
         'birthday-celebration' => 'Celebrate your kid\'s birthday at Jus Jumpin – India\'s favorite indoor play zone. Trampolines, foam pits & party fun at locations nationwide!',
         'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.'
@@ -297,6 +297,45 @@ function newjusjumpin_custom_meta_descriptions() {
  * Hook for custom meta descriptions
  */
 add_action('wp_head', 'newjusjumpin_custom_meta_descriptions', 2);
+
+/**
+ * Add proper canonical URLs
+ */
+function newjusjumpin_canonical_url() {
+    // Don't output on feeds/archives
+    if (is_feed() || is_archive() || is_search()) {
+        return;
+    }
+
+    // Get the current URL
+    $canonical_url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    
+    // For singular posts/pages, use the permalink
+    if (is_singular()) {
+        $canonical_url = get_permalink();
+    }
+    
+    // For the blog page
+    if (is_home() && !is_front_page()) {
+        $canonical_url = get_permalink(get_option('page_for_posts'));
+    }
+    
+    // For the front page
+    if (is_front_page()) {
+        $canonical_url = home_url('/');
+    }
+    
+    // For category/tag/author archives
+    if (is_category() || is_tag() || is_author()) {
+        $canonical_url = get_term_link(get_queried_object());
+    }
+    
+    // Output the canonical URL
+    if (!empty($canonical_url)) {
+        echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
+    }
+}
+add_action('wp_head', 'newjusjumpin_canonical_url', 5); // Early priority to ensure it's output before other meta tags
 
 /**
  * Add Google Site Verification and other meta tags
@@ -521,7 +560,8 @@ add_action('template_redirect', function() {
             'siliguri-city-centre' => 'Kids Playzone City Centre Mall Siliguri - Jus Jumpin',
             'surat-vr-mall' => 'Best Kids Play Area in Surat VR mall - Jus Jumpin',
             'udaipur-urban-square-mall' => 'Kids Play Area in Udaipur Urban Square Mall - Jus Jumpin',
-        ];
+            'thane-r-mall' => 'Kids playzone Thane R Mall - Jus Jumpin',
+    ];
 
         $page_title = $location_titles[$slug] ?? 'Jus Jumpin Location | Best Trampoline Park in India';
     }
@@ -791,6 +831,7 @@ function newjusjumpin_setup_mega_menu() {
             'Pune - Seasons Mall' => '/pune-seasons-mall/',
             'Nashik - City Centre' => '/nashik-city-centre/',
             'Ghatkopar - RCity Mall' => '/ghatkopar-rcity-mall/',
+            'Thane - R Mall' => '/thane-r-mall/'
         ),
         'Chhattisgarh' => array(
             'Raipur - Zora Mall' => '/raipur-zora-mall/'
@@ -1359,7 +1400,7 @@ function newjusjumpin_seo_meta() {
         $og_image = get_the_post_thumbnail_url(null, 'full');
     } else {
         // Use the specific default image you provided
-        $og_image = 'https://www.jusjumpin.com/wp-content/uploads/2025/11/cropped-Jus-jumpin-favicon.png';
+        $og_image = 'https://www.jusjumpin.com/wp-content/uploads/2025/12/favicon.png';
     }
 
     // Prioritize template-defined $description
@@ -1456,7 +1497,8 @@ function newjusjumpin_seo_meta() {
                 'nashik-city-centre' => 'Celebrate your kid\'s birthday at Nashik City Centre. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Nashik.',
                 'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
                 'birthday-celebration' => 'Celebrate your kid\'s birthday at Jus Jumpin – India\'s favorite indoor play zone. Trampolines, foam pits & party fun at locations nationwide!',
-                'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.'
+                'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.',
+                'thane-r-mall' => 'Celebrate your kid\'s birthday at Thane R Mall. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Thane R Mall.',
             );
             
             // Try to get description from page slug
@@ -1969,10 +2011,11 @@ function newjusjumpin_get_location_slugs() {
             
         ),
         'Maharashtra' => array(
+            'Thane - R Mall' => '/thane-r-mall/',
             'Nagpur - VR Mall' => '/nagpur-vr-mall/',
             'Pune - Seasons Mall' => '/pune-seasons-mall/',
             'Nashik - City Centre' => '/nashik-city-centre/',
-            'Ghatkopar -Rcity Mall' => '/ghatkopar-rcity-mall/'
+            'Ghatkopar - R City Mall' => '/ghatkopar-rcity-mall/'
         ),
         'Chhattisgarh' => array(
             'Raipur - Zora Mall' => '/raipur-zora-mall/'

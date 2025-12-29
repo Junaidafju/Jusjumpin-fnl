@@ -329,9 +329,8 @@ get_header(); ?>
       </p>
 
       <div class="jj-birthday-cta__buttons">
-        <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn-glass primary">
-          <span class="btn-icon">🎂</span> Book Now
-        </a>
+        <a href="https://api.whatsapp.com/send?phone=919830359999&text=Hey!%20I%20need%20Booking%20and%20Birthday%20Party%20related%20help." class="btn-glass primary" target="_blank" rel="noopener noreferrer">
+    <span class="btn-icon">🎂</span> Book Now</a>
         <a href="tel:+919830359999" class="btn-glass secondary">
           <span class="btn-icon">📞</span> Call Us
         </a>

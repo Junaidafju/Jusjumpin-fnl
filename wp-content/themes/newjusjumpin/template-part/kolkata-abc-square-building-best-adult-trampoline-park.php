@@ -437,7 +437,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                         <tr>
                             <th>Session Duration</th>
                             <th>Weekday   (Mon–Fri)</th>
-                            <th>Weekend (Sat-Sun)</th>
+                            <th>Weekend (Weekends/ Holidays)</th>
                         </tr>
                     </thead>
                     <tbody>

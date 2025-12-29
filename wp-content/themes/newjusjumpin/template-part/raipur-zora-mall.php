@@ -471,7 +471,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                         <tr>
                             <th>Session Duration</th>
                             <th>Weekday   (Mon–Fri)</th>
-                            <th>Weekend (Sat-Sun)</th>
+                            <th>Weekend (Weekends/ Holidays)</th>
                         </tr>
                     </thead>
                     <tbody>

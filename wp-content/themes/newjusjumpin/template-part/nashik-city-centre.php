@@ -132,7 +132,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="section-footer-text">Dedicated party area perfect for <strong>hosting amazing birthday parties</strong> and <strong>corporate events </strong>in Nashik. The venue features an <strong>awesome in-house DJ</strong> and a <strong>designated cafe with beverages.</strong></p>
+        <p class="section-footer-text">Dedicated party area perfect for <strong>hosting amazing birthday parties</strong> and in Nashik. The venue features an <strong>awesome in-house DJ</strong> and a <strong>designated cafe with beverages.</strong></p>
     </div>
 </section>
 

@@ -1,18 +1,18 @@
 <?php
 /**
- * Template: Dhanbad - Prabhatam Mall
+ * Template: R City Mall - Ghatkopar
  * Modern location page with hero slider and glassmorphism design
  */
 
 // Page specific variables
-$title = "Dhanbad - Prabhatam Mall | Jus Jumpin";
-$state = "Jharkhand";
-$city = "Dhanbad";
-$slug = "dhanbad-prabhatam-mall";
-$address = "Shop no. 252, 2nd floor, Prabhatam Grand Mall, Barwaada Rd, Dhaiya, Dhanbad, Jharkhand 826010";
-$timings = "11:00 AM - 10:00 PM";
-$pricing = "Weekday: ₹650 (90min), ₹850 (120min) | Weekend: ₹750 (90min), ₹950 (120min)";
-$phone = "+919830115533";
+$title = "R City Mall - Ghatkopar | Jus Jumpin";
+$state = "Maharashtra";
+$city = "Ghatkopar";
+$slug = "Ghatkopar-R-City Mall";
+$address = "3rd Floor, Jus Jumpin, R City Mall Mall, Untwadi Rd, Lavate Nagar, Parijat Nagar, Ghatkopar, Maharashtra 422002";
+$timings = "11:00 AM - 9:30 PM";
+$pricing = "Weekday: ₹400 (30min), ₹500 (60min) | Weekend: ₹400 (30min), ₹500 (60min)";
+$phone = "+919830115533"; // Using a placeholder as the provided content says 'Available Soon.'
 $highlights = [
     "Infinity trampoline",
     "Foam pits",
@@ -27,16 +27,16 @@ $activities = [
     "Ninja Activities", "Pin Wall", "MerryGo Round", "Wave Slide", "Horn Slide",
     "Sand Pit", "Ball Pool", "Tunnels"
 ];
-$image_url = get_template_directory_uri() . '/assets/img/Prabhatam-mall-1.webp';
+$image_url = get_template_directory_uri() . '/assets/img/Ghatkopar_City_center1.webp';
 
 // Schema specific variables
-$alternate_name = "Jus Jumpin || Trampoline & Adventure Park";
+$alternate_name = "Jus Jumpin || Kids Activity, Soft Play Zone";
 $description = "Jus Jumpin is an indoor trampoline park and kids entertainment zone — perfect for playful kids and thrill-loving adults looking to unleash their inner jumper.";
 $email = "info@jusjumpin.com";
-$postal_code = "826010";
-$latitude = "23.82907";
-$longitude = "86.43305";
-$has_map = "https://maps.app.goo.gl/8nkqt8eAjV38CrTJA";
+$postal_code = "422002";
+$latitude = "19.9888";
+$longitude = "73.7656";
+$has_map = "https://maps.app.goo.gl/uX3L3t2K8u4J5gJ3A"; // Using a placeholder as the provided content has #
 $price_range = "₹₹";
 $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fun";
 // $rating_value = "4.8"; // Example: if available, uncomment and set
@@ -48,16 +48,16 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-hero-slider">
     <div class="hero-slider-wrapper">
         <div class="hero-slide active">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Prabhatam-mall-1.webp'); ?>" alt="Jus Jumpin Prabhatam mall" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/R_City_Mall_hero.png'); ?>" alt="Jus Jumpin Ghatkopar R City Mall" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Prabhatam-mall-2.webp'); ?>" alt="Adult Trampoline Park Dhanbad" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/R-City-Mall-3.webp'); ?>" alt="Adult Trampoline Park Ghatkopar" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Kolkata ABC Square Activities" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Ghatkopar ABC Square Activities" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Trampoline Park Fun Kolkata" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Trampoline Park Fun Ghatkopar" class="hero-slide-img">
         </div>
     </div>
     <div class="hero-slider-overlay"></div>
@@ -65,9 +65,9 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="container">
             <h1 class="location-hero-title">
                 <span class="hero-emoji"></span>
-                Jus Jumpin<br>Prabhatam Mall - Dhanbad
+                Jus Jumpin<br>R City Mall Ghatkopar
             </h1>
-            <p class="location-hero-subtitle">Hop in to experience the best trampoline park in Dhanbad. With more than 15 different activities for kids and adults, a day out to remember for a lifetime is guaranteed at Prabhatam Grand Mall - Dhanbad.</p>
+            <p class="location-hero-subtitle">Jump in to experience the most exciting kids play zone in Ghatkopar. Laced with action-packed activities for kids, offer your kids an adventure to remember.</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -84,14 +84,14 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="content-with-image">
             <div class="content-left">
                 <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
-                <p class="section-text">Welcome to <strong>Jus Jumpin,  Prabhatam Grand Mall, Dhanbad.</strong> ump in for an electrifying experience for kids and adults. At our venue, get access to India's finest trampoline Park for adults, alongside a sparkling kids play zone that adheres to international safety & hygiene standards. At our facility, we offer several slides, foam pits, wall climbing and more than 15 energizing activities for people of all ages.</p>
-                <p class="section-text">Alongside our energetic and action-filled amusement park, <strong>Jus Jumpin</strong>, also offers a dedicated party area that is just perfect for hosting unforgettable birthday parties for kids and adults, corporate events, and more. Customized theme decorations, flexible packages tailored to your needs, and a dedicated team to ensure your party remains stress-free, hassle-free, and free from all boring stuff.</p>
-                <p class="section-text">At<strong> Jus Jumpin, </strong>We strive to go beyond ordinary. Our thoughtfully designed, vibrant space radiates energy, generates laughter, and creates memories that last for years.</p>
+                <p class="section-text">Jump into a brand new world of joy <strong>Jus Jumpin, R City Mall Mall Ghatkopar,</strong> Mumbai. Thoughtfully designed to provide a fun-filled, safe space where the kids can run, jump and laugh without any restriction and fear of falling. Our meticulously engineered soft playzone for kids in Mumbai is perfect for little kids aged between 6 months to 12 years. At our facility, treat your kids with an exciting trampoline park, foam pit, interactive doll house, a fun-packed obstacle zone and many other kid-friendly activities.</p>
+                <p class="section-text">Besides offering an exciting playzone in Mumbai, Jus Jumpin always prioritises Kids' safety above anything else. For this reason, we strictly maintain our safety and hygiene standards with frequent equipment checks and regular clean-up in our facilities. The loving parents can watch their little one touching new heights from our dedicated resting zone. Our team of proficient supervisors always ensure children's safety at the playzone.</p>
+                <p class="section-text">Our colourful and vibrant kids' amusement park offers an awesome party zone to host the best birthday parties for kids that will fill them with laughter and joy. With personalised decorations, fun-filled party games and exclusive access to our playzone to surprise your kids with an awesome birthday party.</p>
             </div>
             <div class="content-right">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Prabhatam-Mall-body.webp'); ?>" alt="Prabhatam Grand Mall, Dhanbad" class="building-image">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/RcityMall.webp'); ?>" alt="R City Mall Mall Ghatkopar" class="building-image">
              <div class="image-overlay">
-                    <h2 class="building-name">Dhanbad Prabhatam Mall</h2>
+                    <h2 class="building-name">R City Mall Ghatkopar</h2>   
                 </div>
             </div>
         </div>
@@ -102,36 +102,37 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at Avani Mall features wall-to-wall trampolines, sky stepper, donut slides, hanging bridge, wall climbing, and kids’ play area.</p>
+        <p class="section-intro">Jus Jumpin at R City Mall Ghatkopar features <strong>a premium kids play area, thrilling soft play area, wall climbing, basketball zone, and a dedicated kids' play zone.</strong>
+        </p>
         
-        <div class="experience-grid">
+<div class="experience-grid">
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KittyKolkataABC.jpg'); ?>" alt="Kitty Parties" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp'); ?>" alt="Creative & Educational Activities" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-birthday-cake"></i> Amazing Kitty Parties</h3>
+                <h3 class="card-title gradient-text"><i class="fas fa-book"></i> Creative & Educational Activities</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/CorporateKolkataABC.jpg'); ?>" alt="Corporate Events" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp'); ?>" alt="Age Specific Play Zones" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-building"></i> Corporate Team-Building Events</h3>
+                <h3 class="card-title gradient-text"><i class="fas fa-child"></i> Age Specific Kids Play Zones</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Family Celebrations" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Birthday Celebrations" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-users"></i> Perfect Family Celebrations</h3>
+                <h3 class="card-title gradient-text"><i class="fas fa-birthday-cake"></i> Perfect Birthday Celebrations</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FitnessKolkataABC.jpg'); ?>" alt="Fitness Enthusiasts" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Resting-zone-highlights.webp'); ?>" alt="Dedicated Resting Zone For Parents" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-dumbbell"></i> Passionate Fitness Enthusiasts</h3>
+                <h3 class="card-title gradient-text"><i class="fas fa-smile"></i> Dedicated Resting Zone For Parents</h3>
             </div>
         </div>
         
-        <p class="section-footer-text">Dedicated party area perfect for <strong>hosting amazing birthday parties</strong> and <strong>corporate events </strong>in Kolkata. The venue features an <strong>awesome in-house DJ</strong> and a <strong>designated cafe with beverages.</strong></p>
+        <p class="section-footer-text">Dedicated party area perfect for <strong>hosting amazing birthday parties</strong> and in Ghatkopar. The venue features an <strong>awesome in-house DJ</strong> and a <strong>designated cafe with beverages.</strong></p>
     </div>
 </section>
 
@@ -139,32 +140,32 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section activities-section">
     <div class="container">
         <h2 class="section-heading2"><span class="emoji-icon"><i class="fas fa-gamepad"></i></span> Our Activities</h2>
-        <p class="section-intro">Beyond India's premier trampoline park, dynamic basketball area, a dedicated soft play zone for kids, interactive obstacle zone, and 15+ interactive gaming activities curated just for you.</p>
+        <p class="section-intro">Beyond India's premier trampoline park, experience mind-bending games, a dedicated soft play zone for kids, an international-standard kids play area, and 15+ interactive gaming activities curated just for you.</p>
         <!-- Toggle Switch -->
         <div class="activities-toggle-wrapper">
             <label for="activity-filter" class="switch" aria-label="Toggle Between Adults and Kids Activities">
-                <input type="checkbox" id="activity-filter" />
-                <span>Adults</span>
+                <input type="checkbox" id="activity-filter" checked />
+                <!-- <span>Adults</span> -->
                 <span>Kids</span>
             </label>
         </div>
         
         <!-- Adults Activities Section -->
-        <div class="activities-content adults-activities active" data-category="adults">
-            <div class="activities-grid">
+        <!-- <div class="activities-content adults-activities" data-category="adults"> -->
+            <!-- <div class="activities-grid"> -->
                 <!-- Adult Activity 1 -->
-                <div class="activity-card glass-card" data-activity-name="Infinity Trampoline">
+                <!-- <div class="activity-card glass-card" data-activity-name="Infinity Trampoline">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Infinity_trampoline_activity.webp'); ?>" alt="Infinity Trampoline - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/INFINITY_TRAMPOLINE_abc.webp'); ?>" alt="Infinity Trampoline - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Infinity Trampoline</h4>
                         <p class="activity-desc">Endless bouncing fun on our interconnected trampoline zones. Perfect for fitness enthusiasts and adrenaline seekers!</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 2 -->
-                <div class="activity-card glass-card" data-activity-name="Donut Slide">
+                <!-- <div class="activity-card glass-card" data-activity-name="Donut Slide">
                     <div class="activity-image">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Donut_Slide_abc.webp'); ?>" alt="Donut Slide - Adults" loading="lazy">
                     </div>
@@ -172,98 +173,98 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                         <h4 class="activity-title">Donut Slide</h4>
                         <p class="activity-desc">Experience gravity-powered thrills as you slide down our exciting donut-shaped tunnel at high speed!</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 3 -->
-                <div class="activity-card glass-card" data-activity-name="Foam Pit">
+                <!-- <div class="activity-card glass-card" data-activity-name="Foam Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/family_Adults.jpg'); ?>" alt="Foam Pit - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Foampit_abc.jpg'); ?>" alt="Foam Pit - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Foam Pit</h4>
                         <p class="activity-desc">Jump into a massive pit filled with soft foam cubes. Safe landings guaranteed for all your aerial stunts!</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 4 -->
-                <div class="activity-card glass-card" data-activity-name="Hanging Bridge">
+                <!-- <div class="activity-card glass-card" data-activity-name="Hanging Bridge">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/hangging_bridge_activity.webp'); ?>" alt="Hanging Bridge - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/hanging_bridge_abc.webp'); ?>" alt="Hanging Bridge - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Hanging Bridge</h4>
                         <p class="activity-desc">Test your balance and coordination as you navigate across our suspended rope bridge challenge.</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 5 -->
-                <div class="activity-card glass-card" data-activity-name="Zorb Ball">
+                <!-- <div class="activity-card glass-card" data-activity-name="Zorb Ball">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zorb_ball_activity.webp'); ?>" alt="Zorb Ball - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zorb_ball_abc.jpg'); ?>" alt="Zorb Ball - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Zorb Ball</h4>
                         <p class="activity-desc">Roll around in giant inflatable balls! Hilarious fun and great exercise combined in one activity.</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 6 -->
-                <div class="activity-card glass-card" data-activity-name="Bar Dodger">
+                <!-- <div class="activity-card glass-card" data-activity-name="Bar Dodger">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Bar_dodger_activity.webp'); ?>" alt="Bar Dodger - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/WipeOutKolkataABC.png'); ?>" alt="Bar Dodger - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Bar Dodger</h4>
                         <p class="activity-desc">Duck, jump, and dodge rotating bars in this fast-paced obstacle challenge. Test your reflexes!</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 7 -->
-                <div class="activity-card glass-card" data-activity-name="Sky Steeper">
+                <!-- <div class="activity-card glass-card" data-activity-name="Sky Steeper">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/sky_stepper_activity.webp'); ?>" alt="Sky Steeper - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Sky_stepper_abc.png'); ?>" alt="Sky Steeper - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Sky Stepper</h4>
+                        <h4 class="activity-title">Sky Steeper</h4>
                         <p class="activity-desc">Challenge yourself on steep inclined trampolines. Perfect for testing your jumping power and endurance!</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 8 -->
-                <div class="activity-card glass-card" data-activity-name="Wall Climbing">
+                <!-- <div class="activity-card glass-card" data-activity-name="Wall Climbing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wall_climb_activity.webp'); ?>" alt="Wall Climbing - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wall_climb_abc.jpg'); ?>" alt="Wall Climbing - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wall Climbing</h4>
                         <p class="activity-desc">Scale challenging climbing walls with various difficulty levels. Build strength and conquer new heights!</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 9 -->
-                <div class="activity-card glass-card" data-activity-name="Magnetic Wall">
+                <!-- <div class="activity-card glass-card" data-activity-name="Magnetic Wall">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Magnet_wall_activity.webp'); ?>" alt="Magnetic Wall - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Magnet_wall_abc.jpeg'); ?>" alt="Magnetic Wall - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Magnetic Wall</h4>
                         <p class="activity-desc">Stick to the wall in our unique magnetic suit experience. Defy gravity in this one-of-a-kind attraction!</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 10 -->
-                <div class="activity-card glass-card" data-activity-name="Bridge War">
+                <!-- <div class="activity-card glass-card" data-activity-name="Bridge War">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/BridgeFightKolkata.jpg'); ?>" alt="Bridge War - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Bridge War - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Bridge War</h4>
                         <p class="activity-desc">Battle your friends on a suspended platform using foam jousting sticks. Last one standing wins!</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 11 -->
-                <div class="activity-card glass-card" data-activity-name="Ninja Activities">
+                <!-- <div class="activity-card glass-card" data-activity-name="Ninja Activities">
                     <div class="activity-image">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Ninja_Activities_abc.jpg'); ?>" alt="Ninja Activities - Adults" loading="lazy">
                     </div>
@@ -271,106 +272,166 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                         <h4 class="activity-title">Ninja Activities</h4>
                         <p class="activity-desc">Complete ninja warrior-style obstacles. Test agility, strength, and endurance like a true warrior!</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Adult Activity 12 -->
-                <div class="activity-card glass-card" data-activity-name="Pin Wall">
+                <!-- <div class="activity-card glass-card" data-activity-name="Pin Wall">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Pin_wall_activity.webp'); ?>" alt="Pin Wall - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Pin_wall_abc.webp'); ?>" alt="Pin Wall - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Pin Wall</h4>
                         <p class="activity-desc">Create an impression of your body on our 3D pin wall. Strike a pose and see yourself immortalized!</p>
                     </div>
-                </div>
-            </div>
-        </div>
+                </div> -->
+            <!-- </div>
+        </div> -->
          <!-- Kids Activities Section -->
-        <div class="activities-content kids-activities" data-category="kids">
+         <div class="activities-content kids-activities active" data-category="kids">
             <div class="activities-grid">
                 <!-- Kids Activity 1 -->
-                <div class="activity-card glass-card" data-activity-name="MerryGo Round">
+                <div class="activity-card glass-card" data-activity-name="Wave Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp'); ?>" alt="MerryGo Round - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp'); ?>" alt="Wave Slide At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">MerryGo Round</h4>
-                        <p class="activity-desc">Classic spinning fun for kids! Enjoy the colorful ride on our safe and exciting merry-go-round.</p>
+                        <h4 class="activity-title">Wave Slide</h4>
+                        <p class="activity-desc">Glide down our thrilling Wave Slide and feel the rush of fun as you swoosh through smooth waves of excitement!</p>
                     </div>
                 </div>
                 
                 <!-- Kids Activity 2 -->
-                <div class="activity-card glass-card" data-activity-name="Wave Slide">
+                <div class="activity-card glass-card" data-activity-name="Sand Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp'); ?>" alt="Wave Slide - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp'); ?>" alt="Sand Pit At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Wave Slide</h4>
-                        <p class="activity-desc">Slide down wavy slopes! Our gentle wave slides provide smooth, exciting rides perfect for young children.</p>
+                        <h4 class="activity-title">Sand Pit</h4>
+                        <p class="activity-desc">Build castles, dig tunnels, or just enjoy the soft touch of sand in this creative and calming play zone.</p>
                     </div>
                 </div>
                 
                 <!-- Kids Activity 3 -->
-                <div class="activity-card glass-card" data-activity-name="Swing">
+                <div class="activity-card glass-card" data-activity-name="Soft Play Area">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Swing_activity.webp'); ?>" alt="Swings at Jus Jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_softplay_activity.webp'); ?>" alt="Soft Play Area At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Swing</h4>
-                        <p class="activity-desc">A fun and soothing activity where kids glide back and forth in a safe, cushioned swing setup. Perfect for building balance, joy, and endless giggles.</p>
+                        <h4 class="activity-title">Soft Play Area</h4>
+                        <p class="activity-desc">A safe, cushioned wonderland where kids can jump, climb, and tumble freely without a worry in the world.</p>
                     </div>
                 </div>
                 
                 <!-- Kids Activity 4 -->
-                <div class="activity-card glass-card" data-activity-name="Sand Pit">
+                <div class="activity-card glass-card" data-activity-name="Pathways">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp'); ?>" alt="Sand Pit - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pathway_activity.webp'); ?>" alt="Pathways Area At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Sand Pit</h4>
-                        <p class="activity-desc">Dig, build, and create! Our clean sand pit offers endless creative play opportunities for little ones.</p>
+                        <h4 class="activity-title">Pathways</h4>
+                        <p class="activity-desc">Explore our playful pathways designed for discovery, laughter, and little adventures at every turn.</p>
                     </div>
                 </div>
                 
                 <!-- Kids Activity 5 -->
-                <div class="activity-card glass-card" data-activity-name="Ball Pool">
+                <div class="activity-card glass-card" data-activity-name="Doll House">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp'); ?>" alt="Ball Pool - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_dollhouse_activities.webp'); ?>" alt="Doll House Area At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Ball Pool</h4>
-                        <p class="activity-desc">Dive into thousands of colorful balls! A favorite among kids for sensory play and endless fun.</p>
+                        <h4 class="activity-title">Doll House</h4>
+                        <p class="activity-desc">Step into a magical miniature world filled with charm, imagination, and make-believe fun!</p>
                     </div>
                 </div>
                 
                 <!-- Kids Activity 6 -->
-                <div class="activity-card glass-card" data-activity-name="Tunnels">
+                <div class="activity-card glass-card" data-activity-name="Tunnel Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Tunnel_activities.webp'); ?>" alt="Tunnels - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp'); ?>" alt="Tunnel Slide Area At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Tunnels</h4>
-                        <p class="activity-desc">Crawl through exciting tunnels and explore! Great for developing motor skills and imagination.</p>
+                        <h4 class="activity-title">Tunnel Slide</h4>
+                        <p class="activity-desc">Zoom through twisty tunnels that spark excitement and make every slide a surprise-filled adventure.</p>
                     </div>
                 </div>
                 <!-- Kids Activity 7 -->
-                <div class="activity-card glass-card" data-activity-name="Toddler play area">
+                <div class="activity-card glass-card" data-activity-name="Merry Go Round">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Toddler_play_activity.webp'); ?>" alt="Tunnels - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp'); ?>" alt="Merry Go Round At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Toddler play area</h4>
-                        <p class="activity-desc">A safe, soft, and colorful zone specially designed for little ones, filled with age-appropriate toys, mini slides, and sensory elements. Perfect for gentle play, early learning, and worry-free fun for your tiny adventurers..</p>
+                        <h4 class="activity-title">Merry Go Round</h4>
+                        <p class="activity-desc">Spin, laugh, and twirl to your heart’s delight — the classic ride that never goes out of style!</p>
                     </div>
                 </div>
                 <!-- Kids Activity 8 -->
-                <div class="activity-card glass-card" data-activity-name="Soft play area">
+                <div class="activity-card glass-card" data-activity-name="Zebra Swing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Soft_play_activity.webp'); ?>" alt="Soft_play_activity_area" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/zebra_swing_activity.webp'); ?>" alt="Zebra Swing At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Soft play area</h4>
-                        <p class="activity-desc">A safe, soft, and colorful zone specially designed for little ones, filled with age-appropriate toys, mini slides, and sensory elements. Perfect for gentle play, early learning, and worry-free fun for your tiny adventurers..</p>
+                        <h4 class="activity-title">Zebra Swing</h4>
+                        <p class="activity-desc">Hop on the zebra and swing away — balancing fun and thrill in one adorable ride.</p>
+                    </div>
+                </div>
+                <!-- Kids Activity 9 -->
+                <div class="activity-card glass-card" data-activity-name="Foam Pit">
+                    <div class="activity-image">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity2.webp'); ?>" alt="Foam Pit Area At Jus Jumpin Avani Mall" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Foam Pit</h4>
+                        <p class="activity-desc">Leap high and land soft in our fluffy foam cubes — a safe spot for flips, jumps, and fearless fun!</p>
+                    </div>
+                </div>
+                <!-- Kids Activity 10 -->
+                <div class="activity-card glass-card" data-activity-name="Horn Slide">
+                    <div class="activity-image">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/horn_slide_activity.webp'); ?>" alt="Horn Slide At Jus Jumpin Avani Mall" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Horn Slide</h4>
+                        <p class="activity-desc">Slide down the playful Horn Slide and enjoy a smooth, curvy ride that ends with giggles and excitement!</p>
+                    </div>
+                </div>
+                <!-- Kids Activity 11 -->
+                <div class="activity-card glass-card" data-activity-name="Ball Pool">
+                    <div class="activity-image">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp'); ?>" alt="Ball Pool Area At Jus Jumpin Avani Mall" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Ball Pool</h4>
+                        <p class="activity-desc">Dive into a sea of colorful balls — perfect for giggles, splashes of joy, and endless playtime memories.</p>
+                    </div>
+                </div>
+                <!-- Kids Activity 12 -->
+                <div class="activity-card glass-card" data-activity-name="Interactive Ball Pool">
+                    <div class="activity-image">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Interactive_ball_pool_activity.webp'); ?>" alt="Interactive Ball Pool At Jus Jumpin Avani Mall" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Interactive Ball Pool</h4>
+                        <p class="activity-desc">Experience play like never before with lights, sounds, and motion games in our high-tech interactive ball pool!</p>
+                    </div>
+                </div>
+                <!-- Kids Activity 13 -->
+                <div class="activity-card glass-card" data-activity-name="Obstacle Zone">
+                    <div class="activity-image">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Obstacle_zone_activity.webp'); ?>" alt="Obstacle zone At Jus Jumpin Avani Mall" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Obstacle Zone</h4>
+                        <p class="activity-desc">Challenge yourself in our thrilling Obstacle Zone — climb, jump, and balance your way through fun hurdles designed for endless excitement!</p>
+                    </div>
+                </div>
+                <!-- Kids Activity 14 -->
+                <div class="activity-card glass-card" data-activity-name="Donut Slide">
+                    <div class="activity-image">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp'); ?>" alt="Donut Slide Jus Jumpin Avani Mall" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Donut Slide</h4>
+                        <p class="activity-desc">Spin, slide, and laugh your way down the Donut Slide — a twisting tunnel of pure joy that guarantees a rush of fun every time!</p>
                     </div>
                 </div>
             </div>
@@ -431,14 +492,14 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     </thead>
                     <tbody>
                         <tr>
-                            <td>30 Minutes</td>
-                            <td>₹400</td>
-                            <td>₹400</td>
+                            <td>60 Minutes</td>
+                            <td>₹750</td>
+                            <td>₹750</td>
                         </tr>
                         <tr>
-                            <td>60 Minutes</td>
-                            <td>₹500</td>
-                            <td>₹500</td>
+                            <td>90 Minutes</td>
+                            <td>₹900</td> 
+                            <td>₹900</td>
                         </tr>
                         <tr class="highlight-row">
                             <td>Anti-Skid Grip Socks <em>(One-time Purchase. Compulsory for your safety.)</td>
@@ -462,35 +523,35 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <!-- Location Map Section -->
 <section class="location-section map-section">
     <div class="container">
-        <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-map-marker-alt"></i></span> Location: Jus Jumpin - Prabhatam Mall Dhanbad</h2>
+        <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-map-marker-alt"></i></span> Location: Jus Jumpin R City Mall Mall Ghatkopar.</h2>
         
         <div class="address-card glass-card">
             <div class="address-content">
                 <p class="address-main"><strong>Address:</strong></p>
-                <p> Shop no. 252, 2nd floor, Prabhatam Grand Mall,<br>
-                Barwaada Rd, Dhaiya, Dhanbad, Jharkhand 826010.<br><strong>Call Us:</strong> (+91)98301 15533</p>
-                <p class="landmarks"><strong>Landmarks:</strong> Near Barwaada Road, Dhaiya</p>
+                <p>2nd Floor, Jus Jumpin, R City Mall Mall,<br>
+                Lal Bahadur Shastri Marg, Amrut Nagar, Ghatkopar West, Mumbai<br><strong>Call Us:</strong> +91 9836229922</p>
+                <p class="landmarks"><strong>Landmarks:</strong> R City Mall,  Ghatkopar metro station</p>
             </div>
         </div>
         
         <div class="map-container">
             <iframe
-                src="https://maps.google.com/maps?q=Jus+Jumpin+Shop+no.+252%2C+2nd+floor%2C+Prabhatam+Grand+Mall%2C+Barwaada+Rd%2C+Dhaiya%2C+Dhanbad%2C+Jharkhand+826010&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.1756595476095!2d72.9168899!3d19.099948299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c72e3f79e581%3A0x329bfdf93fbaa010!2sJus%20Jumpin%2C%20Ghatkopar%20%7C%20Kid&#39;s%20Play%20Activity%20%26%20Birthday%20Party%20Zone!5e0!3m2!1sen!2sin!4v1767013451197!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 width="100%"
                 height="450"
                 style="border:0;border-radius:16px;"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Jus Jumpin Dhanbad Prbhatam grand mall">
+                title="Jus Jumpin R City Mall Mall Ghatkopar">
             </iframe>
         </div>
         
         <div class="map-button-wrapper">
-            <a href="https://share.google/RviLOBisQ3AJI1T9f" target="_blank" rel="noopener noreferrer" class="visit-us-button">
+            <a href="https://maps.app.goo.gl/a36tno6isrgJz7Rw5" target="_blank" rel="noopener noreferrer" class="visit-us-button">
                 <i class="fas fa-map-marked-alt"></i> Visit Us
             </a>
-            <a href="https://reviewthis.biz/prabhatam" target="_blank" rel="noopener noreferrer" class="visit-us-button">
+            <a href="https://reviewthis.biz/jus-jumpin-ghatkopar" target="_blank" rel="noopener noreferrer" class="visit-us-button">
                 <i class="fas fa-star"></i> Review Us
             </a>
         </div>
@@ -539,55 +600,55 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         
         <div class="faq-accordion">
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-1"></i> <span>Is there any age limit at Jus Jumpin' Trampoline Park?</span></button>
+                <button class="faq-question"><i class="fas fa-1"></i> <span>Is a disclaimer mandatory for all visitors?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        <p>At Jus Jumpin, we believe that age shouldn't limit you from having fun. All the age groups can visit our adult trampoline parks and enjoy to the fullest.</p>
+                        <p>Yes. Every participant must sign a disclaimer and provide valid ID (for adults).</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-2"></i> <span>What are the activities Jus Jumpin offers?</span></button>
+                <button class="faq-question"><i class="fas fa-2"></i> <span>Are anti-skid grip socks compulsory?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        <p>At our selected venues, Jus Jumpin offers versatile play activities for both kids and adults. At our facilities, you can find dedicated zones for different age groups.</p>
+                        <p>Yes — required for hygiene and safety. Cost ₹60 (one-time purchase).</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-3"></i> <span>Are there packages, parties, or group rates for adults?</span></button>
+                <button class="faq-question"><i class="fas fa-3"></i> <span>Can I extend my jump session?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        <p>Our vibrant theme parks are absolutely epic for hosting birthday parties and social events. For group or bulk bookings, contact our dedicated sales team for irresistible offers.</p>
+                        <p>Yes, depending on park capacity and availability. Additional charges apply.</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-4"></i> <span>Are there any health / age / weight restrictions?</span></button>
+                <button class="faq-question"><i class="fas fa-4"></i> <span>What if I buy tickets online?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        <p>Although at Jus Jumpin, everyone can enjoy without any restrictions, we cordially suggest pregnant guests and guests with heart conditions not participate for safety reasons. The standard weight limit at our facility is up to 100kg, but it totally depends on specific activities.</p>
+                        <p>Please arrive within <strong>30 minutes of your booked time</strong> for check-in and waiver completion.</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-5"></i> <span>Do I need to sign a waiver?</span></button>
+                <button class="faq-question"><i class="fas fa-5"></i> <span>Does Jus Jumpin host parties and corporate events?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        <p>Yes, it is mandatory to ensure you are aware of our facility's safety guidelines. For minors, the waiver form must be signed by the guardian.</p>
+                        <p>Absolutely! Dedicated spaces for birthdays, kitty parties, and corporate team-building are available.</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-6"></i> <span>What to wear while visiting Jus Jumpin?</span></button>
+                <button class="faq-question"><i class="fas fa-6"></i> <span>Where exactly is it inside the building?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        <p>While there is no such dress code at Jus Jumpin, we recommend wearing comfortable clothes and mandatory grip socks to ensure the safety of the guests.</p>
+                        <p>Located on the <strong>10th Floor of ABC Square Building</strong>, accessible via elevators.</p>
                     </div>
                 </div>
             </div>
@@ -598,7 +659,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <!-- Conclusion CTA Section -->
 <section class="location-section conclusion-section">
     <div class="container">
-        <h2 class="section-heading white-text"><span class="emoji-icon"><i class="fas fa-brain"></i></span> Why Jus Jumpin Prbhatam Mall?</h2>
+        <h2 class="section-heading white-text"><span class="emoji-icon"><i class="fas fa-brain"></i></span> Why Jus Jumpin R City Mall Mall Ghatkopar?</h2>
         
         <div class="conclusion-grid">
             <div class="conclusion-item">
@@ -619,7 +680,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | Prabhatam Grand Mall (Dhanbad),</strong>  isn't just another trampoline park — it's an experience built for everyone who wants to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | R City Mall Mall (Ghatkopar)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">
@@ -719,8 +780,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Live Digital Clock & Store Status
     const OPEN_HOUR = 11; // 11 AM
-    const CLOSE_HOUR = 22; // 10 PM
-    const CLOSE_MINUTE = 0; // 0 minutes
+    const CLOSE_HOUR = 21; // 9 PM
+    const CLOSE_MINUTE = 30; // 30 minutes
 
     function updateClock() {
         const now = new Date();

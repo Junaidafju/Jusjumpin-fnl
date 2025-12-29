@@ -68,71 +68,100 @@ get_header(); ?>
 </section>
 
 
-<!-- Stores Marquee: Lists all States and Cities with Jus Jumpin stores -->
 <?php
-// Build a unique list of "State — City" pairs from known locations
+// Define brand colors array for cycling
+$brand_colors = array(
+    '#f67edd', // pink
+    '#6dc065', // green
+    '#ff661a', // orange
+    '#00b9e3', // cyan
+    '#ff5da0', // rose
+    '#ffc60b', // yellow
+    '#b2d235', // lime
+    '#ff3645', // red
+    '#8869d2'  // purple
+);
+// Build a list of cities with images, colors, and slugs
 $jj_locations = array(
     'West Bengal' => array(
-        'Kolkata - ABC Square Building',
-        'Kolkata - Avani Mall',
-        'Kolkata - Axis Mall',
-        'Kolkata - City Centre 2',
-        'Siliguri - City Centre',
-        'Durgapur - Junction Mall'
+        'Kolkata' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/estroso-icon-packs-2.png',
+        'Siliguri' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/siliguri.png',
+        'Durgapur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/durgapur.png'
     ),
     'Karnataka' => array(
-        'Bengaluru - M5 Ecity Mall',
-        'Bengaluru - Meenakshi Mall'
+        'Bengaluru' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/bengaluru-1.png'
     ),
     'Jharkhand' => array(
-        'Dhanbad - Prabhatam Mall',
-        'Jamshedpur - P&M Mall',
-        'Ranchi - Nucleus Mall'
+        'Dhanbad' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/dhanbad.png',
+        'Jamshedpur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/jamshedpur.png',
+        'Ranchi' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Ranchi.png'
     ),
     'Uttar Pradesh' => array(
-        'Noida - GIP Mall',
-        'Noida - Spectrum Mall'
+        'Noida' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Noida.png'
     ),
     'Maharashtra' => array(
-        'Nagpur - VR Mall',
-        'Pune - Seasons Mall',
-        'Nashik - City Centre'
+        'Nagpur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Nagpur.png',
+        'Pune' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Pune.png',
+        'Nashik' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Nashik.png',
+        'Ghatkopar' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Ghatkopar.png',
+        'Thane' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Thane.png'
     ),
     'Chhattisgarh' => array(
-        'Raipur - Zora Mall'
+        'Raipur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/raipur.png'
     ),
     'Rajasthan' => array(
-        'Udaipur - Urban Square Mall'
+        'Udaipur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Udaipur.png'
     ),
     'Gujarat' => array(
-        'Surat - VR Mall'
+        'Surat' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/surat.png'
     )
 );
 
+$location_slugs = newjusjumpin_get_location_slugs(); // Get slugs from helper
+
 $store_items = array();
-foreach ($jj_locations as $state => $venues) {
-    foreach ($venues as $venue_name) {
-        // Extract city from the pattern "City - Venue"
-        $parts = explode(' - ', $venue_name, 2);
-        $city  = trim($parts[0] ?? '');
-        if ($state && $city) {
-            $store_items[$state . ' — ' . $city] = true; // use associative for uniqueness
+$color_index = 0;
+foreach ($jj_locations as $state => $cities) {
+    foreach ($cities as $city => $image_url) {
+        if ($city && $image_url) {
+            // Find the first slug for this city from the helper (e.g., for Kolkata, use the first venue)
+            $slug = '';
+            if (isset($location_slugs[$state])) {
+                foreach ($location_slugs[$state] as $venue => $venue_slug) {
+                    if (stripos($venue, $city) === 0) { // Match city at start of venue name
+                        $slug = $venue_slug;
+                        break;
+                    }
+                }
+            }
+            $store_items[] = array(
+                'name' => $city, // Only city name
+                'image' => $image_url,
+                'color' => $brand_colors[$color_index % count($brand_colors)],
+                'slug' => $slug // Add slug for linking
+            );
+            $color_index++;
         }
     }
 }
-$store_items = array_keys($store_items);
 ?>
-<section class="store-marquee" aria-label="Available Jus Jumpin locations (States and Cities)">
+<section class="store-marquee" aria-label="Available Jus Jumpin locations">
     <div class="store-marquee__inner">
         <div class="store-marquee__track">
             <?php foreach ($store_items as $item): ?>
-                <span class="store-marquee__pill"><?php echo esc_html($item); ?></span>
+                <a href="<?php echo esc_url($item['slug']); ?>" class="store-marquee__item" style="--item-color: <?php echo esc_attr($item['color']); ?>" aria-label="Visit Jus Jumpin in <?php echo esc_attr($item['name']); ?>">
+                    <img class="store-marquee__image" src="<?php echo esc_url($item['image']); ?>" alt="Store in <?php echo esc_attr($item['name']); ?>">
+                    <span class="store-marquee__name"><?php echo esc_html($item['name']); ?></span>
+                </a>
             <?php endforeach; ?>
         </div>
-        <!-- Duplicate track for seamless loop; hidden from screen readers -->
+        <!-- Duplicate track for seamless loop -->
         <div class="store-marquee__track" aria-hidden="true">
             <?php foreach ($store_items as $item): ?>
-                <span class="store-marquee__pill"><?php echo esc_html($item); ?></span>
+                <a href="<?php echo esc_url($item['slug']); ?>" class="store-marquee__item" style="--item-color: <?php echo esc_attr($item['color']); ?>" aria-label="Visit Jus Jumpin in <?php echo esc_attr($item['name']); ?>">
+                    <img class="store-marquee__image" src="<?php echo esc_url($item['image']); ?>" alt="Store in <?php echo esc_attr($item['name']); ?>">
+                    <span class="store-marquee__name"><?php echo esc_html($item['name']); ?></span>
+                </a>
             <?php endforeach; ?>
         </div>
     </div>
