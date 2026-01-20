@@ -93,23 +93,96 @@ get_header(); ?>
             ?>
 
         <?php else : ?>
-            <section class="no-results not-found">
-                <header class="page-header">
-                    <h1 class="page-title"><?php esc_html_e('Nothing here', 'newjusjumpin'); ?></h1>
-                </header>
+            <section class="no-results not-found" style="background-image: url('https://media.giphy.com/media/3o7TKz9bX9Z8LxOq5y/giphy.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; padding: 20px; animation: fadeIn 1s ease-in;">
+    <!-- Overlay for readability -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1;"></div>
+    
+    <div style="position: relative; z-index: 2; width: 100%; max-width: 1200px; text-align: center;">
+        <header class="page-header" style="margin-bottom: 40px;">
+            <h1 class="page-title" style="color: #f67edd; font-size: 3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; animation: bounceIn 1.5s ease-out; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"><?php esc_html_e('Nothing here', 'newjusjumpin'); ?></h1>
+        </header>
 
-                <div class="page-content glass-card">
-                    <?php if (is_home() && current_user_can('publish_posts')) : ?>
-                        <p><?php printf(wp_kses(__('Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'newjusjumpin'), array('a' => array('href' => array()))), esc_url(admin_url('post-new.php'))); ?></p>
-                    <?php elseif (is_search()) : ?>
-                        <p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'newjusjumpin'); ?></p>
-                    <?php else : ?>
-                        <p><?php esc_html_e('It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'newjusjumpin'); ?></p>
-                    <?php endif; ?>
-                    
-                    <?php get_search_form(); ?>
-                </div>
-            </section>
+        <!-- Lottie Animation in Center - Bigger and More Responsive -->
+        <div style="margin: 40px 0; display: flex; justify-content: center;">
+            <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+            <dotlottie-wc
+                src="https://lottie.host/22c23daf-8fca-465c-bbdd-aef4f5401b19/pYE2tT63u4.lottie"
+                style="width: 500px; height: 500px; max-width: 90vw; max-height: 90vw;"
+                autoplay
+                loop
+            ></dotlottie-wc>
+        </div>
+
+        <div class="page-content glass-card" style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(15px); border-radius: 20px; padding: 40px; box-shadow: 0 12px 40px rgba(0,0,0,0.15); border: 1px solid rgba(255, 255, 255, 0.3); max-width: 800px; margin: 0 auto; animation: slideUp 1s ease-out 0.5s both;">
+            <?php if (is_home() && current_user_can('publish_posts')) : ?>
+                <p style="font-size: 1.2rem; color: #666; margin-bottom: 30px;"><?php printf(wp_kses(__('Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'newjusjumpin'), array('a' => array('href' => array()))), esc_url(admin_url('post-new.php'))); ?></p>
+            <?php elseif (is_search()) : ?>
+                <p style="font-size: 1.2rem; color: #666; margin-bottom: 30px;"><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'newjusjumpin'); ?></p>
+            <?php else : ?>
+                <p style="font-size: 1.2rem; color: #666; margin-bottom: 30px;"><?php esc_html_e('It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'newjusjumpin'); ?></p>
+            <?php endif; ?>
+            
+            <div style="margin-bottom: 40px;">
+                <label for="search-form" style="display: block; margin-bottom: 15px; font-weight: bold; color: #1C352D;">Search for Stores or Fun Activities:</label>
+                <?php get_search_form(); ?>
+            </div>
+            
+            <div class="cta-buttons" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="cta-btn" style="background: linear-gradient(135deg, #f67edd, #ff5da0); color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(246, 126, 221, 0.3);">
+                    <span>🏠</span> Go to Home Page
+                </a>
+                <a href="<?php echo esc_url(home_url('/activities')); ?>" class="cta-btn" style="background: linear-gradient(135deg, #6dc065, #b2d235); color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(109, 192, 101, 0.3);">
+                    <span>🎉</span> View Activities
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=919830359999&text=Hey!%20I%20want%20to%20book%20a%20birthday%20party%20at%20Jus%20Jumpin." class="cta-btn" style="background: linear-gradient(135deg, #ff661a, #ffc60b); color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(255, 102, 26, 0.3);" target="_blank" rel="noopener noreferrer">
+                    <span>🎂</span> Book Birthdays
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=919830359999&text=Hey!%20I%20want%20to%20book%20tickets%20for%20Jus%20Jumpin." class="cta-btn" style="background: linear-gradient(135deg, #00b9e3, #8869d2); color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(0, 185, 227, 0.3);" target="_blank" rel="noopener noreferrer">
+                    <span>🎫</span> Book Tickets
+                </a>
+                <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-btn" style="background: linear-gradient(135deg, #ff3645, #f67edd); color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(255, 54, 69, 0.3);">
+                    <span>📞</span> Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+}
+
+@media (max-width: 768px) {
+    .cta-buttons {
+        grid-template-columns: 1fr;
+    }
+    .page-title {
+        font-size: 2rem;
+    }
+    dotlottie-wc {
+        width: 350px !important; /* Bigger on mobile for better visibility */
+        height: 350px !important;
+    }
+}
+</style>
         <?php endif; ?>
     </div>
 </div>

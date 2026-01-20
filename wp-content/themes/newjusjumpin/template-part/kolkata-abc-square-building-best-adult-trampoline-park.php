@@ -126,9 +126,9 @@ $review_count = "2795"; // Example: if available, uncomment and set
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FitnessKolkataABC.jpg'); ?>" alt="Fitness Enthusiasts" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/jus bites.jpg'); ?>" alt="Inhouse Cafe & Restaurant" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-dumbbell"></i> Passionate Fitness Enthusiasts</h3>
+                <h3 class="card-title gradient-text"><i class="fa-solid fa-martini-glass-citrus"></i> Inhouse Restaurant <br>(Jus' Bites)</h3>
             </div>
         </div>
         
@@ -156,7 +156,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 1 -->
                 <div class="activity-card glass-card" data-activity-name="Infinity Trampoline">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Infinity_trampoline_activity.webp'); ?>" alt="Infinity Trampoline - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Infinity_trampoline_activity.webp?v1'); ?>" alt="Infinity Trampoline - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Infinity Trampoline</h4>
@@ -167,7 +167,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 2 -->
                 <div class="activity-card glass-card" data-activity-name="Donut Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp'); ?>" alt="Donut Slide - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp?v2'); ?>" alt="Donut Slide - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Donut Slide</h4>
@@ -178,7 +178,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 3 -->
                 <div class="activity-card glass-card" data-activity-name="Foam Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity.webp'); ?>" alt="Foam Pit - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity.webp?v2'); ?>" alt="Foam Pit - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Foam Pit</h4>
@@ -189,7 +189,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 4 -->
                 <div class="activity-card glass-card" data-activity-name="Hanging Bridge">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/hangging_bridge_activity.webp'); ?>" alt="Hanging Bridge - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/hangging_bridge_activity.webp?v1'); ?>" alt="Hanging Bridge - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Hanging Bridge</h4>
@@ -200,7 +200,14 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 5 -->
                 <div class="activity-card glass-card" data-activity-name="Zorb Ball">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zorb_ball_activity.webp'); ?>" alt="Zorb Ball - Adults" loading="lazy">
+                        <?php
+                        $image_path = get_template_directory() . '/assets/img/Zorb_ball_activity.webp';
+                        $image_url = get_template_directory_uri() . '/assets/img/Zorb_ball_activity.webp';
+                        if (file_exists($image_path)) {
+                            $image_url .= '?v=' . filemtime($image_path);
+                        }
+                        ?>
+                        <img src="<?php echo esc_url($image_url); ?>" alt="Zorb Ball - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Zorb Ball</h4>
@@ -211,7 +218,14 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 6 -->
                 <div class="activity-card glass-card" data-activity-name="Bar Dodger">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Bar_dodger_activity.webp'); ?>" alt="Bar Dodger - Adults" loading="lazy">
+                        <?php
+                        $image_path = get_template_directory() . '/assets/img/Bar_dodger_activity.webp';
+                        $image_url = get_template_directory_uri() . '/assets/img/Bar_dodger_activity.webp';
+                        if (file_exists($image_path)) {
+                            $image_url .= '?v=' . filemtime($image_path);
+                        }
+                        ?>
+                        <img src="<?php echo esc_url($image_url); ?>" alt="Bar Dodger - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Bar Dodger</h4>
@@ -222,7 +236,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 7 -->
                 <div class="activity-card glass-card" data-activity-name="Sky Steeper">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/sky_stepper_activity.webp'); ?>" alt="Sky Steeper - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/sky_stepper_activity.webp?v1'); ?>" alt="Sky Steeper - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Sky Stepper</h4>
@@ -244,7 +258,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 9 -->
                 <div class="activity-card glass-card" data-activity-name="Magnetic Wall">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Magnet_wall_activity.webp'); ?>" alt="Magnetic Wall - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Magnet_wall_activity.webp?v1'); ?>" alt="Magnetic Wall - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Magnetic Wall</h4>
@@ -255,7 +269,14 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 10 -->
                 <div class="activity-card glass-card" data-activity-name="Bridge War">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Bridge War - Adults" loading="lazy">
+                        <?php
+                         $image_path = get_template_directory() . '/assets/img/KolkataABC3.jpg';
+                         $image_url = get_template_directory_uri() . '/assets/img/KolkataABC3.jpg';
+                         if (file_exists($image_path)) {
+                             $image_url .= '?v=' . filemtime($image_path);
+                         }
+                        ?>
+                        <img src="<?php echo esc_url($image_url); ?>" alt="Bridge War - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Bridge War</h4>
@@ -266,7 +287,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="Ninja Activities">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Ninja_Activities_abc.jpg'); ?>" alt="Ninja Activities - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Ninja_Activities_abc.jpg?v1'); ?>" alt="Ninja Activities - Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Ninja Activities</h4>
@@ -287,7 +308,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Adult Activity 13 -->
                 <div class="activity-card glass-card" data-activity-name="Basketball Area">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Basketball-area-activity.webp'); ?>" alt="Basketball Area at Jus Jumpin, Kolkata Abc Square Building" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Basketball-area-activity.webp?v1'); ?>" alt="Basketball Area at Jus Jumpin, Kolkata Abc Square Building" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Basketball Area</h4>
@@ -302,7 +323,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 1 -->
                 <div class="activity-card glass-card" data-activity-name="Merry-Go-Round">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp'); ?>" alt="MerryGo Round - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp?v1'); ?>" alt="MerryGo Round - Kids" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Merry-Go-Round</h4>
@@ -313,7 +334,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 2 -->
                 <div class="activity-card glass-card" data-activity-name="Wave Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp'); ?>" alt="Wave Slide - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp?v1'); ?>" alt="Wave Slide - Kids" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wave Slide</h4>
@@ -324,7 +345,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 3 -->
                 <div class="activity-card glass-card" data-activity-name="Swing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Swing_activity.webp'); ?>" alt="Swings at Jus Jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Swing_activity.webp?v1'); ?>" alt="Swings at Jus Jumpin" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Swing</h4>
@@ -335,7 +356,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 4 -->
                 <div class="activity-card glass-card" data-activity-name="Sand Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp'); ?>" alt="Sand Pit - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp?v1'); ?>" alt="Sand Pit - Kids" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Sand Pit</h4>
@@ -346,7 +367,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 5 -->
                 <div class="activity-card glass-card" data-activity-name="Ball Pool">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp'); ?>" alt="Ball Pool - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp?v1'); ?>" alt="Ball Pool - Kids" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Ball Pool</h4>
@@ -357,7 +378,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 6 -->
                 <div class="activity-card glass-card" data-activity-name="Tunnels">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Tunnel_activities.webp'); ?>" alt="Tunnels - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Tunnel_activities.webp?v1'); ?>" alt="Tunnels - Kids" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Tunnels</h4>
@@ -367,7 +388,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 7 -->
                 <div class="activity-card glass-card" data-activity-name="Toddler play area">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Toddler_play_activity.webp'); ?>" alt="Tunnels - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Toddler_play_activity.webp?v1'); ?>" alt="Tunnels - Kids" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Toddler play area</h4>
@@ -377,7 +398,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 7 -->
                 <div class="activity-card glass-card" data-activity-name="Soft play area">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Soft_play_activity.webp'); ?>" alt="Soft_play_activity_area" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Soft_play_activity.webp?v1'); ?>" alt="Soft_play_activity_area" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Soft play area</h4>

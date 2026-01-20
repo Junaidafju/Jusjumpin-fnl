@@ -404,8 +404,9 @@ foreach ($jj_locations as $state => $cities) {
             <p class="jj-acts__sub"><?php esc_html_e('dedicated soft play zone for kids, international standard arcade zone and 15+ interactive gaming activities curated for you.', 'newjusjumpin'); ?></p>
         </div>
 
-        <div class="jj-acts__slider" aria-label="<?php esc_attr_e('Activities slider', 'newjusjumpin'); ?>">
-            <div class="jj-acts__slides">
+        <div class="jj-acts__slider" aria-label="<?php esc_attr_e('Activities slider', 'newjusjumpin'); ?>" role="region" tabindex="0">
+            <div class="jj-acts__slides" id="activities-slides">
+                <!-- Duplicate slides for seamless loop -->
                 <div class="jj-acts__slide">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/trampoline-jumping-zones.jpg" alt="<?php esc_attr_e('Trampoline Jumping Zones', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="jj-acts__name"><?php esc_html_e('Trampoline Jumping Zones', 'newjusjumpin'); ?></div>
@@ -430,7 +431,6 @@ foreach ($jj_locations as $state => $cities) {
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Rock_Walls.jpg" alt="<?php esc_attr_e('Rock Climbing Walls ', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="jj-acts__name"><?php esc_html_e('Rock Climbing Walls ', 'newjusjumpin'); ?></div>
                 </div>
-                <!-- continue slides -->
                 <div class="jj-acts__slide">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Ladder_Climbing.jpg" alt="<?php esc_attr_e('Ladder Climbing', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="jj-acts__name"><?php esc_html_e('Ladder Climbing', 'newjusjumpin'); ?></div>
@@ -483,8 +483,104 @@ foreach ($jj_locations as $state => $cities) {
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Rat-run.jpg" alt="<?php esc_attr_e('Rat Wheel', 'newjusjumpin'); ?>" loading="lazy">
                     <div class="jj-acts__name"><?php esc_html_e('Rat Wheel', 'newjusjumpin'); ?></div>
                 </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/trampoline-jumping-zones.jpg" alt="<?php esc_attr_e('Trampoline Jumping Zones', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Trampoline Jumping Zones', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/family_Adults.jpg" alt="<?php esc_attr_e('Foam Pit Adventures', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Foam Pit Adventures', 'newjusjumpin'); ?></div>
+                </div>
+                <!-- Duplicate slides for seamless loop -->
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/trampoline-jumping-zones.jpg" alt="<?php esc_attr_e('Trampoline Jumping Zones', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Trampoline Jumping Zones', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/family_Adults.jpg" alt="<?php esc_attr_e('Foam Pit Adventures', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Foam Pit Adventures', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/SlamDunk.jpg" alt="<?php esc_attr_e('Slam Dunk Basketball Courts', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Slam Dunk Basketball Courts', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Obstacle.jpg" alt="<?php esc_attr_e('Obstacle Courses & Challenges', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Obstacle Courses & Challenges', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Sky_Steeper.jpg" alt="<?php esc_attr_e('Sky Stepper', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Sky Stepper', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Rock_Walls.jpg" alt="<?php esc_attr_e('Rock Climbing Walls ', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Rock Climbing Walls ', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Ladder_Climbing.jpg" alt="<?php esc_attr_e('Ladder Climbing', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Ladder Climbing', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Donut_Slide.jpg" alt="<?php esc_attr_e('Donut Slides', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Donut Slides', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/3-Line Slides.jpg" alt="<?php esc_attr_e('3-Line Slides', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('3-Line Slides', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Bumpper-car.jpg" alt="<?php esc_attr_e('Bumper Car', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Bumper Car', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Pin_Board_Game.jpg" alt="<?php esc_attr_e('Pin Board Game', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Pin Board Game', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/karate.jpg" alt="<?php esc_attr_e('Karate Zone', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Karate Zone', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Marrygoround.jpg" alt="<?php esc_attr_e('Merry Go Round', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Merry Go Round', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Interactive_Sand_Pit.jpg" alt="<?php esc_attr_e('Interactive Sand Pit', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Interactive Sand Pit', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Colorful_Ball_Pits.jpg" alt="<?php esc_attr_e('Colorful Soft Play & Ball Pits', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Colorful Soft Play & Ball Pits', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Creative_Play_Zone.jpg" alt="<?php esc_attr_e('Creative Play Zone', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Creative Play Zone', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Birthday_Party_Zones.jpg" alt="<?php esc_attr_e('Birthday & Party Zones', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Birthday & Party Zones', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Kids_Play_Area.jpg" alt="<?php esc_attr_e('Kids Play Area', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Kids Play Area', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/Rat-run.jpg" alt="<?php esc_attr_e('Rat Wheel', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Rat Wheel', 'newjusjumpin'); ?></div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/trampoline-jumping-zones.jpg" alt="<?php esc_attr_e('Trampoline Jumping Zones', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Trampoline Jumping Zones', 'newjusjumpin'); ?></div>
+                </div>
+                <div class="jj-acts__slide">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/family_Adults.jpg" alt="<?php esc_attr_e('Foam Pit Adventures', 'newjusjumpin'); ?>" loading="lazy">
+                    <div class="jj-acts__name"><?php esc_html_e('Foam Pit Adventures', 'newjusjumpin'); ?></div>
+                </div>
             </div>
         </div>
+    </div>
 
         <div class="activities-cta text-center animate-on-scroll fade-up">
             <h3><?php esc_html_e('Ready to Jump In?', 'newjusjumpin'); ?></h3>

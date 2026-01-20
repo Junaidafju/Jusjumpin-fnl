@@ -32,6 +32,7 @@ define( 'DB_PASSWORD', '' );
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
 
+
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 

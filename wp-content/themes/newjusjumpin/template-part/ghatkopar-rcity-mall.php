@@ -9,7 +9,7 @@ $title = "R City Mall - Ghatkopar | Jus Jumpin";
 $state = "Maharashtra";
 $city = "Ghatkopar";
 $slug = "Ghatkopar-R-City Mall";
-$address = "3rd Floor, Jus Jumpin, R City Mall Mall, Untwadi Rd, Lavate Nagar, Parijat Nagar, Ghatkopar, Maharashtra 422002";
+$address = "3rd Floor, Jus Jumpin, R City Mall, Untwadi Rd, Lavate Nagar, Parijat Nagar, Ghatkopar, Maharashtra 422002";
 $timings = "11:00 AM - 9:30 PM";
 $pricing = "Weekday: ₹400 (30min), ₹500 (60min) | Weekend: ₹400 (30min), ₹500 (60min)";
 $phone = "+919830115533"; // Using a placeholder as the provided content says 'Available Soon.'
@@ -84,12 +84,12 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="content-with-image">
             <div class="content-left">
                 <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
-                <p class="section-text">Jump into a brand new world of joy <strong>Jus Jumpin, R City Mall Mall Ghatkopar,</strong> Mumbai. Thoughtfully designed to provide a fun-filled, safe space where the kids can run, jump and laugh without any restriction and fear of falling. Our meticulously engineered soft playzone for kids in Mumbai is perfect for little kids aged between 6 months to 12 years. At our facility, treat your kids with an exciting trampoline park, foam pit, interactive doll house, a fun-packed obstacle zone and many other kid-friendly activities.</p>
+                <p class="section-text">Jump into a brand new world of joy <strong>Jus Jumpin, R City Mall Ghatkopar,</strong> Mumbai. Thoughtfully designed to provide a fun-filled, safe space where the kids can run, jump and laugh without any restriction and fear of falling. Our meticulously engineered soft playzone for kids in Mumbai is perfect for little kids aged between 6 months to 12 years. At our facility, treat your kids with an exciting trampoline park, foam pit, interactive doll house, a fun-packed obstacle zone and many other kid-friendly activities.</p>
                 <p class="section-text">Besides offering an exciting playzone in Mumbai, Jus Jumpin always prioritises Kids' safety above anything else. For this reason, we strictly maintain our safety and hygiene standards with frequent equipment checks and regular clean-up in our facilities. The loving parents can watch their little one touching new heights from our dedicated resting zone. Our team of proficient supervisors always ensure children's safety at the playzone.</p>
                 <p class="section-text">Our colourful and vibrant kids' amusement park offers an awesome party zone to host the best birthday parties for kids that will fill them with laughter and joy. With personalised decorations, fun-filled party games and exclusive access to our playzone to surprise your kids with an awesome birthday party.</p>
             </div>
             <div class="content-right">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/RcityMall.webp'); ?>" alt="R City Mall Mall Ghatkopar" class="building-image">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/RcityMall.webp'); ?>" alt="R City Mall Ghatkopar" class="building-image">
              <div class="image-overlay">
                     <h2 class="building-name">R City Mall Ghatkopar</h2>   
                 </div>
@@ -493,7 +493,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     <tbody>
                         <tr>
                             <td>60 Minutes</td>
-                            <td>₹750</td>
+                            <td>₹750</td>
                             <td>₹750</td>
                         </tr>
                         <tr>
@@ -523,12 +523,12 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <!-- Location Map Section -->
 <section class="location-section map-section">
     <div class="container">
-        <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-map-marker-alt"></i></span> Location: Jus Jumpin R City Mall Mall Ghatkopar.</h2>
+        <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-map-marker-alt"></i></span> Location: Jus Jumpin R City Mall, Ghatkopar.</h2>
         
         <div class="address-card glass-card">
             <div class="address-content">
                 <p class="address-main"><strong>Address:</strong></p>
-                <p>2nd Floor, Jus Jumpin, R City Mall Mall,<br>
+                <p>2nd Floor, Jus Jumpin, R City Mall,<br>
                 Lal Bahadur Shastri Marg, Amrut Nagar, Ghatkopar West, Mumbai<br><strong>Call Us:</strong> +91 9836229922</p>
                 <p class="landmarks"><strong>Landmarks:</strong> R City Mall,  Ghatkopar metro station</p>
             </div>
@@ -543,7 +543,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Jus Jumpin R City Mall Mall Ghatkopar">
+                title="Jus Jumpin R City Mall Ghatkopar">
             </iframe>
         </div>
         
@@ -659,7 +659,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <!-- Conclusion CTA Section -->
 <section class="location-section conclusion-section">
     <div class="container">
-        <h2 class="section-heading white-text"><span class="emoji-icon"><i class="fas fa-brain"></i></span> Why Jus Jumpin R City Mall Mall Ghatkopar?</h2>
+        <h2 class="section-heading white-text"><span class="emoji-icon"><i class="fas fa-brain"></i></span> Why Jus Jumpin R City Mall, Ghatkopar?</h2>
         
         <div class="conclusion-grid">
             <div class="conclusion-item">
@@ -680,7 +680,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | R City Mall Mall (Ghatkopar)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | R City Mall (Ghatkopar)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">

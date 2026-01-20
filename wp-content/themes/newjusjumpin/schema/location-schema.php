@@ -774,6 +774,42 @@ return [
             "closes" => "21:30"
         ]
     ],
+    // ============================================================
+// 20. Thane — R Mall
+// ============================================================
+'thane-r-mall' => [
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "name" => "Jus Jumpin Kids Amusement Park in R Mall - Thane",
+    "alternateName" => "Jus Jumpin Trampoline Park Thane",
+    "url" => "https://www.jusjumpin.com/thane-r-mall/",
+    "telephone" => "+91 9830359999",
+    "logo" => "https://www.jusjumpin.com/wp-content/uploads/2025/12/CCTV-Group-Photo-3.png",
+    "image" => [
+        "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_0001-2048x1365.jpg",
+        "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_4608-2048x1536.jpg"
+    ],
+    "address" => [
+        "@type" => "PostalAddress",
+        "streetAddress" => "2nd Floor, Unit no. SF, R MALL, 01-05, Ghodbunder Service Rd, opposite Lokim Company, Dokali Pada, Dhokali, Thane West, Maharashtra 400607",
+        "addressLocality" => "Thane",
+        "addressRegion" => "Maharashtra",
+        "postalCode" => "400607",
+        "addressCountry" => "IN"
+    ],
+    "geo" => [
+        "@type" => "GeoCoordinates",
+        "latitude" => 19.230575316918834, 
+        "longitude" => 72.97737313806414
+    ],
+    "hasMap" => "https://maps.app.goo.gl/MfepFRjS7F2QjvSa9",
+    "openingHoursSpecification" => [
+        "@type" => "OpeningHoursSpecification",
+        "dayOfWeek" => ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens" => "11:00",
+        "closes" => "21:30"
+    ]
+],
 
    
 ];

@@ -85,7 +85,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="content-with-image">
             <div class="content-left">
                 <h2 class="section-title gradient-text">Adventure Starts Here</h2>
-                <p class="section-text">Jump into a world full of fun at <strong>Jus Jumpin, City Centre.</strong> A wholesome kids' play zone and children's amusement park, filled with high energy, endless laughter, and pure excitement. Meticulously designed with international safety and hygiene standards, Jus Jumpin offers a safe and vibrant environment where the little jumpers can jump, dive, and play without any restrictions, and the parents can enjoy their me time meanwhile. The game park consists wholesome play zones, thrilling physical activities, a dynamic trampoline park, and interactive indoor games. Our dedicated team ensures endless fun with paramount safety standards and well-maintained hygiene.</p>
+                <p class="section-text">Jump into a world full of fun at <strong>Jus Jumpin, City Centre, Siliguri.</strong> A wholesome kids' play zone and children's amusement park, filled with high energy, endless laughter, and pure excitement. Meticulously designed with international safety and hygiene standards, Jus Jumpin offers a safe and vibrant environment where the little jumpers can jump, dive, and play without any restrictions, and the parents can enjoy their me time meanwhile. The game park consists wholesome play zones, thrilling physical activities, a dynamic trampoline park, and interactive indoor games. Our dedicated team ensures endless fun with paramount safety standards and well-maintained hygiene.</p>
             <p class="section-text">
                 <p class="section-text">At our facility in Siliguri City Centre, we provide a vibrant and safe environment where the kids can learn while playing. Our meticulously designed game parks for kids encourage holistic growth of the child, both mentally and physically. The colourful interactive play zone at Jus Jumpin offers a screen-free fun session to the little jumpers in a safe and secure environment. Beyond being the best Kids' play zone in Siliguri, our enchanting venue provides an awesome space, ideal for hosting magical birthday parties curated with personalised themes, interactive party games, and multiple play activities to craft a beautiful memory.</p>
             </div>
@@ -103,19 +103,19 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at City Centre features an infinity trampoline, foam pits, web frame tunnel, wall climbing, zebra swing, and a dedicated soft play area.</p>
+        <p class="section-intro">Jus Jumpin at Siliguri City Centre features an infinity trampoline, foam pits, web frame tunnel, wall climbing, zebra swing, and a dedicated soft play area.</p>
         
         
 <div class="experience-grid">
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp'); ?>" alt="Creative & Educational Activities" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp?v1'); ?>" alt="Creative & Educational Activities" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-book"></i> Creative & Educational Activities</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp'); ?>" alt="Age Specific Play Zones" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp?v1'); ?>" alt="Age Specific Play Zones" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-child"></i> Age Specific Kids Play Zones</h3>
             </div>
@@ -133,7 +133,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="section-footer-text">Dedicated party area perfect for <strong>hosting amazing birthday parties</strong> and <strong>corporate events </strong>in Kolkata. The venue features an <strong>awesome in-house DJ</strong> and a <strong>designated cafe with beverages.</strong></p>
+        <p class="section-footer-text">Vibrant party zone ideal to host <strong>amazing birthday parties</strong> your kids will love, with <strong>exclusive access</strong> to the play area and exciting party games.</p>
     </div>
 </section>
 
@@ -293,7 +293,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 1 -->
                 <div class="activity-card glass-card" data-activity-name="Wave Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp'); ?>" alt="Wave Slide At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp?v1'); ?>" alt="Wave Slide At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wave Slide</h4>
@@ -304,7 +304,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 2 -->
                 <div class="activity-card glass-card" data-activity-name="Sand Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp'); ?>" alt="Sand Pit At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp?v1'); ?>" alt="Sand Pit At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Sand Pit</h4>
@@ -315,7 +315,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 3 -->
                 <div class="activity-card glass-card" data-activity-name="Soft Play Area">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_softplay_activity.webp'); ?>" alt="Soft Play Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_softplay_activity.webp?v1'); ?>" alt="Soft Play Area At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Soft Play Area</h4>
@@ -326,7 +326,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 4 -->
                 <div class="activity-card glass-card" data-activity-name="Pathways">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pathway_activity.webp'); ?>" alt="Pathways Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pathway_activity.webp?v1'); ?>" alt="Pathways Area At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Pathways</h4>
@@ -337,7 +337,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 5 -->
                 <div class="activity-card glass-card" data-activity-name="Doll House">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_dollhouse_activities.webp'); ?>" alt="Doll House Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_dollhouse_activities.webp?v1'); ?>" alt="Doll House Area At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Doll House</h4>
@@ -348,7 +348,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 6 -->
                 <div class="activity-card glass-card" data-activity-name="Tunnel Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp'); ?>" alt="Tunnel Slide Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp?v1'); ?>" alt="Tunnel Slide Area At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Tunnel Slide</h4>
@@ -358,7 +358,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 7 -->
                 <div class="activity-card glass-card" data-activity-name="Merry Go Round">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp'); ?>" alt="Merry Go Round At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp?v1'); ?>" alt="Merry Go Round At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Merry Go Round</h4>
@@ -368,7 +368,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 8 -->
                 <div class="activity-card glass-card" data-activity-name="Zebra Swing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/zebra_swing_activity.webp'); ?>" alt="Zebra Swing At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/zebra_swing_activity.webp?v1'); ?>" alt="Zebra Swing At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Zebra Swing</h4>
@@ -378,7 +378,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 9 -->
                 <div class="activity-card glass-card" data-activity-name="Foam Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity2.webp'); ?>" alt="Foam Pit Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity2.webp?v1'); ?>" alt="Foam Pit Area At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Foam Pit</h4>
@@ -388,7 +388,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 10 -->
                 <div class="activity-card glass-card" data-activity-name="Wall Climbing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/climbing_wall_activity.webp'); ?>" alt="Wall Climbing At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/climbing_wall_activity.webp?v1'); ?>" alt="Wall Climbing At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wall Climbing</h4>
@@ -398,7 +398,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="Ball Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pit_Activity.webp'); ?>" alt="Ball Pit At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pit_Activity.webp?v1'); ?>" alt="Ball Pit At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Ball Pit</h4>
@@ -408,7 +408,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 12 -->
                 <div class="activity-card glass-card" data-activity-name="Web Frame Tunnel">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Tunnel_activities.webp'); ?>" alt="Web Frame Tunnel At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Tunnel_activities.webp?v1'); ?>" alt="Web Frame Tunnel At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Web Frame Tunnel</h4>
@@ -418,7 +418,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 13 -->
                 <div class="activity-card glass-card" data-activity-name="Obstacle Zone">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Obstacle_zone_activity.webp'); ?>" alt="Obstacle zone At Jus Jumpin Avani Mall" loading="lazy">
+                       <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Obstacle_zone_activity.webp?v1'); ?>" alt="Obstacle zone At Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Obstacle Zone</h4>
@@ -428,7 +428,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 14 -->
                 <div class="activity-card glass-card" data-activity-name="Donut Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp'); ?>" alt="Donut Slide Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp?v1'); ?>" alt="Donut Slide Jus Jumpin Avani Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Donut Slide</h4>
@@ -510,7 +510,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 </table>
                 <div class="special-bookings-cta">
                     <p class="special-bookings-text">
-                        <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, <strong>kitty parties</strong>, <strong>group events</strong>, <strong>bulk bookings</strong>, <strong>corporate packages</strong>, and <strong>personalized gift vouchers.</strong>
+                        <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, and <strong>personalized gift vouchers.</strong>
                     </p>
                     <a href="<?php echo esc_url(home_url('/contact')); ?>" class="contact-cta-button">
                         <i class="fas fa-phone"></i> Contact Us Now
@@ -529,8 +529,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="address-card glass-card">
             <div class="address-content">
                 <p class="address-main"><strong>Address:</strong></p>
-                <p>4th Floor, Food Court, City Centre, Major Arterial Road(South-East),<br>
-                CF Block(Newtown), Action Area 1C, Newtown, Siliguri, West Bengal 700107.<br><strong>Call Us:</strong> (+91)98362 29922</p>
+                <p>2nd Floor, City Centre Mall, Unit No. CCSG-207, S.P. Mukherjee Road, near Gandhi Maidan, Khalpara, Siliguri, West Bengal 734010<br><strong>Call Us:</strong> (+91)98303 59999</p>
                 <p class="landmarks"><strong>Landmarks:</strong> Located in City Centre, Silliguri</p>
             </div>
         </div>

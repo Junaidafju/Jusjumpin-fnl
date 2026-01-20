@@ -53,7 +53,7 @@
                 <li><a href="<?php echo esc_url(home_url('/durgapur-junction-mall/')); ?>">Durgapur - Junction Mall</a></li>
                 <li><a href="<?php echo esc_url(home_url('/bengaluru-m5-ecity-mall/')); ?>">Bengaluru - M5 Ecity Mall</a></li>
                 <li><a href="<?php echo esc_url(home_url('/bengaluru-meenakshi-mall/')); ?>">Bengaluru - Meenakshi Mall</a></li>
-                <li><a href="<?php echo esc_url(home_url('/nashik-city-centre/')); ?>">Nashik - City Centre</a></li>
+                <li><a href="<?php echo esc_url(home_url('/ghatkopar-rcity-mall/')); ?>">Ghatkopar - R City Mall</a></li>
                 <li><a href="<?php echo esc_url(home_url('/dhanbad-prabhatam-mall/')); ?>">Dhanbad - Prabhatam Mall</a></li>
             </ul>
         </div>
@@ -66,6 +66,7 @@
                 <li><a href="<?php echo esc_url(home_url('/ranchi-nucleus-mall/')); ?>">Ranchi - Nucleus Mall</a></li>
                 <li><a href="<?php echo esc_url(home_url('/noida-gip-mall/')); ?>">Noida - GIP Mall</a></li>
                 <li><a href="<?php echo esc_url(home_url('/noida-spectrum-mall/')); ?>">Noida - Spectrum Mall</a></li>
+                <li><a href="<?php echo esc_url(home_url('/nashik-city-centre/')); ?>">Nashik - City Centre</a></li>
                 <li><a href="<?php echo esc_url(home_url('/nagpur-vr-mall/')); ?>">Nagpur - VR Mall</a></li>
                 <li><a href="<?php echo esc_url(home_url('/pune-seasons-mall/')); ?>">Pune - Seasons Mall</a></li>
                 <li><a href="<?php echo esc_url(home_url('/raipur-zora-mall/')); ?>">Raipur - Zora Mall</a></li>

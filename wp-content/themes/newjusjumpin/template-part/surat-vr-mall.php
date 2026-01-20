@@ -134,7 +134,7 @@ Jus Jumpin at VR Mall offers a unique kids' playzone experience, featuring thril
             </div>
         </div>
         
-        <p class="section-footer-text">Dedicated party area perfect for <strong>hosting amazing birthday parties</strong> and <strong>corporate events </strong>in Kolkata. The venue features an <strong>awesome in-house DJ</strong> and a <strong>designated cafe with beverages.</strong></p>
+        <p class="section-footer-text">Vibrant party zone ideal to host <strong>amazing birthday parties</strong> your kids will love, with <strong>exclusive access</strong> to the play area and exciting party games.</p>
     </div>
 </section>
 
@@ -511,7 +511,7 @@ Jus Jumpin at VR Mall offers a unique kids' playzone experience, featuring thril
                 </table>
                 <div class="special-bookings-cta">
                     <p class="special-bookings-text">
-                        <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, <strong>kitty parties</strong>, <strong>group events</strong>, <strong>bulk bookings</strong>, <strong>corporate packages</strong>, and <strong>personalized gift vouchers.</strong>
+                       <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, and <strong>personalized gift vouchers.</strong>
                     </p>
                     <a href="<?php echo esc_url(home_url('/contact')); ?>" class="contact-cta-button">
                         <i class="fas fa-phone"></i> Contact Us Now
@@ -863,4 +863,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-

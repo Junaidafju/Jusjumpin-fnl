@@ -251,7 +251,7 @@ function newjusjumpin_custom_meta_descriptions() {
         'bengaluru-m5-ecity-mall' => 'Visit Kids Playzone at M5 Ecity Mall Bengaluru—top indoor play area & adventure park, perfect for fun-filled kids\' birthday party celebrations.',
         'bengaluru-meenakshi-mall' => 'Explore Kids Playzone Bengaluru Meenakshi Mall – the ultimate indoor play area & party venue for kids\' birthdays in Bengaluru Meenakshi Mall.',
         'dhanbad-prabhatam-mall' => 'Explore Adult Trampoline Park in Prabhatam Mall Dhanbad – combined with Kids Playzone & indoor play area, adventure park for family fun & kids\' play.',
-        'ghatkopar-rcity-mall' => 'Explore Adult Trampoline Park in Prabhatam Mall Dhanbad – combined with Kids Playzone & indoor play area, adventure park for family fun & kids\' play.',
+        'ghatkopar-rcity-mall' => 'Jump Into A World Full of joy at the Finest Kids Amusement Park in Mumbai. Give your kid an action-packed day at our trampoline zone and soft play area.',
         'jamshedpur-pm-mall' => 'Jamshedpur P&M Mall offers a fantastic indoor play area setup, a top adventure park, and the best birthday party venues.',
         'ranchi-nucleus-mall' => 'Make birthdays special at Ranchi Nucleus Mall – indoor play area & the best adventure park venue for kids. Best Kids Playzone at Nucleus Mall Ranchi.',
         'noida-gip-mall' => 'Explore the trampoline park in GIP Mall Noida – indoor play area setup & kids\' party venues for birthdays, family fun & safe play.',
@@ -380,10 +380,12 @@ function newjusjumpin_scripts() {
         wp_enqueue_style('newjusjumpin-front-page', get_template_directory_uri() . '/assets/css/front-page.css', array('newjusjumpin-style'), '1.0.4');
     }
     
-    if (is_page_template('page-contact.php')) {
-        wp_enqueue_style('newjusjumpin-contact', get_template_directory_uri() . '/assets/css/contact.css', array('newjusjumpin-style'), '1.0.4');
-    }
-    
+     // Contact Page CSS with better detection
+if (is_page_template('page-contact.php') || is_page('contact') || is_page('contact-us') || is_page('Contact Us')) {
+    $contact_css_path = get_template_directory() . '/assets/css/contact.css';
+    $contact_css_ver = file_exists($contact_css_path) ? filemtime($contact_css_path) : '1.0.4';
+    wp_enqueue_style('newjusjumpin-contact', get_template_directory_uri() . '/assets/css/contact.css', array('newjusjumpin-style'), $contact_css_ver);
+}
     // Page template stylesheets
     // Important: the About page uses a slug-specific template (page-{slug}.php),
     // so we detect by slug/title to ensure the CSS loads no matter the permalink.
@@ -547,7 +549,7 @@ add_action('template_redirect', function() {
             'kolkata-city-centre-2' => 'Kids Playzone at City Centre 2 Kolkata - Jus Jumpin',
             'bengaluru-meenakshi-mall' => 'Kids Playzone Bengaluru Meenakshi Mall - Jus Jumpin',
             'dhanbad-prabhatam-mall' => 'Adult Trampoline Park in Prabhatam Mall Dhanbad - Jus Jumpin',
-            'ghatkopar-rcity-mall' => 'Adult Trampoline Park in Prabhatam Mall Dhanbad - Jus Jumpin',
+            'ghatkopar-rcity-mall' => 'Most Exciting Indoor Kids Play Zone in Ghatkopar Mumbai - Jus Jumpin',
             'durgapur-junction-mall' => 'Trampoline Park At Durgapur Junction Mall – Jus Jumpin',
             'nashik-city-centre' => 'Kids Amusement Park in City Centre - Nashik',
             'jamshedpur-pm-mall' => 'Kids Play Area in Jamshedpur P&M Mall - Jus Jumpin',
@@ -1484,7 +1486,7 @@ function newjusjumpin_seo_meta() {
                 'bengaluru-m5-ecity-mall' => 'Visit Kids Playzone at M5 Ecity Mall Bengaluru—top indoor play area & adventure park, perfect for fun-filled kids\' birthday party celebrations.',
                 'bengaluru-meenakshi-mall' => 'Explore Kids Playzone Bengaluru Meenakshi Mall – the ultimate indoor play area & party venue for kids\' birthdays in Bengaluru Meenakshi Mall.',
                 'dhanbad-prabhatam-mall' => 'Explore Adult Trampoline Park in Prabhatam Mall Dhanbad – combined with Kids Playzone & indoor play area, adventure park for family fun & kids\' play.',
-                'ghatkopar-rcity-mall' => 'Celebrate your kid\'s birthday at RCity Mall Ghatkopar. Enjoy our indoor play area setup and adventure park for an unforgettable birthday party experience.',
+                'ghatkopar-rcity-mall' => 'Jump Into A World Full of joy at the Finest Kids Amusement Park in Mumbai. Give your kid an action-packed day at our trampoline zone and soft play area.',
                 'jamshedpur-pm-mall' => 'Jamshedpur P&M Mall offers a fantastic indoor play area setup, a top adventure park, and the best birthday party venues.',
                 'ranchi-nucleus-mall' => 'Make birthdays special at Ranchi Nucleus Mall – indoor play area & the best adventure park venue for kids. Best Kids Playzone at Nucleus Mall Ranchi.',
                 'noida-gip-mall' => 'Explore the trampoline park in GIP Mall Noida – indoor play area setup & kids\' party venues for birthdays, family fun & safe play.',
@@ -1702,7 +1704,15 @@ function jusjumpin_popup_settings_page_callback() {
     </div>
     <?php
 }
-
+//Image CACHE BUSTING update 
+function get_versioned_image_url($relative_path) {
+    $full_path = get_template_directory() . $relative_path;
+    $url = get_template_directory_uri() . $relative_path;
+    if (file_exists($full_path)) {
+        $url .= '?v=' . filemtime($full_path);
+    }
+    return $url;
+}
 // Register Popup Settings
 function jusjumpin_register_popup_settings() {
     register_setting(
