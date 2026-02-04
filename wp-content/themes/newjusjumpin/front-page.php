@@ -13,8 +13,8 @@ get_header(); ?>
     <?php 
     // Define video files for mobile and desktop separately
     $mobile_video_files = array(
-        'mobile-video.mp4' => get_template_directory() . '/assets/video/mobile-video.mp4',
-        'mobile-video.webm' => get_template_directory() . '/assets/video/mobile-video.webm',
+        'mobile-video.mp4' => get_template_directory() . '/assets/video/mobile-video-new.mp4',
+        'mobile-video.webm' => get_template_directory() . '/assets/video/mobile-video-new.mp4',
         // Add more mobile-specific videos here if needed
     );
     
@@ -46,6 +46,7 @@ get_header(); ?>
         $poster_attr = 'poster="' . esc_url($poster_svg_url) . '"';
     }
     ?>
+    
     
     <video class="hero-video" autoplay muted loop playsinline <?php echo $poster_attr; ?>>
         <?php foreach ($video_files as $filename => $filepath) : 

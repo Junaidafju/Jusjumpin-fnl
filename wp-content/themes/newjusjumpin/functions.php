@@ -80,8 +80,11 @@ function newjusjumpin_custom_meta_titles($title) {
         'our-location' => 'Jus Jumpin Locations – Find a Kids Play Zone Near You',
         'our-activities' => 'Activities at Jus Jumpin | Indoor Fun & Play Zones for Kids',
         'birthday-celebration' => 'Birthday Celebration at Jus Jumpin | Best Kids Birthday Party Venue',
+        'school-trips' => 'Ultimate School Field Trips & Group Outings | Best place for kids and adults trips',
         'contact' => 'Contact Jus Jumpin – India\'s Premier Kids Play Zone',
         'blog' => 'Blog - JUSJUMPIN | Latest News & Updates',
+        'termsandcondition' => 'Terms and Conditions | Jus Jumpin',
+        'privacypolicy' => 'Privacy Policy | Jus Jumpin',
         
     );
     
@@ -261,10 +264,11 @@ function newjusjumpin_custom_meta_descriptions() {
         'raipur-zora-mall' => 'Hop into the best trampoline park and gaming zone for adults and kids in Raipur Zora Mall. Experience our exciting bowling alley and Kids\' adventure park.',
         'udaipur-urban-square-mall' => 'Celebrate your kid\'s birthday at Urban Square Mall, Udaipur. Urban Square Mall Udaipur is a great place for kid\'s adventure park & kid\'s indoor play area.',
         'surat-vr-mall' => 'Find the best birthday party venue in Surat VR Mall – kids\' play area in Surat VR Mall, adventure park & indoor play area in Surat VR mall fun for children.',
-        'thane-r-mall' => 'Find the best birthday party venue in Thane R Mall – kids\' play area in Thane R Mall, adventure park & indoor play area in Thane R mall fun for children.',
+        'thane-r-mall' => 'Explore a brand new kids play area and vibrant birthday party zone in Thane, packed with an exciting trampoline park and 20+ kids-friendly gaming activities.',
         'nashik-city-centre' => 'Celebrate your kid\'s birthday at Nashik City Centre. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Nashik.',
         'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
         'birthday-celebration' => 'Celebrate your kid\'s birthday at Jus Jumpin – India\'s favorite indoor play zone. Trampolines, foam pits & party fun at locations nationwide!',
+        'school-trips' => 'Plan a high-energy school trip at Jus Jumpin! Our indoor trampoline park and soft play areas combine physical education with pure fun. Safe, supervised, and discounted group rates available.',
         'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.'
     );
 
@@ -349,10 +353,6 @@ function newjusjumpin_add_meta_tags() {
 }
 add_action('wp_head', 'newjusjumpin_add_meta_tags', 1);
 
-/**
- * Enqueue styles and scripts
- */
-
  
 
 /**
@@ -409,6 +409,12 @@ if (is_page_template('page-contact.php') || is_page('contact') || is_page('conta
         $birthday_css_ver = file_exists($birthday_css_path) ? filemtime($birthday_css_path) : '1.0.4';
         wp_enqueue_style('newjusjumpin-birthday-celebrations', get_template_directory_uri() . '/assets/css/birthday-celebrations.css', array('newjusjumpin-style'), $birthday_css_ver);
     }
+    // School Trips page CSS
+if (is_page_template('page-school-trips.php') || is_page('school-trips') || is_page('School Trips')) {
+    $school_trips_css_path = get_template_directory() . '/assets/css/school-trips.css';
+    $school_trips_css_ver = file_exists($school_trips_css_path) ? filemtime($school_trips_css_path) : '1.0.0';
+    wp_enqueue_style('newjusjumpin-school-trips', get_template_directory_uri() . '/assets/css/school-trips.css', array('newjusjumpin-style'), $school_trips_css_ver);
+}
     
     // Our Activities page CSS
     if (is_page_template('page-our-activities.php') || is_page('our-activities') || is_page_template('page-our-activities')) {
@@ -426,6 +432,19 @@ if (is_page_template('page-contact.php') || is_page('contact') || is_page('conta
     if (is_page_template('blog.php') || is_home() || is_single() || is_category() || is_tag()) {
         wp_enqueue_style('newjusjumpin-blog', get_template_directory_uri() . '/assets/css/blog.css', array('newjusjumpin-style'), '1.0.4');
         wp_enqueue_script('newjusjumpin-blog', get_template_directory_uri() . '/assets/js/blog.js', array(), '1.0.4', true);
+    }
+    // Terms and Conditions page CSS
+    if (is_page_template('termsandcondition.php') || is_page('termsandcondition') || is_page('Terms and Conditions')) {
+        $terms_css_path = get_template_directory() . '/assets/css/terms.css';
+        $terms_css_ver = file_exists($terms_css_path) ? filemtime($terms_css_path) : '1.0.0';
+        wp_enqueue_style('newjusjumpin-terms', get_template_directory_uri() . '/assets/css/terms.css', array('newjusjumpin-style'), $terms_css_ver);
+    }
+    
+    // Privacy Policy page CSS
+    if (is_page_template('privacypolicy.php') || is_page('privacypolicy') || is_page('Privacy Policy')) {
+        $privacy_css_path = get_template_directory() . '/assets/css/privacy.css';
+        $privacy_css_ver = file_exists($privacy_css_path) ? filemtime($privacy_css_path) : '1.0.0';
+        wp_enqueue_style('newjusjumpin-privacy', get_template_directory_uri() . '/assets/css/privacy.css', array('newjusjumpin-style'), $privacy_css_ver);
     }
     
     // Theme JavaScript
@@ -562,7 +581,7 @@ add_action('template_redirect', function() {
             'siliguri-city-centre' => 'Kids Playzone City Centre Mall Siliguri - Jus Jumpin',
             'surat-vr-mall' => 'Best Kids Play Area in Surat VR mall - Jus Jumpin',
             'udaipur-urban-square-mall' => 'Kids Play Area in Udaipur Urban Square Mall - Jus Jumpin',
-            'thane-r-mall' => 'Kids playzone Thane R Mall - Jus Jumpin',
+            'thane-r-mall' => 'Explore The Best Kids Play Zone In Thane, R Mall - Jus Jumpin',
     ];
 
         $page_title = $location_titles[$slug] ?? 'Jus Jumpin Location | Best Trampoline Park in India';
@@ -621,6 +640,11 @@ function newjusjumpin_activation_setup() {
             'template' => 'page-birthday-celebration',
             'slug' => 'birthday-celebration'
         ),
+        'School Trips' => array(
+            'content' => '',
+            'template' => 'page-school-trips',
+            'slug' => 'school-trips'
+        ),
         'Our Activities' => array(
             'content' => '',
             'template' => 'page-our-activities'
@@ -632,12 +656,17 @@ function newjusjumpin_activation_setup() {
             'is_blog' => true
             
         ),
-        'Contact Us' => array(
+        'Terms and Conditions' => array(
             'content' => '',
-            'template' => 'page-contact'
-            
-            
+            'template' => 'termsandcondition',
+            'slug' => 'termsandcondition'
         ),
+        'Privacy Policy' => array(
+            'content' => '',
+            'template' => 'privacypolicy',
+            'slug' => 'privacypolicy'
+        ),
+        
         'Menu1' => array(
             'content' => '<h2>Menu Item 1</h2><p>This is a placeholder page for Menu Item 1. Content will be added later.</p>',
             'template' => 'page'
@@ -731,6 +760,14 @@ function newjusjumpin_setup_menus($pages) {
             'menu-item-type' => 'post_type',
             'menu-item-status' => 'publish'
         ));
+        wp_update_nav_menu_item($left_menu, 0, array(
+            'menu-item-title' => 'School Trips',
+            'menu-item-object' => 'page',
+            'menu-item-object-id' => $pages['School Trips'],
+            'menu-item-type' => 'post_type',
+            'menu-item-status' => 'publish'
+    ));
+        
         
         // Assign to menu location
         $locations = get_theme_mod('nav_menu_locations');
@@ -1500,8 +1537,8 @@ function newjusjumpin_seo_meta() {
                 'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
                 'birthday-celebration' => 'Celebrate your kid\'s birthday at Jus Jumpin – India\'s favorite indoor play zone. Trampolines, foam pits & party fun at locations nationwide!',
                 'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.',
-                'thane-r-mall' => 'Celebrate your kid\'s birthday at Thane R Mall. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Thane R Mall.',
-            );
+                'thane-r-mall' => 'Explore a brand new kids play area and vibrant birthday party zone in Thane, packed with an exciting trampoline park and 20+ kids-friendly gaming activities.',);
+            
             
             // Try to get description from page slug
             if (!empty($page_slug) && isset($custom_descriptions[$page_slug])) {
@@ -1703,15 +1740,6 @@ function jusjumpin_popup_settings_page_callback() {
         </form>
     </div>
     <?php
-}
-//Image CACHE BUSTING update 
-function get_versioned_image_url($relative_path) {
-    $full_path = get_template_directory() . $relative_path;
-    $url = get_template_directory_uri() . $relative_path;
-    if (file_exists($full_path)) {
-        $url .= '?v=' . filemtime($full_path);
-    }
-    return $url;
 }
 // Register Popup Settings
 function jusjumpin_register_popup_settings() {

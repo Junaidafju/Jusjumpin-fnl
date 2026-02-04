@@ -106,7 +106,17 @@
         <div class="footer-bottom-container">
             <p class="footer-copyright">© Jus Jumpin.com Inc. <?php echo esc_html(date('Y')); ?> All rights reserved.</p>
             <p class="footer-credit">Made with <i class="fas fa-heart"></i> in <a href="https://jusjumpin.com" target="_blank" rel="noopener">Jus Jumpin</a></p>
+        <table class="footer-table">
+    <!-- Your existing table rows here -->
+    
+    <!-- New row for Terms & Privacy links at the bottom -->
+    <tr>
+        <td><a href="/termsandcondition" class="footer-link">Terms & Conditions |</a></td>
+        <td><a href="/privacypolicy" class="footer-link"> Privacy Policy</a></td>
+    </tr>
         </div>
+        
+</table>
     </div>
 </footer>
 
