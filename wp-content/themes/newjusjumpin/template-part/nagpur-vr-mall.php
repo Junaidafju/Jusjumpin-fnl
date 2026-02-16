@@ -51,10 +51,10 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Nagpur_vr_mall_1.webp'); ?>" alt="Jus Jumpin Nagpur VR Mall" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Nagpur_vr_mall_2.webp'); ?>" alt="Adult Trampoline Park Nagpur" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Nagpur_vr_mall_2.webp'); ?>" alt="Kids aplay area and Birthday PartyVenue In Nagpur" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Nagpur ABC Square Activities" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Kids play zone Nagpur" class="hero-slide-img">
         </div>
         <div class="hero-slide">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Trampoline Park Fun Nagpur" class="hero-slide-img">
@@ -113,7 +113,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp?v1'); ?>" alt="Age Specific Play Zones" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp?v1'); ?>" alt="Age Specific Play Zones in Nagpur" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-child"></i> Age Specific Kids Play Zones</h3>
             </div>
@@ -291,7 +291,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 1 -->
                 <div class="activity-card glass-card" data-activity-name="Wave Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp?v1'); ?>" alt="Wave Slide At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp?v1'); ?>" alt="Wave slide Nagpur VR" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wave Slide</h4>
@@ -302,7 +302,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 2 -->
                 <div class="activity-card glass-card" data-activity-name="Sand Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp?v1'); ?>" alt="Sand Pit At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp?v1'); ?>" alt="Sand Pit At Jus Jumpin Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Sand Pit</h4>
@@ -313,7 +313,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 3 -->
                 <div class="activity-card glass-card" data-activity-name="Soft Play Area">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_softplay_activity.webp?v1'); ?>" alt="Soft Play Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_softplay_activity.webp?v1'); ?>" alt="Kids Soft Play Area Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Soft Play Area</h4>
@@ -324,7 +324,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 4 -->
                 <div class="activity-card glass-card" data-activity-name="Pathways">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pathway_activity.webp?v1'); ?>" alt="Pathways Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pathway_activity.webp?v1'); ?>" alt="Pathways Area At Jus Jumpin Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Pathways</h4>
@@ -335,7 +335,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 5 -->
                 <div class="activity-card glass-card" data-activity-name="Doll House">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_dollhouse_activities.webp?v1'); ?>" alt="Doll House Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_dollhouse_activities.webp?v1'); ?>" alt="Doll House Area At Jus Jumpin Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Doll House</h4>
@@ -346,7 +346,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 6 -->
                 <div class="activity-card glass-card" data-activity-name="Tunnel Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp?v1'); ?>" alt="Tunnel Slide Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp?v1'); ?>" alt="Tunnel Slide Area At Jus Jumpin Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Tunnel Slide</h4>
@@ -366,7 +366,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 8 -->
                 <div class="activity-card glass-card" data-activity-name="Zebra Swing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/zebra_swing_activity.webp?v1'); ?>" alt="Zebra Swing At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/zebra_swing_activity.webp?v1'); ?>" alt="Zebra Swing At Jus Jumpin Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Zebra Swing</h4>
@@ -376,7 +376,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 9 -->
                 <div class="activity-card glass-card" data-activity-name="Foam Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity2.webp?v1'); ?>" alt="Foam Pit Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity2.webp?v1'); ?>" alt="Soft play activities in Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Foam Pit</h4>
@@ -386,7 +386,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 10 -->
                 <div class="activity-card glass-card" data-activity-name="Ball Pool">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp?v1'); ?>" alt="Ball Pool Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp?v1'); ?>" alt="Ball Pool Area At Jus Jumpin Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Ball Pool</h4>
@@ -396,7 +396,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="Interactive Ball Pool">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Interactive_ball_pool_activity.webp?v1'); ?>" alt="Interactive Ball Pool At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Interactive_ball_pool_activity.webp?v1'); ?>" alt="Interactive Ball Pool At Jus Jumpin Nagpur VR" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Interactive Ball Pool</h4>
@@ -406,7 +406,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 12 -->
                 <div class="activity-card glass-card" data-activity-name="Obstacle Zone">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Obstacle_zone_activity.webp?v1'); ?>" alt="Obstacle zone At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Obstacle_zone_activity.webp?v1'); ?>" alt="School dayout activity In Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Obstacle Zone</h4>
@@ -416,7 +416,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 13 -->
                 <div class="activity-card glass-card" data-activity-name="Pin Wall">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Pin_wall_activity.webp?v1'); ?>" alt="Pin wall Game At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Pin_wall_activity.webp?v1'); ?>" alt="Kids friendly activities Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Pin Wall</h4>
@@ -426,7 +426,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!--Kids Activity 14 -->
                 <div class="activity-card glass-card" data-activity-name="Horn Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/horn_slide_activity.webp?v1'); ?>" alt="Horn Slide At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/horn_slide_activity.webp?v1'); ?>" alt="Children's Amusement Park Nagpur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Horn Slide</h4>

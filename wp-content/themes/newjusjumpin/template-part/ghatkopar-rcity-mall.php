@@ -48,16 +48,16 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-hero-slider">
     <div class="hero-slider-wrapper">
         <div class="hero-slide active">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/R_City_Mall_hero.png'); ?>" alt="Jus Jumpin Ghatkopar R City Mall" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/R_City_Mall_hero.png'); ?>" alt="Indoor Kids play area in Mumbai" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/R-City-Mall-3.webp'); ?>" alt="Adult Trampoline Park Ghatkopar" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/R-City-Mall-3.webp'); ?>" alt="Indoor kids play zone in Mumbai Ghatkopar" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Ghatkopar ABC Square Activities" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Kids play area in ghatkopar" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Trampoline Park Fun Ghatkopar" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Kids play zone in Ghatkopar" class="hero-slide-img">
         </div>
     </div>
     <div class="hero-slider-overlay"></div>
@@ -108,19 +108,19 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <div class="experience-grid">
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp'); ?>" alt="Creative & Educational Activities" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp'); ?>" alt="Kids play activities in Mumbai Ghatkopar" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-book"></i> Creative & Educational Activities</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp'); ?>" alt="Age Specific Play Zones" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp'); ?>" alt="Age specific kids play zone in Ghatkopar Mumbai" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-child"></i> Age Specific Kids Play Zones</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Birthday Celebrations" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Kids Birthday celebreation venue in Mumbai" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-birthday-cake"></i> Perfect Birthday Celebrations</h3>
             </div>
@@ -292,7 +292,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 1 -->
                 <div class="activity-card glass-card" data-activity-name="Wave Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp'); ?>" alt="Wave Slide At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp'); ?>" alt="Kids play zone in Ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wave Slide</h4>
@@ -303,7 +303,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 2 -->
                 <div class="activity-card glass-card" data-activity-name="Sand Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp'); ?>" alt="Sand Pit At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp'); ?>" alt="Kids play zone in Ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Sand Pit</h4>
@@ -314,7 +314,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 3 -->
                 <div class="activity-card glass-card" data-activity-name="Soft Play Area">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_softplay_activity.webp'); ?>" alt="Soft Play Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_softplay_activity.webp'); ?>" alt="Kids play area in Ghatkopar Mumbai" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Soft Play Area</h4>
@@ -325,7 +325,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 4 -->
                 <div class="activity-card glass-card" data-activity-name="Pathways">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pathway_activity.webp'); ?>" alt="Pathways Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pathway_activity.webp'); ?>" alt="Kids play zone in Mumbai ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Pathways</h4>
@@ -336,7 +336,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 5 -->
                 <div class="activity-card glass-card" data-activity-name="Doll House">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_dollhouse_activities.webp'); ?>" alt="Doll House Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_dollhouse_activities.webp'); ?>" alt="Doll house for kids play in Ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Doll House</h4>
@@ -347,7 +347,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 6 -->
                 <div class="activity-card glass-card" data-activity-name="Tunnel Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp'); ?>" alt="Tunnel Slide Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp'); ?>" alt="Tunnel slide for kids in Ghatkopar R City Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Tunnel Slide</h4>
@@ -357,7 +357,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 7 -->
                 <div class="activity-card glass-card" data-activity-name="Merry Go Round">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp'); ?>" alt="Merry Go Round At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp'); ?>" alt="Merry go round for kids in Ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Merry Go Round</h4>
@@ -367,7 +367,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 8 -->
                 <div class="activity-card glass-card" data-activity-name="Zebra Swing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/zebra_swing_activity.webp'); ?>" alt="Zebra Swing At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/zebra_swing_activity.webp'); ?>" alt="Zebra swing for kids in Ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Zebra Swing</h4>
@@ -377,7 +377,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 9 -->
                 <div class="activity-card glass-card" data-activity-name="Foam Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity2.webp'); ?>" alt="Foam Pit Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity2.webp'); ?>" alt="Kids play zone in Ghatkopar Mumbai" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Foam Pit</h4>
@@ -387,7 +387,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 10 -->
                 <div class="activity-card glass-card" data-activity-name="Horn Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/horn_slide_activity.webp'); ?>" alt="Horn Slide At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/horn_slide_activity.webp'); ?>" alt="Horn slide for kids in R city mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Horn Slide</h4>
@@ -397,7 +397,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="Ball Pool">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp'); ?>" alt="Ball Pool Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp'); ?>" alt="Toddler play area in Ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Ball Pool</h4>
@@ -407,7 +407,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 12 -->
                 <div class="activity-card glass-card" data-activity-name="Interactive Ball Pool">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Interactive_ball_pool_activity.webp'); ?>" alt="Interactive Ball Pool At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Interactive_ball_pool_activity.webp'); ?>" alt="Toddler play area in Ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Interactive Ball Pool</h4>
@@ -417,7 +417,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 13 -->
                 <div class="activity-card glass-card" data-activity-name="Obstacle Zone">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Obstacle_zone_activity.webp'); ?>" alt="Obstacle zone At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Obstacle_zone_activity.webp'); ?>" alt="Kids play activities in Ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Obstacle Zone</h4>
@@ -427,7 +427,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 14 -->
                 <div class="activity-card glass-card" data-activity-name="Donut Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp'); ?>" alt="Donut Slide Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp'); ?>" alt="Kids play zone in Ghatkopar" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Donut Slide</h4>

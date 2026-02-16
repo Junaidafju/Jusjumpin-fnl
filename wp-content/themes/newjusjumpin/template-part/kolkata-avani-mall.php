@@ -51,13 +51,13 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/avani-mall.png" alt="Jus Jumpin Kolkata Avani Mall Riverside Mall" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/avani-mall2.webp" alt="Adult Trampoline Park Kolkata" class="hero-slide-img">
+            <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/avani-mall2.webp" alt="Kids trampoline park Howrah Avani Mall" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Kolkata Avani Mall Activities" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Kids play area Howrah Avani Mall" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Trampoline Park Fun Kolkata" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Trampoline park for kids in howrah" class="hero-slide-img">
         </div>
     </div>
     <div class="hero-slider-overlay"></div>
@@ -90,7 +90,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <p class="section-text">Jus Jumpin at Avani Riverside Mall offers a unique kids' playzone experience, featuring thrilling wall-to-wall trampolines for kids, exciting wave slides, spiral slides, adventure obstacle games for children, and an interactive soft play zone. With international safety and hygiene standards, parents can sit back and relax, while the kids enjoy to their fullest. Apart from acting as the finest kids' indoor play area, the venue also specializes in hosting blissful birthday party celebrations with custom themes, delicious food, and fun birthday party activities.</p>
             </div>
             <div class="content-right">
-                <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/compressed_avani-mall-main.webp" alt="Avani Mall" class="building-image">
+                <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/compressed_avani-mall-main.webp" alt="Kids playzone Howrah" class="building-image">
              <div class="image-overlay">
                     <h2 class="building-name">Avani Mall</h2>
                 </div>
@@ -109,19 +109,19 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="experience-grid">
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp?v1'); ?>" alt="Creative & Educational Activities" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp?v1'); ?>" alt="Creative & Educational Activities for kids" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-book"></i> Creative & Educational Activities</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp?v1'); ?>" alt="Age Specific Play Zones" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp?v1'); ?>" alt="Age Specific Play Zones in Howrah Avani Mall" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-child"></i> Age Specific Kids Play Zones</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Birthday Celebrations" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Kids Birthday Celebrations in Howrah" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-birthday-cake"></i> Perfect Birthday Celebrations</h3>
             </div>
@@ -315,7 +315,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 3 -->
                 <div class="activity-card glass-card" data-activity-name="Soft play area">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Soft_play_activity.webp?v1'); ?>" alt="Soft_play_activity_area" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Soft_play_activity.webp?v1'); ?>" alt="Soft play area for kids" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Soft play area</h4>

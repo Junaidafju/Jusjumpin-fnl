@@ -10,16 +10,16 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
 <section class="location-hero-slider">
     <div class="hero-slider-wrapper">
         <div class="hero-slide active">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zora_the_Mall_1.webp'); ?>" alt="Jus Jumpin Kolkata ABC Square" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zora_the_Mall_1.webp'); ?>" alt="Bowling and Arcade zone in Raipur" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zora_the_Mall_2.webp'); ?>" alt="Adult Trampoline Park Kolkata" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zora_the_Mall_2.webp'); ?>" alt="Trampoline park in Raipur Zora Mall" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zora_the_Mall_3.webp'); ?>" alt="Kolkata ABC Square Activities" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zora_the_Mall_3.webp'); ?>" alt="Gaming zone in Raipur" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Trampoline Park Fun Kolkata" class="hero-slide-img">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Bowling zone in Raipur Zora Mall" class="hero-slide-img">
         </div>
     </div>
     <div class="hero-slider-overlay"></div>
@@ -51,7 +51,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <p class="section-text">At this venue, we also offer a dedicated party zone to host magical birthday parties in Raipur and conduct corporate events for team building activities. The enchanting atmosphere, customized party decor, in-house DJ, loads of party games, and, of course, a large range of delectable food make it a perfect venue for parties and social gatherings.</p>
             </div>
             <div class="content-right">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zora_the_Mall_body.webp'); ?>" alt="Zora The Mall- Raipur" class="building-image">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zora_the_Mall_body.webp'); ?>" alt="Kids play area in Raipur" class="building-image">
              <div class="image-overlay">
                     <h2 class="building-name">Zora The Mall- Raipur</h2>
                 </div>
@@ -69,25 +69,25 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
         <div class="experience-grid">
         <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="https://www.jusjumpin.com/wp-content/uploads/2025/11/vr-games.webp" alt="Fitness Enthusiasts" loading="lazy">
+                    <img src="https://www.jusjumpin.com/wp-content/uploads/2025/11/vr-games.webp" alt="Gaming activities in Raipur" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-dumbbell"></i> Amazing VR & Arcade Games</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KittyKolkataABC.jpg'); ?>" alt="Kitty Parties" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KittyKolkataABC.jpg'); ?>" alt="Party venue in raipur zora mall" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-birthday-cake"></i> Amazing Kitty Parties</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/CorporateKolkataABC.jpg'); ?>" alt="Corporate Events" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/CorporateKolkataABC.jpg'); ?>" alt="Corporate team building activities in Raipur" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-building"></i> Corporate Team-Building Events</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Family Celebrations" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Birthday celebration venue in Raipur" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-users"></i> Perfect Family Celebrations</h3>
             </div>
@@ -118,7 +118,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 10 -->
                 <div class="activity-card glass-card" data-activity-name="Arcade Game">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Arcade_game.webp'); ?>" alt="Arcade Game in Jus Jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Arcade_game.webp'); ?>" alt="Arcade zone in Raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Arcade</h4>
@@ -129,7 +129,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="VR Games">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/VR_Bike_games.webp'); ?>" alt="VR Games in Jus Jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/VR_Bike_games.webp'); ?>" alt="VR Gaming zone in Raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">VR Games</h4>
@@ -140,7 +140,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 12 -->
                 <div class="activity-card glass-card" data-activity-name="Bowling">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Bowling_alley.webp'); ?>" alt="Bowling at jus jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Bowling_alley.webp'); ?>" alt="Bowling arena in Raipur zora mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Bowling</h4>
@@ -150,7 +150,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 1 -->
                 <div class="activity-card glass-card" data-activity-name="Infinity Trampoline">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Infinity_trampoline_activity.webp'); ?>" alt="Infinity Trampoline - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Infinity_trampoline_activity.webp'); ?>" alt="Trampoline park in Raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Infinity Trampoline</h4>
@@ -161,7 +161,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 2 -->
                 <div class="activity-card glass-card" data-activity-name="Donut Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp'); ?>" alt="Donut Slide - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp'); ?>" alt="Donut slide activity in Raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Donut Slide</h4>
@@ -172,7 +172,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 3 -->
                 <div class="activity-card glass-card" data-activity-name="Foam Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity.webp'); ?>" alt="Foam Pit - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity.webp'); ?>" alt="Kids play area in Raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Foam Pit</h4>
@@ -183,7 +183,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 4 -->
                 <div class="activity-card glass-card" data-activity-name="Hanging Bridge">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/hangging_bridge_activity.webp'); ?>" alt="Hanging Bridge - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/hangging_bridge_activity.webp'); ?>" alt="Kids playzone in Raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Hanging Bridge</h4>
@@ -194,7 +194,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 5 -->
                 <div class="activity-card glass-card" data-activity-name="Sky Steeper">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/sky_stepper_activity.webp'); ?>" alt="Sky Steeper - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/sky_stepper_activity.webp'); ?>" alt="Kids play area in Raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Sky Stepper</h4>
@@ -206,7 +206,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 6 -->
                 <div class="activity-card glass-card" data-activity-name="Pin Wall">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Pin_wall_abc.webp'); ?>" alt="Pin Wall - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Pin_wall_abc.webp'); ?>" alt="Kids play zone in Raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Pin Wall</h4>
@@ -217,7 +217,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 7 -->
                 <div class="activity-card glass-card" data-activity-name="Cubic climbing ">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Cubic_Climbing_activities.webp'); ?>" alt="Cubic climbing in jus jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Cubic_Climbing_activities.webp'); ?>" alt="Amusement park in Raipur Zora Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Cubic climbing </h4>
@@ -228,7 +228,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 8 -->
                 <div class="activity-card glass-card" data-activity-name="Wall Climbing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Basketball-area-activity.webp'); ?>" alt="Wall Climbing - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Basketball-area-activity.webp'); ?>" alt="Game zone in Raipur for Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Basket Ball</h4>
@@ -239,7 +239,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 9 -->
                 <div class="activity-card glass-card" data-activity-name="Tunnel Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp'); ?>" alt="Tunnel Slide Area At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp'); ?>" alt="Game zone in raipur for Adults" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Tunnel Slide</h4>
@@ -250,7 +250,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 10 -->
                 <div class="activity-card glass-card" data-activity-name="Arcade Game">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Arcade_game.webp'); ?>" alt="Arcade Game in Jus Jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Arcade_game.webp'); ?>" alt="Arcade game zone in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Arcade</h4>
@@ -261,7 +261,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="VR Games">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/VR_Bike_games.webp'); ?>" alt="VR Games in Jus Jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/VR_Bike_games.webp'); ?>" alt="VR game zone in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">VR Games</h4>
@@ -272,7 +272,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 12 -->
                 <div class="activity-card glass-card" data-activity-name="Bowling">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Bowling_alley.webp'); ?>" alt="Bowling at jus jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Bowling_alley.webp'); ?>" alt="bowling alley in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Bowling</h4>
@@ -282,7 +282,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 13 -->
                 <div class="activity-card glass-card" data-activity-name="Bumper Car">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Bumper_cars_Activity.webp'); ?>" alt="Bumper Car at jus jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Bumper_cars_Activity.webp'); ?>" alt="Bumper car game in raipur zora mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Bumper Car</h4>
@@ -292,7 +292,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Adult Activity 14 -->
                 <div class="activity-card glass-card" data-activity-name="Wall Climbing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/climbing_wall_activity.webp'); ?>" alt="Wall Climbing At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/climbing_wall_activity.webp'); ?>" alt="Kids play area in zora mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wall Climbing</h4>
@@ -307,7 +307,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Kids Activity 1 -->
                 <div class="activity-card glass-card" data-activity-name="MerryGo Round">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp'); ?>" alt="MerryGo Round - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp'); ?>" alt="Kids play zone in zora mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">MerryGo Round</h4>
@@ -318,7 +318,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Kids Activity 2 -->
                 <div class="activity-card glass-card" data-activity-name="Wave Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp'); ?>" alt="Wave Slide At Jus Jumpin Avani Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp'); ?>" alt="game zone in raipur zora mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wave Slide</h4>
@@ -329,7 +329,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Kids Activity 3 -->
                 <div class="activity-card glass-card" data-activity-name="Horn Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Horn Slide - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="gaming zone in raipur zora mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Horn Slide</h4>
@@ -340,7 +340,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Kids Activity 4 -->
                 <div class="activity-card glass-card" data-activity-name="Ball Pool">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp'); ?>" alt="Ball Pool - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp'); ?>" alt="Kids play zone in Raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Ball Pool</h4>
@@ -351,7 +351,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Kids Activity 5 -->
                 <div class="activity-card glass-card" data-activity-name="Wall Climbing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Basketball-area-activity.webp'); ?>" alt="Wall Climbing - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Basketball-area-activity.webp'); ?>" alt="Adults play area in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Basket Ball</h4>
@@ -362,7 +362,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Kids Activity 6 -->
                 <div class="activity-card glass-card" data-activity-name="Tunnels">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Tunnel_activities.webp'); ?>" alt="Tunnels - Kids" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Tunnel_activities.webp'); ?>" alt="Play area for adults in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Tunnels</h4>
@@ -372,7 +372,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Kids Activity 7 -->
                 <div class="activity-card glass-card" data-activity-name="Foam Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity.webp'); ?>" alt="Foam Pit - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity.webp'); ?>" alt="Kids playzone in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Foam Pit</h4>
@@ -382,7 +382,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                  <!-- Kids Activity 8 -->
                  <div class="activity-card glass-card" data-activity-name="Donut Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp'); ?>" alt="Donut Slide - Adults" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/donut_slide_activity.webp'); ?>" alt="Kids playzone in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Donut Slide</h4>
@@ -392,7 +392,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                  <!-- Kids Activity 9 -->
                  <div class="activity-card glass-card" data-activity-name="Toshi Net">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/toshi-net.webp'); ?>" alt="Toshi Net Jus Jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/toshi-net.webp'); ?>" alt="Toshi net play area in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Toshi Net</h4>
@@ -402,7 +402,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Kids Activity 10 -->
                 <div class="activity-card glass-card" data-activity-name="Mat Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Mat-slide.webp'); ?>" alt="Mat Slide Jus Jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Mat-slide.webp'); ?>" alt="Children's amuesment park in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Mat Slide</h4>
@@ -411,7 +411,7 @@ $title = "Raipur - Zora Mall | Jus Jumpin";
                 <!-- Kids Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="Car Racing Track">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Mat-slide.webp'); ?>" alt="Car Racing Track Jus Jumpin" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Mat-slide.webp'); ?>" alt="Car racing games in raipur" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Car Racing Track</h4>
@@ -845,3 +845,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
