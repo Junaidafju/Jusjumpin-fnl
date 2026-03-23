@@ -38,6 +38,7 @@
                 <li><a href="<?php echo esc_url( home_url('/our-activities') ); ?>">Our Activities</a></li>
                 <li><a href="<?php echo esc_url( home_url('/contact') ); ?>">Contact Us</a></li>
                 <li><a href="<?php echo esc_url( home_url('/blog') ); ?>">Blogs</a></li>
+                <li><a href="<?php echo esc_url( home_url('/career') ); ?>">Career</a></li>
             </ul>
         </div>
 

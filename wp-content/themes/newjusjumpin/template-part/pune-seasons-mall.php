@@ -68,7 +68,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 Jus Jumpin<br>Seasons Mall - Pune
 
             </h1>
-            <p class="location-hero-subtitle">Hop in to experience the best trampoline park in Pune. With more than 15 different activities for kids and adults, a day out to remember for a lifetime is guaranteed.</p>
+            <p class="location-hero-subtitle">Hop in to experience the best trampoline park & Kids play zone in Pune. With more than 15 fun-packed activities, a day out to remember for a lifetime is guaranteed.</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -85,9 +85,9 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="content-with-image">
             <div class="content-left">
                 <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
-                <p class="section-text">Dive into a world of joy at<strong> Jus Jumpin, Seasons Mall, Pune.</strong> Jump in for an electrifying experience for kids and adults. At our venue, get access to India's finest trampoline Park for adults, alongside a sparkling kids play zone that adheres to international safety & hygiene standards. At our facility, we offer several slides, foam pits, wall climbing and more than 15 energizing activities for people of all ages.</p>
-                <p class="section-text">At our venue, you get exclusive access to action-packed activities like sky stepper, obstacle zone, net climb, basketball area, and numerous fun activities for adults. Alongside these, we also offer a dedicated soft play area stacked with kid-friendly activities like foam pit, wave slide, merry-go-round, tunnel slide, toddler play area, and other wholesome activities for the kids to explore.</p>
-                <p class="section-text">Our bright and vibrant venue features a dedicated party area ideal for hosting amazing birthday parties, social gatherings, or corporate team building activities. Your party shines brighter at Jus Jumpin with exclusive access to our play zone, party games, personalized decoration, and customized dining menu. Hurry up now! Get ready to visit us at Jus Jumpin! Let's Spring It On!</p>
+                <p class="section-text">Dive into a world of joy at<strong> Jus Jumpin, Seasons Mall, Pune.</strong> Jump in for an electrifying experience for kids and adults. At our venue, get access to India's finest trampoline Park for adults, alongside a sparkling kids play area in Pune with highest safety & hygiene standards. At our facility, we offer colourful slides, foam pits, wall climbing and more than 15 energising activities for people of all ages.</p>
+                <p class="section-text">At Jus Jumpin, you get exclusive access to action-packed kids activities like sky stepper, obstacle zone, net climb, basketball area, and numerous fun activities for adults. Alongside these, we also offer a dedicated soft play area stacked with kid-friendly activities like foam pit, wave slide, merry-go-round, tunnel slide, toddler play area, and other wholesome activities for the kids to explore.</p>
+                <p class="section-text">Our bright and vibrant venue features a dedicated party area ideal for hosting amazing birthday parties, social gatherings, or corporate team building activities. Your party shines brighter at Jus Jumpin with exclusive access to our kids play zone, party games, personalised decoration, and customized dining menu. Hurry up now! Get ready to visit us at Jus Jumpin! Let's Spring It On!</p>
             </div>
             <div class="content-right">
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/season_mall_punebody.webp'); ?>" alt="Season Mall Pune" class="building-image">
@@ -103,7 +103,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at Seasons Mall features an infinity trampoline, sand pit, pin wall, net climb, wave slide, and a dedicated toddler play area.</p>
+        <p class="section-intro">Jus Jumpin at Pune Seasons Mall features an infinity trampoline, sand pit, pin wall, net climb, wave slide, and a dedicated toddler play area.</p>
         
         <div class="experience-grid">
             <div class="experience-card glass-card">
@@ -132,7 +132,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="section-footer-text">Dedicated party area perfect for <strong>hosting amazing birthday parties</strong> and <strong>corporate events </strong>in Pune. The venue features an <strong>awesome in-house DJ</strong> and a <strong>designated cafe with beverages.</strong></p>
+        <p class="section-footer-text">Dedicated party area perfect for <strong>hosting kids’ birthday parties in Pune</strong>. With exciting <strong>party games, live performances,</strong>  & exclusive play area access, <strong>a birthday to remember is guaranteed.</strong></p>
     </div>
 </section>
 
@@ -270,7 +270,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Ninja Activities</h4>
-                        <p class="activity-desc">Complete ninja warrior-style obstacles. Test agility, strength, and endurance like a true warrior!</p>
+                        <p class="activity-desc">Complete ninja warrior-style obstacles. Test your agility, strength, and endurance like a true Ninja!</p>
                     </div>
                 </div>
                 
@@ -281,7 +281,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Pin Wall</h4>
-                        <p class="activity-desc">Create an impression of your body on our 3D pin wall. Strike a pose and see yourself immortalized!</p>
+                        <p class="activity-desc">Create an impression of your body on our 3D pin wall. Strike a pose and see yourself getting pinned!</p>
                     </div>
                 </div>
                 <!-- Adult Activity 13 -->
@@ -291,7 +291,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Basketball Area</h4>
-                        <p class="activity-desc">Shoot, score, and celebrate in our Basketball Area — a fun zone where kids enjoy friendly matches and practice perfect shots!</p>
+                        <p class="activity-desc">Shoot, score, and celebrate in our Basketball Area — a fun zone where kids enjoy friendly matches and practice perfect dunks!</p>
                     </div>
                 </div>
                 <!-- Adult Activity 14 -->
@@ -301,7 +301,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Net Climb</h4>
-                        <p class="activity-desc">Shoot, score, and celebrate in our Basketball Area — a fun zone where kids enjoy friendly matches and practice perfect shots!</p>
+                        <p class="activity-desc">Jump, climb or fall, weave memories that stay with you - awesome softplay activity that encourages healthy risk-taking.</p>
                     </div>
                 </div>
             </div>
@@ -531,23 +531,23 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <span class="safety-icon"><i class="fas fa-socks"></i></span>
                 <h4>Grip Socks Required</h4>
                 <p>₹60, reusable on future visits.
-                    <strong>This socks are provided for extra protection and hygiene.</strong>
+                    <strong>The socks are provided for extra protection and hygiene.</strong>
                 </p>
             </div>
             <div class="safety-item glass-card">
                 <span class="safety-icon"><i class="fas fa-file-signature"></i></span>
                 <h4>Disclaimer Form & ID</h4>
-                <p>All participants must sign a liability waiver and present valid government-issued photo ID before entry.</p>
+                <p>All participants must sign a liability waiver and present a valid government-issued photo ID before entry.</p>
             </div>
             <div class="safety-item glass-card">
                 <span class="safety-icon"><i class="fas fa-exclamation-triangle"></i></span>
                 <h4>No Rough Play</h4>
-                <p>No stunts beyond skill level - our expert staff provides personalized guidance keeping the fun safe and accessible for everyone.</p>
+                <p>No stunts beyond skill level - our expert staff provides personalised guidance, keeping the fun safe and accessible for everyone.</p>
             </div>
             <div class="safety-item glass-card">
                 <span class="safety-icon"><i class="fas fa-heartbeat"></i></span>
                 <h4>Health Restrictions</h4>
-                <p>This activity is not suitable for guests who are pregnant, have heart conditions to ensure safety and well-being for all participants.</p>
+                <p>This activity is not suitable for guests who are pregnant or have heart conditions to ensure safety and well-being for all participants.</p>
             </div>
         </div>
     </div>
@@ -569,16 +569,25 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
             
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-2"></i> <span>What are the activities Jus Jumpin offers?</span></button>
+                <button class="faq-question"><i class="fas fa-2"></i> <span>Is there any age limit at the Jus Jumpin' Pune outlet?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        <p>At our selected venues, Jus Jumpin offers versatile play activities for both kids and adults. At our facilities, you can find dedicated zones for different age groups.</p>
+                        <p>At Jus Jumpin, we believe that age shouldn't limit you from having fun. All the age groups can visit our adult trampoline parks and enjoy to the fullest.</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-3"></i> <span>Are there packages, parties, or group rates for adults?</span></button>
+                <button class="faq-question"><i class="fas fa-3"></i> <span>What are the activities Jus Jumpin offers?</span></button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>At our selected venues, Jus Jumpin offers versatile play activities for both kids and adults. At our facilities, you can find dedicated kids' play zones for different age groups.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question"><i class="fas fa-4"></i> <span>Are there packages, parties, or group rates for adults?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
                         <p>Our vibrant theme parks are absolutely epic for hosting birthday parties and social events. For group or bulk bookings, contact our dedicated sales team for irresistible offers.</p>
@@ -587,7 +596,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
             
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-4"></i> <span>Are there any health / age / weight restrictions?</span></button>
+                <button class="faq-question"><i class="fas fa-5"></i> <span>Are there any health/age/weight restrictions?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
                         <p>Although at Jus Jumpin, everyone can enjoy without any restrictions, we cordially suggest pregnant guests and guests with heart conditions not participate for safety reasons. The standard weight limit at our facility is up to 100kg, but it totally depends on specific activities.</p>
@@ -596,19 +605,10 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
             
             <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-5"></i> <span>Do I need to sign a waiver?</span></button>
+                <button class="faq-question"><i class="fas fa-6"></i> <span>Do I need to sign a waiver?</span></button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
                         <p>Yes, it is mandatory to ensure you are aware of our facility's safety guidelines. For minors, the waiver form must be signed by the guardian.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <button class="faq-question"><i class="fas fa-6"></i> <span>What to wear while visiting Jus Jumpin?</span></button>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        <p>While there is no such dress code at Jus Jumpin, we recommend wearing comfortable clothes and mandatory grip socks to ensure the safety of the guests.</p>
                     </div>
                 </div>
             </div>

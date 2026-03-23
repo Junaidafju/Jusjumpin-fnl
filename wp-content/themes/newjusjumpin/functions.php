@@ -79,10 +79,11 @@ function newjusjumpin_custom_meta_titles($title) {
         'about' => 'About Jus Jumpin – India\'s Leading Indoor Trampoline Park',
         'our-location' => 'Jus Jumpin Locations – Find a Kids Play Zone Near You',
         'our-activities' => 'Activities at Jus Jumpin | Indoor Fun & Play Zones for Kids',
-        'birthday-celebration' => 'Birthday Celebration at Jus Jumpin | Best Kids Birthday Party Venue',
+        'birthday-celebration' => 'Best Birthday Celebration Venue | Top Kids Birthday Party Halls',
         'school-trips' => 'Ultimate School Field Trips & Group Outings | Best place for kids and adults trips',
         'contact' => 'Contact Jus Jumpin – India\'s Premier Kids Play Zone',
         'blog' => 'Blog - JUSJUMPIN | Latest News & Updates',
+        'careers' => 'Careers at Jus Jumpin | Join Our Amazing Team - Jobs & Internships',
         'termsandcondition' => 'Terms and Conditions | Jus Jumpin',
         'privacypolicy' => 'Privacy Policy | Jus Jumpin',
         
@@ -243,6 +244,7 @@ function newjusjumpin_custom_meta_descriptions() {
         'about' => 'Jus Jumpin is India\'s top indoor trampoline and play park brand offering safe, fun-filled zones for kids, families, and birthdays across multiple cities.',
         'our-location' => 'Explore all Jus Jumpin locations across India! Find your nearest indoor trampoline park & kids play zone for birthdays, playdates & family fun.',
         'blog' => 'Stay updated with the latest news and updates from Jus Jumpin - India\'s premier indoor trampoline park.',
+        'careers' => 'Join the Jus Jumpin team! Explore exciting career opportunities & internships in marketing, operations, surveillance & HR. Be part of India\'s leading kids entertainment brand.',
 
         // Location pages
         'kolkata-abc-square-building-best-adult-trampoline-park' => 'Experience high-energy fun at Kolkata\'s best adult trampoline park at ABC Square Building Kolkata. Best for birthday parties and kitty parties in ABC Square Building.',
@@ -267,7 +269,7 @@ function newjusjumpin_custom_meta_descriptions() {
         'thane-r-mall' => 'Explore a brand new kids play area and vibrant birthday party zone in Thane, packed with an exciting trampoline park and 20+ kids-friendly gaming activities.',
         'nashik-city-centre' => 'Celebrate your kid\'s birthday at Nashik City Centre. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Nashik.',
         'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
-        'birthday-celebration' => 'Celebrate your kid\'s birthday at Jus Jumpin – India\'s favorite indoor play zone. Trampolines, foam pits & party fun at locations nationwide!',
+        'birthday-celebration' => 'Find the best kids birthday party venue in your city. Host a birthday party for your kid at our party zone with party games, delicious food and theme decorations.',
         'school-trips' => 'Plan a high-energy school trip at Jus Jumpin! Our indoor trampoline park and soft play areas combine physical education with pure fun. Safe, supervised, and discounted group rates available.',
         'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.'
     );
@@ -445,6 +447,11 @@ if (is_page_template('page-school-trips.php') || is_page('school-trips') || is_p
         $privacy_css_path = get_template_directory() . '/assets/css/privacy.css';
         $privacy_css_ver = file_exists($privacy_css_path) ? filemtime($privacy_css_path) : '1.0.0';
         wp_enqueue_style('newjusjumpin-privacy', get_template_directory_uri() . '/assets/css/privacy.css', array('newjusjumpin-style'), $privacy_css_ver);
+    }
+    if (is_page_template('career.php') || is_page('career') || is_page('Career')) {
+        $career_css_path = get_template_directory() . '/assets/css/career.css';
+        $career_css_ver = file_exists($career_css_path) ? filemtime($career_css_path) : '1.0.0';
+        wp_enqueue_style('newjusjumpin-career', get_template_directory_uri() . '/assets/css/career.css', array('newjusjumpin-style'), $career_css_ver);
     }
     
     // Theme JavaScript
@@ -1535,7 +1542,7 @@ function newjusjumpin_seo_meta() {
                 'surat-vr-mall' => 'Find the best birthday party venue in Surat VR Mall – kids\' play area in Surat VR Mall, adventure park & indoor play area in Surat VR mall fun for children.',
                 'nashik-city-centre' => 'Celebrate your kid\'s birthday at Nashik City Centre. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Nashik.',
                 'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
-                'birthday-celebration' => 'Celebrate your kid\'s birthday at Jus Jumpin – India\'s favorite indoor play zone. Trampolines, foam pits & party fun at locations nationwide!',
+                'birthday-celebration' => 'Find the best kids birthday party venue in your city. Host a birthday party for your kid at our party zone with party games, delicious food and theme decorations.',
                 'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.',
                 'thane-r-mall' => 'Explore a brand new kids play area and vibrant birthday party zone in Thane, packed with an exciting trampoline park and 20+ kids-friendly gaming activities.',);
             

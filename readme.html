@@ -96,3 +96,76 @@
 
 </body>
 </html>
+Project Overview: Jus-Jumpin
+Jus-Jumpin is a WordPress-based website for what appears to be a children's activity center, play area, or entertainment venue. The project is built on WordPress (latest version) and uses a custom theme with various plugins to deliver its functionality.
+Project Type
+Platform: WordPress CMS
+Environment: Local development (Laragon - Windows)
+Database: MySQL (database name: Jus-Jumpin)
+Site URL: Dynamically configured based on request
+Folder Structure
+plaintext
+Jus-Jumpin/
+├── wp-admin/                      # WordPress admin dashboard files
+├── wp-includes/                   # WordPress core files
+├── wp-content/                    # Custom content directory
+│   ├── themes/
+│   │   ├── newjusjumpin/         # ACTIVE CUSTOM THEME ⭐
+│   │   │   ├── assets/           # Theme assets (CSS, JS, images)
+│   │   │   ├── inc/              # Additional PHP includes
+│   │   │   ├── schema/           # Schema.org markup
+│   │   │   ├── template-part/    # Reusable template parts
+│   │   │   ├── templates/        # Page templates
+│   │   │   ├── front-page.php    # Homepage template
+│   │   │   ├── page-*.php        # Custom page templates:
+│   │   │   │   ├── about
+│   │   │   │   ├── birthday-celebration
+│   │   │   │   ├── contact
+│   │   │   │   ├── our-activities
+│   │   │   │   └── school-trips
+│   │   │   ├── blog.php          # Blog listing
+│   │   │   ├── single.php        # Single post view
+│   │   │   ├── header.php        # Site header
+│   │   │   ├── footer.php        # Site footer
+│   │   │   ├── functions.php     # Theme functions (93.9KB - extensive!)
+│   │   │   └── style.css         # Main stylesheet
+│   │   ├── twentytwentyfive/     # Default WP theme (backup)
+│   │   ├── twentytwentyfour/     # Default WP theme (backup)
+│   │   └── twentytwentythree/    # Default WP theme (backup)
+│   │
+│   └── plugins/
+│       ├── advanced-custom-fields/    # ACF - Custom fields management
+│       ├── elementor/                 # Page builder plugin
+│       ├── wp-google-maps/            # Google Maps integration
+│       ├── wp-whatsapp/               # WhatsApp chat integration
+│       └── akismet/                   # Spam protection
+│
+├── .htaccess                        # Apache rewrite rules
+├── wp-config.php                    # WordPress configuration
+├── index.php                        # Main entry point
+├── sitemap.xml                      # Site sitemap
+└── [Various WordPress core files]
+Key Features & Pages
+Based on the custom theme structure, the site includes:
+Homepage (front-page.php - 48.7KB)
+About Page
+Birthday Celebration Packages
+Contact Page
+Our Activities
+School Trips Program
+Blog Section
+Privacy Policy & Terms
+Technology Stack
+CMS: WordPress
+Page Builder: Elementor
+Custom Fields: Advanced Custom Fields (ACF)
+Communication: WhatsApp integration
+Maps: WP Google Maps
+Theme: Custom theme (newjusjumpin)
+Server: Laragon (local Apache/PHP/MySQL environment)
+Configuration Highlights
+Database: Jus-Jumpin (localhost, root user, no password)
+Dynamic URLs: Site URL adapts to the current host
+Debug Mode: Disabled (production setting)
+Table Prefix: wp_
+This appears to be a fully functional business website for an entertainment/activity venue with booking capabilities, information pages, and customer communication features through WhatsApp.
