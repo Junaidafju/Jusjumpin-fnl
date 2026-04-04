@@ -167,7 +167,7 @@ function jj_flash_messages() {
         </a>
         <div class="jj-hero__stats">
             <div class="jj-hero__stat"><span class="jj-stat-n">500+</span><span class="jj-stat-l">Team Members</span></div>
-            <div class="jj-hero__stat"><span class="jj-stat-n">5+</span><span class="jj-stat-l">Years of Fun</span></div>
+            <div class="jj-hero__stat"><span class="jj-stat-n">9+</span><span class="jj-stat-l">Years of Fun</span></div>
             <div class="jj-hero__stat"><span class="jj-stat-n">15</span><span class="jj-stat-l">Open Roles</span></div>
             <div class="jj-hero__stat"><span class="jj-stat-n">∞</span><span class="jj-stat-l">Good Vibes</span></div>
         </div>
@@ -274,7 +274,7 @@ function jj_flash_messages() {
                 <span>🎨</span><span class="jj-tab__label">Marketing</span><span class="jj-tab__count">5</span>
             </button>
             <button class="jj-tab" data-dept="operations">
-                <span>🏪</span><span class="jj-tab__label">Operations</span><span class="jj-tab__count">8</span>
+                <span>🏪</span><span class="jj-tab__label">Operations</span><span class="jj-tab__count">9</span>
             </button>
             <button class="jj-tab" data-dept="surveillance">
                 <span>📹</span><span class="jj-tab__label">Surveillance</span><span class="jj-tab__count">1</span>
@@ -318,11 +318,12 @@ function jj_flash_messages() {
                     <h3>🏪 Operations Department</h3>
                     <p>Be the backbone of our on-ground experience</p>
                 </div>
-                <span class="jj-dept-badge">8 Openings 🔥</span>
+                <span class="jj-dept-badge">9 Openings 🔥</span>
             </div>
             <div class="jj-jobs">
                 <?php
                 $ops_jobs = [
+                    ['Accounts & Finance',   'Oversee financial operations, ensure compliance, and support business decision-making.',         ['Leadership','Finance','Accounts']],
                     ['Store Manager',        'Oversee daily operations, manage staff, ensure customer satisfaction, and drive sales performance.',         ['Leadership','Operations','Customer Service']],
                     ['Security Guards',      'Ensure safety of all visitors, monitor premises, and maintain security protocols at all times.',              ['Security','Vigilance','Safety Protocols']],
                     ['Cash Counter Manager', 'Manage cash transactions, handle billing, and maintain accurate financial records with precision.',            ['Cash Handling','Billing','Finance']],
