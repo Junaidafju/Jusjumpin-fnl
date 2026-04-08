@@ -1135,16 +1135,39 @@ class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu {
  * Contact form handler
  */
 function newjusjumpin_handle_contact_form() {
+    // --- Honeypot spam protection (run early to short-circuit bots) ---
+    $hp_field = 'contact_website';
+    if (isset($_POST[$hp_field])) {
+        $hp_value = is_string($_POST[$hp_field]) ? trim(wp_unslash($_POST[$hp_field])) : '';
+        if ($hp_value !== '') {
+            // Log attempt (IP, UA, time) for monitoring — do not expose details to client
+            $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+            $ua = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
+            $time = gmdate('Y-m-d H:i:s');
+            // Clean newlines from UA and honeypot value for safe logging
+            $ua_clean = str_replace(array("\r","\n"), ' ', $ua);
+            $hp_clean = str_replace(array("\r","\n"), ' ', $hp_value);
+            $log_line = sprintf("[%s] HONEYPOT SPAM from %s UA:%s field(%s)=\"%s\"\n", $time, $ip, $ua_clean, $hp_field, $hp_clean);
+            if (function_exists('wp_upload_dir')) {
+                $up = wp_upload_dir();
+                $logfile = rtrim($up['basedir'], '/\\') . '/jj_spam.log';
+            } else {
+                $logfile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'jj_spam.log';
+            }
+            @file_put_contents($logfile, $log_line, FILE_APPEND | LOCK_EX);
+
+            // Return a normal success redirect so bots receive a normal response; do not process further
+            if (!headers_sent()) {
+                http_response_code(200);
+            }
+            wp_redirect(add_query_arg('contact', 'success', wp_get_referer()));
+            exit;
+        }
+    }
+
     // Verify nonce
     if (!isset($_POST['newjusjumpin_contact_nonce']) || !wp_verify_nonce($_POST['newjusjumpin_contact_nonce'], 'newjusjumpin_contact')) {
         wp_redirect(add_query_arg('contact', 'error', wp_get_referer()));
-        exit;
-    }
-    
-    // Honeypot spam protection
-    if (!empty($_POST['contact_website'])) {
-        // Spam detected - silently fail
-        wp_redirect(add_query_arg('contact', 'success', wp_get_referer()));
         exit;
     }
     

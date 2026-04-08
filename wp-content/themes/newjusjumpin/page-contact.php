@@ -135,10 +135,18 @@ get_header(); ?>
                         <p><?php esc_html_e('Have a question or want to book a session? Fill out the form below and we\'ll respond as soon as possible.', 'newjusjumpin'); ?></p>
                     </div>
 
+                    <!-- Fallback CSS: ensures honeypot stays hidden if theme stylesheet is missing or cached -->
+                    <style>
+                    /* Honeypot fallback - keeps field visually hidden while remaining in DOM */
+                    .jj-hp{position:absolute !important;left:-10000px !important;width:1px !important;height:1px !important;overflow:hidden !important;clip:rect(1px,1px,1px,1px) !important;white-space:nowrap !important;border:0 !important}
+                    </style>
                     <form class="elegant-contact-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post" novalidate>
                         <?php wp_nonce_field('newjusjumpin_contact', 'newjusjumpin_contact_nonce'); ?>
                         <input type="hidden" name="action" value="contact_form">
-                        <input type="text" name="contact_website" value="" style="display:none;" aria-hidden="true">
+                        <div class="jj-hp" aria-hidden="true">
+                            <label for="contact_website_field">Company</label>
+                            <input id="contact_website_field" name="contact_website" type="text" autocomplete="off" tabindex="-1" />
+                        </div>
 
                         <!-- Name Section with ID for scrolling -->
                         <div class="form-section-elegant" id="contact-name-section">
