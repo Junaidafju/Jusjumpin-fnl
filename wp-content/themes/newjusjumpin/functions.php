@@ -1228,6 +1228,110 @@ function newjusjumpin_handle_contact_form() {
         $ip = sanitize_text_field($_SERVER['REMOTE_ADDR']);
     }
     
+    // --- Enforce: only accept submissions from Indian IPs and Indian mobile numbers ---
+    // and block known disposable email providers. Blocked attempts are silently
+    // dropped (redirect with success) to avoid revealing filtering rules to bots.
+    // Resolve client IP (first in X-Forwarded-For if present)
+    $client_ip = $ip;
+    if (strpos($client_ip, ',') !== false) {
+        $parts = explode(',', $client_ip);
+        $client_ip = trim($parts[0]);
+    }
+
+    // GeoIP: try cached lookup in uploads, otherwise use ip-api.com (no key required)
+    $country_code = 'unknown';
+    if (filter_var($client_ip, FILTER_VALIDATE_IP)) {
+        if (function_exists('wp_upload_dir')) {
+            $upc = wp_upload_dir();
+            $geo_dir = rtrim($upc['basedir'], '/\\') . '/jj_geo_cache';
+        } else {
+            $geo_dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'jj_geo_cache';
+        }
+        if (!file_exists($geo_dir)) {
+            @wp_mkdir_p($geo_dir);
+        }
+        $cache_file = $geo_dir . DIRECTORY_SEPARATOR . md5($client_ip) . '.json';
+        $use_cache = false;
+        if (file_exists($cache_file)) {
+            $data = @json_decode(@file_get_contents($cache_file), true);
+            if (!empty($data) && !empty($data['countryCode']) && !empty($data['timestamp']) && (time() - intval($data['timestamp']) < 86400 * 7)) {
+                $country_code = $data['countryCode'];
+                $use_cache = true;
+            }
+        }
+        if (!$use_cache) {
+            $lookup_url = 'http://ip-api.com/json/' . rawurlencode($client_ip) . '?fields=status,countryCode';
+            if (function_exists('wp_remote_get')) {
+                $resp = wp_remote_get($lookup_url, array('timeout' => 3));
+                if (!is_wp_error($resp) && wp_remote_retrieve_response_code($resp) === 200) {
+                    $body = wp_remote_retrieve_body($resp);
+                    $json = @json_decode($body, true);
+                    if (!empty($json) && isset($json['countryCode']) && isset($json['status']) && $json['status'] === 'success') {
+                        $country_code = $json['countryCode'];
+                        @file_put_contents($cache_file, json_encode(array('countryCode' => $country_code, 'timestamp' => time())));
+                    }
+                }
+            } else {
+                // Fallback: try file_get_contents
+                $body = @file_get_contents($lookup_url);
+                $json = @json_decode($body, true);
+                if (!empty($json) && isset($json['countryCode']) && isset($json['status']) && $json['status'] === 'success') {
+                    $country_code = $json['countryCode'];
+                    @file_put_contents($cache_file, json_encode(array('countryCode' => $country_code, 'timestamp' => time())));
+                }
+            }
+        }
+    }
+
+    // Phone: normalize and check Indian mobile pattern (10 digits starting 6-9)
+    $phone_digits = preg_replace('/\D+/', '', $phone);
+    $check_phone = $phone_digits;
+    if (strpos($phone_digits, '91') === 0) {
+        $check_phone = substr($phone_digits, 2);
+    }
+    $is_indian_mobile = preg_match('/^[6-9]\d{9}$/', $check_phone);
+
+    // Disposable email domains (non-exhaustive). Add more as needed.
+    $disposable_domains = array(
+        'mailinator.com','10minutemail.com','tempmail.com','guerrillamail.com','yopmail.com','trashmail.com','dispostable.com','maildrop.cc','fakeinbox.com','getnada.com','temp-mail.org'
+    );
+    $email_domain = strtolower(substr(strrchr($email, '@'), 1));
+    $is_disposable = in_array($email_domain, $disposable_domains, true);
+
+    // If any of the enforcement checks fail, log and silently drop
+    if ($country_code !== 'IN' || !$is_indian_mobile || $is_disposable) {
+        $reason_parts = array();
+        if ($country_code !== 'IN') {
+            $reason_parts[] = 'country=' . $country_code;
+        }
+        if (!$is_indian_mobile) {
+            $reason_parts[] = 'phone=' . $phone_digits;
+        }
+        if ($is_disposable) {
+            $reason_parts[] = 'disposable_email=' . $email_domain;
+        }
+        $reason = implode(';', $reason_parts);
+
+        $ip_block = $client_ip ?: 'unknown';
+        $ua_block = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
+        $time_block = gmdate('Y-m-d H:i:s');
+        $ua_clean_block = str_replace(array("\r","\n"), ' ', $ua_block);
+        $log_line_block = sprintf("[%s] BLOCKED SUBMISSION from %s UA:%s email:%s phone:%s reason:%s\n", $time_block, $ip_block, $ua_clean_block, $email, $phone_digits, $reason);
+        if (function_exists('wp_upload_dir')) {
+            $upb = wp_upload_dir();
+            $blockfile = rtrim($upb['basedir'], '/\\') . '/jj_blocked.log';
+        } else {
+            $blockfile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'jj_blocked.log';
+        }
+        @file_put_contents($blockfile, $log_line_block, FILE_APPEND | LOCK_EX);
+
+        if (!headers_sent()) {
+            http_response_code(200);
+        }
+        wp_redirect(add_query_arg('contact', 'success', wp_get_referer()));
+        exit;
+    }
+    
     // Prepare data for email templates
     $email_data = array(
         'name' => $name,
