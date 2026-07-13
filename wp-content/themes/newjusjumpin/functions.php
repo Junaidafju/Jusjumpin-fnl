@@ -14,7 +14,8 @@ if (!defined('ABSPATH')) {
 /**
  * Theme Setup
  */
-function newjusjumpin_setup() {
+function newjusjumpin_setup()
+{
     // Theme supports
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
@@ -28,11 +29,11 @@ function newjusjumpin_setup() {
         'style',
         'script'
     ));
-    
+
     // Image sizes
     add_image_size('activity-card', 400, 300, true);
     add_image_size('hero-bg', 1920, 1080, true);
-    
+
     // Register navigation menus
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'newjusjumpin'),
@@ -54,7 +55,8 @@ remove_action('template_redirect', 'wp_shortlink_header', 11);
 /**
  * Custom Meta Titles for Pages
  */
-function newjusjumpin_custom_meta_titles($title) {
+function newjusjumpin_custom_meta_titles($title)
+{
     // Prefer the posts page slug when we're on the blog index with a static front page
     $page_slug = '';
     if (is_home() && !is_front_page()) {
@@ -63,16 +65,16 @@ function newjusjumpin_custom_meta_titles($title) {
             $page_slug = get_post_field('post_name', $posts_page_id);
         }
     }
-    
+
     if (empty($page_slug)) {
         $page_slug = basename(get_permalink());
     }
-    
+
     // Treat the real front page (or when the blog is also the front page) as the home title
     if (is_front_page() || (!get_option('page_for_posts') && is_home())) {
         return 'Discover the Best Trampoline Park at Jus Jumpin';
     }
-    
+
     // Define custom titles for specific pages
     $custom_titles = array(
         'home' => 'Discover the Best Trampoline Park at Jus Jumpin',
@@ -86,14 +88,14 @@ function newjusjumpin_custom_meta_titles($title) {
         'careers' => 'Careers at Jus Jumpin | Join Our Amazing Team - Jobs & Internships',
         'termsandcondition' => 'Terms and Conditions | Jus Jumpin',
         'privacypolicy' => 'Privacy Policy | Jus Jumpin',
-        
+
     );
-    
+
     // If we have a custom title for this page, use it
     if (isset($custom_titles[$page_slug])) {
         return $custom_titles[$page_slug];
     }
-    
+
     // For location pages that follow a pattern, create dynamic titles
     if (strpos($page_slug, '-kids-playzone-') !== false || strpos($page_slug, '-trampoline-park-') !== false) {
         // Convert slug to readable format
@@ -101,7 +103,7 @@ function newjusjumpin_custom_meta_titles($title) {
         $location_name = ucwords(str_replace(array('kids playzone', 'trampoline park'), array('Kids Playzone', 'Trampoline Park'), $location_name));
         return $location_name . ' | Jus Jumpin';
     }
-    
+
     // Return default title if no custom title is found
     return $title;
 }
@@ -110,18 +112,19 @@ add_filter('pre_get_document_title', 'newjusjumpin_custom_meta_titles');
 /**
  * Custom Meta Descriptions for Pages
  */
-function newjusjumpin_custom_meta_descriptions() {
+function newjusjumpin_custom_meta_descriptions()
+{
     $has_posts_page = (int) get_option('page_for_posts');
     $is_static_front = is_front_page() && !is_home();
     $is_blog_front = is_front_page() && is_home();
-    
+
     // Treat the actual homepage (either the static front page or when posts are the front page) with the home description
     if ($is_static_front || $is_blog_front) {
         echo '<meta name="description" content="Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball & birthday parties for kids, teens & adults. Safe, high-energy adventures await!" />' . "\n";
         do_action('newjusjumpin_custom_meta_descriptions_done');
         return;
     }
-    
+
     // If there is no dedicated posts page, the blog index is also the homepage
     if (!$has_posts_page && is_home()) {
         echo '<meta name="description" content="Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball & birthday parties for kids, teens & adults. Safe, high-energy adventures await!" />' . "\n";
@@ -132,7 +135,7 @@ function newjusjumpin_custom_meta_descriptions() {
     // Get correct slug of current page
     // Use different methods to get the slug for better compatibility
     $page_slug = '';
-    
+
     // Method 0: When viewing the posts page while a static front page is set
     if (is_home() && !$is_blog_front) {
         $posts_page_id = $has_posts_page;
@@ -140,7 +143,7 @@ function newjusjumpin_custom_meta_descriptions() {
             $page_slug = get_post_field('post_name', $posts_page_id);
         }
     }
-    
+
     // Method 1: Get slug from post object
     if (is_page() || is_single()) {
         $post_obj = get_post();
@@ -148,7 +151,7 @@ function newjusjumpin_custom_meta_descriptions() {
             $page_slug = $post_obj->post_name;
         }
     }
-    
+
     // Method 2: Get slug from URL if method 1 didn't work
     if (empty($page_slug)) {
         $permalink = get_permalink();
@@ -156,27 +159,41 @@ function newjusjumpin_custom_meta_descriptions() {
             $page_slug = basename(rtrim($permalink, '/'));
         }
     }
-    
+
     // Method 3: For location pages handled by custom router, extract from request URI
     if (empty($page_slug)) {
         $request_uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
         $parts = explode('/', $request_uri);
         $page_slug = end($parts);
-        
+
         // Clean up the slug - remove any query parameters
         if (strpos($page_slug, '?') !== false) {
             $page_slug = substr($page_slug, 0, strpos($page_slug, '?'));
         }
-        
+
         // Additional check for location pages
         if (!empty($page_slug)) {
             // Check if this is a location page by looking for location-specific patterns
             $location_patterns = array(
-                'kolkata-', 'bengaluru-', 'dhanbad-', 'durgapur-', 'jamshedpur-',
-                'nagpur-', 'noida-', 'pune-', 'raipur-', 'ranchi-', 'siliguri-',
-                'surat-', 'udaipur-', 'nashik-', 'ghatkopar-', 'thane-'
+                'kolkata-',
+                'hyderabad-',
+                'bengaluru-',
+                'dhanbad-',
+                'durgapur-',
+                'jamshedpur-',
+                'nagpur-',
+                'noida-',
+                'pune-',
+                'raipur-',
+                'ranchi-',
+                'siliguri-',
+                'surat-',
+                'udaipur-',
+                'nashik-',
+                'ghatkopar-',
+                'thane-'
             );
-            
+
             $is_location_page = false;
             foreach ($location_patterns as $pattern) {
                 if (strpos($page_slug, $pattern) !== false) {
@@ -184,7 +201,7 @@ function newjusjumpin_custom_meta_descriptions() {
                     break;
                 }
             }
-            
+
             // If it's not detected as a location page but should be, try alternative methods
             if (!$is_location_page) {
                 // Reset page_slug to try other methods
@@ -192,7 +209,7 @@ function newjusjumpin_custom_meta_descriptions() {
             }
         }
     }
-    
+
     // Method 4: For edge cases, try getting slug from queried object
     if (empty($page_slug) && is_page()) {
         $queried_object = get_queried_object();
@@ -200,7 +217,7 @@ function newjusjumpin_custom_meta_descriptions() {
             $page_slug = $queried_object->post_name;
         }
     }
-    
+
     // Method 5: Try to get slug from WP query vars
     if (empty($page_slug)) {
         global $wp_query;
@@ -210,7 +227,7 @@ function newjusjumpin_custom_meta_descriptions() {
             $page_slug = $wp_query->query_vars['name'];
         }
     }
-    
+
     // Final fallback: try to extract from the full request URI
     if (empty($page_slug)) {
         $request_uri = $_SERVER['REQUEST_URI'] ?? '';
@@ -221,10 +238,10 @@ function newjusjumpin_custom_meta_descriptions() {
             $page_slug = end($parts);
         }
     }
-    
+
     // Test output to see if function is being called
     error_log("Custom meta description function called. Page slug: " . $page_slug);
-    
+
     // For blog posts, we might want to handle differently
     if (is_single() && get_post_type() === 'post') {
         // Use the post excerpt or a default description for blog posts
@@ -285,7 +302,7 @@ function newjusjumpin_custom_meta_descriptions() {
         $request_uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
         $parts = explode('/', $request_uri);
         $alternative_slug = end($parts);
-        
+
         if (!empty($alternative_slug) && isset($custom_descriptions[$alternative_slug])) {
             error_log("Found custom description for alternative slug: " . $alternative_slug);
             echo '<meta name="description" content="' . esc_attr($custom_descriptions[$alternative_slug]) . '" />' . "\n";
@@ -295,7 +312,7 @@ function newjusjumpin_custom_meta_descriptions() {
             echo '<meta name="description" content="Experience the ultimate indoor trampoline and play park experience at Jus Jumpin - India\'s premier destination for family fun." />' . "\n";
         }
     }
-    
+
     // Signal that we've output our meta descriptions
     do_action('newjusjumpin_custom_meta_descriptions_done');
 }
@@ -307,7 +324,8 @@ add_action('wp_head', 'newjusjumpin_custom_meta_descriptions', 2);
 /**
  * Add proper canonical URLs
  */
-function newjusjumpin_canonical_url() {
+function newjusjumpin_canonical_url()
+{
     // Don't output on feeds/archives
     if (is_feed() || is_archive() || is_search()) {
         return;
@@ -315,27 +333,27 @@ function newjusjumpin_canonical_url() {
 
     // Get the current URL
     $canonical_url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-    
+
     // For singular posts/pages, use the permalink
     if (is_singular()) {
         $canonical_url = get_permalink();
     }
-    
+
     // For the blog page
     if (is_home() && !is_front_page()) {
         $canonical_url = get_permalink(get_option('page_for_posts'));
     }
-    
+
     // For the front page
     if (is_front_page()) {
         $canonical_url = home_url('/');
     }
-    
+
     // For category/tag/author archives
     if (is_category() || is_tag() || is_author()) {
         $canonical_url = get_term_link(get_queried_object());
     }
-    
+
     // Output the canonical URL
     if (!empty($canonical_url)) {
         echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
@@ -346,7 +364,8 @@ add_action('wp_head', 'newjusjumpin_canonical_url', 5); // Early priority to ens
 /**
  * Add Google Site Verification and other meta tags
  */
-function newjusjumpin_add_meta_tags() {
+function newjusjumpin_add_meta_tags()
+{
     // Google Site Verification - only output if not already output
     if (!did_action('newjusjumpin_site_verification_done')) {
         echo '<meta name="google-site-verification" content="QKqaMCa9aZeg143tzKjKhMldwtGgzlfLey0KqMKGWJs" />' . "\n";
@@ -355,18 +374,19 @@ function newjusjumpin_add_meta_tags() {
 }
 add_action('wp_head', 'newjusjumpin_add_meta_tags', 1);
 
- 
+
 
 /**
  * Enqueue styles and scripts
  */
-function newjusjumpin_scripts() {
+function newjusjumpin_scripts()
+{
     // Google Fonts
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap', array(), null);
-    
+
     // Font Awesome
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css', array(), '6.5.2');
-    
+
     // Theme main stylesheet
     wp_enqueue_style('newjusjumpin-style', get_stylesheet_uri(), array('google-fonts', 'font-awesome'), '1.0.4');
     // Animated background stylesheet (site-wide)
@@ -376,18 +396,18 @@ function newjusjumpin_scripts() {
     // Component-specific stylesheets
     wp_enqueue_style('newjusjumpin-header', get_template_directory_uri() . '/assets/css/header.css', array('newjusjumpin-style'), '1.0.4');
     wp_enqueue_style('newjusjumpin-footer', get_template_directory_uri() . '/assets/css/footer.css', array('newjusjumpin-style'), '1.0.4');
-    
+
     // Page-specific stylesheets
     if (is_front_page()) {
         wp_enqueue_style('newjusjumpin-front-page', get_template_directory_uri() . '/assets/css/front-page.css', array('newjusjumpin-style'), '1.0.4');
     }
-    
-     // Contact Page CSS with better detection
-if (is_page_template('page-contact.php') || is_page('contact') || is_page('contact-us') || is_page('Contact Us')) {
-    $contact_css_path = get_template_directory() . '/assets/css/contact.css';
-    $contact_css_ver = file_exists($contact_css_path) ? filemtime($contact_css_path) : '1.0.4';
-    wp_enqueue_style('newjusjumpin-contact', get_template_directory_uri() . '/assets/css/contact.css', array('newjusjumpin-style'), $contact_css_ver);
-}
+
+    // Contact Page CSS with better detection
+    if (is_page_template('page-contact.php') || is_page('contact') || is_page('contact-us') || is_page('Contact Us')) {
+        $contact_css_path = get_template_directory() . '/assets/css/contact.css';
+        $contact_css_ver = file_exists($contact_css_path) ? filemtime($contact_css_path) : '1.0.4';
+        wp_enqueue_style('newjusjumpin-contact', get_template_directory_uri() . '/assets/css/contact.css', array('newjusjumpin-style'), $contact_css_ver);
+    }
     // Page template stylesheets
     // Important: the About page uses a slug-specific template (page-{slug}.php),
     // so we detect by slug/title to ensure the CSS loads no matter the permalink.
@@ -400,7 +420,7 @@ if (is_page_template('page-contact.php') || is_page('contact') || is_page('conta
         $about_css_ver = file_exists($about_css_path) ? filemtime($about_css_path) : '1.0.4';
         wp_enqueue_style('newjusjumpin-about-us', get_template_directory_uri() . '/assets/css/about-us-page.css', array('newjusjumpin-style'), $about_css_ver);
     }
-    
+
     // Birthday Celebrations page CSS
     if (
         (function_exists('is_page_template') && is_page_template('page-birthday-celebration.php'))
@@ -412,19 +432,19 @@ if (is_page_template('page-contact.php') || is_page('contact') || is_page('conta
         wp_enqueue_style('newjusjumpin-birthday-celebrations', get_template_directory_uri() . '/assets/css/birthday-celebrations.css', array('newjusjumpin-style'), $birthday_css_ver);
     }
     // School Trips page CSS
-if (is_page_template('page-school-trips.php') || is_page('school-trips') || is_page('School Trips')) {
-    $school_trips_css_path = get_template_directory() . '/assets/css/school-trips.css';
-    $school_trips_css_ver = file_exists($school_trips_css_path) ? filemtime($school_trips_css_path) : '1.0.0';
-    wp_enqueue_style('newjusjumpin-school-trips', get_template_directory_uri() . '/assets/css/school-trips.css', array('newjusjumpin-style'), $school_trips_css_ver);
-}
-    
+    if (is_page_template('page-school-trips.php') || is_page('school-trips') || is_page('School Trips')) {
+        $school_trips_css_path = get_template_directory() . '/assets/css/school-trips.css';
+        $school_trips_css_ver = file_exists($school_trips_css_path) ? filemtime($school_trips_css_path) : '1.0.0';
+        wp_enqueue_style('newjusjumpin-school-trips', get_template_directory_uri() . '/assets/css/school-trips.css', array('newjusjumpin-style'), $school_trips_css_ver);
+    }
+
     // Our Activities page CSS
     if (is_page_template('page-our-activities.php') || is_page('our-activities') || is_page_template('page-our-activities')) {
         $activities_css_path = get_template_directory() . '/assets/css/our-activities.css';
         $activities_css_ver = file_exists($activities_css_path) ? filemtime($activities_css_path) : '1.0.4';
         wp_enqueue_style('newjusjumpin-our-activities', get_template_directory_uri() . '/assets/css/our-activities.css', array('newjusjumpin-style'), $activities_css_ver);
     }
-    
+
     // Fallback for both pages using page-templates.css (if needed)
     if ((is_page_template('page-birthday-celebration.php') || is_page_template('page-our-activities.php')) && !file_exists(get_template_directory() . '/assets/css/birthday-celebrations.css')) {
         wp_enqueue_style('newjusjumpin-page-templates', get_template_directory_uri() . '/assets/css/page-templates.css', array('newjusjumpin-style'), '1.0.4');
@@ -441,7 +461,7 @@ if (is_page_template('page-school-trips.php') || is_page('school-trips') || is_p
         $terms_css_ver = file_exists($terms_css_path) ? filemtime($terms_css_path) : '1.0.0';
         wp_enqueue_style('newjusjumpin-terms', get_template_directory_uri() . '/assets/css/terms.css', array('newjusjumpin-style'), $terms_css_ver);
     }
-    
+
     // Privacy Policy page CSS
     if (is_page_template('privacypolicy.php') || is_page('privacypolicy') || is_page('Privacy Policy')) {
         $privacy_css_path = get_template_directory() . '/assets/css/privacy.css';
@@ -453,10 +473,10 @@ if (is_page_template('page-school-trips.php') || is_page('school-trips') || is_p
         $career_css_ver = file_exists($career_css_path) ? filemtime($career_css_path) : '1.0.0';
         wp_enqueue_style('newjusjumpin-career', get_template_directory_uri() . '/assets/css/career.css', array('newjusjumpin-style'), $career_css_ver);
     }
-    
+
     // Theme JavaScript
     wp_enqueue_script('newjusjumpin-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.4', true);
-    
+
     // Localize script for AJAX
     wp_localize_script('newjusjumpin-main', 'newjusjumpin_ajax', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
@@ -468,7 +488,7 @@ add_action('wp_enqueue_scripts', 'newjusjumpin_scripts');
 /**
  * Ensure the About template is used for both /about/ and /about-us/ slugs.
  */
-add_filter('page_template', function($template) {
+add_filter('page_template', function ($template) {
     if (is_page(array('about', 'about-us'))) {
         $about_template = locate_template('page-about-us.php');
         if (!empty($about_template)) {
@@ -481,7 +501,7 @@ add_filter('page_template', function($template) {
 /**
  * Force Font Awesome to load after Elementor to prevent conflicts
  */
-add_action('wp_enqueue_scripts', function() {
+add_action('wp_enqueue_scripts', function () {
     // Dequeue Elementor's Font Awesome if it's loaded
     wp_dequeue_style('font-awesome');
     wp_deregister_style('font-awesome');
@@ -505,7 +525,7 @@ add_action('wp_enqueue_scripts', function() {
 /**
  * Custom Router for Location Pages + Dynamic Schema Injection
  */
-add_action('template_redirect', function() {
+add_action('template_redirect', function () {
 
     if (is_admin() || is_feed()) {
         return;
@@ -551,10 +571,10 @@ add_action('template_redirect', function() {
     $location_schemas = file_exists($schema_file) ? include $schema_file : [];
 
     if (isset($location_schemas[$slug])) {
-        add_action('wp_head', function() use ($location_schemas, $slug) {
+        add_action('wp_head', function () use ($location_schemas, $slug) {
             echo '<script type="application/ld+json">' .
                 wp_json_encode($location_schemas[$slug], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) .
-            '</script>';
+                '</script>';
         });
     }
 
@@ -589,19 +609,19 @@ add_action('template_redirect', function() {
             'surat-vr-mall' => 'Best Kids Play Area in Surat VR mall - Jus Jumpin',
             'udaipur-urban-square-mall' => 'Kids Play Area in Udaipur Urban Square Mall - Jus Jumpin',
             'thane-r-mall' => 'Explore The Best Kids Play Zone In Thane, R Mall - Jus Jumpin',
-    ];
+        ];
 
         $page_title = $location_titles[$slug] ?? 'Jus Jumpin Location | Best Trampoline Park in India';
     }
 
-    add_filter('pre_get_document_title', function() use ($page_title) {
+    add_filter('pre_get_document_title', function () use ($page_title) {
         return $page_title;
     });
 
     // ---------------------------------------------------------------------------------
-    // Enqueue CSS + JS
+    // Enqueue CSS + JS for location pages
     // ---------------------------------------------------------------------------------
-    add_action('wp_enqueue_scripts', function() {
+    add_action('wp_enqueue_scripts', function () {
         $location_css = get_template_directory() . '/assets/css/location-page.css';
         if (file_exists($location_css)) {
             $ver = filemtime($location_css);
@@ -629,7 +649,8 @@ add_action('template_redirect', function() {
 /**
  * Theme activation - Create pages and set up menus
  */
-function newjusjumpin_activation_setup() {
+function newjusjumpin_activation_setup()
+{
     // Create pages
     $pages = array(
         'Home' => array(
@@ -655,13 +676,13 @@ function newjusjumpin_activation_setup() {
         'Our Activities' => array(
             'content' => '',
             'template' => 'page-our-activities'
-            
+
         ),
         'Blogs' => array(
             'content' => '<h2>Latest News & Updates</h2><p>Stay updated with the latest news, events, and health tips from Jus Jumpin.</p>',
             'template' => 'page',
             'is_blog' => true
-            
+
         ),
         'Terms and Conditions' => array(
             'content' => '',
@@ -673,7 +694,7 @@ function newjusjumpin_activation_setup() {
             'template' => 'privacypolicy',
             'slug' => 'privacypolicy'
         ),
-        
+
         'Menu1' => array(
             'content' => '<h2>Menu Item 1</h2><p>This is a placeholder page for Menu Item 1. Content will be added later.</p>',
             'template' => 'page'
@@ -699,9 +720,9 @@ function newjusjumpin_activation_setup() {
             'template' => 'page'
         ),
     );
-    
+
     $created_pages = array();
-    
+
     foreach ($pages as $title => $page_data) {
         $page_check = get_page_by_title($title);
         if (!$page_check) {
@@ -712,15 +733,15 @@ function newjusjumpin_activation_setup() {
                 'post_type' => 'page',
                 'post_name' => sanitize_title(isset($page_data['slug']) ? $page_data['slug'] : $title)
             ));
-            
+
             $created_pages[$title] = $page_id;
-            
+
             // Set front page
             if (isset($page_data['is_front']) && $page_data['is_front']) {
                 update_option('show_on_front', 'page');
                 update_option('page_on_front', $page_id);
             }
-            
+
             // Set blog page
             if (isset($page_data['is_blog']) && $page_data['is_blog']) {
                 update_option('page_for_posts', $page_id);
@@ -729,12 +750,12 @@ function newjusjumpin_activation_setup() {
             $created_pages[$title] = $page_check->ID;
         }
     }
-    
+
     // Removed auto-creation of individual state location pages
-    
+
     // Set up menus
     newjusjumpin_setup_menus($created_pages);
-    
+
     // Set up mega menu with location structure
     newjusjumpin_setup_mega_menu();
 }
@@ -742,7 +763,8 @@ function newjusjumpin_activation_setup() {
 /**
  * Set up navigation menus
  */
-function newjusjumpin_setup_menus($pages) {
+function newjusjumpin_setup_menus($pages)
+{
     // Create Left Navigation Menu
     $left_menu = wp_create_nav_menu('Left Navigation');
     if (!is_wp_error($left_menu)) {
@@ -773,15 +795,15 @@ function newjusjumpin_setup_menus($pages) {
             'menu-item-object-id' => $pages['School Trips'],
             'menu-item-type' => 'post_type',
             'menu-item-status' => 'publish'
-    ));
-        
-        
+        ));
+
+
         // Assign to menu location
         $locations = get_theme_mod('nav_menu_locations');
         $locations['left-nav'] = $left_menu;
         set_theme_mod('nav_menu_locations', $locations);
     }
-    
+
     // Create Right Navigation Menu
     $right_menu = wp_create_nav_menu('Right Navigation');
     if (!is_wp_error($right_menu)) {
@@ -792,7 +814,7 @@ function newjusjumpin_setup_menus($pages) {
             'menu-item-type' => 'custom',
             'menu-item-status' => 'publish'
         ));
-        
+
         wp_update_nav_menu_item($right_menu, 0, array(
             'menu-item-title' => 'Our Activities',
             'menu-item-object' => 'page',
@@ -814,13 +836,13 @@ function newjusjumpin_setup_menus($pages) {
             'menu-item-type' => 'post_type',
             'menu-item-status' => 'publish'
         ));
-        
+
         // Assign to menu location
         $locations = get_theme_mod('nav_menu_locations');
         $locations['right-nav'] = $right_menu;
         set_theme_mod('nav_menu_locations', $locations);
     }
-    
+
     // Create Footer Quick Links Menu
     $footer_menu = wp_create_nav_menu('Footer Quick Links');
     if (!is_wp_error($footer_menu)) {
@@ -836,7 +858,7 @@ function newjusjumpin_setup_menus($pages) {
                 ));
             }
         }
-        
+
         // Assign to menu location
         $locations = get_theme_mod('nav_menu_locations');
         $locations['footer-quick'] = $footer_menu;
@@ -847,7 +869,8 @@ function newjusjumpin_setup_menus($pages) {
 /**
  * Set up mega menu location structure
  */
-function newjusjumpin_setup_mega_menu() {
+function newjusjumpin_setup_mega_menu()
+{
     // Define the location structure - 2 levels: State -> Venues
     $locations = array(
         'West Bengal' => array(
@@ -857,6 +880,9 @@ function newjusjumpin_setup_mega_menu() {
             'Kolkata - City Centre 2' => '/kolkata-city-centre-2/',
             'Siliguri - City Centre' => '/siliguri-city-centre/',
             'Durgapur - Junction Mall' => '/durgapur-junction-mall/'
+        ),
+        'Hyderabad' => array(
+            'Hyderabad - Sarath City Capital Mall' => '/hyderabad-sarath-city-capital-mall/'
         ),
         'Karnataka' => array(
             'Bengaluru - M5 Ecity Mall' => '/bengaluru-m5-ecity-mall/',
@@ -870,7 +896,7 @@ function newjusjumpin_setup_mega_menu() {
         'Uttar Pradesh' => array(
             'Noida - GIP Mall' => '/noida-gip-mall/',
             'Noida - Spectrum Mall' => '/noida-spectrum-mall/',
-            
+
         ),
         'Maharashtra' => array(
             'Nagpur - VR Mall' => '/nagpur-vr-mall/',
@@ -889,17 +915,18 @@ function newjusjumpin_setup_mega_menu() {
             'Surat - VR Mall' => '/surat-vr-mall/'
         )
     );
-    
+
     // Do NOT auto-create pages. Only build the menu structure using custom links
     newjusjumpin_setup_location_mega_menu($locations, array());
-    
+
     return array();
 }
 
 /**
  * Set up the location mega menu in WordPress admin
  */
-function newjusjumpin_setup_location_mega_menu($locations, $created_pages) {
+function newjusjumpin_setup_location_mega_menu($locations, $created_pages)
+{
     // Always rebuild the Right Navigation menu from scratch to avoid legacy page links
     $menu_name = 'Right Navigation';
     $menu = wp_get_nav_menu_object($menu_name);
@@ -907,7 +934,7 @@ function newjusjumpin_setup_location_mega_menu($locations, $created_pages) {
         wp_delete_nav_menu($menu->term_id);
     }
     $menu_id = wp_create_nav_menu($menu_name);
-    
+
     if (!is_wp_error($menu_id)) {
         // Add the main "Our Location" item
         $our_location_id = wp_update_nav_menu_item($menu_id, 0, array(
@@ -916,7 +943,7 @@ function newjusjumpin_setup_location_mega_menu($locations, $created_pages) {
             'menu-item-type' => 'custom',
             'menu-item-status' => 'publish'
         ));
-        
+
         // Add states and venues in proper order
         $menu_order = 1;
         foreach ($locations as $state => $venues) {
@@ -928,14 +955,14 @@ function newjusjumpin_setup_location_mega_menu($locations, $created_pages) {
                 'menu-item-parent-id' => $our_location_id,
                 'menu-item-position' => $menu_order++
             ));
-            
+
             // Add venues directly under this specific state
             $venue_order = 1;
             foreach ($venues as $venue_name => $venue_url) {
                 // Use custom links pointing to SEO-friendly URLs handled by router
                 wp_update_nav_menu_item($menu_id, 0, array(
                     'menu-item-title' => $venue_name,
-                    'menu-item-url' => home_url( trailingslashit( trim($venue_url, '/') ) ),
+                    'menu-item-url' => home_url(trailingslashit(trim($venue_url, '/'))),
                     'menu-item-type' => 'custom',
                     'menu-item-status' => 'publish',
                     'menu-item-parent-id' => $state_id,
@@ -943,7 +970,7 @@ function newjusjumpin_setup_location_mega_menu($locations, $created_pages) {
                 ));
             }
         }
-        
+
         // Re-add other right navigation items (Our Activities, Blogs, Contact Us) as pages if present
         $other_pages = array('Our Activities', 'Blogs', 'Contact Us');
         foreach ($other_pages as $page_title) {
@@ -958,7 +985,7 @@ function newjusjumpin_setup_location_mega_menu($locations, $created_pages) {
                 ));
             }
         }
-        
+
         // Assign menu to location
         $locations = get_theme_mod('nav_menu_locations');
         $locations['right-nav'] = $menu_id;
@@ -974,18 +1001,22 @@ add_action('after_switch_theme', 'newjusjumpin_activation_setup');
 /**
  * Custom walker for mobile menu with proper hierarchy and touch-friendly functionality
  */
-class NewJusJumpin_Mobile_Walker extends Walker_Nav_Menu {
-    public function start_lvl( &$output, $depth = 0, $args = null ) {
+class NewJusJumpin_Mobile_Walker extends Walker_Nav_Menu
+{
+    public function start_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"mobile-submenu\">\n";
     }
 
-    public function end_lvl( &$output, $depth = 0, $args = null ) {
+    public function end_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
     }
 
-    public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
         $classes = empty($item->classes) ? array() : (array) $item->classes;
@@ -993,7 +1024,7 @@ class NewJusJumpin_Mobile_Walker extends Walker_Nav_Menu {
 
         // Add helper classes based on depth and if it has children
         $has_children = in_array('menu-item-has-children', $classes);
-        
+
         if ($has_children) {
             $classes[] = 'has-submenu';
         }
@@ -1004,10 +1035,10 @@ class NewJusJumpin_Mobile_Walker extends Walker_Nav_Menu {
         $id_attr = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
         $id_attr = $id_attr ? ' id="' . esc_attr($id_attr) . '"' : '';
 
-        $attributes  = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
-        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target ) . '"' : '';
-        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn ) . '"' : '';
-        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url ) . '"' : '';
+        $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
+        $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+        $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
+        $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 
         $output .= $indent . '<li' . $id_attr . $class_names . '>';
 
@@ -1027,7 +1058,8 @@ class NewJusJumpin_Mobile_Walker extends Walker_Nav_Menu {
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 
-    public function end_el( &$output, $item, $depth = 0, $args = null ) {
+    public function end_el(&$output, $item, $depth = 0, $args = null)
+    {
         $output .= "</li>\n";
     }
 }
@@ -1035,10 +1067,12 @@ class NewJusJumpin_Mobile_Walker extends Walker_Nav_Menu {
 /**
  * Custom walker for mega menu dropdown with correct 2-level structure
  */
-class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu {
-    public function start_lvl( &$output, $depth = 0, $args = null ) {
+class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu
+{
+    public function start_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
-        
+
         // Different classes for different levels
         if ($depth === 0) {
             $submenu_class = 'dropdown';
@@ -1047,16 +1081,18 @@ class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu {
         } else {
             $submenu_class = 'sub-menu';
         }
-        
+
         $output .= "\n$indent<div class=\"$submenu_class\">\n";
     }
 
-    public function end_lvl( &$output, $depth = 0, $args = null ) {
+    public function end_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</div>\n";
     }
 
-    public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
         $classes = empty($item->classes) ? array() : (array) $item->classes;
@@ -1064,7 +1100,7 @@ class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu {
 
         // Add helper classes based on depth and if it has children
         $has_children = in_array('menu-item-has-children', $classes);
-        
+
         if ($depth === 0 && $has_children) {
             $classes[] = 'dropdown-parent';
         } elseif ($depth === 1 && $has_children) {
@@ -1079,15 +1115,15 @@ class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu {
         $id_attr = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
         $id_attr = $id_attr ? ' id="' . esc_attr($id_attr) . '"' : '';
 
-        $attributes  = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
-        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target ) . '"' : '';
-        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn ) . '"' : '';
-        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url ) . '"' : '';
+        $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
+        $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+        $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
+        $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 
         if ($depth === 0) {
             // Top level - use <li> element
             $output .= $indent . '<li' . $id_attr . $class_names . '>';
-            $item_output  = isset($args->before) ? ($args->before ?? '') : '';
+            $item_output = isset($args->before) ? ($args->before ?? '') : '';
             $item_output .= '<a class="nav-link"' . $attributes . '>';
             $item_output .= (isset($args->link_before) ? ($args->link_before ?? '') : '')
                 . apply_filters('the_title', $item->title, $item->ID)
@@ -1103,12 +1139,12 @@ class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu {
                 $item_output .= (isset($args->link_before) ? ($args->link_before ?? '') : '')
                     . apply_filters('the_title', $item->title, $item->ID)
                     . (isset($args->link_after) ? ($args->link_after ?? '') : '');
-                
+
                 // Add dropdown arrow for items with submenus
                 if ($has_children) {
                     $item_output .= ' <i class="fas fa-chevron-right dropdown-arrow"></i>';
                 }
-                
+
                 $item_output .= '</a>';
             } else {
                 // Venue items (second level of dropdown)
@@ -1123,7 +1159,8 @@ class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu {
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 
-    public function end_el( &$output, $item, $depth = 0, $args = null ) {
+    public function end_el(&$output, $item, $depth = 0, $args = null)
+    {
         if ($depth === 0) {
             $output .= "</li>\n";
         }
@@ -1134,7 +1171,8 @@ class NewJusJumpin_Mega_Walker extends Walker_Nav_Menu {
 /**
  * Contact form handler
  */
-function newjusjumpin_handle_contact_form() {
+function newjusjumpin_handle_contact_form()
+{
     // --- Honeypot spam protection (run early to short-circuit bots) ---
     $hp_field = 'contact_website';
     if (isset($_POST[$hp_field])) {
@@ -1145,8 +1183,8 @@ function newjusjumpin_handle_contact_form() {
             $ua = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
             $time = gmdate('Y-m-d H:i:s');
             // Clean newlines from UA and honeypot value for safe logging
-            $ua_clean = str_replace(array("\r","\n"), ' ', $ua);
-            $hp_clean = str_replace(array("\r","\n"), ' ', $hp_value);
+            $ua_clean = str_replace(array("\r", "\n"), ' ', $ua);
+            $hp_clean = str_replace(array("\r", "\n"), ' ', $hp_value);
             $log_line = sprintf("[%s] HONEYPOT SPAM from %s UA:%s field(%s)=\"%s\"\n", $time, $ip, $ua_clean, $hp_field, $hp_clean);
             if (function_exists('wp_upload_dir')) {
                 $up = wp_upload_dir();
@@ -1154,6 +1192,12 @@ function newjusjumpin_handle_contact_form() {
             } else {
                 $logfile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'jj_spam.log';
             }
+            
+            // Auto-delete log file if it exceeds 1MB to save space
+            if (file_exists($logfile) && filesize($logfile) > 1048576) {
+                @unlink($logfile);
+            }
+            
             @file_put_contents($logfile, $log_line, FILE_APPEND | LOCK_EX);
 
             // Return a normal success redirect so bots receive a normal response; do not process further
@@ -1170,14 +1214,14 @@ function newjusjumpin_handle_contact_form() {
         wp_redirect(add_query_arg('contact', 'error', wp_get_referer()));
         exit;
     }
-    
+
     // Sanitize and validate input
     $name = isset($_POST['contact_name']) ? sanitize_text_field(trim($_POST['contact_name'])) : '';
     $email = isset($_POST['contact_email']) ? sanitize_email(trim($_POST['contact_email'])) : '';
     $phone = isset($_POST['contact_phone']) ? sanitize_text_field(trim($_POST['contact_phone'])) : '';
     $subject_field = isset($_POST['contact_subject']) ? sanitize_text_field($_POST['contact_subject']) : 'general';
     $message = isset($_POST['contact_message']) ? sanitize_textarea_field(trim($_POST['contact_message'])) : '';
-    
+
     // Validate required fields
     $errors = array();
     if (empty($name)) {
@@ -1195,13 +1239,13 @@ function newjusjumpin_handle_contact_form() {
     if (empty($message)) {
         $errors[] = 'Message is required';
     }
-    
+
     // If validation fails, redirect with error
     if (!empty($errors)) {
         wp_redirect(add_query_arg('contact', 'error', wp_get_referer()));
         exit;
     }
-    
+
     // Map subject values to readable format
     $subject_map = array(
         'general' => 'General Inquiry',
@@ -1214,10 +1258,10 @@ function newjusjumpin_handle_contact_form() {
         'other' => 'Other'
     );
     $topic = isset($subject_map[$subject_field]) ? $subject_map[$subject_field] : ucfirst($subject_field);
-    
+
     // Generate tracking ID
     $tracking_id = 'JJ-' . strtoupper(wp_generate_password(8, false, false)) . '-' . date('Ymd');
-    
+
     // Get IP address
     $ip = '';
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -1227,7 +1271,7 @@ function newjusjumpin_handle_contact_form() {
     } elseif (!empty($_SERVER['REMOTE_ADDR'])) {
         $ip = sanitize_text_field($_SERVER['REMOTE_ADDR']);
     }
-    
+
     // --- Enforce: only accept submissions from Indian IPs and Indian mobile numbers ---
     // and block known disposable email providers. Blocked attempts are silently
     // dropped (redirect with success) to avoid revealing filtering rules to bots.
@@ -1293,7 +1337,29 @@ function newjusjumpin_handle_contact_form() {
 
     // Disposable email domains (non-exhaustive). Add more as needed.
     $disposable_domains = array(
-        'mailinator.com','10minutemail.com','tempmail.com','guerrillamail.com','yopmail.com','trashmail.com','dispostable.com','maildrop.cc','fakeinbox.com','getnada.com','temp-mail.org'
+        'mailinator.com',
+        '10minutemail.com',
+        'tempmail.com',
+        'guerrillamail.com',
+        'yopmail.com',
+        'trashmail.com',
+        'dispostable.com',
+        'maildrop.cc',
+        'fakeinbox.com',
+        'getnada.com',
+        'temp-mail.org',
+        'sharklasers.com',
+        'guerrillamail.info',
+        'guerrillamail.biz',
+        'guerrillamail.de',
+        'guerrillamail.net',
+        'guerrillamail.org',
+        'guerrillamailblock.com',
+        'throwam.com',
+        'mailcatch.com',
+        'incognitomail.org',
+        'binkmail.com',
+        'nada.ltd'
     );
     $email_domain = strtolower(substr(strrchr($email, '@'), 1));
     $is_disposable = in_array($email_domain, $disposable_domains, true);
@@ -1315,7 +1381,7 @@ function newjusjumpin_handle_contact_form() {
         $ip_block = $client_ip ?: 'unknown';
         $ua_block = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
         $time_block = gmdate('Y-m-d H:i:s');
-        $ua_clean_block = str_replace(array("\r","\n"), ' ', $ua_block);
+        $ua_clean_block = str_replace(array("\r", "\n"), ' ', $ua_block);
         $log_line_block = sprintf("[%s] BLOCKED SUBMISSION from %s UA:%s email:%s phone:%s reason:%s\n", $time_block, $ip_block, $ua_clean_block, $email, $phone_digits, $reason);
         if (function_exists('wp_upload_dir')) {
             $upb = wp_upload_dir();
@@ -1323,6 +1389,12 @@ function newjusjumpin_handle_contact_form() {
         } else {
             $blockfile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'jj_blocked.log';
         }
+        
+        // Auto-delete blocked log file if it exceeds 1MB to save space
+        if (file_exists($blockfile) && filesize($blockfile) > 1048576) {
+            @unlink($blockfile);
+        }
+        
         @file_put_contents($blockfile, $log_line_block, FILE_APPEND | LOCK_EX);
 
         if (!headers_sent()) {
@@ -1331,7 +1403,7 @@ function newjusjumpin_handle_contact_form() {
         wp_redirect(add_query_arg('contact', 'success', wp_get_referer()));
         exit;
     }
-    
+
     // Prepare data for email templates
     $email_data = array(
         'name' => $name,
@@ -1346,7 +1418,7 @@ function newjusjumpin_handle_contact_form() {
         'siteName' => get_bloginfo('name'),
         'siteUrl' => home_url()
     );
-    
+
     // Send admin notification email
     $admin_sent = false;
     $admin_error = '';
@@ -1363,7 +1435,7 @@ function newjusjumpin_handle_contact_form() {
         $admin_error = $e->getMessage();
         error_log('Contact Form Admin Email Exception: ' . $admin_error);
     }
-    
+
     // Send user confirmation email
     $user_sent = false;
     $user_error = '';
@@ -1380,13 +1452,13 @@ function newjusjumpin_handle_contact_form() {
         $user_error = $e->getMessage();
         error_log('Contact Form User Email Exception: ' . $user_error);
     }
-    
+
     // Log submission details (for debugging)
     error_log('Contact Form Submission: Name=' . $name . ', Email=' . $email . ', Admin Sent=' . ($admin_sent ? 'Yes' : 'No') . ', User Sent=' . ($user_sent ? 'Yes' : 'No'));
-    
+
     // Log to database (optional - for tracking submissions)
     // You can add custom post type or database logging here if needed
-    
+
     // Redirect based on result - consider it success if at least admin email is sent
     if ($admin_sent) {
         wp_redirect(add_query_arg('contact', 'success', wp_get_referer()));
@@ -1403,7 +1475,8 @@ add_action('admin_post_contact_form', 'newjusjumpin_handle_contact_form');
 /**
  * Custom excerpt length
  */
-function newjusjumpin_excerpt_length($length) {
+function newjusjumpin_excerpt_length($length)
+{
     return 30;
 }
 add_filter('excerpt_length', 'newjusjumpin_excerpt_length');
@@ -1411,7 +1484,8 @@ add_filter('excerpt_length', 'newjusjumpin_excerpt_length');
 /**
  * Custom excerpt more
  */
-function newjusjumpin_excerpt_more($more) {
+function newjusjumpin_excerpt_more($more)
+{
     return '...';
 }
 add_filter('excerpt_more', 'newjusjumpin_excerpt_more');
@@ -1419,7 +1493,8 @@ add_filter('excerpt_more', 'newjusjumpin_excerpt_more');
 /**
  * Add body classes
  */
-function newjusjumpin_body_classes($classes) {
+function newjusjumpin_body_classes($classes)
+{
     if (is_front_page()) {
         $classes[] = 'home-page';
     }
@@ -1430,7 +1505,8 @@ add_filter('body_class', 'newjusjumpin_body_classes');
 /**
  * Disable WordPress admin bar for non-admins
  */
-function newjusjumpin_disable_admin_bar() {
+function newjusjumpin_disable_admin_bar()
+{
     if (!current_user_can('administrator') && !is_admin()) {
         show_admin_bar(false);
     }
@@ -1440,31 +1516,32 @@ add_action('after_setup_theme', 'newjusjumpin_disable_admin_bar');
 /**
  * Admin action to manually setup mega menu
  */
-function newjusjumpin_admin_setup_mega_menu() {
+function newjusjumpin_admin_setup_mega_menu()
+{
     if (current_user_can('administrator') && isset($_GET['setup_mega_menu']) && $_GET['setup_mega_menu'] === 'true') {
         // Clear existing menu first
         $menu = wp_get_nav_menu_object('Right Navigation');
         if ($menu) {
             wp_delete_nav_menu($menu->term_id);
         }
-        
+
         // Create fresh menu
         newjusjumpin_setup_mega_menu();
-        
+
         wp_redirect(admin_url('themes.php?mega_menu_setup=success'));
         exit;
     }
-    
+
     // Show success message
     if (isset($_GET['mega_menu_setup']) && $_GET['mega_menu_setup'] === 'success') {
-        add_action('admin_notices', function() {
+        add_action('admin_notices', function () {
             echo '<div class="notice notice-success is-dismissible"><p>Mega menu has been set up successfully! Check your navigation.</p></div>';
         });
     }
-    
+
     // Add admin notice for manual rebuild if needed
     if (is_admin() && current_user_can('administrator')) {
-        add_action('admin_notices', function() {
+        add_action('admin_notices', function () {
             $current_screen = get_current_screen();
             if ($current_screen && $current_screen->id === 'nav-menus') {
                 echo '<div class="notice notice-info"><p>';
@@ -1480,7 +1557,8 @@ add_action('admin_init', 'newjusjumpin_admin_setup_mega_menu');
 /**
  * Add admin menu for theme options
  */
-function newjusjumpin_admin_menu() {
+function newjusjumpin_admin_menu()
+{
     add_theme_page(
         'Jus Jumpin Settings',
         'Jus Jumpin Settings',
@@ -1489,8 +1567,8 @@ function newjusjumpin_admin_menu() {
         'newjusjumpin_settings_page'
     );
     /**
- * Popup setting
- */
+     * Popup setting
+     */
     add_submenu_page(
         'themes.php', // Parent slug
         'Popup Settings',
@@ -1505,7 +1583,8 @@ add_action('admin_menu', 'newjusjumpin_admin_menu');
 /**
  * Theme settings page
  */
-function newjusjumpin_settings_page() {
+function newjusjumpin_settings_page()
+{
     ?>
     <div class="wrap">
         <h1>Jus Jumpin Theme Settings</h1>
@@ -1513,7 +1592,8 @@ function newjusjumpin_settings_page() {
             <h2>Mega Menu Setup</h2>
             <p>Click the button below to set up or refresh the mega menu with all location pages.</p>
             <p>This will create pages for all Jus Jumpin locations and set up the mega menu structure.</p>
-            <a href="<?php echo admin_url('themes.php?setup_mega_menu=true'); ?>" class="button button-primary">Setup Mega Menu</a>
+            <a href="<?php echo admin_url('themes.php?setup_mega_menu=true'); ?>" class="button button-primary">Setup Mega
+                Menu</a>
         </div>
     </div>
     <?php
@@ -1522,7 +1602,8 @@ function newjusjumpin_settings_page() {
 /**
  * Add setup link to theme actions
  */
-function newjusjumpin_theme_action_links($actions, $theme) {
+function newjusjumpin_theme_action_links($actions, $theme)
+{
     if ($theme->get_stylesheet() === get_stylesheet()) {
         $setup_link = '<a href="' . admin_url('themes.php?page=newjusjumpin-settings') . '">Setup</a>';
         $actions[] = $setup_link;
@@ -1534,21 +1615,27 @@ add_filter('theme_action_links', 'newjusjumpin_theme_action_links', 10, 2);
 /**
  * Featured Post Meta Box
  */
-function jj_add_featured_metabox() {
+function jj_add_featured_metabox()
+{
     add_meta_box('jj_featured_post', 'Featured Post', 'jj_featured_metabox_cb', 'post', 'side', 'high');
 }
 add_action('add_meta_boxes', 'jj_add_featured_metabox');
 
-function jj_featured_metabox_cb($post) {
+function jj_featured_metabox_cb($post)
+{
     $val = get_post_meta($post->ID, 'featured_post', true);
     wp_nonce_field('jj_featured_post', 'jj_featured_post_nonce');
     echo '<label><input type="checkbox" name="jj_featured_post" value="1" ' . checked($val, '1', false) . '> Feature this post</label>';
 }
 
-function jj_save_featured_metabox($post_id) {
-    if (!isset($_POST['jj_featured_post_nonce']) || !wp_verify_nonce($_POST['jj_featured_post_nonce'], 'jj_featured_post')) return;
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-    if (!current_user_can('edit_post', $post_id)) return;
+function jj_save_featured_metabox($post_id)
+{
+    if (!isset($_POST['jj_featured_post_nonce']) || !wp_verify_nonce($_POST['jj_featured_post_nonce'], 'jj_featured_post'))
+        return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+        return;
+    if (!current_user_can('edit_post', $post_id))
+        return;
     $is_featured = isset($_POST['jj_featured_post']) ? '1' : '0';
     update_post_meta($post_id, 'featured_post', $is_featured);
 }
@@ -1557,7 +1644,8 @@ add_action('save_post', 'jj_save_featured_metabox');
 /**
  * Dynamic SEO meta tags for all pages, prioritizing template variables
  */
-function newjusjumpin_seo_meta() {
+function newjusjumpin_seo_meta()
+{
     global $post, $description, $keywords; // Access custom variables from template parts
 
     $current_description = '';
@@ -1565,7 +1653,7 @@ function newjusjumpin_seo_meta() {
     $current_title = wp_get_document_title();
     $current_url = (is_singular() || is_page()) ? get_permalink($post) : home_url('/');
     $og_type = (is_single() || is_page()) ? 'article' : 'website';
-    
+
     // Get featured image or default image for og:image
     $og_image = '';
     if (is_singular() && has_post_thumbnail()) {
@@ -1605,7 +1693,7 @@ function newjusjumpin_seo_meta() {
 
     // Check if a custom description was already output
     $description_already_output = did_action('newjusjumpin_custom_meta_descriptions_done');
-    
+
     // Get the custom description if one was already set (for OG tags)
     $og_description = $current_description;
     if ($description_already_output) {
@@ -1614,7 +1702,7 @@ function newjusjumpin_seo_meta() {
         $has_posts_page = (int) get_option('page_for_posts');
         $is_static_front = is_front_page() && !is_home();
         $is_blog_front = is_front_page() && is_home();
-        
+
         if ($is_static_front || $is_blog_front || (!$has_posts_page && is_home())) {
             $og_description = 'Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball & birthday parties for kids, teens & adults. Safe, high-energy adventures await!';
         } elseif (is_single() && get_post_type() === 'post') {
@@ -1634,14 +1722,14 @@ function newjusjumpin_seo_meta() {
                     $page_slug = $post_obj->post_name;
                 }
             }
-            
+
             if (empty($page_slug)) {
                 $permalink = get_permalink();
                 if ($permalink) {
                     $page_slug = basename(rtrim($permalink, '/'));
                 }
             }
-            
+
             // Get the full custom descriptions array (same as in newjusjumpin_custom_meta_descriptions)
             $custom_descriptions = array(
                 'home' => 'Experience gravity-defying fun at jus jumpin! Trampoline parks, foam pits, dodgeball &amp; birthday parties for kids, teens &amp; adults. Safe, high-energy adventures await!',
@@ -1671,9 +1759,10 @@ function newjusjumpin_seo_meta() {
                 'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
                 'birthday-celebration' => 'Find the best kids birthday party venue in your city. Host a birthday party for your kid at our party zone with party games, delicious food and theme decorations.',
                 'contact' => 'Reach out to Jus Jumpin for inquiries, bookings, partnerships, or support. ! Call us at 9800005721 or 9830359999 today! Friendly help awaits.',
-                'thane-r-mall' => 'Explore a brand new kids play area and vibrant birthday party zone in Thane, packed with an exciting trampoline park and 20+ kids-friendly gaming activities.',);
-            
-            
+                'thane-r-mall' => 'Explore a brand new kids play area and vibrant birthday party zone in Thane, packed with an exciting trampoline park and 20+ kids-friendly gaming activities.',
+            );
+
+
             // Try to get description from page slug
             if (!empty($page_slug) && isset($custom_descriptions[$page_slug])) {
                 $og_description = $custom_descriptions[$page_slug];
@@ -1682,7 +1771,7 @@ function newjusjumpin_seo_meta() {
                 $request_uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
                 $parts = explode('/', $request_uri);
                 $alternative_slug = end($parts);
-                
+
                 if (!empty($alternative_slug) && isset($custom_descriptions[$alternative_slug])) {
                     $og_description = $custom_descriptions[$alternative_slug];
                 } else {
@@ -1700,7 +1789,7 @@ function newjusjumpin_seo_meta() {
             echo "\n<meta name=\"description\" content=\"" . esc_attr($current_description) . "\">\n";
         }
     }
-    
+
     // Always output keywords, OG tags, and Twitter cards
     echo "<meta name=\"keywords\" content=\"" . esc_attr($current_keywords) . "\">\n";
     echo "<meta property=\"og:title\" content=\"" . esc_attr($current_title) . "\">\n";
@@ -1710,12 +1799,12 @@ function newjusjumpin_seo_meta() {
     echo "<meta property=\"og:url\" content=\"" . esc_url($current_url) . "\">\n";
     echo "<meta property=\"og:type\" content=\"" . esc_attr($og_type) . "\">\n";
     echo "<meta property=\"og:site_name\" content=\"" . esc_attr(get_bloginfo('name')) . "\">\n";
-    
+
     // Add og:image if we have one
     if (!empty($og_image)) {
         echo "<meta property=\"og:image\" content=\"" . esc_url($og_image) . "\">\n";
     }
-    
+
     // Add Twitter Card meta tags
     echo "<meta name=\"twitter:card\" content=\"summary_large_image\">\n";
     echo "<meta name=\"twitter:title\" content=\"" . esc_attr($current_title) . "\">\n";
@@ -1732,7 +1821,7 @@ add_action('wp_head', 'newjusjumpin_seo_meta', 3); // Run early to ensure meta t
 /**
  * Global Organization Schema
  */
-add_action('wp_head', function() {
+add_action('wp_head', function () {
     // Don't output global schema if location-specific schema is used
     if (get_query_var('is_location_page') === true) {
         return;
@@ -1765,13 +1854,13 @@ add_action('wp_head', function() {
 
     echo '<script type="application/ld+json">' .
         wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) .
-    '</script>';
+        '</script>';
 });
 
 /**
  * Use our custom blog template for the Posts Page (/blogs) as well
  */
-add_filter('template_include', function($template) {
+add_filter('template_include', function ($template) {
     if (is_home()) {
         $custom = locate_template('blog.php');
         if ($custom) {
@@ -1794,7 +1883,8 @@ require_once get_template_directory() . '/inc/mail.php';
 require_once get_template_directory() . '/smtp-config.php';
 
 // Register the main image popup, dynamically configured from admin settings
-function jusjumpin_register_image_popup() {
+function jusjumpin_register_image_popup()
+{
     global $popup_manager;
 
     // Will fetch popup settings from WordPress options later
@@ -1846,7 +1936,7 @@ function jusjumpin_register_image_popup() {
                 'trigger' => $popup_trigger,
                 'delay' => intval($popup_delay),
                 'scroll_percentage' => intval($popup_scroll_percentage),
-                'show_once' => (bool)$popup_show_once,
+                'show_once' => (bool) $popup_show_once,
                 'expire_days' => intval($popup_expire_days),
                 'pages' => $pages_to_show,
                 'classes' => 'popup-zoom popup-image-only',
@@ -1861,7 +1951,8 @@ function jusjumpin_register_image_popup() {
 add_action('wp_loaded', 'jusjumpin_register_image_popup');
 
 // Admin page for Popup Settings
-function jusjumpin_popup_settings_page_callback() {
+function jusjumpin_popup_settings_page_callback()
+{
     ?>
     <div class="wrap">
         <h1>Jus Jumpin Popup Settings</h1>
@@ -1876,7 +1967,8 @@ function jusjumpin_popup_settings_page_callback() {
     <?php
 }
 // Register Popup Settings
-function jusjumpin_register_popup_settings() {
+function jusjumpin_register_popup_settings()
+{
     register_setting(
         'jusjumpin_popup_settings_group',
         'jusjumpin_popup_enabled',
@@ -2010,7 +2102,7 @@ function jusjumpin_register_popup_settings() {
         'jusjumpin_popup_expire_days_callback',
         'jusjumpin_popup_main_section'
     );
-    
+
     // Add missing fields for Popup Width and Max Height
     add_settings_field(
         'jusjumpin_popup_width_field',
@@ -2042,17 +2134,20 @@ function jusjumpin_register_popup_settings() {
 add_action('admin_init', 'jusjumpin_register_popup_settings');
 
 // Section callback (optional, can be left empty)
-function jusjumpin_popup_section_callback() {
+function jusjumpin_popup_section_callback()
+{
     echo '<p>Configure the content and display rules for your main image popup.</p>';
 }
 
 // Field callbacks
-function jusjumpin_popup_enabled_callback() {
+function jusjumpin_popup_enabled_callback()
+{
     $value = get_option('jusjumpin_popup_enabled', false);
     echo '<label><input type="checkbox" name="jusjumpin_popup_enabled" value="1" ' . checked(1, $value, false) . ' /> Enable the popup</label>';
 }
 
-function jusjumpin_popup_image_url_callback() {
+function jusjumpin_popup_image_url_callback()
+{
     $value = get_option('jusjumpin_popup_image_url', '');
     echo '<input type="text" id="jusjumpin_popup_image_url_input" name="jusjumpin_popup_image_url" value="' . esc_attr($value) . '" class="regular-text" /><!-- Remove <br> tag here -->';
     echo '<input type="button" id="jusjumpin_popup_image_upload_button" class="button-secondary jusjumpin-upload-button" value="Upload Image" /> ';
@@ -2067,13 +2162,15 @@ function jusjumpin_popup_image_url_callback() {
     }
 }
 
-function jusjumpin_popup_title_callback() {
+function jusjumpin_popup_title_callback()
+{
     $value = get_option('jusjumpin_popup_title', '');
     echo '<input type="text" name="jusjumpin_popup_title" value="' . esc_attr($value) . '" class="regular-text" />';
     echo '<p class="description">A main title for your popup.</p>';
 }
 
-function jusjumpin_popup_content_text_callback() {
+function jusjumpin_popup_content_text_callback()
+{
     $value = get_option('jusjumpin_popup_content_text', '');
     wp_editor(htmlspecialchars_decode($value), 'jusjumpin_popup_content_text_editor', array(
         'textarea_name' => 'jusjumpin_popup_content_text',
@@ -2085,7 +2182,8 @@ function jusjumpin_popup_content_text_callback() {
     echo '<p class="description">Additional text content for your popup. HTML is allowed.</p>';
 }
 
-function jusjumpin_popup_trigger_callback() {
+function jusjumpin_popup_trigger_callback()
+{
     $value = get_option('jusjumpin_popup_trigger', 'auto');
     echo '<select name="jusjumpin_popup_trigger">';
     echo '<option value="auto" ' . selected($value, 'auto', false) . '>Automatic (after delay)</option>';
@@ -2096,58 +2194,67 @@ function jusjumpin_popup_trigger_callback() {
     echo '<p class="description">Choose how the popup is triggered.</p>';
 }
 
-function jusjumpin_popup_delay_callback() {
+function jusjumpin_popup_delay_callback()
+{
     $value = get_option('jusjumpin_popup_delay', 3000);
     echo '<input type="number" name="jusjumpin_popup_delay" value="' . esc_attr($value) . '" class="small-text" /> ms';
     echo '<p class="description">Delay in milliseconds before the popup appears (for "Automatic" trigger).</p>';
 }
 
-function jusjumpin_popup_scroll_percentage_callback() {
+function jusjumpin_popup_scroll_percentage_callback()
+{
     $value = get_option('jusjumpin_popup_scroll_percentage', 50);
     echo '<input type="number" name="jusjumpin_popup_scroll_percentage" value="' . esc_attr($value) . '" min="1" max="100" class="small-text" /> %';
     echo '<p class="description">Percentage of page scrolled before the popup appears (for "On Scroll" trigger).</p>';
 }
 
-function jusjumpin_popup_show_once_callback() {
+function jusjumpin_popup_show_once_callback()
+{
     $value = get_option('jusjumpin_popup_show_once', true);
     echo '<label><input type="checkbox" name="jusjumpin_popup_show_once" value="1" ' . checked(1, $value, false) . ' /> Show this popup only once per user session (uses cookies)</label>';
     echo '<p class="description">If checked, the popup will not reappear to the same user after dismissal until the cookie expires.</p>';
 }
 
-function jusjumpin_popup_expire_days_callback() {
+function jusjumpin_popup_expire_days_callback()
+{
     $value = get_option('jusjumpin_popup_expire_days', 30);
     echo '<input type="number" name="jusjumpin_popup_expire_days" value="' . esc_attr($value) . '" min="0" class="small-text" /> days';
     echo '<p class="description">Number of days before the dismissal cookie expires (0 for session-only).</p>';
 }
 
-function jusjumpin_popup_width_callback() {
+function jusjumpin_popup_width_callback()
+{
     $value = get_option('jusjumpin_popup_width', '500px');
     echo '<input type="text" name="jusjumpin_popup_width" value="' . esc_attr($value) . '" class="regular-text" />';
     echo '<p class="description">Set the width of the popup (e.g., 500px, 80%, 30em). Default: 500px.</p>';
 }
 
-function jusjumpin_popup_max_height_callback() {
+function jusjumpin_popup_max_height_callback()
+{
     $value = get_option('jusjumpin_popup_max_height', '80vh');
     echo '<input type="text" name="jusjumpin_popup_max_height" value="' . esc_attr($value) . '" class="regular-text" />';
     echo '<p class="description">Set the maximum height of the popup (e.g., 80vh, 400px). Default: 80vh.</p>';
 }
 
-function jusjumpin_popup_display_homepage_callback() {
+function jusjumpin_popup_display_homepage_callback()
+{
     $value = get_option('jusjumpin_popup_display_homepage', false);
     echo '<label><input type="checkbox" name="jusjumpin_popup_display_homepage" value="1" ' . checked(1, $value, false) . ' /> Display on Homepage</label>';
 }
 
-function jusjumpin_popup_display_location_pages_callback() {
+function jusjumpin_popup_display_location_pages_callback()
+{
     $value = get_option('jusjumpin_popup_display_location_pages', false);
     echo '<label><input type="checkbox" name="jusjumpin_popup_display_location_pages" value="1" ' . checked(1, $value, false) . ' /> Display on all Location Pages</label>';
 }
 
 // Enqueue media uploader scripts
-function jusjumpin_enqueue_media_uploader() {
+function jusjumpin_enqueue_media_uploader()
+{
     // Temporarily add a debug line to find the correct screen ID
     error_log('Current Admin Screen ID: ' . get_current_screen()->id);
 
-    if ('toplevel_page_jusjumpin-popup-settings' === get_current_screen()->id || 'appearance_page_jusjumpin-popup-settings' === get_current_screen()->id ) {
+    if ('toplevel_page_jusjumpin-popup-settings' === get_current_screen()->id || 'appearance_page_jusjumpin-popup-settings' === get_current_screen()->id) {
         wp_enqueue_media();
         wp_enqueue_script('jusjumpin-media-uploader', get_template_directory_uri() . '/assets/js/media-uploader.js', array('jquery'), '1.0.0', true);
     }
@@ -2158,7 +2265,8 @@ add_action('admin_enqueue_scripts', 'jusjumpin_enqueue_media_uploader');
 // This will be created in the next step, but defined here for clarity.
 
 // Helper function to get all location slugs
-function newjusjumpin_get_location_slugs() {
+function newjusjumpin_get_location_slugs()
+{
     $locations = array(
         'West Bengal' => array(
             'Kolkata - ABC Square Building' => '/kolkata-abc-square-building-best-adult-trampoline-park/',
@@ -2167,6 +2275,9 @@ function newjusjumpin_get_location_slugs() {
             'Kolkata - City Centre 2' => '/kolkata-city-centre-2/',
             'Siliguri - City Centre' => '/siliguri-city-centre/',
             'Durgapur - Junction Mall' => '/durgapur-junction-mall/'
+        ),
+        'Hyderabad' => array(
+            'Hyderabad - Sarath City Capital Mall' => '/hyderabad-sarath-city-capital-mall/'
         ),
         'Karnataka' => array(
             'Bengaluru - M5 Ecity Mall' => '/bengaluru-m5-ecity-mall/',
@@ -2180,7 +2291,7 @@ function newjusjumpin_get_location_slugs() {
         'Uttar Pradesh' => array(
             'Noida - GIP Mall' => '/noida-gip-mall/',
             'Noida - Spectrum Mall' => '/noida-spectrum-mall/',
-            
+
         ),
         'Maharashtra' => array(
             'Thane - R Mall' => '/thane-r-mall/',

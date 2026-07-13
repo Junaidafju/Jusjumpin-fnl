@@ -16,7 +16,7 @@ add_action('phpmailer_init', function($phpmailer) {
 
     // Credentials
     $phpmailer->Username = 'junaidafju@gmail.com';
-    $phpmailer->Password = 'rcrw efyf dcox hvpf';
+    $phpmailer->Password = 'qgzkoicywosdhyqn';
 
     // From
     $fromEmail = 'junaidafju@gmail.com';
