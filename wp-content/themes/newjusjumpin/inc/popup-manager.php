@@ -58,16 +58,44 @@ if (!class_exists('Popup_Manager')) {
                 return false;
             }
             
+            // Get current page slug
+            $current_slug = '';
+            if (is_front_page() || is_home()) {
+                $current_slug = 'home';
+            } else {
+                $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+                if (!empty($request_uri)) {
+                    $clean_uri = trim(parse_url($request_uri, PHP_URL_PATH), '/');
+                    $parts = explode('/', $clean_uri);
+                    $current_slug = end($parts);
+                }
+                if (empty($current_slug) && is_singular()) {
+                    $post = get_post();
+                    if ($post && isset($post->post_name)) {
+                        $current_slug = $post->post_name;
+                    }
+                }
+            }
+            
             // Check specific pages
             if (!empty($popup['pages'])) {
-                if (!is_page($popup['pages']) && !is_front_page()) {
+                $show = false;
+                if (in_array($current_slug, $popup['pages'], true)) {
+                    $show = true;
+                } elseif (is_page($popup['pages']) || (in_array('home', $popup['pages'], true) && is_front_page())) {
+                    $show = true;
+                }
+                if (!$show) {
                     return false;
                 }
             }
             
             // Check excluded pages
             if (!empty($popup['exclude_pages'])) {
-                if (is_page($popup['exclude_pages']) || is_front_page()) {
+                if (in_array($current_slug, $popup['exclude_pages'], true)) {
+                    return false;
+                }
+                if (is_page($popup['exclude_pages']) || (in_array('home', $popup['exclude_pages'], true) && is_front_page())) {
                     return false;
                 }
             }

@@ -1904,6 +1904,11 @@ function jusjumpin_register_image_popup()
         $popup_width = get_option('jusjumpin_popup_width', '500px'); // New setting
         $popup_max_height = get_option('jusjumpin_popup_max_height', '80vh'); // New setting
 
+        $exclude_pages = get_option('jusjumpin_popup_exclude_pages', array());
+        if (!is_array($exclude_pages)) {
+            $exclude_pages = array();
+        }
+
         $pages_to_show = array();
         if ($display_on_homepage) {
             $pages_to_show[] = 'home';
@@ -1939,6 +1944,7 @@ function jusjumpin_register_image_popup()
                 'show_once' => (bool) $popup_show_once,
                 'expire_days' => intval($popup_expire_days),
                 'pages' => $pages_to_show,
+                'exclude_pages' => $exclude_pages,
                 'classes' => 'popup-zoom popup-image-only',
                 'styles' => array(
                     'width' => $popup_width,
@@ -2034,6 +2040,11 @@ function jusjumpin_register_popup_settings()
         'jusjumpin_popup_display_location_pages',
         array('type' => 'boolean', 'sanitize_callback' => 'rest_sanitize_boolean', 'default' => false)
     );
+    register_setting(
+        'jusjumpin_popup_settings_group',
+        'jusjumpin_popup_exclude_pages',
+        array('type' => 'array', 'sanitize_callback' => 'jusjumpin_sanitize_array_elements', 'default' => array())
+    );
 
     add_settings_section(
         'jusjumpin_popup_main_section',
@@ -2122,12 +2133,21 @@ function jusjumpin_register_popup_settings()
         'jusjumpin_popup_display_homepage_field',
         'Display on Homepage',
         'jusjumpin_popup_display_homepage_callback',
+        'jusjumpin-popup-settings',
         'jusjumpin_popup_main_section'
     );
     add_settings_field(
         'jusjumpin_popup_display_location_pages_field',
         'Display on Location Pages',
         'jusjumpin_popup_display_location_pages_callback',
+        'jusjumpin-popup-settings',
+        'jusjumpin_popup_main_section'
+    );
+    add_settings_field(
+        'jusjumpin_popup_exclude_pages_field',
+        'Exclude from Selected Pages',
+        'jusjumpin_popup_exclude_pages_callback',
+        'jusjumpin-popup-settings',
         'jusjumpin_popup_main_section'
     );
 }
@@ -2246,6 +2266,66 @@ function jusjumpin_popup_display_location_pages_callback()
 {
     $value = get_option('jusjumpin_popup_display_location_pages', false);
     echo '<label><input type="checkbox" name="jusjumpin_popup_display_location_pages" value="1" ' . checked(1, $value, false) . ' /> Display on all Location Pages</label>';
+}
+
+function jusjumpin_sanitize_array_elements($arr)
+{
+    if (!is_array($arr)) {
+        return array();
+    }
+    return array_map('sanitize_text_field', $arr);
+}
+
+function jusjumpin_popup_exclude_pages_callback()
+{
+    $excluded_pages = get_option('jusjumpin_popup_exclude_pages', array());
+    if (!is_array($excluded_pages)) {
+        $excluded_pages = array();
+    }
+
+    // Get WordPress pages
+    $wp_pages = get_pages(array(
+        'post_status' => 'publish',
+        'sort_column' => 'post_title',
+    ));
+
+    // Get location pages configuration
+    $locations_config = newjusjumpin_get_location_slugs();
+
+    echo '<div class="jusjumpin-pages-selector" style="max-height: 250px; overflow-y: auto; border: 1px solid #ccc; padding: 12px; background: #fff; border-radius: 4px; max-width: 600px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);">';
+    
+    // Render WordPress pages
+    echo '<h4 style="margin: 0 0 10px 0; font-size: 14px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">WordPress Pages</h4>';
+    echo '<div style="margin-left: 5px; margin-bottom: 15px;">';
+    
+    $checked = in_array('home', $excluded_pages, true) ? 'checked' : '';
+    echo '<label style="display:block; margin-bottom: 6px; font-weight: normal;"><input type="checkbox" name="jusjumpin_popup_exclude_pages[]" value="home" ' . $checked . ' /> Homepage (Front Page)</label>';
+
+    foreach ($wp_pages as $page) {
+        $slug = $page->post_name;
+        if ($slug === 'home') continue;
+        $checked = in_array($slug, $excluded_pages, true) ? 'checked' : '';
+        echo '<label style="display:block; margin-bottom: 6px; font-weight: normal;"><input type="checkbox" name="jusjumpin_popup_exclude_pages[]" value="' . esc_attr($slug) . '" ' . $checked . ' /> ' . esc_html($page->post_title) . ' (' . esc_html($slug) . ')</label>';
+    }
+    echo '</div>';
+
+    // Render location pages grouped by State
+    echo '<h4 style="margin: 15px 0 10px 0; font-size: 14px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Location Pages (Virtual Slugs)</h4>';
+    foreach ($locations_config as $state => $venues) {
+        echo '<div style="margin-bottom: 12px;">';
+        echo '<strong style="display:block; margin-bottom: 6px; font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.5px;">' . esc_html($state) . '</strong>';
+        echo '<div style="margin-left: 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 4px;">';
+        foreach ($venues as $venue_name => $venue_url) {
+            $slug = trim(parse_url($venue_url, PHP_URL_PATH), '/');
+            $checked = in_array($slug, $excluded_pages, true) ? 'checked' : '';
+            echo '<label style="display:block; font-weight: normal;"><input type="checkbox" name="jusjumpin_popup_exclude_pages[]" value="' . esc_attr($slug) . '" ' . $checked . ' /> ' . esc_html($venue_name) . '</label>';
+        }
+        echo '</div>';
+        echo '</div>';
+    }
+
+    echo '</div>';
+    echo '<p class="description">Select the pages and locations where you do NOT want the popup to display.</p>';
 }
 
 // Enqueue media uploader scripts
