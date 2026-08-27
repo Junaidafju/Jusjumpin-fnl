@@ -285,6 +285,8 @@ function newjusjumpin_custom_meta_descriptions()
         'surat-vr-mall' => 'Find the best birthday party venue in Surat VR Mall – kids\' play area in Surat VR Mall, adventure park & indoor play area in Surat VR mall fun for children.',
         'thane-r-mall' => 'Explore a brand new kids play area and vibrant birthday party zone in Thane, packed with an exciting trampoline park and 20+ kids-friendly gaming activities.',
         'nashik-city-centre' => 'Celebrate your kid\'s birthday at Nashik City Centre. With our indoor play area setup and adventure park facilities, it\'s the perfect venue for kids\' birthday parties in Nashik.',
+        'hyderabad-sarath-city-capital-mall' => 'Experience Jus Jumpin, the ultimate indoor entertainment park in hyderabad sarath city capital mall. Find fun packed activities and unrestricted  play time.',
+        'hyderabad-dsl-virtue-mall' => 'Explore screen free kids entertainment at jus jumpin DSL virtue mall. Find 15+ exciting games and activities at the best kids play area in hyderabad. Visit now.',
         'our-activities' => 'Discover exciting activities at Jus Jumpin – trampolines, foam pits, soft play zones & more across India. Safe, clean fun for kids of all ages!',
         'birthday-celebration' => 'Find the best kids birthday party venue in your city. Host a birthday party for your kid at our party zone with party games, delicious food and theme decorations.',
         'school-trips' => 'Plan a high-energy school trip at Jus Jumpin! Our indoor trampoline park and soft play areas combine physical education with pure fun. Safe, supervised, and discounted group rates available.',
@@ -609,6 +611,8 @@ add_action('template_redirect', function () {
             'surat-vr-mall' => 'Best Kids Play Area in Surat VR mall - Jus Jumpin',
             'udaipur-urban-square-mall' => 'Kids Play Area in Udaipur Urban Square Mall - Jus Jumpin',
             'thane-r-mall' => 'Explore The Best Kids Play Zone In Thane, R Mall - Jus Jumpin',
+            'hyderabad-sarath-city-capital-mall' => 'Best Indoor Entertainment Zone & Trampoline Park In Hyderabad',
+            'hyderabad-dsl-virtue-mall' => 'Most Exciting Kids Play Zone in Hyderabad DSL Virtue Mall',
         ];
 
         $page_title = $location_titles[$slug] ?? 'Jus Jumpin Location | Best Trampoline Park in India';
@@ -882,7 +886,8 @@ function newjusjumpin_setup_mega_menu()
             'Durgapur - Junction Mall' => '/durgapur-junction-mall/'
         ),
         'Hyderabad' => array(
-            'Hyderabad - Sarath City Capital Mall' => '/hyderabad-sarath-city-capital-mall/'
+            'Hyderabad - Sarath City Capital Mall' => '/hyderabad-sarath-city-capital-mall/',
+            'Hyderabad - DSL Virtue Mall' => '/hyderabad-dsl-virtue-mall/'
         ),
         'Karnataka' => array(
             'Bengaluru - M5 Ecity Mall' => '/bengaluru-m5-ecity-mall/',
@@ -2357,7 +2362,8 @@ function newjusjumpin_get_location_slugs()
             'Durgapur - Junction Mall' => '/durgapur-junction-mall/'
         ),
         'Hyderabad' => array(
-            'Hyderabad - Sarath City Capital Mall' => '/hyderabad-sarath-city-capital-mall/'
+            'Hyderabad - Sarath City Capital Mall' => '/hyderabad-sarath-city-capital-mall/',
+            'Hyderabad - DSL Virtue Mall' => '/hyderabad-dsl-virtue-mall/'
         ),
         'Karnataka' => array(
             'Bengaluru - M5 Ecity Mall' => '/bengaluru-m5-ecity-mall/',

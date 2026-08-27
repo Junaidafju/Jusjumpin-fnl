@@ -1,25 +1,26 @@
 <?php
 /**
- * Template: Jamshedpur - PM Mall
+ * Template: Hyderabad - DSL Virtue Mall
  * Modern location page with hero slider and glassmorphism design
  */
 
 // Page specific variables
-$title = "Jamshedpur - P&M Mall | Jus Jumpin";
-$state = "Jharkhand";
-$city = "Jamshedpur";
-$slug = "jamshedpur-pm-mall";
-$address = "2nd Floor, P&M Mall, Bistupur Main Rd, South Park, Bistupur, Jamshedpur, Jharkhand 831001";
+$title = "Hyderabad - DSL Virtue Mall";
+$description = "Visit Kids Playzone at DSL Virtue Mall Hyderabad—top indoor play area & adventure park, perfect for fun-filled kids’ birthday party celebrations.";
+$state = "Telangana";
+$city = "Hyderabad";
+$slug = "hyderabad-dsl-virtue-mall";
+$address = "2nd Floor, DSL Virtue Mall, Unit No. SF 27, 28, 29, near Rajiv Gandhi International Cricket Stadium, Industrial Development Area, Uppal, Hyderabad, Telangana 500039";
 $timings = "11:00 AM - 9:30 PM";
-$pricing = "Weekday: ₹650 (90min), ₹850 (120min) | Weekend: ₹750 (90min), ₹950 (120min)";
-$phone = "+919831126633";
+$pricing = "Weekday: ₹500 (30min), ₹600 (60min) | Weekend: ₹500 (30min), ₹600 (60min)";
+$phone = "+919830359999";
 $highlights = [
     "Infinity trampoline",
     "Foam pits",
     "Thrilling arcade",
     "Wall climbing",
     "Basketball zone",
-    "Dedicated kids\' play zone"
+    "Dedicated kids' play zone"
 ];
 $activities = [
     "Infinity Trampoline", "Donut Slide", "Foam Pit", "Hanging Bridge", "Zorb Ball",
@@ -27,16 +28,16 @@ $activities = [
     "Ninja Activities", "Pin Wall", "MerryGo Round", "Wave Slide", "Horn Slide",
     "Sand Pit", "Ball Pool", "Tunnels"
 ];
-$image_url = get_template_directory_uri() . '/assets/img/P&M_MALL_1.webp';
+$image_url = get_template_directory_uri() . '/assets/img/DSL_Virtue_Mall1.webp';
 
 // Schema specific variables
-$alternate_name = "Jus Jumpin Kid\'s Play Zone and Birthday Party Place";
+$alternate_name = "Jus Jumpin || Kids Activity, Soft Play Zone";
 $description = "Jus Jumpin is an indoor trampoline park and kids entertainment zone — perfect for playful kids and thrill-loving adults looking to unleash their inner jumper.";
 $email = "info@jusjumpin.com";
-$postal_code = "831001";
-$latitude = "22.78486";
-$longitude = "86.17985";
-$has_map = "https://maps.app.goo.gl/yYtjhsXA3wjXM5kP9";
+$postal_code = "500039";
+$latitude = "17.40018";
+$longitude = "78.55506";
+$has_map = "https://www.google.com/maps/search/?api=1&query=DSL+Virtue+Mall+Uppal+Hyderabad";
 $price_range = "₹₹";
 $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fun";
 // $rating_value = "4.8"; // Example: if available, uncomment and set
@@ -48,16 +49,16 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-hero-slider">
     <div class="hero-slider-wrapper">
         <div class="hero-slide active">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/P&M_MALL_1.webp'); ?>" alt="Kids play area in Jamshedpur PM Mall" class="hero-slide-img">
+            <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/dsl-virtue-mall-uppal-hyderabad-malls-f8t2ftz7d5.jpg" alt="Kids Playzone Hyderabad" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/P&M_MALL_2.webp'); ?>" alt="Kids trampoline Park In Jamshedpur" class="hero-slide-img">
+            <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/DJI_0668-scaled-1.jpg" alt="Kids trampoline park Hyderabad" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Kids play zone in Jamshedpur Pm Mall" class="hero-slide-img">
+            <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/dsl-virtue-mall-cover-image.png" alt="Kids play area Hyderabad DSL Virtue Mall" class="hero-slide-img">
         </div>
         <div class="hero-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC4.jpg'); ?>" alt="Trampoline Park for kids in Jamshedpur" class="hero-slide-img">
+            <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/cover-image-DSL-virtue-mall.jpg" alt="Trampoline park for kids in Hyderabad" class="hero-slide-img">
         </div>
     </div>
     <div class="hero-slider-overlay"></div>
@@ -65,10 +66,9 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="container">
             <h1 class="location-hero-title">
                 <span class="hero-emoji"></span>
-                Jus Jumpin<br>P&M Mall - Jamshedpur
-
+                Jus Jumpin<br>DSL Virtue Mall, Hyderabad
             </h1>
-            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, and a large range of delicious food, a memorable day out is guaranteed with the best Kids’ Playzone Adventure Park in Jamshedpur.</p>
+            <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than 15 thrilling gaming activities for kids, soft playzone, and a large range of delicious food, a memorable day out is guaranteed with the best Kids’ Playzone Adventure Park in Hyderabad.</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -85,14 +85,16 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
         <div class="content-with-image">
             <div class="content-left">
                 <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
-                <p class="section-text">Step into a brand new world of fun at<strong> Jus Jumpin P&M Mall, Jamshedpur.</strong> Our meticulously designed kids' play zone in Jamshedpur offers a large range of fascinating activities, featuring our exciting trampoline park, ball pool, foam pit, hanging bridge, and a variety of fun-packed activities. Our thoughtfully designed kids' play zone promotes a screen-free fun time in a safe and vibrant environment, where kids can learn while playing, and let their imagination flow without restriction.</p>
+                <p class="section-text">Jump into a brand new world full of laughter and fun, at <strong>Jus Jumpin, DSL Virtue Mall.</strong> Our uplifting kids' play zone and adventure park is thoughtfully designed to provide a vibrant and safe space for kids aged between 6 months to 12 years, to play without restrictions. With special attractions like vibrant trampoline park, exciting slides, hanging bridge, toddler play zone, and wall climbers, Jus Jumpin hails as the best kids playzone in Hyderabad.</p>
                 <p class="section-text">Jus Jumpin also acts as the finest venue for birthday party of your child. You can get customized cartoon or anime-themed decorations, an extensive menu curated to your needs, and access to our indoor sports layout, where your kids can play all day long.</p>
-                <p class="section-text">Our premier indoor kids play area in Jamshedpur offers an action-packed yet safe experience for all our little guests. With global safety and hygiene standards and a well-trained team of supervisors, Jus Jumpin ensures a safe and secure environment where the children can play without any worry and the caring parents can have peace of mind. Visit our facility at P&M Mall, and watch your little jumper jump into new heights.</p>
+                <p class="section-text">For the caring parents, we have a cozy lounge area where they can relax comfortably, while their children can explore the new limits of their imagination and play with no restrictions. With more than 15+ games and joyrides, Jus Jumpin creates laughter, energy among kids and wholesome memories for the parents.</p>
+                <p class="section-text">Jus Jumpin at DSL Virtue Mall is dedicated to providing a safe and fun-filled experience to the tiny jumpers with thrilling wall-to-wall trampolines for kids, exciting wave slides, spiral slides, adventure obstacle games for children, and an interactive soft play zone. With certified safety and hygiene standards, caring parents can entrust their little one with Jus Jumpin and have peace of mind.</p>
+
             </div>
             <div class="content-right">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/P&M_MALL_body.webp'); ?>" alt="P&M Mall Jamshedpur" class="building-image">
+                <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/cover-image.png" alt="DSL Virtue Mall" class="building-image">
              <div class="image-overlay">
-                    <h2 class="building-name">P&M Mall Jamshedpur</h2>
+                    <h2 class="building-name">DSL Virtue Mall</h2>
                 </div>
             </div>
         </div>
@@ -103,32 +105,32 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section experience-section">
     <div class="container">
         <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-business-time"></i></span> Key Highlights</h2>
-        <p class="section-intro">Jus Jumpin at P&M Mall features an infinity trampoline, foam pits, interactive ball pool, wall climbing, horn slide, and a dedicated kids' play zone.</p>
+        <p class="section-intro">Jus Jumpin at DSL Virtue Mall features an infinity trampoline, foam pits, interactive ball pool, wall climbing, horn slide, and a dedicated kids' play zone.</p>
         
-        <div class="experience-grid">
+<div class="experience-grid">
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp?v1'); ?>" alt="Children's Amusement Park In Jamshedpur" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kids-activity-highlights.webp?v1'); ?>" alt="Kid friendly activities in Hyderabad" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-birthday-cake"></i> Creative & Educational Activities</h3>
+                <h3 class="card-title gradient-text"><i class="fas fa-book"></i> Creative & Educational Activities</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp?v1'); ?>" alt="Age specific kids playzone in Jamshedpur" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Age-specific-activities-highlights.webp?v1'); ?>" alt="Age Specific kids playzone Hyderabad" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-building"></i> Age Specific Kids Play Zones</h3>
+                <h3 class="card-title gradient-text"><i class="fas fa-child"></i> Age Specific Kids Play Zones</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Kids Birthday Celebration Venue in Jamshedpur" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>" alt="Kids birthday celebration venue in Hyderabad" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-users"></i> Perfect Family Celebrations</h3>
+                <h3 class="card-title gradient-text"><i class="fas fa-birthday-cake"></i> Perfect Birthday Celebrations</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Resting-zone-highlights.webp'); ?>" alt="Kid friendly indoor games in Jamshedpur" loading="lazy">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Resting-zone-highlights.webp'); ?>" alt="Dedicated Resting Zone For Parents" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-dumbbell"></i>Dedicated Resting Zone For Parents</h3>
+                <h3 class="card-title gradient-text"><i class="fas fa-smile"></i> Dedicated Resting Zone For Parents</h3>
             </div>
         </div>
         
@@ -140,7 +142,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <section class="location-section activities-section">
     <div class="container">
         <h2 class="section-heading2"><span class="emoji-icon"><i class="fas fa-gamepad"></i></span> Our Activities</h2>
-        <p class="section-intro">Beyond India's premier trampoline park, experience an interactive ball pool, a dedicated soft play zone for kids, a wholesome cow Game, and 15+ interactive gaming activities curated just for you.</p>
+        <p class="section-intro">Beyond India's premier trampoline park, experience an action-packed obstacle zone, a dedicated soft play zone for kids, a wholesome merry-go-round, and 15+ interactive gaming activities curated just for you.</p>
         <!-- Toggle Switch -->
         <div class="activities-toggle-wrapper">
             <label for="activity-filter" class="switch" aria-label="Toggle Between Adults and Kids Activities">
@@ -149,150 +151,14 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <span>Kids</span>
             </label>
         </div>
-        
-        <!-- Adults Activities Section -->
-        <!-- <div class="activities-content adults-activities" data-category="adults"> -->
-            <!-- <div class="activities-grid"> -->
-                <!-- Adult Activity 1 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Infinity Trampoline">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/INFINITY_TRAMPOLINE_abc.webp'); ?>" alt="Infinity Trampoline - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Infinity Trampoline</h4>
-                        <p class="activity-desc">Endless bouncing fun on our interconnected trampoline zones. Perfect for fitness enthusiasts and adrenaline seekers!</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 2 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Donut Slide">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Donut_Slide_abc.webp'); ?>" alt="Donut Slide - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Donut Slide</h4>
-                        <p class="activity-desc">Experience gravity-powered thrills as you slide down our exciting donut-shaped tunnel at high speed!</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 3 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Foam Pit">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Foampit_abc.jpg'); ?>" alt="Foam Pit - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Foam Pit</h4>
-                        <p class="activity-desc">Jump into a massive pit filled with soft foam cubes. Safe landings guaranteed for all your aerial stunts!</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 4 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Hanging Bridge">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/hanging_bridge_abc.webp'); ?>" alt="Hanging Bridge - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Hanging Bridge</h4>
-                        <p class="activity-desc">Test your balance and coordination as you navigate across our suspended rope bridge challenge.</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 5 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Zorb Ball">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Zorb_ball_abc.jpg'); ?>" alt="Zorb Ball - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Zorb Ball</h4>
-                        <p class="activity-desc">Roll around in giant inflatable balls! Hilarious fun and great exercise combined in one activity.</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 6 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Bar Dodger">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/WipeOutKolkataABC.png'); ?>" alt="Bar Dodger - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Bar Dodger</h4>
-                        <p class="activity-desc">Duck, jump, and dodge rotating bars in this fast-paced obstacle challenge. Test your reflexes!</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 7 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Sky Steeper">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Sky_stepper_abc.png'); ?>" alt="Sky Steeper - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Sky Steeper</h4>
-                        <p class="activity-desc">Challenge yourself on steep inclined trampolines. Perfect for testing your jumping power and endurance!</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 8 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Wall Climbing">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wall_climb_abc.jpg'); ?>" alt="Wall Climbing - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Wall Climbing</h4>
-                        <p class="activity-desc">Scale challenging climbing walls with various difficulty levels. Build strength and conquer new heights!</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 9 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Magnetic Wall">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Magnet_wall_abc.jpeg'); ?>" alt="Magnetic Wall - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Magnetic Wall</h4>
-                        <p class="activity-desc">Stick to the wall in our unique magnetic suit experience. Defy gravity in this one-of-a-kind attraction!</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 10 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Bridge War">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KolkataABC3.jpg'); ?>" alt="Bridge War - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Bridge War</h4>
-                        <p class="activity-desc">Battle your friends on a suspended platform using foam jousting sticks. Last one standing wins!</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 11 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Ninja Activities">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Ninja_Activities_abc.jpg'); ?>" alt="Ninja Activities - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Ninja Activities</h4>
-                        <p class="activity-desc">Complete ninja warrior-style obstacles. Test agility, strength, and endurance like a true warrior!</p>
-                    </div>
-                </div> -->
-                
-                <!-- Adult Activity 12 -->
-                <!-- <div class="activity-card glass-card" data-activity-name="Pin Wall">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Pin_wall_abc.webp'); ?>" alt="Pin Wall - Adults" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Pin Wall</h4>
-                        <p class="activity-desc">Create an impression of your body on our 3D pin wall. Strike a pose and see yourself immortalized!</p>
-                    </div>
-                </div> -->
-            <!-- </div>
-        </div> -->
-         <!-- Kids Activities Section -->
+
+        <!-- Kids Activities Section -->
         <div class="activities-content kids-activities active" data-category="kids">
-        <div class="activities-grid">
+            <div class="activities-grid">
                 <!-- Kids Activity 1 -->
                 <div class="activity-card glass-card" data-activity-name="Wave Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp?v1'); ?>" alt="Wave Slide At Jus Jumpin Jamshedpur" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Wave-Slide-DSL-Virtue-Mall.jpg" alt="Wave Slide for kids play Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wave Slide</h4>
@@ -303,7 +169,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 2 -->
                 <div class="activity-card glass-card" data-activity-name="Sand Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp?v1'); ?>" alt="Sand Pit At Jus Jumpin P&M Mall" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/sand-pit-dsl-virtue-mall.jpg" alt="Toddler play zone Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Sand Pit</h4>
@@ -314,7 +180,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 3 -->
                 <div class="activity-card glass-card" data-activity-name="Soft Play Area">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_softplay_activity.webp?v1'); ?>" alt="Kids soft play area in Jamshedpur" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2025/12/compressed_16.webp" alt="Kids soft play area Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Soft Play Area</h4>
@@ -323,31 +189,31 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 </div>
                 
                 <!-- Kids Activity 4 -->
-                <div class="activity-card glass-card" data-activity-name="Pathways">
+                <div class="activity-card glass-card" data-activity-name="Cow game">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pathway_activity.webp?v1'); ?>" alt="Pathway Play for kids in Jamshedpur" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/cow-game.jpg" alt="Cow game at Hyderabad DSL Virtue Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Pathways</h4>
-                        <p class="activity-desc">Explore our playful pathways designed for discovery, laughter, and little adventures at every turn.</p>
+                        <h4 class="activity-title">Cow Game</h4>
+                        <p class="activity-desc">Step into the barnyard for some moo-velous fun—try your hand at our interactive cow game and see if you have the ultimate farmer's touch!</p>
                     </div>
                 </div>
                 
                 <!-- Kids Activity 5 -->
-                <div class="activity-card glass-card" data-activity-name="Doll House">
+                <div class="activity-card glass-card" data-activity-name="Toshi Net">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_dollhouse_activities.webp?v1'); ?>" alt="Doll house for Kids In Jamshedpur" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/toshi-net.jpg" alt="Doll house for Kids play Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Doll House</h4>
-                        <p class="activity-desc">Step into a magical miniature world filled with charm, imagination, and make-believe fun!</p>
+                        <h4 class="activity-title">Toshi Net</h4>
+                        <p class="activity-desc">Enter a magical, giant cocoon of colorful yarn, built entirely for leaping, laughing, and make-believe play!</p>
                     </div>
                 </div>
                 
                 <!-- Kids Activity 6 -->
                 <div class="activity-card glass-card" data-activity-name="Tunnel Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp?v1'); ?>" alt="Tunnel slide area at Jus Jumpin P&m Mall" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/tunnel_slide_Activity.webp?v1'); ?>" alt="Tunnel Slide Kids play Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Tunnel Slide</h4>
@@ -357,7 +223,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 7 -->
                 <div class="activity-card glass-card" data-activity-name="Merry Go Round">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/indian_kids_merry_go_round_activity.webp?v1'); ?>" alt="Merry Go Round At Jus Jumpin Jamshedpur" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Merry-Go-Round.jpg" alt="Merry go round Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Merry Go Round</h4>
@@ -367,7 +233,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 8 -->
                 <div class="activity-card glass-card" data-activity-name="Zebra Swing">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/zebra_swing_activity.webp?v1'); ?>" alt="Zebra Swing At Jus Jumpin Jamshedpur" loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/zebra_swing_activity.webp?v1'); ?>" alt="Zebra Swing DSL Virtue Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Zebra Swing</h4>
@@ -377,7 +243,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                 <!-- Kids Activity 9 -->
                 <div class="activity-card glass-card" data-activity-name="Foam Pit">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/foam_pit_activity2.webp?v1'); ?>" alt="Toddler Play Area in Jamshedpur" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Foam-pit-at-dsl-virtue-mall.jpg" alt="Toddler play area Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Foam Pit</h4>
@@ -385,29 +251,29 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     </div>
                 </div>
                 <!-- Kids Activity 10 -->
-                <div class="activity-card glass-card" data-activity-name="Ball Pool">
-                    <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/ball_pool_activities.webp?v1'); ?>" alt="Toddler Play zone in Jamshedpur" loading="lazy">
-                    </div>
-                    <div class="activity-info">
-                        <h4 class="activity-title">Ball Pool</h4>
-                        <p class="activity-desc">Dive into a sea of colorful balls — perfect for giggles, splashes of joy, and endless playtime memories.</p>
-                    </div>
-                </div>
-                <!-- Kids Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="Horn Slide">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/horn_slide_activity.webp?v1'); ?>" alt="Horn Slide for Kids in Jamshedpur" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/horn-slide.jpg" alt="Horn Slide at Kids play zone Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Horn Slide</h4>
                         <p class="activity-desc">Slide down the playful Horn Slide and enjoy a smooth, curvy ride that ends with giggles and excitement!</p>
                     </div>
                 </div>
+                <!-- Kids Activity 11 -->
+                <div class="activity-card glass-card" data-activity-name="Ball Pool">
+                    <div class="activity-image">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/ball-poll-at-dsl-virtue-mall.jpg" alt="Toddler play area Hyderabad" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Ball Pool</h4>
+                        <p class="activity-desc">Dive into a sea of colorful balls — perfect for giggles, splashes of joy, and endless playtime memories.</p>
+                    </div>
+                </div>
                 <!-- Kids Activity 12 -->
                 <div class="activity-card glass-card" data-activity-name="Interactive Ball Pool">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Interactive_ball_pool_activity.webp?v1'); ?>" alt="Interactive Ball Pool For Kids" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/interactive-ball-pool.jpg" alt="Interactive ball pool for kids in Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Interactive Ball Pool</h4>
@@ -415,13 +281,23 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     </div>
                 </div>
                 <!-- Kids Activity 13 -->
-                <div class="activity-card glass-card" data-activity-name="Tunnel crossway">
+                <div class="activity-card glass-card" data-activity-name="Obstacle Zone">
                     <div class="activity-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Tunnel_crossway_activities.webp?v1'); ?>" alt="Tunnel Crossway for Kids play" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/wall-climb.jpg" alt="best kids play zone in Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
-                        <h4 class="activity-title">Tunnel crossway</h4>
-                        <p class="activity-desc">Crawl, explore, and adventure through our colorful Tunnel Crossway — a playful path that sparks curiosity at every turn!</p>
+                        <h4 class="activity-title">Wall Climb</h4>
+                        <p class="activity-desc">Challenge yourself on our epic Climbing Wall — push your limits, find your footing, and race to the summit for endless vertical fun</p>
+                    </div>
+                </div>
+                <!-- Kids Activity 14 -->
+                <div class="activity-card glass-card" data-activity-name="Donut Slide">
+                    <div class="activity-image">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/donut-slide.jpg" alt="top kids play area in Hyderabad" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Donut Slide</h4>
+                        <p class="activity-desc">Spin, slide, and laugh your way down the Donut Slide — a twisting tunnel of pure joy that guarantees a rush of fun every time!</p>
                     </div>
                 </div>
             </div>
@@ -476,30 +352,30 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
                     <thead>
                         <tr>
                             <th>Session Duration</th>
-                            <th>Weekday   (Mon–Fri)</th>
-                            <th>Weekend (Sat-Sun)</th>
+                            <th>SAT - SUN</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>30 Minutes</td>
-                            <td>₹350</td>
-                            <td>₹350</td>
+                            <td>60 Minutes</td>
+                            <td>₹550</td>
+                            
                         </tr>
                         <tr>
-                            <td>60 Minutes</td>
-                            <td>₹450</td>
-                            <td>₹450</td>
+                            <td>90 Minutes</td>
+                            <td>₹650</td>
+                           
                         </tr>
                         <tr class="highlight-row">
                             <td>Anti-Skid Grip Socks <em>(One-time Purchase. Compulsory for your safety.)</td>
-                            <td colspan="2">₹40</td>
+                            <td colspan="2">₹50</td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="special-bookings-cta">
                     <p class="special-bookings-text">
-                       <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, and <strong>personalized gift vouchers.</strong>
+                        <i class="fas fa-gift"></i> Planning something special? Get in touch for <strong>extended sessions</strong>, <strong>full-day access</strong>, <strong>birthday celebrations</strong>, and <strong>personalized gift vouchers.</strong>
                     </p>
                     <a href="<?php echo esc_url(home_url('/contact')); ?>" class="contact-cta-button">
                         <i class="fas fa-phone"></i> Contact Us Now
@@ -513,35 +389,36 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <!-- Location Map Section -->
 <section class="location-section map-section">
     <div class="container">
-        <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-map-marker-alt"></i></span> Location: Jus Jumpin P&M Mall, Jamshedpur</h2>
+        <h2 class="section-heading"><span class="emoji-icon"><i class="fas fa-map-marker-alt"></i></span> Location: Jus Jumpin – DSL Virtue Mall</h2>
         
         <div class="address-card glass-card">
             <div class="address-content">
                 <p class="address-main"><strong>Address:</strong></p>
-                <p>2nd Floor, P&M Mall, Bistupur Main Rd<br>
-                South Park, Bistupur, Jamshedpur, Jharkhand 831001<br><strong>Call Us:</strong> (+91)98311 26633</p>
-                <p class="landmarks"><strong>Landmarks:</strong> Bistupur Main Road</p>
+                <p>2nd Floor, DSL Virtue Mall, Unit No. SF 27, 28, 29,<br>
+                 near Rajiv Gandhi International Cricket Stadium, Industrial Development Area, Uppal, Hyderabad, Telangana 500039<br><strong>Call Us:</strong> (+91)98303 59999</p>
+                <p class="landmarks"><strong>Landmarks:</strong> Near Rajiv Gandhi International Cricket Stadium, Uppal</p>
             </div>
         </div>
         
         <div class="map-container">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4564.564552150203!2d86.1778833760317!3d22.784895525154564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e3668a0bf67f%3A0xdb9bd13d2c36ac11!2sJus%20Jumpin!5e1!3m2!1sen!2sin!4v1787813339046!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.95368802562894!2d78.55516850259671!3d17.399353436986623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99d9d44113a3%3A0xd66edde834fb7528!2sJus&#39;%20Jumpin&#39;%20%7C%7C%20Kid&#39;s%20Activity%20and%20Soft%20Play%20Zone!5e0!3m2!1sen!2sin!4v1785138544653!5m2!1sen!2sin"
                 width="100%"
                 height="450"
                 style="border:0;border-radius:16px;"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Jus Jumpin P&M Mall Jamshedpur">
+                title="Jus Jumpin Hyderabad DSL Virtue Mall Location">
             </iframe>
         </div>
         
         <div class="map-button-wrapper">
-            <a href="https://share.google/ydcToJ0HyAI1CB8Tt" target="_blank" rel="noopener noreferrer" class="visit-us-button">
+            <a href="<?php echo esc_url($has_map); ?>" target="_blank" rel="noopener noreferrer" class="visit-us-button">
                 <i class="fas fa-map-marked-alt"></i> Visit Us
             </a>
-            <a href="https://reviewthis.biz/pmj" target="_blank" rel="noopener noreferrer" class="visit-us-button">
+            <!-- TODO: replace with the location-specific reviewthis.biz link for DSL Virtue Mall once available -->
+            <a href="https://search.google.com/local/writereview?placeid=ChIJoxNB1NmZyzsRKHX7NOjdbtY" target="_blank" rel="noopener noreferrer" class="visit-us-button">
                 <i class="fas fa-star"></i> Review Us
             </a>
         </div>
@@ -560,8 +437,8 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             <div class="safety-item glass-card">
                 <span class="safety-icon"><i class="fas fa-socks"></i></span>
                 <h4>Grip Socks Required</h4>
-                <p>₹60, reusable on future visits.
-                    <strong>This socks are provided for extra protection and hygiene.</strong>
+                <p>₹50, reusable on future visits.
+                    <strong>These socks are provided for extra protection and hygiene.</strong>
                 </p>
             </div>
             <div class="safety-item glass-card">
@@ -649,7 +526,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
 <!-- Conclusion CTA Section -->
 <section class="location-section conclusion-section">
     <div class="container">
-        <h2 class="section-heading white-text"><span class="emoji-icon"><i class="fas fa-brain"></i></span> Why Jus Jumpin P&M Mall Jamshedpur?</h2>
+        <h2 class="section-heading white-text"><span class="emoji-icon"><i class="fas fa-brain"></i></span> Why Jus Jumpin DSL Virtue Mall?</h2>
         
         <div class="conclusion-grid">
             <div class="conclusion-item">
@@ -670,7 +547,7 @@ $keywords = "trampoline park, kids entertainment zone, indoor play area, jump fu
             </div>
         </div>
         
-        <p class="conclusion-text"><strong>Jus Jumpin | P&M Mall (Jamshedpur),</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
+        <p class="conclusion-text"><strong>Jus Jumpin | Hyderabad (DSL Virtue Mall)</strong> isn't just another trampoline park — it's an experience built for kids who want to jump higher, laugh harder, and rediscover the joy of play.</p>
         
         <div class="cta-button-wrapper">
             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">
@@ -851,4 +728,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-

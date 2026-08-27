@@ -1,6 +1,6 @@
 <?php
 /**
- * Template: Kolkata - Sarath City Capital Mall
+ * Template: Hyderabad - Sarath City Capital Mall
  * Modern location page with hero slider and glassmorphism design
  */
 
@@ -8,7 +8,7 @@
 $title = "Sarath city capital mall | Jus Jumpin";
 $state = "Telangana";
 $city = "Hyderabad";
-$slug = "hyderabad-Sarath-City-Capital-Mall";
+$slug = "hyderabad-sarath-city-capital-mall";
 $address = "JUS JUMPIN, 4TH FLOOR, Sarath City Capital Mall, Gachibowli Rd, Kondapur, Whitefields, HITEC City, Hyderabad, Telangana 500084";
 $timings = "11:00 AM - 9:30 PM";
 $pricing = "Weekday: ₹650 (90min), ₹850 (120min) | Weekend: ₹750 (90min), ₹950 (120min)";
@@ -63,19 +63,19 @@ $review_count = "2795"; // Example: if available, uncomment and set
     <div class="hero-slider-wrapper">
         <div class="hero-slide active">
             <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Sarath-city-Mall-Hyderabad.png"
-                alt="Jus Jumpin Kolkata ABC Square" class="hero-slide-img">
+                alt="Jus Jumpin Sarath City Capital Mall Hyderabad" class="hero-slide-img">
         </div>
         <div class="hero-slide">
             <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Sarath-city-capital-Mall.png"
-                alt="Adult Trampoline Park Kolkata" class="hero-slide-img">
+                alt="Adult Trampoline Park Hyderabad Sarath City Mall" class="hero-slide-img">
         </div>
         <div class="hero-slide">
             <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/activity2.png"
-                alt="Kolkata ABC Square Activities" class="hero-slide-img">
+                alt="Sarath City Capital Mall Hyderabad Activities" class="hero-slide-img">
         </div>
         <div class="hero-slide">
             <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/activity.png"
-                alt="Trampoline Park Fun Kolkata" class="hero-slide-img">
+                alt="Trampoline Park Fun Hyderabad Sarath City Mall" class="hero-slide-img">
         </div>
     </div>
     <div class="hero-slider-overlay"></div>
@@ -86,8 +86,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 Jus Jumpin<br>Sarath City Capital Mall
             </h1>
             <p class="location-hero-subtitle">Dive into the world of pure joy and laughter at Jus Jumpin. With more than
-                15 thrilling gaming activities for kids, and a large range of delicious food, a memorable day out is
-                guaranteed with us.</p>
+                20 exciting gaming activities for every fun loving soul. An action packed day is guaranteed with us.</p>
         </div>
     </div>
     <div class="slider-dots">
@@ -104,24 +103,15 @@ $review_count = "2795"; // Example: if available, uncomment and set
         <div class="content-with-image">
             <div class="content-left">
                 <h2 class="section-title gradient-text">Ultimate Fun Awaits</h2>
-                <p class="section-text">Welcome to <strong>Jus Jumpin, Sarath City Capital Mall,</strong> your ultimate
-                    hangout spot in Hyderabad.Dive into a brand new world of limitless fun, where your age means
-                    nothing! Jus Jumpin at the Sarath City Capital Mall is thoughtfullly designed to host the fun loving
-                    people who have a lot of energy to burn. With dedicated play zones; one to host toddlers and kids to
-                    enjoy, and another to host adventure lovers of every age. Both the areas consist of wholesome play
-                    zones, thrilling physical activities, a dynamic trampoline park, and interactive indoor games. Our
-                    dedicated team ensures endless fun with paramount safety standards and well-maintained hygiene.</p>
-                <p class="section-text">Besides our action-filled, vibrnat trampoline park, Jus Jumpin offers an awesome
-                    party zone that is perfectly suited to host private birthday parties for kids and adults, social
-                    gatherings and more. With custom theme decors, flexible packages and food tailored to your palate,
-                    our dedicated team ensure your party remains free of hassle and full of good moments.</p>
-                <p class="section-text">At<strong> Jus Jumpin, </strong>We strive to go beyond ordinary. Our
+                <p class="section-text">Jump into a whole new world of laughter and joy at <strong>Jus Jumpin, Sarath City Capital Mall,</strong>  the ultimate indoor playzone in Hyderabad. Laced with 20+ exciting activities and attractions, Jus Jumpin creates a perfect world full of fun, where your age means absolutely nothing. Designed to cater to the fun-loving kid inside you, Jus Jumpin at Sarath City Capital Mall offers an infinity trampoline, a knee-shaking adventure course, a wall climb, a zip line, and a bunch of activities you can’t resist. Built to host every age of fun-loving people, Jus Jumpin Sarath City Capital Mall consists of dedicated play zones for kids and adults.  At our facilities, we adhere to global safety standards and an impeccably hygienic environment, so you can worry less and jump more.</p>
+                <p class="section-text">Besides a world-class infinity trampoline and indoor play area in Hyderabad, Jus Jumpin also comes with an awesome party zone to host vibrant birthday parties for Kids. Along with custom decoration, affordable birthday party packages, and food tailored to your preference, we provide magic shows, tattoo artists, and numerous party activities to turn your party into a day to remember.</p>
+                <!-- <p class="section-text">At<strong> Jus Jumpin, </strong>We strive to go beyond ordinary. Our
                     thoughtfully designed, vibrant space radiates energy, generates laughter, and creates memories that
-                    last for years.</p>
+                    last for years.</p> -->
             </div>
             <div class="content-right">
                 <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/sarath-City.png"
-                    alt="Sarath City Capital Mall" class="building-image">
+                    alt="Sarath City Capital Mall Hyderabad Building" class="building-image">
                 <div class="image-overlay">
                     <h2 class="building-name">Sarath City Capital Mall</h2>
                 </div>
@@ -143,37 +133,37 @@ $review_count = "2795"; // Example: if available, uncomment and set
             <div class="experience-card glass-card">
                 <div class="card-image">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/KittyKolkataABC.jpg'); ?>"
-                        alt="Kitty Parties" loading="lazy">
+                        alt="Kitty Parties at Jus Jumpin Sarath City Mall Hyderabad" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fas fa-birthday-cake"></i> Amazing Kitty Parties</h3>
+                <h3 class="card-title gradient-text"><i class="fas fa-birthday-cake"></i> Amazing Kitty <br>Parties</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/CorporateKolkataABC.jpg'); ?>"
-                        alt="Corporate Events" loading="lazy">
+                        alt="Corporate Events at Jus Jumpin Hyderabad Sarath City Mall" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-building"></i> Corporate Team-Building Events</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/FamilyKolkataABC.jpg'); ?>"
-                        alt="Family Celebrations" loading="lazy">
+                        alt="Family Celebrations at Jus Jumpin Sarath City Capital Mall Hyderabad" loading="lazy">
                 </div>
                 <h3 class="card-title gradient-text"><i class="fas fa-users"></i> Perfect Family Celebrations</h3>
             </div>
             <div class="experience-card glass-card">
                 <div class="card-image">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/jus bites.jpg'); ?>"
-                        alt="Inhouse Cafe & Restaurant" loading="lazy">
+                        alt="Inhouse Cafe and Restaurant Jus Bites Hyderabad" loading="lazy">
                 </div>
-                <h3 class="card-title gradient-text"><i class="fa-solid fa-martini-glass-citrus"></i> Inhouse Restaurant
+                <h3 class="card-title gradient-text"><i class="fa-solid fa-martini-glass-citrus"></i> Inhouse Cafe
                     <br>(Jus' Bites)
                 </h3>
             </div>
         </div>
 
         <p class="section-footer-text">Dedicated party area perfect for <strong>hosting amazing birthday
-                parties</strong> and <strong>corporate events </strong>in Kolkata. The venue features an <strong>vibrant
+                parties</strong> and <strong>corporate events </strong>in Hyderabad. The venue features an <strong>vibrant
                 decor, cool music,</strong> and <strong>time full of laughter.</strong></p>
     </div>
 </section>
@@ -200,7 +190,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Infinity Trampoline">
                     <div class="activity-image">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Infinity_trampoline_activity.webp?v1'); ?>"
-                            alt="Infinity Trampoline - Adults" loading="lazy">
+                            alt="Infinity Trampoline for Adults at Sarath City Capital Mall Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Infinity Trampoline</h4>
@@ -213,7 +203,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Donut Slide">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/DODGEBALL.png"
-                            alt="Donut Slide - Adults" loading="lazy">
+                            alt="Trampoline Dodgeball for Adults in Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Dodge ball </h4>
@@ -226,7 +216,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Sky stepper">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Sky-stepper-new.png"
-                            alt="Foam Pit - Adults" loading="lazy">
+                            alt="Sky Stepper Activity for Adults Hyderabad Sarath City Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Sky Stepper</h4>
@@ -239,7 +229,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Adventure">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/unmatched_variety.jpg"
-                            alt="Hanging Bridge - Adults" loading="lazy">
+                            alt="Adventure Obstacle Course in Hyderabad Sarath City Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Adventure</h4>
@@ -253,7 +243,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Wall Climbing">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/climbing_wall_activity.webp"
-                            alt="Wall Climbing - Adults" loading="lazy">
+                            alt="Wall Climbing for Adults at Sarath City Capital Mall Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wall Climbing</h4>
@@ -266,7 +256,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Donut slide ">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Donut-slide-adult-new.png"
-                            alt="Donut slide  - Adults" loading="lazy">
+                            alt="Donut Slide for Adults in Hyderabad Sarath City Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Donut slide </h4>
@@ -279,7 +269,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Tunnel Slide">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/tunnel-slide-new.png"
-                            alt="Tunnel Slide - Adults" loading="lazy">
+                            alt="Tunnel Slide Activity for Adults Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Tunnel Slide</h4>
@@ -287,12 +277,44 @@ $review_count = "2795"; // Example: if available, uncomment and set
                             laughter-filled sliding adventure.</p>
                     </div>
                 </div>
-
-                <!-- Adult Activity 8 -->
+               <!-- Adult Activity 8 -->
+                <div class="activity-card glass-card" data-activity-name="Zorb Ball">
+                    <div class="activity-image">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Zorb-Ball.png"
+                            alt="Zorb Ball - Adults" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Zorb Ball</h4>
+                        <p class="activity-desc">Step inside a giant inflatable sphere and roll, bounce, and tumble for an unforgettable thrill.</p>
+                    </div>
+                </div>
+<!-- Adult Activity 9 -->
+                <div id="zip-line-card" class="activity-card glass-card" data-activity-name="Zip Line">
+                    <div class="activity-image">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/ZIP-LINE.png"
+                            alt="Zip Line - Adults" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Zip Line</h4>
+                        <p class="activity-desc">Step off the platform and soar through the air on an exhilarating zip line ride filled with high-flying fun.</p>
+                    </div>
+                </div>
+<!-- Adult Activity 10 -->
+                <div class="activity-card glass-card" data-activity-name="bar dodger">
+                    <div class="activity-image">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/bar-dodger.jpeg"
+                            alt="Bar dodger - Adults" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Bar Dodger</h4>
+                        <p class="activity-desc">Duck, jump, and weave past fast-spinning padded beams in a thrilling, high-energy test of speed and agility.</p>
+                    </div>
+                </div>
+                <!-- Adult Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="360 cycling">
                     <div class="activity-image">
-                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/360-cycle-1.jpeg"
-                            alt="360 cycling" loading="lazy">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/360-Cycle-At-sarath-City.jpeg"
+                            alt="360 Cycling Activity at Sarath City Capital Mall Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">360 Cycle</h4>
@@ -300,7 +322,17 @@ $review_count = "2795"; // Example: if available, uncomment and set
                             cycling experience like no other.</p>
                     </div>
                 </div>
-
+<!-- Adult Activity 12 -->
+                <div class="activity-card glass-card" data-activity-name="Battle Beam">
+                    <div class="activity-image">
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Battle-Beam-sarath-city.png"
+                            alt="Battle Beam - Adults" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <h4 class="activity-title">Battle Beam</h4>
+                        <p class="activity-desc">Grab a padded pugil stick, keep your balance, and knock your opponent off the beam into the soft foam pit below!</p>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -311,7 +343,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Ball Pool">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Interactive_ball_pool_activity.webp?v1"
-                            alt="Ball Pool" loading="lazy">
+                            alt="Kids Ball Pool Play Area Hyderabad Sarath City Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Ball Pool</h4>
@@ -324,7 +356,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Wave Slide">
                     <div class="activity-image">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Wave-slide-activity.webp?v1'); ?>"
-                            alt="Wave Slide - Kids" loading="lazy">
+                            alt="Wave Slide for Kids in Hyderabad Sarath City Capital Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Wave Slide</h4>
@@ -337,7 +369,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Swing">
                     <div class="activity-image">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Swing_activity.webp?v1'); ?>"
-                            alt="Swings at Jus Jumpin" loading="lazy">
+                            alt="Kids Swings Activity at Jus Jumpin Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Swing</h4>
@@ -350,7 +382,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Sand Pit">
                     <div class="activity-image">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/kids_playing_sandpit_activity.webp?v1'); ?>"
-                            alt="Sand Pit - Kids" loading="lazy">
+                            alt="Clean Sand Pit Play Zone for Kids Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Sand Pit</h4>
@@ -363,7 +395,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Ball Pool">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/football.png"
-                            alt="Ball Pool - Kids" loading="lazy">
+                            alt="Kids Football Activity Zone at Sarath City Mall Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Football</h4>
@@ -376,7 +408,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Tunnels">
                     <div class="activity-image">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Tunnel_activities.webp?v1'); ?>"
-                            alt="Tunnels - Kids" loading="lazy">
+                            alt="Kids Tunnels Play Area at Sarath City Capital Mall Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Tunnels</h4>
@@ -388,7 +420,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Toddler play area">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/indian_kids_merry_go_round_activity.webp?v1"
-                            alt="Tunnels - Kids" loading="lazy">
+                            alt="Merry Go Round Activity for Kids in Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Merry Go Round</h4>
@@ -400,7 +432,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Horn Slide">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/horn-slide.png"
-                            alt="Soft_play_activity_area" loading="lazy">
+                            alt="Kids Horn Slide Activity at Sarath City Capital Mall Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Horn Slide</h4>
@@ -412,7 +444,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Trampoline">
                     <div class="activity-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcLZCmWa3yAHsfvE3IkgHPEJE7zZNcTQxJyHsZtScMmm1Fka8LoUWL6y4&s=10>"
-                            alt="Trampoline" loading="lazy">
+                            alt="Kids Trampoline Play Area Hyderabad Sarath City Mall" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Trampoline</h4>
@@ -424,7 +456,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <div class="activity-card glass-card" data-activity-name="Seesaw">
                     <div class="activity-image">
                         <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/see-saw-at-jusjumpin.png"
-                            alt="Seesaw" loading="lazy">
+                            alt="Kids Seesaw Play Activity at Jus Jumpin Hyderabad" loading="lazy">
                     </div>
                     <div class="activity-info">
                         <h4 class="activity-title">Seesaw</h4>
@@ -435,7 +467,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 11 -->
                 <div class="activity-card glass-card" data-activity-name="Soft play area">
                     <div class="activity-image">
-                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Kitchen.png" alt="Kitchen"
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/Kitchen.png" alt="Kids Toy Kitchen Soft Play Area Hyderabad"
                             loading="lazy">
                     </div>
                     <div class="activity-info">
@@ -447,7 +479,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <!-- Kids Activity 12 -->
                 <div class="activity-card glass-card" data-activity-name="Soft play area">
                     <div class="activity-image">
-                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/doll-house-.png" alt="Doll House"
+                        <img src="https://www.jusjumpin.com/wp-content/uploads/2026/07/doll-house-.png" alt="Kids Doll House Play Zone Hyderabad Sarath City Capital Mall"
                             loading="lazy">
                     </div>
                     <div class="activity-info">
@@ -509,24 +541,24 @@ $review_count = "2795"; // Example: if available, uncomment and set
                     <thead>
                         <tr>
                             <th>Session Duration</th>
-                            <th>Weekday (Mon–Fri)</th>
-                            <th>Weekend (Weekends/ Holidays)</th>
+                            <th>SUN - SAT</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>90 Minutes</td>
-                            <td>₹650</td>
-                            <td>₹750</td>
+                            <td>₹1100</td>
+                           
                         </tr>
                         <tr>
-                            <td>120 Minutes</td>
-                            <td>₹850</td>
-                            <td>₹950</td>
+                            <td>Extensions</td>
+                            <td>₹250/₹450</td>
+                            
                         </tr>
                         <tr class="highlight-row">
-                            <td>Anti-Skid Grip Socks <em>(One-time Purchase. Compulsory for your safety.)</td>
-                            <td colspan="2">₹60</td>
+                            <td>Anti-Skid Grip Socks <em><br>(One-time Purchase. Compulsory for your safety.)</td>
+                            <td colspan="2">₹50</td>
                         </tr>
                     </tbody>
                 </table>
@@ -557,7 +589,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 <p class="address-main"><strong>Address:</strong></p>
                 <p>JUS JUMPIN, Unit No. SF - 26-30, 4th Floor, Sarath City Capital Mall,<br>
                     Gachibowli Rd, Kondapur, Whitefields, HITEC City, Hyderabad, Telangana 500084<br><strong>Call
-                        Us:</strong> To be Updated Soon...</p>
+                        Us:</strong> +91 9836888333</p>
                 <p class="landmarks"><strong>Landmarks:</strong> Sarath City Capital Mall, Gachibowli Rd
                 </p>
             </div>
@@ -882,7 +914,7 @@ $review_count = "2795"; // Example: if available, uncomment and set
                 statusIcon.className = 'fas fa-store-slash status-icon';
                 if (nextOpening) nextOpening.style.display = 'block';
 
-                // Calculate next opening time
+                // Calculate next opening time 
                 const tomorrow = new Date(now);
                 if (currentHour >= CLOSE_HOUR && currentMinute > CLOSE_MINUTE) {
                     tomorrow.setDate(tomorrow.getDate() + 1);

@@ -810,6 +810,118 @@ return [
         "closes" => "21:30"
     ]
 ],
-
-   
+// ============================================================
+// 21. Hyderabad - DSL Virtue Mall
+// ============================================================
+'hyderabad-dsl-virtue-mall' => [
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "name" => "Jus Jumpin",
+    "alternateName" => "Jus Jumpin Adult Trampoline Park and Kids Entertainment",
+    "url" => "https://www.jusjumpin.com/hyderabad-dsl-virtue-mall/",
+    "logo" => "https://www.jusjumpin.com/wp-content/uploads/2025/12/CCTV-Group-Photo-3.png",
+    "image" => [
+        "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_0001-2048x1365.jpg",
+        "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_4608-2048x1536.jpg"
+    ],
+    "description" => "Explore screen free kids entertainment at Jus' Jumpin' DSL virtue mall. Find 15+ exciting games and activities at the best kids play area in hyderabad. Visit now.",
+    "telephone" => "+91 9830359999",
+    "email" => "info@jusjumpin.com",
+    "address" => [
+        "@type" => "PostalAddress",
+        "streetAddress" => "2nd floor, UNIT No. SF 27,28,29, DSL Virtue Mall, near Rajiv Gandhi International Cricket Stadium, Industrial Development Area, Uppal, Hyderabad, Telangana 500039",
+        "addressLocality" => "Hyderabad",
+        "addressRegion" => "Telangana",
+        "postalCode" => "500039",
+        "addressCountry" => "IN"
+],
+    "geo" => [
+        "@type"=> "GeoCoordinates",
+        "latitude"=> 17.399558035575325,
+        "longitude"=>    78.55498698926979
+],
+    "hasMap"=> "https://maps.app.goo.gl/DAwc1hMqwqV478gy8",
+    "openingHoursSpecification"=> [
+        "@type"=> "OpeningHoursSpecification",
+        "dayOfWeek"=> [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens"=> "11:00",
+        "closes"=> "21:30"
+    ],
+    "priceRange"=> "\u20b9\u20b9",
+    "keywords"=> "kids play zone, entertainment zone, kids play area, indoor amusement park, hyderabad",
+    "areaServed"=>[
+        "@type"=> "Place",
+        "address"=> [
+            "@type"=> "PostalAddress",
+            "addressLocality"=> "Hyderabad",
+            "addressRegion"=> "Telengana",
+            "addressCountry"=> "IN"
+        ]
+    ],
+    ],
+// ============================================================
+// 22. Hyderabad - Sarath City Capital Mall
+// ============================================================
+'hyderabad-sarath-city-capital-mall' =>[
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "name" => "Jus Jumpin",
+    "alternateName" => "Jus Jumpin Adult Trampoline Park and Kids Entertainment",
+    "url" => "https://www.jusjumpin.com/hyderabad-sarath-city-capital-mall/",
+    "logo" => "https://www.jusjumpin.com/wp-content/uploads/2025/12/CCTV-Group-Photo-3.png",
+    "image" => [
+        "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_0001-2048x1365.jpg",
+        "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_4608-2048x1536.jpg"
+    ],
+    "description" => "Explore screen free kids entertainment at Jus' Jumpin' DSL virtue mall. Find 15+ exciting games and activities at the best kids play area in hyderabad. Visit now.",
+    "telephone" => "+91 9830359999",
+    "email" => "info@jusjumpin.com",
+    "address" => [
+        "@type" => "PostalAddress",
+        "streetAddress" => "2nd floor, UNIT No. SF 27,28,29, DSL Virtue Mall, near Rajiv Gandhi International Cricket Stadium, Industrial Development Area, Uppal, Hyderabad, Telangana 500039",
+        "addressLocality" => "Hyderabad",
+        "addressRegion" => "Telangana",
+        "postalCode" => "500039",
+        "addressCountry" => "IN"
+],
+    "geo" => [
+        "@type"=> "GeoCoordinates",
+        "latitude"=> 17.457692384590423,
+        "longitude"=> 78.36485484076584
+],
+    "hasMap"=> "https://maps.app.goo.gl/DAwc1hMqwqV478gy8",
+    "openingHoursSpecification"=> [
+        "@type"=> "OpeningHoursSpecification",
+        "dayOfWeek"=> [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens"=> "11:00",
+        "closes"=> "21:30"
+    ],
+    "priceRange"=> "\u20b9\u20b9",
+    "keywords"=> "kids play zone, entertainment zone, kids play area, indoor amusement park, hyderabad",
+    "areaServed"=>[
+        "@type"=> "Place",
+        "address"=> [
+            "@type"=> "PostalAddress",
+            "addressLocality"=> "Hyderabad",
+            "addressRegion"=> "Telengana",
+            "addressCountry"=> "IN"
+        ]
+    ],
+    ],
 ];

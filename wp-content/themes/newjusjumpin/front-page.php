@@ -10,14 +10,14 @@ get_header(); ?>
 
 <!-- Hero Section -->
 <section class="hero-section full-width" id="hero">
-    <?php 
+    <?php
     // Define video files for mobile and desktop separately
     $mobile_video_files = array(
-        'mobile-video.mp4' => get_template_directory() . '/assets/video/mobile-video-new.mp4',
-        'mobile-video.webm' => get_template_directory() . '/assets/video/mobile-video-new.mp4',
+        'mobile-video.mp4' => get_template_directory() . '/assets/video/mobile-video.mp4',
+        'mobile-video.webm' => get_template_directory() . '/assets/video/mobile-video.webm',
         // Add more mobile-specific videos here if needed
     );
-    
+
     $desktop_video_files = array(
         'Hero1.mp4' => get_template_directory() . '/assets/video/Hero1.mp4',
         'for-webside-1-3.webm' => get_template_directory() . '/assets/video/for-webside-1-3.webm',
@@ -82,40 +82,57 @@ $brand_colors = array(
     '#ff3645', // red
     '#8869d2'  // purple
 );
+
+// Blob shape variants — cycled per card alongside colors so neighboring
+// cards don't repeat the same outline. Defined once as SVG clipPaths below.
+$blob_shapes = array(
+    'jj-blob-twin-arch',
+    'jj-blob-single-dome',
+    'jj-blob-triple-wave',
+    'jj-blob-lopsided'
+);
+
 // Build a list of cities with images, colors, and slugs
 $jj_locations = array(
     'West Bengal' => array(
-        'Kolkata' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/estroso-icon-packs-2.png',
-        'Siliguri' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/siliguri.png',
-        'Durgapur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/durgapur.png'
+        'Kolkata' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/KolkataABC1.jpg',
+        'Avani Mall' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/avani-mall.png',
+        'Axis Mall' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/compressed_AXIS-MALL.webp',
+        'City Centre 2' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/jus-jumpin-City-center-2.webp',    
+        'Siliguri' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/City-Centre_Siliguri-body.webp',
+        'Durgapur' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Junction_mall_1.webp'
+    ),
+    'Hyderabad' => array(
+        'Sarath City Mall' => 'https://www.jusjumpin.com/wp-content/uploads/2026/07/sarath-City.png',
+        'DSL Virtue Mall' => 'https://www.jusjumpin.com/wp-content/uploads/2026/07/cover-image.png'
     ),
     'Karnataka' => array(
-        'Bengaluru' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/bengaluru-1.png'
+        'Bengaluru' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/M5_Ecity_Mall2.webp',
+        'Meenakshi Mall' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Meenakshi_Mall1.webp'
     ),
     'Jharkhand' => array(
-        'Dhanbad' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/dhanbad.png',
-        'Jamshedpur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/jamshedpur.png',
-        'Ranchi' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Ranchi.png'
+        'Dhanbad' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Prabhatam-mall-1.webp',
+        'Jamshedpur' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/P&M_MALL_1.webp',
+        'Ranchi' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Nucleus-mall-1.webp'
     ),
     'Uttar Pradesh' => array(
-        'Noida' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Noida.png'
+        'Noida' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Noida_gip_mall-1.webp',
+        'Spectrum Mall' => '	https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/spectrum-mall1.webp'
     ),
     'Maharashtra' => array(
-        'Nagpur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Nagpur.png',
-        'Pune' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Pune.png',
-        'Nashik' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Nashik.png',
-        'Ghatkopar' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Ghatkopar.png',
-        'Thane' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Thane.png'
+        'Nagpur' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Nagpur_vr_mall_1.webp',
+        'Pune' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/season_mall_pune2.webp',
+        'Nashik' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Nashik_City_center1.webp',
+        'Ghatkopar' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/R_City_Mall_hero.png',
+        'Thane' => '	https://www.jusjumpin.com/wp-content/uploads/2026/01/R-Mall-Thane-Nightview2-1024x512-1.jpg'
     ),
     'Chhattisgarh' => array(
-        'Raipur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/raipur.png'
-    ),
-    'Rajasthan' => array(
-        'Udaipur' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/Udaipur.png'
+        'Raipur' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/Zora_the_Mall_1.webp'
     ),
     'Gujarat' => array(
-        'Surat' => 'https://www.jusjumpin.com/wp-content/uploads/2025/12/surat.png'
+        'Surat' => 'https://www.jusjumpin.com/wp-content/themes/newjusjumpin/assets/img/surat_vr_mall_1.webp'
     )
+    
 );
 
 $location_slugs = newjusjumpin_get_location_slugs(); // Get slugs from helper
@@ -129,7 +146,10 @@ foreach ($jj_locations as $state => $cities) {
             $slug = '';
             if (isset($location_slugs[$state])) {
                 foreach ($location_slugs[$state] as $venue => $venue_slug) {
-                    if (stripos($venue, $city) === 0) { // Match city at start of venue name
+                    $clean_city = trim(str_ireplace(' Mall', '', $city));
+                    $normalized_city = str_ireplace('center', 'centre', $clean_city);
+                    $normalized_venue = str_ireplace('center', 'centre', $venue);
+                    if (stripos($normalized_venue, $normalized_city) !== false) { // Match city/mall within venue name
                         $slug = $venue_slug;
                         break;
                     }
@@ -139,6 +159,7 @@ foreach ($jj_locations as $state => $cities) {
                 'name' => $city, // Only city name
                 'image' => $image_url,
                 'color' => $brand_colors[$color_index % count($brand_colors)],
+                'shape' => $blob_shapes[$color_index % count($blob_shapes)],
                 'slug' => $slug // Add slug for linking
             );
             $color_index++;
@@ -147,11 +168,32 @@ foreach ($jj_locations as $state => $cities) {
 }
 ?>
 <section class="store-marquee" aria-label="Available Jus Jumpin locations">
+
+    <!-- Signature shapes: four blob outlines, reused by the cards via clip-path: var(--item-shape) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <clipPath id="jj-blob-twin-arch" clipPathUnits="objectBoundingBox">
+                <path d="M 0 0.25 C 0 0.1121 0.1345 0 0.3 0 C 0.4655 0 0.5 0.1667 0.5 0.2292 C 0.5 0.1667 0.5345 0 0.7 0 C 0.8655 0 1 0.1121 1 0.25 L 1 0.8333 C 1 0.9254 0.9105 1 0.8 1 L 0.2 1 C 0.0895 1 0 0.9254 0 0.8333 Z"></path>
+            </clipPath>
+            <clipPath id="jj-blob-single-dome" clipPathUnits="objectBoundingBox">
+                <path d="M 0 0.3333 C 0 0.1458 0.2 0 0.45 0 C 0.75 0 1 0.0833 1 0.3333 L 1 0.8333 C 1 0.925 0.91 1 0.8 1 L 0.2 1 C 0.09 1 0 0.925 0 0.8333 Z"></path>
+            </clipPath>
+            <clipPath id="jj-blob-triple-wave" clipPathUnits="objectBoundingBox">
+                <path d="M 0 0.2917 C 0 0.2292 0.05 0.1667 0.125 0.1583 C 0.2 0.15 0.225 0.0417 0.325 0.0333 C 0.425 0.025 0.45 0.125 0.5 0.125 C 0.55 0.125 0.575 0.025 0.675 0.0333 C 0.775 0.0417 0.8 0.15 0.875 0.1583 C 0.95 0.1667 1 0.2292 1 0.2917 L 1 0.8333 C 1 0.925 0.91 1 0.8 1 L 0.2 1 C 0.09 1 0 0.925 0 0.8333 Z"></path>
+            </clipPath>
+            <clipPath id="jj-blob-lopsided" clipPathUnits="objectBoundingBox">
+                <path d="M 0 0.2917 C 0 0.1292 0.155 0 0.35 0 C 0.5 0 0.5 0.1042 0.6 0.1042 C 0.775 0.1042 1 0.0833 1 0.2917 L 1 0.8333 C 1 0.925 0.91 1 0.8 1 L 0.2 1 C 0.09 1 0 0.925 0 0.8333 Z"></path>
+            </clipPath>
+        </defs>
+    </svg>
+
     <div class="store-marquee__inner">
         <div class="store-marquee__track">
             <?php foreach ($store_items as $item): ?>
-                <a href="<?php echo esc_url($item['slug']); ?>" class="store-marquee__item" style="--item-color: <?php echo esc_attr($item['color']); ?>" aria-label="Visit Jus Jumpin in <?php echo esc_attr($item['name']); ?>">
-                    <img class="store-marquee__image" src="<?php echo esc_url($item['image']); ?>" alt="Store in <?php echo esc_attr($item['name']); ?>">
+                <a href="<?php echo esc_url($item['slug']); ?>" class="store-marquee__item" style="--item-color: <?php echo esc_attr($item['color']); ?>; --item-shape: url(#<?php echo esc_attr($item['shape']); ?>);" aria-label="Visit Jus Jumpin in <?php echo esc_attr($item['name']); ?>">
+                    <span class="store-marquee__shape">
+                        <img class="store-marquee__image" src="<?php echo esc_url($item['image']); ?>" alt="Store in <?php echo esc_attr($item['name']); ?>" loading="lazy">
+                    </span>
                     <span class="store-marquee__name"><?php echo esc_html($item['name']); ?></span>
                 </a>
             <?php endforeach; ?>
@@ -159,14 +201,51 @@ foreach ($jj_locations as $state => $cities) {
         <!-- Duplicate track for seamless loop -->
         <div class="store-marquee__track" aria-hidden="true">
             <?php foreach ($store_items as $item): ?>
-                <a href="<?php echo esc_url($item['slug']); ?>" class="store-marquee__item" style="--item-color: <?php echo esc_attr($item['color']); ?>" aria-label="Visit Jus Jumpin in <?php echo esc_attr($item['name']); ?>">
-                    <img class="store-marquee__image" src="<?php echo esc_url($item['image']); ?>" alt="Store in <?php echo esc_attr($item['name']); ?>">
+                <a href="<?php echo esc_url($item['slug']); ?>" class="store-marquee__item" style="--item-color: <?php echo esc_attr($item['color']); ?>; --item-shape: url(#<?php echo esc_attr($item['shape']); ?>);" tabindex="-1" aria-label="Visit Jus Jumpin in <?php echo esc_attr($item['name']); ?>">
+                    <span class="store-marquee__shape">
+                        <img class="store-marquee__image" src="<?php echo esc_url($item['image']); ?>" alt="" loading="lazy">
+                    </span>
                     <span class="store-marquee__name"><?php echo esc_html($item['name']); ?></span>
                 </a>
             <?php endforeach; ?>
         </div>
     </div>
 </section>
+<script>
+(function () {
+    // Keeps the marquee moving at a constant pixel-per-second speed no matter
+    // how many locations are listed or how wide the screen is — a fixed
+    // animation-duration would speed up/slow down as content changes.
+    var PIXELS_PER_SECOND = 100; // increase to speed up, decrease to slow down
+    var resizeTimer;
+
+    function setMarqueeSpeed(section) {
+        var tracks = section.querySelectorAll('.store-marquee__track');
+        if (!tracks.length) return;
+        var trackWidth = tracks[0].scrollWidth;
+        if (!trackWidth) return;
+        var duration = Math.max(trackWidth / PIXELS_PER_SECOND, 8);
+        tracks.forEach(function (track) {
+            track.style.animationDuration = duration + 's';
+        });
+    }
+
+    function setAllMarqueeSpeeds() {
+        document.querySelectorAll('.store-marquee').forEach(setMarqueeSpeed);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setAllMarqueeSpeeds);
+    } else {
+        setAllMarqueeSpeeds();
+    }
+
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(setAllMarqueeSpeeds, 200);
+    });
+})();
+</script>
 
 <!-- Know Us Better Section -->
 <section class="section full-width" id="know-us-better">
