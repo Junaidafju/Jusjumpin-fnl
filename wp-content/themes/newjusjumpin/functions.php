@@ -3,7 +3,7 @@
  * New Jus Jumpin Theme Functions
  * 
  * @package NewJusJumpin
- * @version 1.0.4
+ * @version 1.0.5
  */
 
 // Prevent direct access
@@ -401,7 +401,7 @@ function newjusjumpin_scripts()
 
     // Page-specific stylesheets
     if (is_front_page()) {
-        wp_enqueue_style('newjusjumpin-front-page', get_template_directory_uri() . '/assets/css/front-page.css', array('newjusjumpin-style'), '1.0.4');
+        wp_enqueue_style('newjusjumpin-front-page', get_template_directory_uri() . '/assets/css/front-page.css', array('newjusjumpin-style'), '1.0.9');
     }
 
     // Contact Page CSS with better detection
@@ -613,6 +613,7 @@ add_action('template_redirect', function () {
             'thane-r-mall' => 'Explore The Best Kids Play Zone In Thane, R Mall - Jus Jumpin',
             'hyderabad-sarath-city-capital-mall' => 'Best Indoor Entertainment Zone & Trampoline Park In Hyderabad',
             'hyderabad-dsl-virtue-mall' => 'Most Exciting Kids Play Zone in Hyderabad DSL Virtue Mall',
+			
         ];
 
         $page_title = $location_titles[$slug] ?? 'Jus Jumpin Location | Best Trampoline Park in India';
@@ -887,7 +888,8 @@ function newjusjumpin_setup_mega_menu()
         ),
         'Hyderabad' => array(
             'Hyderabad - Sarath City Capital Mall' => '/hyderabad-sarath-city-capital-mall/',
-            'Hyderabad - DSL Virtue Mall' => '/hyderabad-dsl-virtue-mall/'
+            'Hyderabad - DSL Virtue Mall' => '/hyderabad-dsl-virtue-mall/',
+			'Hyderabad - Lake Shore Mall' => '/hyderabad-lakeshore-mall'
         ),
         'Karnataka' => array(
             'Bengaluru - M5 Ecity Mall' => '/bengaluru-m5-ecity-mall/',
@@ -2363,7 +2365,8 @@ function newjusjumpin_get_location_slugs()
         ),
         'Hyderabad' => array(
             'Hyderabad - Sarath City Capital Mall' => '/hyderabad-sarath-city-capital-mall/',
-            'Hyderabad - DSL Virtue Mall' => '/hyderabad-dsl-virtue-mall/'
+            'Hyderabad - DSL Virtue Mall' => '/hyderabad-dsl-virtue-mall/',
+			'Hyderabad - Lake Shore Mall' => '/hyderabad-lakeshore-mall'
         ),
         'Karnataka' => array(
             'Bengaluru - M5 Ecity Mall' => '/bengaluru-m5-ecity-mall/',

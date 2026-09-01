@@ -881,23 +881,23 @@ return [
         "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_0001-2048x1365.jpg",
         "https://www.jusjumpin.com/wp-content/uploads/2025/07/IMG_4608-2048x1536.jpg"
     ],
-    "description" => "Explore screen free kids entertainment at Jus' Jumpin' DSL virtue mall. Find 15+ exciting games and activities at the best kids play area in hyderabad. Visit now.",
+    "description" => "Expereince Jus Jumpin, the ultimate indoor entertainment park in Hyderabad Sarath City Capital Mall. Find fun packed activities and unrestricted play time.",
     "telephone" => "+91 9830359999",
     "email" => "info@jusjumpin.com",
     "address" => [
         "@type" => "PostalAddress",
-        "streetAddress" => "2nd floor, UNIT No. SF 27,28,29, DSL Virtue Mall, near Rajiv Gandhi International Cricket Stadium, Industrial Development Area, Uppal, Hyderabad, Telangana 500039",
+        "streetAddress" => "4th Floor, Sarath City Capital Mall, Unit No. SF - 26-30, Gachibowli - Miyapur Rd, Kondapur, Whitefields, HITEC City, Kondapur, Hyderabad, Telangana 500084",
         "addressLocality" => "Hyderabad",
         "addressRegion" => "Telangana",
-        "postalCode" => "500039",
+        "postalCode" => "500084",
         "addressCountry" => "IN"
 ],
     "geo" => [
         "@type"=> "GeoCoordinates",
         "latitude"=> 17.457692384590423,
         "longitude"=> 78.36485484076584
-],
-    "hasMap"=> "https://maps.app.goo.gl/DAwc1hMqwqV478gy8",
+    ],
+    "hasMap" => "https://maps.app.goo.gl/mT9zLGrd6NTGeKTX7",
     "openingHoursSpecification"=> [
         "@type"=> "OpeningHoursSpecification",
         "dayOfWeek"=> [
